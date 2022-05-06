@@ -1,3 +1,5 @@
+package com.test;
+
 import com.test.Solution03;
 import org.junit.jupiter.api.Test;
 

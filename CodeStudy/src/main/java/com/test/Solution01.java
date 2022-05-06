@@ -40,7 +40,7 @@ public class Solution01 {
 
     public static void main(String[] args) {
         int[] result = {};
-        result = solution(new int[]{1,1,0,1,1,100,89,32,14});
+        result = solution(new int[]{1,1,2,3});
         System.out.println(Arrays.toString(result));
     }
 }
