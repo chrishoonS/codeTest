@@ -10,12 +10,17 @@
   <img src="https://img.shields.io/badge/Mysql-E6B91E?style=flat-square&logo=MySql&logoColor=white"/></a>&nbsp 
   <img src="https://img.shields.io/badge/aws-333664?style=flat-square&logo=amazon-aws&logoColor=white"/></a>&nbsp 
 </p>
-
 <br>
 
-### codeTest
-#programmers codeTest<br>
-월간 코드 챌린지 시즌 1 - 1단계 finish<br>
+## Code_Test
+### 프로그래머스 CodeTest<br>
+<table>
+  <tr>
+    <th></th>
+  </tr>
+</table>
+월간 코드 챌린지 시즌 1(1단계)<br>
+https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test/Solution01.java <br>
 월간 코드 챌린지 시즌 2 - 1단계 finish<br>
 월간 코드 챌린지 시즌 3 - 1단계 finish<br>
 
