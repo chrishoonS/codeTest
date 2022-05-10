@@ -80,6 +80,19 @@
         <td>:white_check_mark:	</td>
         <td></td>
     </tr>
+    <tr>
+        <td rowspan="2">Summer/Winter Coding(~2018)(1단계)</td>
+        <td><a href="https://programmers.co.kr/learn/courses/30/lessons/12977">소수만들기</a></td>
+        <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test/Solution10.java">Solution10.java</a></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><a href="https://programmers.co.kr/learn/courses/30/lessons/12982">예산</a></td>
+        <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test/Solution11.java">Solution11.java</a></td>
+        <td></td>
+        <td></td>
+    </tr>
 
 
 </table>
