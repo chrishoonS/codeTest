@@ -11,6 +11,5 @@ class Solution10Test {
         Solution10 slt10 = new Solution10();
         assertEquals(slt10.solution(new int[]{1,2,3,4}), 1);
         assertEquals(slt10.solution(new int[]{1,2,7,6,4}), 4);
-        assertEquals(slt10.solution(new int[]{1,2,7,6,4,3,5,8,9}), 26);
     }
 }
