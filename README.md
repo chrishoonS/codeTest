@@ -77,14 +77,14 @@
     <tr>
         <td><a href="https://programmers.co.kr/learn/courses/30/lessons/86491">최소직사각형</a></td>
         <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test/Solution09.java">Solution09.java</a></td>
-        <td>:white_check_mark:	</td>
+        <td>:white_check_mark:</td>
         <td></td>
     </tr>
     <tr>
         <td rowspan="2">Summer/Winter Coding(~2018)(1단계)</td>
         <td><a href="https://programmers.co.kr/learn/courses/30/lessons/12977">소수만들기</a></td>
         <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test/Solution10.java">Solution10.java</a></td>
-        <td></td>
+        <td>:white_check_mark:</td>
         <td></td>
     </tr>
     <tr>
