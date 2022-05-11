@@ -3,7 +3,7 @@ package com.test;
 import java.util.Arrays;
 
 public class Solution11 {
-    public static int solution(int[] d, int budget) {
+    public int solution(int[] d, int budget) {
         int answer = 0;
         int sum = 0;                //부서별로 신청한 금액 배열
         int part = d.length;        //요청한 부서 수
