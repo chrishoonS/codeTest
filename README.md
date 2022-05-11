@@ -96,8 +96,8 @@
     <tr>
         <td>찾아라 프로그래밍 마에스터(1단계)</td>
         <td><a href="https://programmers.co.kr/learn/courses/30/lessons/1845">폰켓몬</a></td>
-        <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test/Solution12.java">Solution10.java</a></td>
-        <td></td>
+        <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test/Solution12.java">Solution12.java</a></td>
+        <td>:white_check_mark:</td>
         <td></td>
     </tr>
 
