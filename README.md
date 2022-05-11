@@ -90,7 +90,7 @@
     <tr>
         <td><a href="https://programmers.co.kr/learn/courses/30/lessons/12982">예산</a></td>
         <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test/Solution11.java">Solution11.java</a></td>
-        <td></td>
+        <td>:white_check_mark:</td>
         <td></td>
     </tr>
 
