@@ -121,8 +121,19 @@
         <td>:white_check_mark:</td>
         <td></td>
     </tr>
-
-
+    <tr>
+        <td rowspan="2">2018 KAKAO BLIND RECRUITMENT(1단계)</td>
+        <td><a href="https://programmers.co.kr/learn/courses/30/lessons/17681">[1차] 비밀지도</a></td>
+        <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test/Solution16.java">Solution16.java</a></td>
+        <td>:white_check_mark:</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><a href="https://programmers.co.kr/learn/courses/30/lessons/17682">[1차] 다트게임</a></td>
+        <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test/Solution17.java">Solution17.java</a></td>
+        <td></td>
+        <td></td>
+    </tr>
 </table>
 
 ---
