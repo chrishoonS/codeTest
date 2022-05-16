@@ -118,7 +118,7 @@
         <td>2021 카카오 채용연계형 인턴십(1단계)</td>
         <td><a href="https://programmers.co.kr/learn/courses/30/lessons/81301">숫자 문자열과 영단어</a></td>
         <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test/Solution15.java">Solution15.java</a></td>
-        <td></td>
+        <td>:white_check_mark:</td>
         <td></td>
     </tr>
 
