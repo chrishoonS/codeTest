@@ -1,56 +1,35 @@
 package com.test;
 
-import java.util.Arrays;
-
 public class Solution17 {
     public int solution(String dartResult) {
         int answer = 0;
-        String regExp1 = "\\D+";    //숫자를 제외한 모든 문자
-        String regExp2 = "\\d+";    //0~9 숫자
-        String[] score  = dartResult.split(regExp1); //해당 정규식을 기준으로 점수만 분리
-        String[] option = dartResult.split(regExp2); //옵션만
-        String[] chgOpt = new String[option.length - 1];
-
-        int _1p = Integer.parseInt(score[0]);
-
-        for (int i=0; i<option.length-1; i++) {     //0번째 빈 인덱스 삭제
-            chgOpt[i] = option[i+1];
-        }
-
-        for (int i=0; i< score.length; i++) {
-            if (chgOpt[i].contains("S")) {
-                answer += Integer.parseInt(score[i]);
-                if (chgOpt[i].contains("*")) {
-                    answer *= 2;
-                } else if (chgOpt[i].contains("#")) {
-                    answer *= -1;
+        // 각 게임별 점수
+        int[] score = new int[3];
+        char[] charArr = dartResult.toCharArray();
+        // 첫 번째는 0이 되기 위한 -1
+        int idx = -1;
+        for (int i=0; i<charArr.length; i++) {
+            // n번째 라운드 점수가 0~9인 경우
+            if (charArr[i] >= '0' && charArr[i] <= '9') {
+                idx++; // 점수 배열 인덱스를 맞춰주기 위한 증가
+                score[idx] += Integer.parseInt(String.valueOf(charArr[i])); // 점수 추가
+                if (charArr[i] == '1' && charArr[i+1] == '0') { //10점인 경우
+                    score[idx] -= Integer.parseInt(String.valueOf(charArr[i])); //이미 들어가 있는 인덱스 제거
+                    score[idx] = 10;
+                    i++;    //10일때는 다음 문자열 건너뛰기 위한 증가
                 }
-            } else if (chgOpt[i].contains("D")) {
-                answer = (int) Math.pow(_1p, 2);
-                if (chgOpt[i].contains("*")) {
-                    answer *= 2;
-                } else if (chgOpt[i].contains("#")) {
-                    answer *= -1;
-                }
-            } else if (chgOpt[i].contains("T")) {
-                answer = (int) Math.pow(_1p, 3);
-                if (chgOpt[i].contains("*")) {
-                    answer *= 2;
-                } else if (chgOpt[i].contains("#")) {
-                    answer *= -1;
-                }
+            } else if (charArr[i] == 'D') {
+                score[idx] = (int) Math.pow(score[idx],2);
+            } else if(charArr[i] == 'T') {
+                score[idx] = (int) Math.pow(score[idx],3);
+            } else if (charArr[i] == '*') { // 이전 라운드와 현재 라운드에 2배
+                if (idx > 0) score[idx-1] *=2;
+                score[idx] *= 2;
+            } else if (charArr[i] == '#') { // 현재 라운드에 -1 곱하기
+                score[idx] *= -1;
             }
         }
-
-        System.out.println(Arrays.toString(score));
-        System.out.println(Arrays.toString(option));
-        System.out.println(Arrays.toString(chgOpt));
+        answer = score[0] + score[1] + score[2];
         return answer;
-    }
-
-    private int solve(String score, String chgOpt) {
-        int val = Integer.parseInt(score);
-
-        return val;
     }
 }

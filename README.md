@@ -131,7 +131,7 @@
     <tr>
         <td><a href="https://programmers.co.kr/learn/courses/30/lessons/17682">[1차] 다트게임</a></td>
         <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test/Solution17.java">Solution17.java</a></td>
-        <td></td>
+        <td>:white_check_mark:</td>
         <td></td>
     </tr>
 </table>
