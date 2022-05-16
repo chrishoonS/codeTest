@@ -10,7 +10,6 @@ public class Solution16 {
             answer[i] = answer[i].replace("0", " ");
             answer[i] = answer[i].replace("1", "#");
         }
-        System.out.println(answer.getClass().getTypeName());
         return answer;
     }
 }
