@@ -134,6 +134,13 @@
         <td>:white_check_mark:</td>
         <td></td>
     </tr>
+    <tr>
+        <td>2019 KAKAO BLIND RECRUITMENT(1단계)</td>
+        <td><a href="https://programmers.co.kr/learn/courses/30/lessons/42889">실패율</a></td>
+        <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test/Solution18.java">Solution18.java</a></td>
+        <td></td>
+        <td></td>
+    </tr>
 </table>
 
 ---
