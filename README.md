@@ -141,6 +141,13 @@
         <td>:white_check_mark:</td>
         <td></td>
     </tr>
+    <tr>
+        <td>2021 KAKAO BLIND RECRUITMENT(1단계)</td>
+        <td><a href="https://programmers.co.kr/learn/courses/30/lessons/72410">신규아이디 추천</a></td>
+        <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test/Solution19.java">Solution19.java</a></td>
+        <td></td>
+        <td></td>
+    </tr>
 </table>
 
 ---
