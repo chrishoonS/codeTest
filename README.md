@@ -159,7 +159,7 @@
         <td>2022 KAKAO BLIND RECRUITMENT(1단계)</td>
         <td><a href="https://programmers.co.kr/learn/courses/30/lessons/77484">신고 결과 받기</a></td>
         <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test/Solution21.java">Solution21.java</a></td>
-        <td>:white_check_mark:</td>
+        <td></td>
         <td></td>
     </tr>
 </table>
