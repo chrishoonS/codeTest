@@ -46,8 +46,8 @@
     <tr>
         <td rowspan="3">Lv.2</td>
         <td><a href="https://programmers.co.kr/learn/courses/30/lessons/70129">삼각 달팽이</a></td>
-        <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test/level2/Solution01.java">Solution01.java</a></td>
-        <td></td>
+        <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test/level2/Solution22.java">Solution22.java</a></td>
+        <td>:white_check_mark:</td>
         <td></td>
     </tr>
     <tr>
