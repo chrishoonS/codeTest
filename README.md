@@ -53,7 +53,7 @@
     <tr>
         <td><a href="https://programmers.co.kr/learn/courses/30/lessons/70129">이진 변환 반복하기</a></td>
         <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test/level2/Solution23.java">Solution23.java</a></td>
-        <td></td>
+        <td align="center">:white_check_mark:</td>
         <td></td>
     </tr>
     <tr>
