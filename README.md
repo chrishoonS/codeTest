@@ -59,11 +59,11 @@
     <tr>
         <td><a href="https://programmers.co.kr/learn/courses/30/lessons/68936">쿼드압축 후 개수 세기</a></td>
         <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test/level2/Solution24.java">Solution24.java</a></td>
-        <td align="center">:white_check_mark:</td><td></td>
+        <td align="center">:white_check_mark:</td>
         <td></td>
     </tr>
     <tr>
-        <td rowspan="2">월간 코드 챌린지 시즌 2</td>
+        <td rowspan="4">월간 코드 챌린지 시즌 2</td>
         <td rowspan="2"align="center">Lv.1</td>
         <td><a href="https://programmers.co.kr/learn/courses/30/lessons/76501">음양 더하기</a></td>
         <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test/level1/Solution04.java">Solution04.java</a></td>
@@ -74,6 +74,19 @@
         <td><a href="https://programmers.co.kr/learn/courses/30/lessons/77884">약수의 개수와 덧셈</a></td>
         <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test/level1/Solution05.java">Solution05.java</a></td>
         <td align="center">:white_check_mark:</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td rowspan="2"align="center">Lv.2</td>
+        <td><a href="https://programmers.co.kr/learn/courses/30/lessons/76502">괄호 회전하기</a></td>
+        <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test/level2/Solution25.java">Solution25.java</a></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><a href="https://programmers.co.kr/learn/courses/30/lessons/77885">2개 이하로 다른 비트</a></td>
+        <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test/level2/Solution26.java">Solution26.java</a></td>
+        <td></td>
         <td></td>
     </tr>
     <tr>
