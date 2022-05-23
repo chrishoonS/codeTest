@@ -80,7 +80,7 @@
         <td rowspan="2"align="center">Lv.2</td>
         <td><a href="https://programmers.co.kr/learn/courses/30/lessons/76502">괄호 회전하기</a></td>
         <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test/level2/Solution25.java">Solution25.java</a></td>
-        <td></td>
+        <td align="center">:white_check_mark:</td>
         <td></td>
     </tr>
     <tr>
