@@ -90,7 +90,7 @@
         <td></td>
     </tr>
     <tr>
-        <td rowspan="2">월간 코드 챌린지 시즌 3</td>
+        <td rowspan="4">월간 코드 챌린지 시즌 3</td>
         <td rowspan="2"align="center">Lv.1</td>
         <td><a href="https://programmers.co.kr/learn/courses/30/lessons/86051">없는숫자 더하기</a></td>
         <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test/level1/Solution06.java">Solution06.java</a></td>
@@ -101,6 +101,19 @@
         <td><a href="https://programmers.co.kr/learn/courses/30/lessons/87389">나머지가 1이 되는 수 찾기</a></td>
         <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test/level1/Solution07.java">Solution07.java</a></td>
         <td align="center">:white_check_mark:</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td rowspan="2"align="center">Lv.2</td>
+        <td><a href="https://programmers.co.kr/learn/courses/30/lessons/86052">빛의 경로 사이클</a></td>
+        <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test/level2/Solution27.java">Solution27.java</a></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><a href="https://programmers.co.kr/learn/courses/30/lessons/87390">n^2 배열 자르기</a></td>
+        <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test/level2/Solution28.java">Solution28.java</a></td>
+        <td></td>
         <td></td>
     </tr>
     <tr>
