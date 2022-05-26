@@ -13,7 +13,7 @@
 <br>
 
 ## Java Code_Test
-### 프로그래머스 CodeTest<br>
+### 프로그래머스 코딩테스트 연습<br>
 <table>
     <tr>
         <th>Category</th>
@@ -107,7 +107,7 @@
         <td rowspan="2"align="center">Lv.2</td>
         <td><a href="https://programmers.co.kr/learn/courses/30/lessons/86052">빛의 경로 사이클</a></td>
         <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test/level2/Solution27.java">Solution27.java</a></td>
-        <td></td>
+        <td>고득점 키트 먼저 푸는중</td>
         <td></td>
     </tr>
     <tr>
@@ -224,6 +224,46 @@
     </tr>
 </table>
 
+---
+### 프로그래머스 코딩테스트 고득점키트<br>
+<table>
+    <tr>
+        <th>Category</th>
+        <th>Level</th>
+        <th>Question</th>
+        <th>Answer</th>
+        <th>Status</th>
+        <th>Note</th>
+    </tr>
+    <tr>
+        <td rowspan="4" align="center">해시</td>
+        <td align="center">Lv.1</td>
+        <td><a href="https://programmers.co.kr/learn/courses/30/lessons/42576">완주하지 못한 선수</a></td>
+        <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test2/level1/Algorithm01.java">Algorithm01.java</a></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td rowspan="2" align="center">Lv.2</td>
+        <td><a href="https://programmers.co.kr/learn/courses/30/lessons/70129">전화번호 목록</a></td>
+        <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test2/level2/Algorithm01.java"></a></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><a href="https://programmers.co.kr/learn/courses/30/lessons/70129">위장</a></td>
+        <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test2/level2/Algorithm01.java"></a></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td align="center">Lv.3</td>
+        <td><a href="https://programmers.co.kr/learn/courses/30/lessons/68936">베스트 앨범</a></td>
+        <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test/level2/Solution24.java"></a></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
 
 ---
 ##Preference <br>
