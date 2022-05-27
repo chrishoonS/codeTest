@@ -1,19 +1,19 @@
 <h3 align="center">🛠 Tech Stack 🛠</h3>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Python-3766AB?style=flat-square&logo=Python&logoColor=white"/></a>&nbsp 
-  <img src="https://img.shields.io/badge/Java-007396?style=flat-square&logo=Java&logoColor=white"/></a>&nbsp 
-  <img src="https://img.shields.io/badge/Javascript-ffb13b?style=flat-square&logo=javascript&logoColor=white"/></a>&nbsp 
-  <img src="https://img.shields.io/badge/css-1572B6?style=flat-square&logo=css3&logoColor=white"/></a>&nbsp 
+  <img src="https://img.shields.io/badge/Python-3766AB?style=flat-square&logo=Python&logoColor=white"/>&nbsp 
+  <img src="https://img.shields.io/badge/Java-007396?style=flat-square&logo=Java&logoColor=white"/>&nbsp 
+  <img src="https://img.shields.io/badge/Javascript-ffb13b?style=flat-square&logo=javascript&logoColor=white"/>&nbsp 
+  <img src="https://img.shields.io/badge/css-1572B6?style=flat-square&logo=css3&logoColor=white"/>&nbsp 
   <br>
-  <img src="https://img.shields.io/badge/SpringBoot-6DB33F?style=flat-square&logo=Spring&logoColor=white"/></a>&nbsp 
-  <img src="https://img.shields.io/badge/Mysql-E6B91E?style=flat-square&logo=MySql&logoColor=white"/></a>&nbsp 
-  <img src="https://img.shields.io/badge/aws-333664?style=flat-square&logo=amazon-aws&logoColor=white"/></a>&nbsp 
+  <img src="https://img.shields.io/badge/SpringBoot-6DB33F?style=flat-square&logo=Spring&logoColor=white"/>&nbsp 
+  <img src="https://img.shields.io/badge/Mysql-E6B91E?style=flat-square&logo=MySql&logoColor=white"/>&nbsp 
+  <img src="https://img.shields.io/badge/aws-333664?style=flat-square&logo=amazon-aws&logoColor=white"/>&nbsp 
 </p>
 <br>
 
 ## Java Code_Test
-### 프로그래머스 코딩테스트 연습<br>
+### 프로그래머스 코딩테스트 연습
 <table>
     <tr>
         <th>Category</th>
@@ -64,7 +64,7 @@
     </tr>
     <tr>
         <td rowspan="4">월간 코드 챌린지 시즌 2</td>
-        <td rowspan="2"align="center">Lv.1</td>
+        <td rowspan="2" align="center">Lv.1</td>
         <td><a href="https://programmers.co.kr/learn/courses/30/lessons/76501">음양 더하기</a></td>
         <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test/level1/Solution04.java">Solution04.java</a></td>
         <td align="center">:white_check_mark:</td>
@@ -77,7 +77,7 @@
         <td></td>
     </tr>
     <tr>
-        <td rowspan="2"align="center">Lv.2</td>
+        <td rowspan="2" align="center">Lv.2</td>
         <td><a href="https://programmers.co.kr/learn/courses/30/lessons/76502">괄호 회전하기</a></td>
         <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test/level2/Solution25.java">Solution25.java</a></td>
         <td align="center">:white_check_mark:</td>
@@ -91,7 +91,7 @@
     </tr>
     <tr>
         <td rowspan="4">월간 코드 챌린지 시즌 3</td>
-        <td rowspan="2"align="center">Lv.1</td>
+        <td rowspan="2" align="center">Lv.1</td>
         <td><a href="https://programmers.co.kr/learn/courses/30/lessons/86051">없는숫자 더하기</a></td>
         <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test/level1/Solution06.java">Solution06.java</a></td>
         <td align="center">:white_check_mark:</td>
@@ -104,7 +104,7 @@
         <td></td>
     </tr>
     <tr>
-        <td rowspan="2"align="center">Lv.2</td>
+        <td rowspan="2" align="center">Lv.2</td>
         <td><a href="https://programmers.co.kr/learn/courses/30/lessons/86052">빛의 경로 사이클</a></td>
         <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test/level2/Solution27.java">Solution27.java</a></td>
         <td>고득점 키트 먼저 푸는중</td>
@@ -118,7 +118,7 @@
     </tr>
     <tr>
         <td rowspan="2">위클리 챌린지</td>
-        <td rowspan="2"align="center">Lv.1</td>
+        <td rowspan="2" align="center">Lv.1</td>
         <td><a href="https://programmers.co.kr/learn/courses/30/lessons/82612">부족한 금액 계산하기</a></td>
         <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test/level1/Solution08.java">Solution08.java</a></td>
         <td align="center">:white_check_mark:</td>
@@ -132,7 +132,7 @@
     </tr>
     <tr>
         <td rowspan="2">Summer/Winter Coding(~2018)</td>
-        <td rowspan="2"align="center">Lv.1</td>
+        <td rowspan="2" align="center">Lv.1</td>
         <td><a href="https://programmers.co.kr/learn/courses/30/lessons/12977">소수만들기</a></td>
         <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test/level1/Solution10.java">Solution10.java</a></td>
         <td align="center">:white_check_mark:</td>
@@ -240,7 +240,7 @@
         <td align="center">Lv.1</td>
         <td><a href="https://programmers.co.kr/learn/courses/30/lessons/42576">완주하지 못한 선수</a></td>
         <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test2/level1/Algorithm01.java">Algorithm01.java</a></td>
-        <td></td>
+        <td align="center">:white_check_mark:</td>
         <td></td>
     </tr>
     <tr>
@@ -260,6 +260,74 @@
         <td align="center">Lv.3</td>
         <td><a href="https://programmers.co.kr/learn/courses/30/lessons/68936">베스트 앨범</a></td>
         <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test/level2/Solution24.java"></a></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td rowspan="4" align="center">스택/큐</td>
+        <td rowspan="4" align="center">Lv.2</td>
+        <td><a href="https://programmers.co.kr/learn/courses/30/lessons/42576">기능개발</a></td>
+        <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test2/level2/Algorithm01.java"></a></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><a href="https://programmers.co.kr/learn/courses/30/lessons/70129">프린터</a></td>
+        <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test2/level2/Algorithm01.java"></a></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><a href="https://programmers.co.kr/learn/courses/30/lessons/70129">다리를 지나는 트럭</a></td>
+        <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test2/level2/Algorithm01.java"></a></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><a href="https://programmers.co.kr/learn/courses/30/lessons/68936">주식가격</a></td>
+        <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test/level2/Solution24.java"></a></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td rowspan="3" align="center">힙(Heap)</td>
+        <td align="center">Lv.2</td>
+        <td><a href="https://programmers.co.kr/learn/courses/30/lessons/42576">더 맵게</a></td>
+        <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test2/level2/Algorithm01.java"></a></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td rowspan="2" align="center">Lv.3</td>
+        <td><a href="https://programmers.co.kr/learn/courses/30/lessons/70129">디스크 컨트롤러</a></td>
+        <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test2/level2/Algorithm01.java"></a></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><a href="https://programmers.co.kr/learn/courses/30/lessons/70129">이중우선순위큐</a></td>
+        <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test2/level2/Algorithm01.java"></a></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td rowspan="3" align="center">정렬</td>
+        <td align="center">Lv.1</td>
+        <td><a href="https://programmers.co.kr/learn/courses/30/lessons/42576">K번째 수</a></td>
+        <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test2/level1/Algorithm02.java">Algorithm02.java</a></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td rowspan="2" align="center">Lv.2</td>
+        <td><a href="https://programmers.co.kr/learn/courses/30/lessons/70129">가장 큰 수</a></td>
+        <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test2/level2/Algorithm01.java"></a></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><a href="https://programmers.co.kr/learn/courses/30/lessons/70129">H-Index</a></td>
+        <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test2/level2/Algorithm01.java"></a></td>
         <td></td>
         <td></td>
     </tr>
