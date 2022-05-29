@@ -331,6 +331,27 @@
         <td></td>
         <td></td>
     </tr>
+<tr>
+        <td rowspan="3" align="center">완전탐색</td>
+        <td align="center">Lv.1</td>
+        <td><a href="https://programmers.co.kr/learn/courses/30/lessons/42840">모의고사</a></td>
+        <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test2/level1/Algorithm03.java">Algorithm03.java</a></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td rowspan="2" align="center">Lv.2</td>
+        <td><a href="https://programmers.co.kr/learn/courses/30/lessons/70129">소수찾기</a></td>
+        <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test2/level2/Algorithm01.java"></a></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><a href="https://programmers.co.kr/learn/courses/30/lessons/70129">카펫</a></td>
+        <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test2/level2/Algorithm01.java"></a></td>
+        <td></td>
+        <td></td>
+    </tr>
 </table>
 
 ---
