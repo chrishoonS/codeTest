@@ -396,6 +396,22 @@
 
 ---
 
+### 프로그래머스 연습문제(Level1)<br>
+<table>
+    <tr>
+        <th>Question</th>
+        <th>Answer</th>
+        <th>Status</th>
+        <th>Note</th>
+    </tr>
+    <tr>
+        <td><a href="https://programmers.co.kr/learn/courses/30/lessons/12903">가운데 글자 가져오기</a></td>
+        <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test3/level1/Excercise01.java">Excercise01.java</a></td>
+        <td align="center">:white_check_mark:</td>
+        <td></td>
+    </tr>
+</table>
+
 ---
 ##Preference <br>
 Markdown Preview - https://dillinger.io/ <br>
