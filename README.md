@@ -331,12 +331,12 @@
         <td></td>
         <td></td>
     </tr>
-<tr>
+    <tr>
         <td rowspan="3" align="center">완전탐색</td>
         <td align="center">Lv.1</td>
         <td><a href="https://programmers.co.kr/learn/courses/30/lessons/42840">모의고사</a></td>
         <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test2/level1/Algorithm03.java">Algorithm03.java</a></td>
-        <td></td>
+        <td align="center">:white_check_mark:</td>
         <td></td>
     </tr>
     <tr>
@@ -352,7 +352,49 @@
         <td></td>
         <td></td>
     </tr>
+    <tr>
+        <td rowspan="6" align="center">탐욕법(Greedy)</td>
+        <td align="center">Lv.1</td>
+        <td><a href="https://programmers.co.kr/learn/courses/30/lessons/42862">체육복</a></td>
+        <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test2/level1/Algorithm04.java">Algorithm04.java</a></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td rowspan="3" align="center">Lv.2</td>
+        <td><a href="https://programmers.co.kr/learn/courses/30/lessons/70129">조이스틱</a></td>
+        <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test2/level2/Algorithm01.java"></a></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><a href="https://programmers.co.kr/learn/courses/30/lessons/70129">큰 수 만들기</a></td>
+        <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test2/level2/Algorithm01.java"></a></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><a href="https://programmers.co.kr/learn/courses/30/lessons/70129">구명보트</a></td>
+        <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test2/level2/Algorithm01.java"></a></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td rowspan="2" align="center">Lv.3</td>
+        <td><a href="https://programmers.co.kr/learn/courses/30/lessons/70129">섬 연결하기</a></td>
+        <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test2/level2/Algorithm01.java"></a></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><a href="https://programmers.co.kr/learn/courses/30/lessons/70129">단속카메라</a></td>
+        <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test2/level2/Algorithm01.java"></a></td>
+        <td></td>
+        <td></td>
+    </tr>
 </table>
+
+---
 
 ---
 ##Preference <br>
