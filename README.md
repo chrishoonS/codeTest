@@ -357,7 +357,7 @@
         <td align="center">Lv.1</td>
         <td><a href="https://programmers.co.kr/learn/courses/30/lessons/42862">체육복</a></td>
         <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test2/level1/Algorithm04.java">Algorithm04.java</a></td>
-        <td></td>
+        <td align="center">:white_check_mark:</td>
         <td></td>
     </tr>
     <tr>
