@@ -1,12 +1,17 @@
 package com.test3.level1;
 
 public class Excercise01 {
-    public String solution(String s) {
+    public String solution(int a, int b) {
         String answer = "";
-        if(s.length()%2 == 0)
-            answer = s.substring((int) Math.floor((s.length()-1)/2), (int) Math.floor((s.length()-1)/2)+2);
-        else
-            answer = s.substring(s.length()/2, (s.length()/2)+1);
+        String[] day = { "FRI", "SAT", "SUN", "MON", "TUE", "WED", "THU" };
+        int[] date = { 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+        int allDate = 0;
+        for (int i = 0; i < a - 1; i++) {
+            allDate += date[i];
+        }
+        allDate += (b - 1);
+        answer = day[allDate % 7];
+
         return answer;
     }
 }

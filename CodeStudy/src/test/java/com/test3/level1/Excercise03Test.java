@@ -9,8 +9,7 @@ class Excercise03Test {
     @Test
     void solution() {
         Excercise03 ex = new Excercise03();
-        assertEquals(ex.solution(new int[]{5,9,7,10}, 5), new int[]{5,10});
-        assertEquals(ex.solution(new int[]{2,36,1,3}, 1), new int[]{1,2,3,36});
-        assertEquals(ex.solution(new int[]{3,2,6}, 10), new int[]{-1});
+        assertArrayEquals(ex.solution(new int[]{1,1,3,3,0,1,1}), new int[]{1,3,0,1});
+        assertArrayEquals(ex.solution(new int[]{4,4,4,3,3}), new int[]{4,3});
     }
 }

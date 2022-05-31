@@ -405,6 +405,12 @@
         <th>Note</th>
     </tr>
     <tr>
+        <td><a href="https://programmers.co.kr/learn/courses/30/lessons/12903">2016</a></td>
+        <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test3/level1/Excercise01.java">Excercise01.java</a></td>
+        <td align="center">:white_check_mark:</td>
+        <td></td>
+    </tr>
+    <tr>
         <td><a href="https://programmers.co.kr/learn/courses/30/lessons/12903">가운데 글자 가져오기</a></td>
         <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test3/level1/Excercise01.java">Excercise01.java</a></td>
         <td align="center">:white_check_mark:</td>
@@ -419,6 +425,12 @@
     <tr>
         <td><a href="https://programmers.co.kr/learn/courses/30/lessons/12910">나누어 떨어지는 숫자 배열</a></td>
         <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test3/level1/Excercise03.java">Excercise03.java</a></td>
+        <td align="center">:white_check_mark:</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><a href="https://programmers.co.kr/learn/courses/30/lessons/12912">두 정수 사이의 합</a></td>
+        <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test3/level1/Excercise04.java">Excercise04.java</a></td>
         <td align="center">:white_check_mark:</td>
         <td></td>
     </tr>
