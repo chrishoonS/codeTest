@@ -3,6 +3,7 @@ package com.test.level1;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class Solution01 {
     //문제2
@@ -21,7 +22,7 @@ public class Solution01 {
 //    }
 
     public static int[] solution(int[] numbers) {
-        Set<Integer> sumSet = new HashSet<>();
+        Set<Integer> sumSet = new TreeSet<>();
 
         for(int i=0; i<numbers.length-1; i++) {
             for(int j=i+1; j<numbers.length; j++) {
@@ -33,7 +34,6 @@ public class Solution01 {
         for(int num: sumSet) {
             answer[no++] = num;
         }
-        Arrays.sort(answer);
 
         return answer;
     }
