@@ -469,8 +469,14 @@
         <td></td>
     </tr>
     <tr>
-        <td><a href="https://programmers.co.kr/learn/courses/30/lessons/12919">소수 찾기</a></td>
+        <td><a href="https://programmers.co.kr/learn/courses/30/lessons/12921">소수 찾기</a></td>
         <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test3/level1/Excercise11.java">Excercise11.java</a></td>
+        <td align="center">:white_check_mark:</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><a href="https://programmers.co.kr/learn/courses/30/lessons/12919">수박수박수박수박수박수?</a></td>
+        <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test3/level1/Excercise12.java">Excercise12.java</a></td>
         <td align="center">:white_check_mark:</td>
         <td></td>
     </tr>
