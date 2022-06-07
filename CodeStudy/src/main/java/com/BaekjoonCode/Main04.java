@@ -119,24 +119,206 @@ import java.util.Scanner;
 //    }
 //}
 
+//public class Main04 {
+//    public static void main(String[] args) {
+//        Scanner in = new Scanner(System.in);
+//        int[] arr = { in.nextInt(), in.nextInt(), in.nextInt(),
+//                in.nextInt(), in.nextInt(), in.nextInt(),
+//                in.nextInt(), in.nextInt(), in.nextInt() };
+//        in.close();
+//
+//        int cnt = 0, max = 0, idx = 0;
+//
+//        for(int value : arr) {
+//            cnt++;
+//
+//            if(value > max) {
+//                max = value;
+//                idx = cnt;
+//            }
+//        }
+//        System.out.print(max + "\n" + idx);
+//    }
+//}
+
+//2577
+//public class Main04 {
+//    public static void main(String[] args) {
+//        Scanner sc = new Scanner(System.in);
+//        int a = sc.nextInt();
+//        int b = sc.nextInt();
+//        int c = sc.nextInt();
+//
+//        int abc = a * b * c;
+//        char[] ch = String.valueOf(abc).toCharArray();
+//        Arrays.sort(ch);
+//
+//        int[] cnt = new int[10];
+//
+//        for (int i = 0; i < ch.length; i++) {
+//            for (int j = 0; j < cnt.length; j++) {
+//                if (j == Integer.parseInt(String.valueOf(ch[i]))) cnt[j]++;
+//            }
+//        }
+//        sc.close();
+//
+//        for (int i = 0; i < cnt.length; i++) {
+//            System.out.println(cnt[i]);
+//        }
+//
+//    }
+//}
+
+//public class Main {
+//    public static void main(String[] args) throws IOException {
+//        // TODO Auto-generated method stub
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//
+//        //StringTokenizer st = new StringTokenizer(br.readLine());
+//        int N = Integer.parseInt(br.readLine());
+//        for(int i=0;i<2;i++) {
+//            N = N* Integer.parseInt(br.readLine());
+//        }
+//        String str = Integer.toString(N);
+//
+//        int[] arr= new int[10];
+//
+//        for(int i=0;i<str.length();i++){
+//            //System.out.println(str.charAt(i));	//str의 i인덱스값
+//            //System.out.println(arr[str.charAt(i)-'0']);
+//            arr[str.charAt(i)-'0']= arr[str.charAt(i)-'0']+ 1;
+//        }
+//
+//
+//        for(int i=0;i<10;i++){ System.out.println(arr[i]); }
+//    }
+//}
+
+//public class Main{
+//    public static void main(String[] args) throws IOException{
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        int[] arr = new int[10];
+//        int val = Integer.parseInt(br.readLine())*Integer.parseInt(br.readLine())*Integer.parseInt(br.readLine());
+//        String str = String.valueOf(val);
+//        for(int i=0;i<str.length();i++){
+//            arr[(str.charAt(i)-48)]++;
+//        }
+//        for(int v : arr){
+//            System.out.println(v);
+//        }
+//    }
+//}
+
+//3052
+//public class Main04 {
+//    public static void main(String[] args) throws IOException {
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        HashSet<Integer> set = new HashSet<>();
+//        for (int i = 0; i < 10; i++) {
+//            set.add(Integer.parseInt(br.readLine()) % 42);
+//        }
+//        System.out.println(set.size());
+//    }
+//}
+
+//public class Main04 {
+//    public static void main(String[] args) throws IOException{
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        int[] nums = new int[42];
+//        int cnt = 0;
+//
+//        for (int i = 0; i < 10; ++i) {
+//            nums[Integer.parseInt(br.readLine()) % 42]++;
+//        }
+//        for (int i = 0; i < 42; ++i) {
+//            if (nums[i] != 0 ) cnt++;
+//        }
+//        System.out.println(cnt);
+//    }
+//}
+
+//1546
+//public class Main04 {
+//    public static void main(String[] args) throws IOException{
+//        Scanner sc = new Scanner(System.in);
+//        int N = sc.nextInt();
+//        double[] score = new double[N];
+//        int M = 0;
+//        float sum = 0;
+//
+//        for (int i = 0; i < N; i++) {
+//            score[i] = sc.nextInt();
+//        }
+//        for (int i = 0; i < score.length; i++) {
+//            if (i == 0) M = (int) score[i];
+//            else M = (int) Math.max(M, score[i]);
+//        }
+//        for (int i = 0; i < N; i++) {
+//            score[i] = (score[i]/M) * 100;
+//            sum += score[i];
+//        }
+//        System.out.println(sum/N);
+//    }
+//}
+
+//8958
+//public class Main04 {
+//    public static void main(String[] args) {
+//        Scanner sc = new Scanner(System.in);
+//        String arr[] = new String[sc.nextInt()];
+//
+//        for (int i = 0; i < arr.length; i++) {
+//            arr[i] = sc.next();
+//        }
+//        sc.close();
+//
+//        for (int i = 0; i < arr.length; i++) {
+//            int cnt = 0;
+//            int sum = 0;
+//
+//            for (int j = 0; j < arr[i].length(); j++) {
+//                if (arr[i].charAt(j) == 'O') cnt++;
+//                else cnt = 0;
+//
+//                sum += cnt;
+//            }
+//
+//            System.out.println(sum);
+//        }
+//    }
+//}
+
+//4344
 public class Main04 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        int[] arr = { in.nextInt(), in.nextInt(), in.nextInt(),
-                in.nextInt(), in.nextInt(), in.nextInt(),
-                in.nextInt(), in.nextInt(), in.nextInt() };
-        in.close();
 
-        int cnt = 0, max = 0, idx = 0;
+        int[] arr;
 
-        for(int value : arr) {
-            cnt++;
+        int testCase = in.nextInt();
 
-            if(value > max) {
-                max = value;
-                idx = cnt;
+        for(int i = 0 ; i < testCase ; i++) {
+
+            int N = in.nextInt();	//학생 수
+            arr = new int[N];
+
+            double sum = 0;
+
+            for(int j = 0 ; j < N ; j++) {
+                int score = in.nextInt();
+                arr[j] = score;
+                sum += score;
             }
+
+            double avg = sum / N ;
+            double cnt = 0;
+
+            for(int j = 0 ; j < N ; j++) {
+                if(arr[j] > avg) cnt++;
+            }
+
+            System.out.printf("%.3f%%\n",(cnt/N)*100);
         }
-        System.out.print(max + "\n" + idx);
+        in.close();
     }
 }
