@@ -511,8 +511,14 @@
         <td></td>
     </tr>
     <tr>
-        <td><a href="https://programmers.co.kr/learn/courses/30/lessons/12931">자연수 뒤집어 배열로 만들기</a></td>
+        <td><a href="https://programmers.co.kr/learn/courses/30/lessons/12932">자연수 뒤집어 배열로 만들기</a></td>
         <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test3/level1/Excercise18.java">Excercise18.java</a></td>
+        <td align="center">:white_check_mark:</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><a href="https://programmers.co.kr/learn/courses/30/lessons/12933">정수 내림차순으로 배치하기</a></td>
+        <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test3/level1/Excercise19.java">Excercise19.java</a></td>
         <td align="center">:white_check_mark:</td>
         <td></td>
     </tr>
