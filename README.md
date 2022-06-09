@@ -552,6 +552,12 @@
         <td align="center">:white_check_mark:</td>
         <td></td>
     </tr>
+    <tr>
+        <td><a href="https://programmers.co.kr/learn/courses/30/lessons/12944">평균 구하기</a></td>
+        <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test3/level1/Excercise25.java">Excercise25.java</a></td>
+        <td align="center">:white_check_mark:</td>
+        <td></td>
+    </tr>
 </table>
 
 ---
