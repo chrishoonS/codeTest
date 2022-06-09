@@ -534,6 +534,12 @@
         <td align="center">:white_check_mark:</td>
         <td></td>
     </tr>
+    <tr>
+        <td><a href="https://programmers.co.kr/learn/courses/30/lessons/12937">짝수와 홀수</a></td>
+        <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test3/level1/Excercise22.java">Excercise22.java</a></td>
+        <td align="center">:white_check_mark:</td>
+        <td></td>
+    </tr>
 </table>
 
 ---
