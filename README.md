@@ -576,7 +576,12 @@
         <td align="center">:white_check_mark:</td>
         <td></td>
     </tr>
-    
+    <tr>
+        <td><a href="https://programmers.co.kr/learn/courses/30/lessons/12954">x만큼 간격이 있는 n개의 숫자</a></td>
+        <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test3/level1/Excercise29.java">Excercise29.java</a></td>
+        <td align="center">:white_check_mark:</td>
+        <td></td>
+    </tr>
 </table>
 
 ---
