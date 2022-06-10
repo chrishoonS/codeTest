@@ -3,6 +3,7 @@ package com.BaekjoonCode;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 
 //11654
 //public class Main06 {
@@ -80,27 +81,56 @@ import java.io.InputStreamReader;
 //}
 
 //1157
+//public class Main06 {
+//    public static void main(String[] args) throws IOException{
+//
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//
+//        int[] arr = new int[26];
+//        String s = br.readLine();
+//
+//        for (int i = 0; i < s.length(); i++) {
+//            if ('a' <= s.charAt(i) && s.charAt(i) <= 'z') arr[s.charAt(i) - 97]++;
+//            else arr[s.charAt(i) - 65]++;
+//        }
+//        int max = -1;
+//        char ch = '?';
+//        for (int i = 0; i < 26; i++) {
+//            if (arr[i] != 0 && arr[i] > max) {
+//                max = arr[i];
+//                ch = (char) (i + 65);
+//            }else if (arr[i] == max) ch = '?';
+//        }
+//        System.out.print(ch);
+//    }
+//}
+
+// 1152
+//public class Main06 {
+//    public static void main(String[] args) throws IOException{
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        String s = br.readLine();
+//        String[] arr = s.trim().split(" ");
+//        int cnt = 0;
+//        for (int i = 0; i < arr.length; i++) {
+//            if (arr[i].isEmpty() || arr[i].isBlank()) continue;
+//            else cnt++;
+//        }
+//        System.out.println(cnt);
+//    }
+//}
+
+// 1152
 public class Main06 {
     public static void main(String[] args) throws IOException{
-
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
-        int[] arr = new int[26]; // 영문자의 개수는 26개임
         String s = br.readLine();
-
-        for (int i = 0; i < s.length(); i++) {
-            if ('a' <= s.charAt(i) && s.charAt(i) <= 'z') arr[s.charAt(i) - 97]++;
-            else arr[s.charAt(i) - 65]++;
+        String[] arr = s.trim().split(" ");
+        int cnt = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i].isEmpty() || arr[i].isBlank()) continue;
+            else cnt++;
         }
-        int max = -1;
-        char ch = '?';
-        for (int i = 0; i < 26; i++) {
-            if (arr[i] != 0 && arr[i] > max) {
-                max = arr[i];
-                ch = (char) (i + 65);
-            }else if (arr[i] == max) ch = '?';
-        }
-        System.out.print(ch);
+        System.out.println(cnt);
     }
-
 }
