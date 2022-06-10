@@ -558,6 +558,12 @@
         <td align="center">:white_check_mark:</td>
         <td></td>
     </tr>
+    <tr>
+        <td><a href="https://programmers.co.kr/learn/courses/30/lessons/12947">하샤드 수</a></td>
+        <td><a href="https://github.com/chrishoonS/codeTest/blob/main/CodeStudy/src/main/java/com/test3/level1/Excercise26.java">Excercise26.java</a></td>
+        <td align="center">:white_check_mark:</td>
+        <td></td>
+    </tr>
 </table>
 
 ---
