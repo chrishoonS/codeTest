@@ -3,7 +3,7 @@ package com.BaekjoonCode;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
+import java.util.StringTokenizer;
 
 //11654
 //public class Main06 {
@@ -121,16 +121,44 @@ import java.util.Arrays;
 //}
 
 // 1152
+//public class Main06 {
+//    public static void main(String[] args) throws IOException{
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        String s = br.readLine();
+//        String[] arr = s.trim().split(" ");
+//        int cnt = 0;
+//        for (int i = 0; i < arr.length; i++) {
+//            if (arr[i].isEmpty() || arr[i].isBlank()) continue;
+//            else cnt++;
+//        }
+//        System.out.println(cnt);
+//    }
+//}
+
+// 2908
+//public class Main06 {
+//    public static void main(String[] args) throws IOException{
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//
+//        StringTokenizer st = new StringTokenizer(br.readLine()," ");
+//
+//        int a = Integer.parseInt(new StringBuilder(st.nextToken()).reverse().toString());
+//        int b = Integer.parseInt(new StringBuilder(st.nextToken()).reverse().toString());
+//
+//        System.out.print(a > b ? a:b);
+//    }
+//}
+
+// 2908
 public class Main06 {
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String s = br.readLine();
-        String[] arr = s.trim().split(" ");
-        int cnt = 0;
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i].isEmpty() || arr[i].isBlank()) continue;
-            else cnt++;
-        }
-        System.out.println(cnt);
+
+        StringTokenizer st = new StringTokenizer(br.readLine()," ");
+
+        int a = Integer.parseInt(new StringBuilder(st.nextToken()).reverse().toString());
+        int b = Integer.parseInt(new StringBuilder(st.nextToken()).reverse().toString());
+
+        System.out.print(a > b ? a:b);
     }
 }
