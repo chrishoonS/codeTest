@@ -1,9 +1,7 @@
 package com.BaekjoonCode;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.StringTokenizer;
+import java.util.Scanner;
 
 //11654
 //public class Main06 {
@@ -149,16 +147,27 @@ import java.util.StringTokenizer;
 //    }
 //}
 
-// 2908
+// 5622
 public class Main06 {
     public static void main(String[] args) throws IOException{
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
-        StringTokenizer st = new StringTokenizer(br.readLine()," ");
-
-        int a = Integer.parseInt(new StringBuilder(st.nextToken()).reverse().toString());
-        int b = Integer.parseInt(new StringBuilder(st.nextToken()).reverse().toString());
-
-        System.out.print(a > b ? a:b);
+        //숫자 1을 걸려면 총 2초가
+        //WA -> 눌러야할 숫자 9,2 -> 총 13초
+        // 2 ABC / 3 DEF / 4 GHI / 5 JKL / 6 MNO / 7 PQRS / 8 TUV / 9 WXYZ
+        //ASCII
+        // 656667 / 686970 / 717273 / 747576 / 777879/ 80818283 / 848586 / 87888990
+        Scanner sc = new Scanner(System.in);
+        String s = sc.next();
+        int sum = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if(s.charAt(i)-65 <= 2) sum += 3;
+            else if (s.charAt(i)-65 > 2 && s.charAt(i)-65 <= 5) sum += 4;
+            else if (s.charAt(i)-65 > 5 && s.charAt(i)-65 <= 8) sum += 5;
+            else if (s.charAt(i)-65 > 8 && s.charAt(i)-65 <= 11) sum += 6;
+            else if (s.charAt(i)-65 > 11 && s.charAt(i)-65 <= 14) sum += 7;
+            else if (s.charAt(i)-65 > 14 && s.charAt(i)-65 <= 18) sum += 8;
+            else if (s.charAt(i)-65 > 18 && s.charAt(i)-65 <= 21) sum += 9;
+            else if (s.charAt(i)-65 > 21 && s.charAt(i)-65 <= 25) sum += 10;
+        }
+        System.out.println(sum);
     }
 }
