@@ -1,6 +1,5 @@
 package com.BaekjoonCode;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 //11654
@@ -148,26 +147,77 @@ import java.util.Scanner;
 //}
 
 // 5622
+//public class Main06 {
+//    public static void main(String[] args) throws IOException{
+//        //숫자 1을 걸려면 총 2초가
+//        //WA -> 눌러야할 숫자 9,2 -> 총 13초
+//        // 2 ABC / 3 DEF / 4 GHI / 5 JKL / 6 MNO / 7 PQRS / 8 TUV / 9 WXYZ
+//        //ASCII
+//        // 656667 / 686970 / 717273 / 747576 / 777879/ 80818283 / 848586 / 87888990
+//        Scanner sc = new Scanner(System.in);
+//        String s = sc.next();
+//        int sum = 0;
+//        for (int i = 0; i < s.length(); i++) {
+//            if(s.charAt(i)-65 <= 2) sum += 3;
+//            else if (s.charAt(i)-65 > 2 && s.charAt(i)-65 <= 5) sum += 4;
+//            else if (s.charAt(i)-65 > 5 && s.charAt(i)-65 <= 8) sum += 5;
+//            else if (s.charAt(i)-65 > 8 && s.charAt(i)-65 <= 11) sum += 6;
+//            else if (s.charAt(i)-65 > 11 && s.charAt(i)-65 <= 14) sum += 7;
+//            else if (s.charAt(i)-65 > 14 && s.charAt(i)-65 <= 18) sum += 8;
+//            else if (s.charAt(i)-65 > 18 && s.charAt(i)-65 <= 21) sum += 9;
+//            else if (s.charAt(i)-65 > 21 && s.charAt(i)-65 <= 25) sum += 10;
+//        }
+//        System.out.println(sum);
+//    }
+//}
+
+// 2941
+//public class Main06 {
+//    public static void main(String[] args) throws IOException{
+//        Scanner sc = new Scanner(System.in);
+//        String s = sc.next();
+//        String[] arr = new String[]{"c=", "c-", "dz=", "d-", "lj", "nj", "s=", "z="};
+//        for (int i = 0; i < arr.length; i++) {
+//            if (s.contains(arr[i])) {
+//                s = s.replace(arr[i], "X");
+//            }
+//        }
+//        System.out.println(s.length());
+//    }
+//}
+
+//1316
 public class Main06 {
-    public static void main(String[] args) throws IOException{
-        //숫자 1을 걸려면 총 2초가
-        //WA -> 눌러야할 숫자 9,2 -> 총 13초
-        // 2 ABC / 3 DEF / 4 GHI / 5 JKL / 6 MNO / 7 PQRS / 8 TUV / 9 WXYZ
-        //ASCII
-        // 656667 / 686970 / 717273 / 747576 / 777879/ 80818283 / 848586 / 87888990
-        Scanner sc = new Scanner(System.in);
-        String s = sc.next();
-        int sum = 0;
-        for (int i = 0; i < s.length(); i++) {
-            if(s.charAt(i)-65 <= 2) sum += 3;
-            else if (s.charAt(i)-65 > 2 && s.charAt(i)-65 <= 5) sum += 4;
-            else if (s.charAt(i)-65 > 5 && s.charAt(i)-65 <= 8) sum += 5;
-            else if (s.charAt(i)-65 > 8 && s.charAt(i)-65 <= 11) sum += 6;
-            else if (s.charAt(i)-65 > 11 && s.charAt(i)-65 <= 14) sum += 7;
-            else if (s.charAt(i)-65 > 14 && s.charAt(i)-65 <= 18) sum += 8;
-            else if (s.charAt(i)-65 > 18 && s.charAt(i)-65 <= 21) sum += 9;
-            else if (s.charAt(i)-65 > 21 && s.charAt(i)-65 <= 25) sum += 10;
+    static Scanner sc = new Scanner(System.in);
+
+    public static void main(String[] args) {
+
+        int count = 0;
+        int N = sc.nextInt();
+
+        for (int i = 0; i < N; i++) {
+            if (check() == true) count++;
         }
-        System.out.println(sum);
+        System.out.println(count);
+    }
+
+    public static boolean check() {
+        boolean[] check = new boolean[26];
+        int prev = 0;       //이전 문자열 계산을 위한 변수
+        String str = sc.next();
+
+        for(int i = 0; i < str.length(); i++) {
+            int now = str.charAt(i);	// 현재 i번째 문자열 저장
+            if (prev != now) {
+                // 해당 문자가 처음 나오는 경우 (false 인 경우)
+                if ( check[now - 'a'] == false ) {
+                    check[now - 'a'] = true;
+                    prev = now;
+                }
+                // 해당 문자가 이미 나온 적이 있는 경우 (그룹단어가 아니게 됨)
+                else return false;
+            }
+        }
+        return true;
     }
 }
