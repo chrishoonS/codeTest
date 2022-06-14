@@ -9,7 +9,7 @@ public class Combination {
         System.out.println("-------- 1. 백트래킹 ---------");
 
         for(int r = 1; r <= arr.length; r++) {
-            System.out.println("\n" + arr.length + "개 중에 " + r  + "개 뽑음");
+            System.out.println(arr.length + "개 중에 " + r  + "개 뽑음");
             comb1(arr, visited, 0, r);
         }
 
@@ -17,7 +17,7 @@ public class Combination {
         System.out.println("\n---------- 2. 재귀 ----------");
 
         for(int r = 1; r <= arr.length ; r++) {
-            System.out.println("\n" + arr.length + "개 중에 " + r  + "개 뽑음");
+            System.out.println(arr.length + "개 중에 " + r  + "개 뽑음");
             comb2(arr, visited, 0, r);
         }
     }
