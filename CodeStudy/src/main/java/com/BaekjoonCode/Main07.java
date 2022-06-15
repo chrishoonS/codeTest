@@ -42,27 +42,14 @@ import java.io.InputStreamReader;
 //    }
 //}
 
-//
+//1193
 public class Main07 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
-        /**
-         * N = 1        1
-         * N = 2~7      6
-         * N = 8~19     12
-         * N = 20~37    18
-         **/
-        int N = Integer.parseInt(br.readLine());
-        int range = 1;
-        int cnt = 1;
-        if(N == 1) System.out.println(cnt);
+        int x = Integer.parseInt(br.readLine());
+        if (x == 1) System.out.println(1 + "/" + 1);
         else{
-            while(N > range){
-                range = range + (6*cnt);
-                cnt++;
-            }
-            System.out.println(cnt);
+
         }
     }
 }
