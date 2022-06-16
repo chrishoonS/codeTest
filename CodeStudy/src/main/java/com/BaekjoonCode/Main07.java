@@ -44,12 +44,40 @@ import java.io.InputStreamReader;
 
 //1193
 public class Main07 {
+
     public static void main(String[] args) throws IOException {
+
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int x = Integer.parseInt(br.readLine());
-        if (x == 1) System.out.println(1 + "/" + 1);
-        else{
 
+        int crossCnt = 1, prevCntSum = 0;
+
+        while (true) {
+            // 직전 대각선 누적합 + 해당 대각선 개수 이용한 범위 판별
+            if (x <= prevCntSum + crossCnt) {
+                if (crossCnt % 2 == 1) {
+                    /**
+                     * 대각선의 개수가 홀수면
+                     * 분모 = 큰 수부터 시작, 대각선 개수 - (x번째 - 직전 대각선까지의 누적합 - 1)
+                     * 분자 = x번째 - 직전 대각선까지의 누적합
+                     **/
+                    System.out.print((crossCnt - (x - prevCntSum - 1)) + "/" + (x - prevCntSum));
+                    break;
+                }
+
+                else {
+                    /**
+                     * 대각선의 개수 짝수면
+                     * 홀수일 때의 출력을 반대로
+                     **/
+                    System.out.print((x - prevCntSum) + "/" + (crossCnt - (x - prevCntSum - 1)));
+                    break;
+                }
+
+            } else {
+                prevCntSum += crossCnt;
+                crossCnt++;
+            }
         }
     }
 }
