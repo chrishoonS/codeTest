@@ -20,6 +20,7 @@ public class Solution12 {
          * Collectors.collectingAndThen로 Set으로 만들고,
          * phonekemons로 Set을 입력받아 phonkemons Set의 사이즈와 num.length/2의 최소값을 구해서,
          * Set의 int값 return
+         * https://wakestand.tistory.com/419
          **/
         return Arrays.stream(nums)
                 .boxed()
