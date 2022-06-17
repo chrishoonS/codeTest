@@ -3,6 +3,7 @@ package com.BaekjoonCode;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 //1712
 //public class Main07 {
@@ -42,42 +43,42 @@ import java.io.InputStreamReader;
 //    }
 //}
 
-//1193
+//2869
+//public class Main{
+//    public static void main(String[] args) throws IOException {
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+//
+//        int A = Integer.parseInt(st.nextToken());
+//        int B = Integer.parseInt(st.nextToken());
+//        int V = Integer.parseInt(st.nextToken());
+//        int climb = 0;
+//        int day = 0;
+//
+//        while(V > climb){
+//            day++;
+//            climb += A;
+//            if (climb == V)
+//                break;
+//            else{
+//                climb -= B;
+//            }
+//        }
+//        System.out.println(day);
+//    }
+//}
+
 public class Main07 {
-
     public static void main(String[] args) throws IOException {
-
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int x = Integer.parseInt(br.readLine());
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 
-        int crossCnt = 1, prevCntSum = 0;
+        int A = Integer.parseInt(st.nextToken());
+        int B = Integer.parseInt(st.nextToken());
+        int V = Integer.parseInt(st.nextToken());
+        int day = (V-B) / (A-B);
+        if ((V-B) % (A-B) != 0) day++;
 
-        while (true) {
-            // 직전 대각선 누적합 + 해당 대각선 개수 이용한 범위 판별
-            if (x <= prevCntSum + crossCnt) {
-                if (crossCnt % 2 == 1) {
-                    /**
-                     * 대각선의 개수가 홀수면
-                     * 분모 = 큰 수부터 시작, 대각선 개수 - (x번째 - 직전 대각선까지의 누적합 - 1)
-                     * 분자 = x번째 - 직전 대각선까지의 누적합
-                     **/
-                    System.out.print((crossCnt - (x - prevCntSum - 1)) + "/" + (x - prevCntSum));
-                    break;
-                }
-
-                else {
-                    /**
-                     * 대각선의 개수 짝수면
-                     * 홀수일 때의 출력을 반대로
-                     **/
-                    System.out.print((x - prevCntSum) + "/" + (crossCnt - (x - prevCntSum - 1)));
-                    break;
-                }
-
-            } else {
-                prevCntSum += crossCnt;
-                crossCnt++;
-            }
-        }
+        System.out.println(day);
     }
 }
