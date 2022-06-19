@@ -83,3 +83,7 @@ public class Main07 {
         System.out.println(day);
     }
 }
+
+//10250 <- 여기서부터 풀기
+
+//2775
