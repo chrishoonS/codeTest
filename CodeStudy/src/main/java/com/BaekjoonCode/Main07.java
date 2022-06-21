@@ -148,18 +148,18 @@ public class Main07 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(br.readLine());
-        int quot = 0; //몫
-        int rmd = 0; //나머지
 
-        for (int i = 5; i >= 3; i--) {
-            if(i==4) continue;
-            else {
-                quot = quot + (N / i);
-                rmd = N % i;
-                if (rmd % i == rmd) continue;
-            }
+        if (N == 4 || N == 7) {
+            System.out.println(-1);
         }
-        System.out.println(quot);
-
+        else if (N % 5 == 0) {
+            System.out.println(N / 5);
+        }
+        else if (N % 5 == 1 || N % 5 == 3) {
+            System.out.println((N / 5) + 1);
+        }
+        else if (N % 5 == 2 || N % 5 == 4) {
+            System.out.println((N / 5) + 2);
+        }
     }
 }
