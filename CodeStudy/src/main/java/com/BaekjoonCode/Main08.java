@@ -3,6 +3,7 @@ package com.BaekjoonCode;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 //10757
 //public class Main08 {
@@ -78,21 +79,70 @@ import java.io.InputStreamReader;
 //}
 
 //11653
+//public class Main08 {
+//    public static void main(String[] args) throws IOException {
+//
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        StringBuilder sb = new StringBuilder();
+//
+//        int N = Integer.parseInt(br.readLine());
+//
+//        for (int i = 2; i <= Math.sqrt(N); i++) {
+//            while (N % i == 0) {
+//                sb.append(i).append('\n');
+//                N /= i;
+//            }
+//        }
+//        if (N != 1) sb.append(N);
+//        System.out.print(sb);
+//    }
+//}
+
+//1929
+//public class Main08 {
+//    public static void main(String[] args) throws IOException {
+//
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        StringBuilder sb = new StringBuilder();
+//        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+//
+//        int M = Integer.parseInt(st.nextToken());
+//        int N = Integer.parseInt(st.nextToken());
+//        br.close();
+//        for (int i = M; i <= N; i++) {
+//            if(chkSosu(i) == true)
+//                System.out.println(i);
+//        }
+//
+//    }
+//
+//    private static boolean chkSosu(int a){
+//        for (int i = 2; i < a; i++) {
+//            if(a%i == 0) return false;
+//        }
+//        return true;
+//    }
+//}
+
 public class Main08 {
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
 
-        int N = Integer.parseInt(br.readLine());
+        StringTokenizer st = new StringTokenizer(br.readLine()," ");
+        int M = Integer.parseInt(st.nextToken());
+        int N = Integer.parseInt(st.nextToken());
 
-        for (int i = 2; i <= Math.sqrt(N); i++) {
-            while (N % i == 0) {
-                sb.append(i).append('\n');
-                N /= i;
+        boolean[] prime = new boolean[N + 1];
+
+        for(int i = 2; i <= N; i++) {
+            if(prime[i]) continue;
+            if(i >= M) sb.append(i).append('\n');
+            for(int j = i + i; j <= N; j += i) {
+                prime[j] = true;
             }
         }
-        if (N != 1) sb.append(N);
-        System.out.print(sb);
+        System.out.println(sb);
     }
 }
