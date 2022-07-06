@@ -198,18 +198,16 @@ public class Main08 {
 
         while (T-- > 0) {
             int n = Integer.parseInt(br.readLine());
-            int first_partition = n / 2;
-            int second_partition = n / 2;
+            int _1stNo = n / 2;
+            int _2ndNo = n / 2;
 
             while (true) {
-
-                // 두 파티션이 모두 소수일 경우
-                if (!prime[first_partition] && !prime[second_partition]) {
-                    sb.append(first_partition).append(' ').append(second_partition).append('\n');
+                if (!prime[_1stNo] && !prime[_2ndNo]) {
+                    sb.append(_1stNo).append(' ').append(_2ndNo).append('\n');
                     break;
                 }
-                first_partition--;
-                second_partition++;
+                _1stNo--;
+                _2ndNo++;
             }
         }
         System.out.print(sb);
