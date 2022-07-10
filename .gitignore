@@ -65,3 +65,5 @@ hs_err_pid*
 /CodeStudy/build/test-results/test/TEST-com.test.level2.Solution24Test.xml
 /.idea/uiDesigner.xml
 /.idea/vcs.xml
+/.idea/modules/CodeStudy.main.iml
+/.idea/inspectionProfiles/Project_Default.xml
