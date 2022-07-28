@@ -22,20 +22,22 @@ import java.io.InputStreamReader;
 //    }
 //}
 
-//
+//10870
 public class Main09 {
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         int N = Integer.parseInt(br.readLine());
-        int result = 0;
-        result = factorial(N);
-        System.out.println(result);
+
+        System.out.println(fibonacci(N));//5
+
     }
 
-    private static int factorial(int n) {
-        if(n <= 1) return 1;
-        return n * factorial(n-1);
+    // 피보나치 함수
+    static int fibonacci(int N) {
+        if (N == 0)	return 0;
+        if (N == 1)	return 1;
+        return fibonacci(N - 1) + fibonacci(N - 2);
     }
 }
