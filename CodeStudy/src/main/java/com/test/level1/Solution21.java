@@ -62,8 +62,8 @@ public class Solution21 {
 
         int[] answer = new int[id_list.length];
         ArrayList<User> users = new ArrayList<>();
-        HashMap<String,Integer> suspendedList = new HashMap<>(); //<이름>
-        HashMap<String,Integer> idIdx = new HashMap<String,Integer>(); // <이름, 해당 이름의 User 클래스 idx>
+        HashMap<String, Integer> suspendedList = new HashMap<>();
+        HashMap<String, Integer> idIdx = new HashMap<String,Integer>();
         int idx = 0;
 
         for(String name : id_list) {
