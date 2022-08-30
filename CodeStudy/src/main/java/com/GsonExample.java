@@ -10,6 +10,7 @@ public class GsonExample {
          * Gson : 구글 오픈소스로 Java -> Json 파싱, 생성
          * Java Object -> Json 문자열로 반환
          * Json 문자열 -> Java Object로 반환
+         * 참고 : https://hianna.tistory.com/629
          **/
         //Gson 객체 생성방법
         Gson gson1 = new Gson();
