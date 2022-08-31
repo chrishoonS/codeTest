@@ -1,4 +1,4 @@
-package com.javaExample.compEx;
+package com.javaExample.comparatorEx;
 
 import java.util.Arrays;
 import java.util.Comparator;

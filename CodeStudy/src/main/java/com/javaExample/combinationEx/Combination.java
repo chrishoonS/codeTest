@@ -1,4 +1,4 @@
-package com.javaExample.combEx;
+package com.javaExample.combinationEx;
 
 public class Combination {
     public static void main(String[] args) {
