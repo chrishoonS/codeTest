@@ -12,12 +12,15 @@ import java.net.URLEncoder;
 public class URLDecodeEx {
     public static void main(String[] args) {
         String url = null;
+        long sTime = System.nanoTime();
         try{
             url = URLDecoder.decode("Encoding+%ED%85%8C%EC%8A%A4%ED%8A%B8+%EC%A4%91%21%21%21%21%21%21","UTF-8");
             url = URLDecoder.decode("%ED%95%9C%EA%B8%80+%EC%9D%B8%EC%BD%94%EB%94%A9+%ED%85%8C%EC%8A%A4%ED%8A%B8+%EC%A4%91%21%21%21%21%21%21","UTF-8");
         }catch (UnsupportedEncodingException e){
             e.printStackTrace();
         }
+        long eTime = System.nanoTime() - sTime;
+        System.out.println("걸린시간 : " + eTime/1000000000.0 + "ms");
         System.out.println(url);
         //첫번째 디코딩 : Encoding 테스트 중!!!!!!
         //두번째 디코딩 : 한글 인코딩 테스트 중!!!!!!
