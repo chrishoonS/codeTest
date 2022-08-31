@@ -1,4 +1,4 @@
-package com.testComparator;
+package com.javaExample.compEx;
 
 public class Student implements Comparable<Student>{
     String name;

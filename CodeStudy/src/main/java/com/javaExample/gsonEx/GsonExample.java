@@ -1,4 +1,4 @@
-package com;
+package com.javaExample.gsonEx;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

@@ -1,4 +1,4 @@
-package com.testComparator;
+package com.javaExample.compEx;
 
 import lombok.Data;
 

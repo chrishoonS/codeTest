@@ -1,7 +1,7 @@
-package com;
+package com.javaExample.gsonEx;
 
 import com.google.gson.Gson;
-import com.testComparator.Student;
+import com.javaExample.compEx.Student;
 
 public class ObjectToJson {
     public static void main(String[] args) {
