@@ -21,13 +21,19 @@ public class TestStream {
     // 데이터를 쓰기위해 write(int a) 메서드를 이용
     @Test
     void OuputStream_데이터를_바이트로_처리한다() throws IOException {
+        //given
         byte[] bytes = {110, 101, 120, 116, 115, 116, 101, 112};
         final OutputStream outputStream = new ByteArrayOutputStream(bytes.length);
         outputStream.write(bytes);
+
         System.out.println(outputStream.getClass());
         System.out.println(outputStream);
         System.out.println();
+
+        //when
         String actual = outputStream.toString();
+
+        //then
         System.out.println(actual);
         assertEquals(actual, "nextstep");
         outputStream.close();
