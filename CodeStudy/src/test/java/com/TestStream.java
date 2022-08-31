@@ -32,4 +32,6 @@ public class TestStream {
         assertEquals(actual, "nextstep");
         outputStream.close();
     }
+
+    //InputStream 공부할것!!!!!!!!!!
 }
