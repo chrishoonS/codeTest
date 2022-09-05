@@ -597,3 +597,4 @@ Markdown Preview - https://dillinger.io/ <br>
 Badge - https://shields.io/ <br>
 Icon - https://simpleicons.org/ <br>
 Readme Preference - https://github.com/kyechan99/capsule-render <br>
+readme edit
