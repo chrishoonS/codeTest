@@ -1,4 +1,4 @@
-package com.javaExample.overTest;
+package com.javaExample.overEx;
 
 public class OverridingTest {
     public static void main(String[] args) {

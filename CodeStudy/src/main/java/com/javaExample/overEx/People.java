@@ -1,4 +1,4 @@
-package com.javaExample.overTest;
+package com.javaExample.overEx;
 
 public class People {
     public String name;

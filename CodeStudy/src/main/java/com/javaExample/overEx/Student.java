@@ -1,4 +1,4 @@
-package com.javaExample.overTest;
+package com.javaExample.overEx;
 
 public class Student extends People{
     String job;
