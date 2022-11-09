@@ -10,6 +10,7 @@ public class ExceptionStudy {
             e.printStackTrace();
         }finally {
             System.out.println("try/catch 끝나고 예외 처리 완료");
+            System.out.println("try/catch 끝나고 예외 처리 완료");
         }
     }
 }
