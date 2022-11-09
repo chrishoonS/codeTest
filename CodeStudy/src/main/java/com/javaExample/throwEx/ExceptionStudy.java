@@ -4,13 +4,30 @@ import java.io.IOException;
 
 public class ExceptionStudy {
     public static void main(String[] args){
+        //try{}안에서 예외가 발생하면 catch(){}에 있는 구문이 실행되게 된다. e.printStackTrace();는 예외상황을 console에 보여준다.
+        try {
+            //예외처리의 계층적인 구조를 보면 Exception Interface를 가져다 쓰기 때문에 new로 예외처리 오브젝트를 생성해 예외를 강제로 발생시켰다.
+            //throw new IOException();
+            testExecption tEx = new testExecption();
+            tEx.read();
+
+            //try~catch 구문은 예외를 처리한 후 이후의 코드를 실행한다는
+            System.out.println("Running main method...");
+        }catch(Exception e) {
+            e.printStackTrace();
+        }finally {
+            System.out.println("try/catch 끝나고 예외 처리 완료");
+        }
+    }
+}
+
+class testExecption{
+    public void read(){
         try {
             throw new IOException();
         }catch(IOException e) {
             e.printStackTrace();
-        }finally {
-            System.out.println("try/catch 끝나고 예외 처리 완료");
-            System.out.println("try/catch 끝나고 예외 처리 완료");
         }
+        System.out.println("Running read method...");
     }
 }
