@@ -1,4 +1,4 @@
-package com.javaExample.AbstractEx;
+package com.javaExample.abstractEx;
 
 public abstract class Computer {    //추상 클래스
     //추상 메서드

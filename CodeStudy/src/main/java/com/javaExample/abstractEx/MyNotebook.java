@@ -1,4 +1,4 @@
-package com.javaExample.AbstractEx;
+package com.javaExample.abstractEx;
 
 public class MyNotebook extends Notebook{
     @Override
