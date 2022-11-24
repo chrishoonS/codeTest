@@ -60,7 +60,7 @@ public class TestStream {
         byte[] bytes = {-16, -97, -92, -87};
         final InputStream inputStream = new ByteArrayInputStream(bytes);
         //when
-        String actual = new String(inputStream.readAllBytes());
+        String actual = new String(String.valueOf(inputStream.read()));//readAllByte 갑자기 에러!?!?
 
         //then
         System.out.println(inputStream.getClass());
