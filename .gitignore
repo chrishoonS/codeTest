@@ -9,6 +9,10 @@
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
+/out/
+/build/
+/.gradle/
+/.idea/
 
 # Package Files #
 *.jar
@@ -21,49 +25,3 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
-/.idea/.gitignore
-/CodeStudy/build/reports/tests/test/css/base-style.css
-/CodeStudy/.gradle/buildOutputCleanup/buildOutputCleanup.lock
-/CodeStudy/.gradle/buildOutputCleanup/cache.properties
-/CodeStudy/.gradle/checksums/checksums.lock
-/CodeStudy/java_pid62389.hprof.dsloyz.b.ij/classes.index
-/.idea/modules/CodeStudy.iml
-/.idea/codeTest.iml
-/CodeStudy/build/reports/tests/test/packages/com.test.level2.html
-/CodeStudy/build/reports/tests/test/classes/com.test.level2.Solution24Test.html
-/.idea/compiler.xml
-/CodeStudy/java_pid62389.hprof.dsloyz.b.ij/count.index
-/CodeStudy/.gradle/7.1/dependencies-accessors/dependencies-accessors.lock
-/CodeStudy/.gradle/7.1/executionHistory/executionHistory.bin
-/CodeStudy/.gradle/7.1/executionHistory/executionHistory.lock
-/CodeStudy/.gradle/7.1/fileHashes/fileHashes.bin
-/CodeStudy/.gradle/7.1/fileHashes/fileHashes.lock
-/CodeStudy/.gradle/7.1/dependencies-accessors/gc.properties
-/CodeStudy/.gradle/7.1/gc.properties
-/CodeStudy/.gradle/vcs-1/gc.properties
-/.idea/git_toolbox_prj.xml
-/.idea/gradle.xml
-/CodeStudy/build/reports/tests/test/index.html
-/.idea/jarRepositories.xml
-/CodeStudy/.gradle/7.1/fileChanges/last-build.bin
-/.idea/misc.xml
-/.idea/modules.xml
-/CodeStudy/java_pid62389.hprof.dsloyz.b.ij/offsets.index
-/CodeStudy/build/test-results/test/binary/output.bin
-/CodeStudy/build/test-results/test/binary/output.bin.idx
-/CodeStudy/.gradle/buildOutputCleanup/outputFiles.bin
-/CodeStudy/build/tmp/compileJava/previous-compilation-data.bin
-/CodeStudy/build/tmp/compileTestJava/previous-compilation-data.bin
-/CodeStudy/java_pid62389.hprof.dsloyz.b.ij/remap.index
-/CodeStudy/build/reports/tests/test/js/report.js
-/CodeStudy/.gradle/7.1/fileHashes/resourceHashesCache.bin
-/CodeStudy/build/test-results/test/binary/results.bin
-/CodeStudy/.gradle/checksums/sha1-checksums.bin
-/CodeStudy/java_pid62389.hprof.dsloyz.b.ij/shallow.index
-/.idea/sonarIssues.xml
-/CodeStudy/build/reports/tests/test/css/style.css
-/CodeStudy/build/test-results/test/TEST-com.test.level2.Solution24Test.xml
-/.idea/uiDesigner.xml
-/.idea/vcs.xml
-/.idea/modules/CodeStudy.main.iml
-/.idea/inspectionProfiles/Project_Default.xml
