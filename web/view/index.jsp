@@ -12,7 +12,7 @@
 </head>
 <body>
 <h2>Hello World</h2>
-${pageContext.request.contextPath}
-<script type="text/javascript" src="../helloWorld.js"></script>
+
+<script type="text/javascript" src="${pageContext.request.contextPath}/helloWorld.js"></script>
 </body>
 </html>
