@@ -13,6 +13,6 @@ public class fooNote {
             formatter.setTimeZone(TimeZone.getTimeZone(str));
         }
         formatter.format(new Date());
-        System.out.println(formatter.format(new Date()).getClass());
+        System.out.println(formatter.format(new Date()));
     }
 }
