@@ -382,9 +382,155 @@ str instanceof Boolean; // false
 
 /****************************************************************************************************************************************************/
 /**
- *
- *
+ * 제어문(control flow statements) : 프로그램의 순차적인 흐름을 제어해야 할 때 사용하는 실행문, 제어문에는 조건문, 반복문 등이 포함
+ * 조건문(conditional statements) : 조건문이란 프로그램 내에서 주어진 표현식의 결과에 따라 별도의 명령을 수행하도록 제어하는 실행문
  **/
+
+/**
+ * 1. if 문
+ * 2. if / else 문
+ * 3. if / else if / else 문
+ * 4. switch 문
+ *
+ * if 문 : 결과가 참(true)이면 주어진 실행문을 실행하며, 거짓(false)이면 아무것도 실행하지 않음
+ *
+ * if (표현식) {
+ *     표현식의 결과가 참일 때 실행하고자 하는 실행문;
+ * }
+ **/
+
+var x = 10, y = 20;
+
+if (x == y) {
+    document.write("x와 y는 같습니다.");
+}
+
+if (x < y) {
+    document.write("x가 y보다 작습니다.");
+}
+
+if (x > y) // 실행될 실행문이 한 줄뿐이라면 중괄호({})를 생략할 수 있음.
+    document.write("x가 y보다 큽니다.");
+
+if (x = y) {
+    document.write("두 변수 x와 y는 같습니다.");
+}
+
+/**
+ * 위의 예제는 변수 x와 y의 값이 같으면 두 변수가 같다는 문자열을 출력하려고 하는 예제
+ * 하지만 if 문의 표현식에서 동등 연산자(==)를 사용해야 할 곳에 잘못해서 대입 연산자(=)을 사용
+ * 따라서 위의 예제는 다음과 같이 수정해야만 정상적으로 동작
+ **/
+if (x == y) {
+    document.write("두 변수 x와 y는 같습니다.");
+}
+
+/**
+ * 또한, 위의 예제가 실제로 if 문의 표현식 내에서 변수 x에 변수 y의 값을 대입 했을수도 있음
+ * 그럴 때는 코드를 다음과 같이 수정해야만 그 의미를 제대로 전달할 수 있습니다.
+ * 하지만 if 문과 같은 제어문의 표현식에 위와 같이 대입문을 사용하는 것은 지양
+ **/
+if ((x = y)) {
+    document.write("두 변수 x와 y는 같습니다.");
+}
+
+/**
+ * else 문 : if 문과 같이 사용할 수 있는 else 문은 if 문의 표현식 결과가 거짓(false)일 때 주어진 실행문을 실행
+ * if (표현식) {
+ *     표현식의 결과가 참일 때 실행하고자 하는 실행문;
+ * } else {
+ *     표현식의 결과가 거짓일 때 실행하고자 하는 실행문;
+ * }
+ **/
+var x = 10, y = 20;
+if (x == y) {
+    document.write("x와 y는 같습니다.");
+} else {
+    if (x < y)
+        document.write("x가 y보다 작습니다.");
+    else
+        document.write("x가 y보다 큽니다.");
+}
+
+/**
+ * else if 문
+ * else if 문은 if 문처럼 표현식을 설정할 수 있으므로, 중첩된 if 문을 좀 더 간결하게 표현
+ * else if 문은 여러 번 사용되어 다양한 조건을 설정 가능
+ **/
+
+/**
+ * 삼항 연산자에 의한 조건문
+ * 표현식 ? 반환값1 : 반환값2
+ *
+ * switch 문 : if / else 문보다 가독성 측면에서 더 좋음
+ * switch (조건 값) {
+    case 값1:
+        조건 값이 값1일 때 실행하고자 하는 실행문;
+        break;
+    case 값2:
+        조건 값이 값2일 때 실행하고자 하는 실행문;
+        break;
+    default:
+        조건 값이 어떠한 case 절에도 해당하지 않을 때 실행하고자 하는 실행문;
+        break;
+}
+ * default 절은 조건 값이 위에 나열된 어떠한 case 절에도 해당하지 않을 때 실행
+ * 이 구문은 반드시 존재해야 하는 것은 아니며, 필요할 때만 선언가능
+ * 각 case 절 및 default 절은 반드시 break 키워드를 포함하고 있어야 break 키워드는 조건 값에 해당하는 case 절이나 default 절이 실행된 뒤에 전체 switch 문을 빠져나가게 함.
+ * default 절의 위치가 반드시 switch 문의 맨 마지막일 필요없음
+ **/
+var x = 10;
+switch (typeof x) {
+    case "number":
+        document.write("변수 x의 타입은 숫자");
+        break;
+    case "string":
+        document.write("변수 x의 타입은 문자열");
+        break;
+    case "object":
+        document.write("변수 x의 타입은 객체");
+        break;
+    default:
+        document.write("변수 x의 타입을 잘 모르겠네요...");
+        break;
+}
+
+var xx = "문자열";
+switch (typeof xx) {
+    case "number":
+        document.write("변수 xx의 타입은 숫자<br>");
+    case "string":
+        document.write("변수 xx의 타입은 문자열<br>");
+    case "object":
+        document.write("변수 xx의 타입은 객체<br>");
+    default:
+        document.write("변수 xx의 타입을 잘 모르겠네요...<br>");
+}
+
+/**
+ * 위의 예제에서 변수 xx는 string 타입이므로, 두 번째 case 절의 document.write() 메소드가 맨 먼저 실행
+ * 하지만 break 키워드가 없으므로, 두 번째 case 절 이후에 나오는 모든 실행문이 모두 실행될 것
+ * 따라서 case 절과 default 절은 반드시 break 키워드를 포함하고 있어야 정확하게 동작
+ **/
+
+var day = new Date().getDay(); // 오늘의 요일을 반환함. (일요일: 0 ~ 토요일: 6)
+switch (day) {
+    case 1: // 월요일인 경우
+    case 2: // 화요일인 경우
+    case 3: // 수요일인 경우
+    case 4: // 목요일인 경우
+    default: // 0부터 6까지의 값이 아닌 경우
+        document.write("아직도 주말은 멀었네요... 힘내자구요!!");
+        break;
+    case 5: // 금요일인 경우
+        document.write("오늘은 불금이네요!!");
+        break;
+    case 6: // 토요일인 경우
+    case 0: // 일요일인 경우
+        document.write("즐거운 주말에도 열심히 공부하는 당신~ 최고에요!!");
+        break;
+}
+
 /****************************************************************************************************************************************************/
 /**
  *
