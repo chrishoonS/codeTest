@@ -13,11 +13,11 @@ public class WeatherAPI {
         String apiURL = "http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst";
         String authKey = "Eg%2FOMvZgWeH%2B0Nq17%2FH8HM9kTyJQ6rHzxh1PSK2YTSi5xryIqd3EUQ4KYYabYEyQglhmN8Eui3nwmGsg%2B2bj2A%3D%3D"; // 본인 서비스 키
 
-        // 구하고자 하는 시간과 좌표 대입
-        String nx = "69";
-        String ny = "100";
+        // 구하고자 하는 시간과 좌표 대입(성북동 60,27)
+        String nx = "60";
+        String ny = "27";
         String baseDate = "20221227";
-        String baseTime = "1800";
+        String baseTime = "1700";
         String dataType = "JSON";
 
         StringBuilder urlBuilder = new StringBuilder(apiURL);

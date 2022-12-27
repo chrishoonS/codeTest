@@ -39,19 +39,17 @@ public class JSONParsingTest {
         String stTime = sdf1.format(now);
         System.out.println(stTime);
 
-        //System.out.println(sdf1.format(now));
-        //System.out.println(sdf2.format(now));
-
         // 입력받을 weather 객체
         WeatherVO weather = new WeatherVO();
         // 변수 설정
         String apiURL = "http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst";   //단기예보 조회
         String authKey = "Eg%2FOMvZgWeH%2B0Nq17%2FH8HM9kTyJQ6rHzxh1PSK2YTSi5xryIqd3EUQ4KYYabYEyQglhmN8Eui3nwmGsg%2B2bj2A%3D%3D"; // 본인 서비스 키
 
-        String nx = "69";
-        String ny = "100";
+        // 구하고자 하는 시간과 좌표 대입(성북동 60,27)
+        String nx = "60";
+        String ny = "27";
         String baseDate = "20221227";
-        String baseTime = "1600";
+        String baseTime = "1700";
         String dataType = "JSON";
 
         StringBuilder urlBuilder = new StringBuilder(apiURL);
