@@ -3,7 +3,6 @@ package com.javaExample.superEx;
 public class Parent {
     String name = "부모님";
     int age = 60;
-    int code = 100;
 
     public Parent(){};
 
@@ -12,7 +11,7 @@ public class Parent {
         this.age = age;
     }
 
-    public void showParents() {
+    public void showInfo() {
         System.out.println(name + "의 나이는 " + age + "세 입니다.");
     }
 }
