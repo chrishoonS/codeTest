@@ -16,8 +16,8 @@ public class WeatherAPI {
         // 구하고자 하는 시간과 좌표 대입(성북동 60,27)
         String nx = "60";
         String ny = "27";
-        String baseDate = "20221227";
-        String baseTime = "1700";
+        String baseDate = "20230101";
+        String baseTime = "1400";
         String dataType = "JSON";
 
         StringBuilder urlBuilder = new StringBuilder(apiURL);

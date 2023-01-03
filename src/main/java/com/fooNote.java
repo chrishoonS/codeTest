@@ -1,5 +1,6 @@
 package com;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
@@ -7,23 +8,29 @@ import java.util.Map;
 import java.util.TimeZone;
 
 public class fooNote {
-    public static void main(String[] args) {
-        Map<String, Object> map = new HashMap<>();
-        map.put("test1", 123);
-        map.put("test2", 234);
-        map.put("test3", 345);
+    public static void main(String[] args) throws ParseException {
+        //현재시간 Date
+        String reqDateStr = "202301022235";
 
-        System.out.println(map.containsKey("test1"));
-        System.out.println(map.containsKey("test2"));
-        System.out.println(map.containsKey("test4"));
-        System.out.println(map.get("test5"));
-        System.out.println(map.getOrDefault("test5", 123123123));
+        Date nowDate = new Date();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("YYYYMMddHHmm");
 
-        String s = "zzzzzzzzzzz;;?ㅜㅁㅇ라ㅜㅏㅇㄹㅁㄴ이마ㅣㅜㄴㅇ라ㅣㅁㄴ아ㅣㄹ미ㅏㄴㅇㄹ마ㅣ;ㄴㅇ럼ㄴ;ㅣㅇㄹ&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;dsasdfasdf11dfasdfdfdfsdfsxcvxcvxcvxcv";
-        String s2 = s.substring(0,100);
+        //요청시간을 Date로 parsing 후 time가져오기
+        Date reqDate = dateFormat.parse(reqDateStr);
+        long reqDateTime = reqDate.getTime();
 
-        System.out.println("길이1 : " + s.length());
-        System.out.println(s2);
-        System.out.println("길이2 : " + s2.length());
+        //현재시간을 요청시간의 형태로 format 후 time 가져오기
+        try {
+            nowDate = dateFormat.parse(dateFormat.format(nowDate));
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
+        long curDateTime = nowDate.getTime();
+
+        //분으로 표현
+        long minute = (curDateTime - reqDateTime) / 60000;
+        System.out.println("요청시간 : " + reqDate);
+        System.out.println("현재시간 : " + nowDate);
+        System.out.println(minute+"분 차이");
     }
 }
