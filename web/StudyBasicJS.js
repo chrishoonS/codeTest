@@ -1190,524 +1190,268 @@ addNum();        // 0
  * arguments 객체
  * 만약 함수의 정의보다 더 많은 수의 인수가 전달되면, 매개변수에 대입되지 못한 인수들은 참조할 방법이 없음
  * 하지만 arguments 객체를 이용하면, 함수로 전달된 인수의 총 개수를 확인하거나, 각각의 인수에도 바로 접근 가능
- *
- *
- *
-arguments 객체는 함수가 호출될 때 전달된 인수를 배열의 형태로 저장하고 있습니다.
- *
-첫 번째 인수는 arguments[0]에 저장되며, 다음 인수는 arguments[1]에 저장됩니다.
- *
-또한, 인수의 총 개수는 arguments 객체의 length 프로퍼티에 저장됩니다.
- *
- *
- *
-다음 예제의 addNum() 함수는 전달받는 인수의 개수에 상관없이 언제나 정상적인 계산을 수행합니다.
- *
-예제
+ * arguments 객체는 함수가 호출될 때 전달된 인수를 배열의 형태로 저장
+ * 첫 번째 인수는 arguments[0]에 저장되며, 다음 인수는 arguments[1]에 저장
+ * 또한, 인수의 총 개수는 arguments 객체의 length 프로퍼티에 저장
+**/
+
 function addNum() {
- *
     var sum = 0;                                // 합을 저장할 변수 sum을 선언함.
- *
+
     for(var i = 0; i < arguments.length; i++) { // 전달받은 인수의 총 수만큼 반복함.
- *
- *
         sum += arguments[i];                    // 전달받은 각각의 인수를 sum에 더함.
- *
     }
- *
+
     return sum;
- *
 }
- *
+
 addNum(1, 2, 3); // 6
- *
 addNum(1, 2);    // 3
- *
 addNum(1);       // 1
- *
 addNum();        // 0
- *
 addNum(1, 2, 3, 4, 5, 6, 7, 8, 9, 10); // 55
- *
 
+/**
+ * arguments 객체는 배열과 비슷할 뿐, 실제로 Array 객체 X
+ * 숫자로 된 인덱스와 length 프로퍼티만을 가지고 있을 뿐, 모든 것을 배열처럼 다룰 수는 없습니다.
  *
- *
- *
-arguments 객체는 배열과 비슷할 뿐, 실제로 Array 객체는 아닙니다.
- *
-숫자로 된 인덱스와 length 프로퍼티만을 가지고 있을 뿐, 모든 것을 배열처럼 다룰 수는 없습니다.
- *
-디폴트 매개변수와 나머지 매개변수
-ECMAScript 6부터 새롭게 정의된 매개변수는 다음과 같습니다.
- *
- *
- *
-1. 디폴트 매개변수(default parameter)
- *
-2. 나머지 매개변수(rest parameter)
- *
-디폴트 매개변수(default parameter)
-디폴트 매개변수란 함수를 호출할 때 명시된 인수를 전달하지 않았을 경우에 사용하게 될 기본값을 의미합니다.
- *
- *
- *
-자바스크립트에서 매개변수의 기본값은 undefined 값으로 설정되어 있습니다.
- *
-예제
-function mul(a, b) {
- *
-    // 인수가 한 개만 전달되었을 때 나머지 매개변수의 값을 undefined 값이 아닌 1로 설정함.
- *
-    b = (typeof b !== 'undefined')  ? b : 1;
- *
-    return ab;
- *
-}
- *
-mul(3, 4); // 12
- *
-mul(3);    // 3
- *
-
- *
- *
- *
-하지만 디폴트 매개변수를 이용하면 이러한 매개변수의 기본값을 바꿀 수 있습니다.
- *
-예제
-function mul(a, b = 1) { // 인수가 한 개만 전달되면 나머지 매개변수의 값을 언제나 1로 설정해 줌.
- *
-    return ab;
- *
-}
- *
-mul(3, 4); // 12
- *
-mul(3);    // 3
- *
-
- *
- *
- *
-디폴트 매개변수는 익스플로러, 사파리, 오페라에서 지원하지 않습니다.
- *
-나머지 매개변수(rest parameter)
-나머지 매개변수는 생략 접두사(...)를 사용하여 특정 위치의 인수부터 마지막 인수까지를 한 번에 지정할 수 있습니다.
- *
- *
- *
-다음 예제는 첫 번째 인수에서 두 번째 인수부터 마지막 인수까지를 뺀 후 그 결과를 반환하는 예제입니다.
- *
-예제
-function sub() {
- *
-    var firstNum = arguments[0];                  // 첫 번째 인수에서
- *
-    for(var i = 0; i < arguments.length-1; i++) { // 두 번째부터 마지막 인수까지를
- *
-        firstNum -= arguments[i+1];               // 뺌.
- *
-    }
- *
-    return firstNum;
- *
-}
- *
-sub(10, 2, 3);    // 10 - 2 - 3 = 5
- *
-sub(10, 1, 5, 8); // 10 - 1 - 5 - 8 = -4
- *
-
- *
- *
- *
-하지만 나머지 매개변수를 이용하면 sub() 함수를 좀 더 직관적으로 정의할 수 있습니다.
- *
-예제
-// 첫 번째 인수를 변수 firstNum에 저장하고 나머지 인수들은 배열 restArgs에 저장함.
- *
-function sub(firstNum, ...restArgs) {
- *
-    for(var i = 0; i < restArgs.length; i++) {
- *
-        firstNum -= restArgs[i];
- *
-    }
- *
-    return firstNum;
- *
-}
- *
-sub(10, 2, 3);    // 10 - 2 - 3 = 5
- *
-sub(10, 1, 5, 8); // 10 - 1 - 5 - 8 = -4
- *
-
- *
- *
- * 나머지 매개변수는 익스플로러, 사파리에서 지원하지 않습니다.
+ * 디폴트 매개변수와 나머지 매개변수
+ * 1. 디폴트 매개변수(default parameter)
+ * 2. 나머지 매개변수(rest parameter)
  **/
+
+/**
+ * 디폴트 매개변수(default parameter) : 함수를 호출할 때 명시된 인수를 전달하지 않았을 경우에 사용하게 될 기본값
+ * 자바스크립트에서 매개변수의 기본값은 undefined
+ * 디폴트 매개변수는 익스플로러, 사파리, 오페라에서 지원 X
+**/
+
+ function mul(a, b) {
+    // 인수가 한 개만 전달되었을 때 나머지 매개변수의 값을 undefined 값이 아닌 1로 설정함.
+    b = (typeof b !== 'undefined')  ? b : 1;
+    return ab;
+}
+mul(3, 4); // 12
+mul(3);    // 3
+
+function mul(a, b = 1) { // 인수가 한 개만 전달되면 나머지 매개변수의 값을 언제나 1로 설정해 줌.
+    return ab;
+}
+
+mul(3, 4); // 12
+mul(3);    // 3
+
+/**
+ * 나머지 매개변수(rest parameter) : 생략 접두사(...)를 사용하여 특정 위치의 인수부터 마지막 인수까지를 한 번에 지정
+ * 다음 예제는 첫 번째 인수에서 두 번째 인수부터 마지막 인수까지를 뺀 후 그 결과를 반환하는 예제
+ **/
+function sub() {
+    var firstNum = arguments[0];                  // 첫 번째 인수에서
+    for(var i = 0; i < arguments.length-1; i++) { // 두 번째부터 마지막 인수까지를
+        firstNum -= arguments[i+1];               // 뺌.
+    }
+    return firstNum;
+}
+sub(10, 2, 3);    // 10 - 2 - 3 = 5
+sub(10, 1, 5, 8); // 10 - 1 - 5 - 8 = -4
+
+
+// 첫 번째 인수를 변수 firstNum에 저장하고 나머지 인수들은 배열 restArgs에 저장함.
+function sub(firstNum, ...restArgs) {
+    for(var i = 0; i < restArgs.length; i++) {
+        firstNum -= restArgs[i];
+    }
+    return firstNum;
+}
+sub(10, 2, 3);    // 10 - 2 - 3 = 5
+sub(10, 1, 5, 8); // 10 - 1 - 5 - 8 = -4
+
 /****************************************************************************************************************************************************/
 /**
- * 미리 정의된 전역 함수
- * 미리 정의된 전역 함수(predefined functions)
- * 자바스크립트는 사용자의 편의를 위해 다양한 기능의 여러 전역 함수를 미리 정의하여 제공합니다.
- *
- * 이러한 전역 함수는 자바스크립트의 어떤 타입의 객체에서도 바로 사용할 수 있습니다.
- *
- *
- *
- * 자바스크립트에서 미리 정의되어 있는 전역 함수는 다음과 같습니다.
- *
- *
+ * 미리 정의된 전역 함수(predefined functions): 자바스크립트는 사용자의 편의를 위해 다양한 기능의 여러 전역 함수를 미리 정의하여 제공
+ * 이러한 전역 함수는 자바스크립트의 어떤 타입의 객체에서도 바로 사용 가능
  *
  * 1. eval()
- *
  * 2. isFinite()
- *
  * 3. isNaN()
- *
  * 4. parseFloat()
- *
  * 5. parseInt()
- *
  * 6. decodeURI()
- *
  * 7. decodeURIComponent()
- *
  * 8. encodeURI()
- *
  * 9. encodeURIComponent()
- *
  * 10. escape()
- *
  * 11. unescape()
- *
  * 12. Number()
- *
  * 13. String()
- *
- * eval()
- * eval() 함수는 문자열로 표현된 자바스크립트 코드를 실행하는 함수입니다.
+ **/
+
+/**
+ * eval() : 문자열로 표현된 자바스크립트 코드를 실행하는 함수입니다.
  *
  * 문법
  * eval("문자열");
- *
- *
- *
- * 예제
- * var x = 10, y = 20;
- *
- * var a = eval("x + y"); // 30
- *
- * var b = eval("y * 3"); // 60
- *
- * document.write(a + "<br>" + b);
- *
- * 
- *
- * isFinite()
- * isFinite() 함수는 전달된 값이 유한한 수인지를 검사하여 그 결과를 반환합니다.
- *
+ **/
+var x = 10, y = 20;
+var a = eval("x + y"); // 30
+var b = eval("y3"); // 60
+document.write(a + "<br>" + b);
+
+/**
+ * isFinite(): 전달된 값이 유한한 수인지를 검사하여 그 결과를 반환합니다.
  * 만약 인수로 전달된 값이 숫자가 아니라면, 숫자로 변환하여 검사합니다.
  *
  * 문법
  * isFinite(검사할값);
- *
- *
- *
- * 예제
- * isFinite(123);       // true
- *
- * isFinite(123e100);   // true
- *
- * isFinite(0);         // true
- *
- * isFinite(true);      // true
- *
- * isFinite(false);     // true
- *
- * isFinite(null);      // true
- *
- * isFinite("123");     // true
- *
- * isFinite("");        // true
- *
- *
- *
- * isFinite("문자열");  // false
- *
- * isFinite(undefined); // false
- *
- * isFinite(NaN);       // false
- *
- * 
- *
- * isNaN()
- * isNaN() 함수는 전달된 값이 NaN인지를 검사하여 그 결과를 반환합니다.
- *
- * 만약 인수로 전달된 값이 숫자가 아니라면, 숫자로 강제 변환하여 검사합니다.
- *
- *
- *
- * 전달된 값이 숫자인지 아닌지를 확인하기 위하여 typeof 연산자를 대신 사용할 수도 있습니다.
- *
+ **/
+
+isFinite(123);       // true
+isFinite(123e100);   // true
+isFinite(0);         // true
+isFinite(true);      // true
+isFinite(false);     // true
+isFinite(null);      // true
+isFinite("123");     // true
+isFinite("");        // true
+isFinite("문자열");  // false
+isFinite(undefined); // false
+isFinite(NaN);       // false
+
+/**
+ * isNaN() : 전달된 값이 NaN인지를 검사하여 그 결과를 반환
+ * 만약 인수로 전달된 값이 숫자가 아니라면, 숫자로 강제 변환하여 검사
+ * 전달된 값이 숫자인지 아닌지를 확인하기 위하여 typeof 연산자를 대신 사용 가능
+ * 이 함수는 숫자로의 강제 변환에 따라 예상치 못한 결과를 얻을 수 있으므로 ECMAScript 6부터는 Number.isNaN() 메소드의 사용을 권장
  * 문법
  * isNaN(검사할값);
- *
- *
- *
- * 예제
- * isNaN(123);       // false
- *
- * isNaN(123e100);   // false
- *
- * isNaN(0);         // false
- *
- * isNaN(true);      // false
- *
- * isNaN(false);     // false
- *
- * isNaN(null);      // false
- *
- * isNaN("123");     // false
- *
- * isNaN("");        // false
- *
- *
- *
- * isNaN("문자열");  // true
- *
- * isNaN(undefined); // true
- *
- * isNaN(NaN);       // true
- *
- * 
- *
- *
- *
- * 이 함수는 숫자로의 강제 변환에 따라 예상치 못한 결과를 얻을 수 있으므로 ECMAScript 6부터는 Number.isNaN() 메소드의 사용을 권장하고 있습니다.
- * parseFloat()
- * parseFloat() 함수는 문자열을 파싱하여 부동 소수점 수(floating point number)로 반환합니다.
- *
+ **/
+isNaN(123);       // false
+isNaN(123e100);   // false
+isNaN(0);         // false
+isNaN(true);      // false
+isNaN(false);     // false
+isNaN(null);      // false
+isNaN("123");     // false
+isNaN("");        // false
+isNaN("문자열");  // true
+isNaN(undefined); // true
+isNaN(NaN);       // true
+
+/**
+ * parseFloat(): 문자열을 파싱하여 부동 소수점 수(floating point number)로 반환
  * 문법
  * parseFloat("문자열");
- *
- *
- *
- * 예제
- * parseFloat("123");        // 123
- *
- * parseFloat("123.000");    // 123
- *
- * parseFloat("123.456");    // 123.456
- *
- * parseFloat("12 34 56");   // 12
- *
- * parseFloat(" 123 ");      // 123
- *
- * parseFloat("123 초콜릿"); // 123
- *
- * parseFloat("초콜릿 123"); // NaN
- *
- * 
- *
- * parseInt()
- * parseInt() 함수는 문자열을 파싱하여 정수로 반환합니다.
- *
+ **/
+parseFloat("123");        // 123
+parseFloat("123.000");    // 123
+parseFloat("123.456");    // 123.456
+parseFloat("12 34 56");   // 12
+parseFloat(" 123 ");      // 123
+parseFloat("123 초콜릿"); // 123
+parseFloat("초콜릿 123"); // NaN
+
+/**
+ * parseInt(): 문자열을 파싱하여 정수로 반환
  * 문법
  * parseInt("문자열");
- *
- *
- *
- * 예제
- * parseInt("123");        // 123
- *
- * parseInt("123.000");    // 123
- *
- * parseInt("123.456");    // 123
- *
- * parseInt("12 34 56");   // 12
- *
- * parseInt(" 123 ");      // 123
- *
- * parseInt("123 초콜릿"); // 123
- *
- * parseInt("초콜릿 123"); // NaN
- *
- *
- *
- * parseInt("10", 10);     // 10
- *
- * parseInt("10", 8);      // 8
- *
- * parseInt("10", 16);     // 16
- *
- * parseInt("0x10");       // 16
- *
- * 
- *
- *
- *
- * 위의 예제처럼 parseInt() 함수에 두 번째 인수로 특정 진법을 전달하면, 해당 진법에 맞는 정수로 반환합니다.
- *
- * 또한, 전달받은 문자열의 시작이 "0x"로 시작하면, parseInt() 함수는 해당 문자열을 16진수로 인식합니다.
- *
- *
- *
- *
- * 지금까지 parseInt() 함수는 전달받은 문자열의 시작이 "0"로 시작하면, 해당 문자열을 8진수로 인식했습니다.
- * 하지만 자바스크립트는 더 이상 이 문법을 지원하지 않습니다.
+ * 예제처럼 parseInt() 함수에 두 번째 인수로 특정 진법을 전달하면, 해당 진법에 맞는 정수로 반환
+ * 또한, 전달받은 문자열의 시작이 "0x"로 시작하면, parseInt() 함수는 해당 문자열을 16진수로 인식
+ **/
+parseInt("123");        // 123
+parseInt("123.000");    // 123
+parseInt("123.456");    // 123
+parseInt("12 34 56");   // 12
+parseInt(" 123 ");      // 123
+parseInt("123 초콜릿"); // 123
+parseInt("초콜릿 123"); // NaN
+parseInt("10", 10);     // 10
+parseInt("10", 8);      // 8
+parseInt("10", 16);     // 16
+parseInt("0x10");       // 16
+
+/**
  * encodeURI()와 encodeURIComponent()
- * encodeURI() 함수는 URI에서 주소를 표시하는 특수문자를 제외하고, 모든 문자를 이스케이프 시퀀스(escape sequences) 처리하여 부호화합니다.
- *
- * 하지만 encodeURIComponent() 함수는 URI에서 encodeURI() 함수에서 부호화하지 않은 모든 문자까지 포함하여 이스케이프 시퀀스 처리합니다.
- *
+ * encodeURI() : URI에서 주소를 표시하는 특수문자를 제외하고, 모든 문자를 이스케이프 시퀀스(escape sequences) 처리하여 부호화
+ * encodeURIComponent() : URI에서 encodeURI() 함수에서 부호화하지 않은 모든 문자까지 포함하여 이스케이프 시퀀스 처리
  * 문법
  * encodeURI(부호화할URI);
- *
  * encodeURIComponent(부호화할URI);
- *
- *
- *
- * 예제
- * var uri = "http://google.com/search.php?name=홍길동&city=서울";
- *
- *
- *
- * var enc1 = encodeURI(uri);
- *
- * var enc2 = encodeURIComponent(uri);
- *
- * document.write(enc1 + "<br>" + enc2);
- *
- * 
- *
+ **/
+
+var uri = "http://google.com/search.php?name=홍길동&city=서울";
+var enc1 = encodeURI(uri);
+var enc2 = encodeURIComponent(uri);
+document.write(enc1 + "<br>" + enc2);
+
+/**
  * decodeURI()와 decodeURIComponent()
- * decodeURI() 함수는 encodeURI() 함수나 다른 방법으로 만들어진 URI(Uniform Resource Identifier)를 해독합니다.
- *
- * decodeURIComponent() 함수는 encodeURIComponent() 함수나 다른 방법으로 만들어진 URI 컴포넌트를 해독합니다.
+ * decodeURI() : encodeURI() 함수나 다른 방법으로 만들어진 URI(Uniform Resource Identifier)를 해독합니다.
+ * decodeURIComponent() : encodeURIComponent() 함수나 다른 방법으로 만들어진 URI 컴포넌트를 해독합니다.
  *
  * 문법
  * decodeURI(해독할URI);
- *
  * decodeURIComponent(해독할URI);
- *
- *
- *
- * 예제
- * var uri = "http://google.com/search.php?name=홍길동&city=서울";
- *
- *
- *
- * var enc1 = encodeURI(uri);
- *
- * var enc2 = encodeURIComponent(uri);
- *
- * document.write(enc1 + "<br>" + enc2 + "<br><br>");
- *
- *
- *
- * var dec1 = decodeURI(enc1);
- *
- * var dec2 = decodeURIComponent(enc2);
- *
- * document.write(dec1 + "<br>" + dec2);
- *
- * 
- *
+ **/
+
+var uri = "http://google.com/search.php?name=홍길동&city=서울";
+var enc1 = encodeURI(uri);
+var enc2 = encodeURIComponent(uri);
+
+document.write(enc1 + "<br>" + enc2 + "<br><br>");
+
+var dec1 = decodeURI(enc1);
+var dec2 = decodeURIComponent(enc2);
+
+document.write(dec1 + "<br>" + dec2);
+
+/**
  * escape()와 unescape()
- * escape() 함수는 전달받은 문자열에서 특정 문자들을 16진법 이스케이프 시퀀스 문자로 변환합니다.
- *
- * unescape() 함수는 전달받은 문자열에서 escape() 함수나 다른 방법으로 만들어진 16진법 이스케이프 시퀀스 문자를 원래의 문자로 변환합니다.
- *
+ * escape() : 전달받은 문자열에서 특정 문자들을 16진법 이스케이프 시퀀스 문자로 변환
+ * unescape() : 전달받은 문자열에서 escape() 함수나 다른 방법으로 만들어진 16진법 이스케이프 시퀀스 문자를 원래의 문자로 변환
  * 문법
  * escape("변환할문자열");
- *
  * unescape("원래대로변환할문자열");
- *
- *
- *
- * 예제
- * var str = "Hello! World ?#$";
- *
- *
- *
- * var esc = escape(str);
- *
- * var une = unescape(esc);
- *
- * document.write(esc + "<br>" + une);
- *
- * 
- *
- *
- *
- * escape() 함수는 자바스크립트 1.5버전부터 더는 지원하지 않으므로, encodeURI() 함수나
- * encodeURIComponent() 함수를 대신 사용해야 합니다.
- * unescape() 함수는 자바스크립트 1.5버전부터 더는 지원하지 않으므로, decodeURI() 함수나
- * decodeURIComponent() 함수를 대신 사용해야 합니다.
- * Number()
- * Number() 함수는 전달받은 객체의 값을 숫자로 반환합니다.
- *
+ * escape() 함수는 자바스크립트 1.5버전부터 더는 지원하지 않으므로, encodeURI() 함수나 encodeURIComponent() 함수를 대신 사용
+ * unescape() 함수는 자바스크립트 1.5버전부터 더는 지원하지 않으므로, decodeURI() 함수나 decodeURIComponent() 함수를 대신 사용
+ **/
+
+var str = "Hello! World ?#$";
+var esc = escape(str);
+var une = unescape(esc);
+
+document.write(esc + "<br>" + une);
+
+/**
+ * Number() : 전달받은 객체의 값을 숫자로 반환
  * 문법
  * Number(객체);
- *
- *
- *
- * 예제
- * Number("123");        // 123
- *
- * Number("123.000");    // 123
- *
- * Number("123.456");    // 123.456
- *
- * Number("12 34 56");   // NaN
- *
- * Number("123 초콜릿"); // NaN
- *
- *
- *
- * Number(true);         // 1
- *
- * Number(false);        // 0
- *
- * Number(new Date());   // 현재 날짜에 해당하는 숫자를 반환함.
- *
- * Number(null);         // 0
- *
- * 
- *
- * String()
- * String() 함수는 전달받은 객체의 값을 문자열로 반환합니다.
+ **/
+Number("123");        // 123
+Number("123.000");    // 123
+Number("123.456");    // 123.456
+Number("12 34 56");   // NaN
+Number("123 초콜릿"); // NaN
+Number(true);         // 1
+Number(false);        // 0
+Number(new Date());   // 현재 날짜에 해당하는 숫자를 반환함.
+Number(null);         // 0
+
+/**
+ * String() : 전달받은 객체의 값을 문자열로 반환
  *
  * 문법
  * String(객체);
- *
- *
- *
- * 예제
- * String(123);        // 123
- *
- * String(123.456);    // 123.456
- *
- * String("123");      // 123
- *
- * String(new Date()); // 현재 날짜에 해당하는 문자열을 반환함.
- *
- * String(null);       // null
- *
- *
- *
- * String(true);       // true
- *
- * String(false);      // false
- *
- * String(Boolean(1)); // true
- *
- * String(Boolean(0)); // false
- *
  **/
+String(123);        // 123
+String(123.456);    // 123.456
+String("123");      // 123
+String(new Date()); // 현재 날짜에 해당하는 문자열을 반환함.
+String(null);       // null
+String(true);       // true
+String(false);      // false
+String(Boolean(1)); // true
+String(Boolean(0)); // false
+
 /****************************************************************************************************************************************************/
 /**
  *
