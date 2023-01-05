@@ -2,35 +2,26 @@ package com;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.TimeZone;
+import java.util.*;
 
 public class fooNote {
     public static void main(String[] args) throws ParseException {
-        //현재시간 Date
-        String reqDateStr = "202301022235";
+        List<Map<String, Object>> list = new ArrayList<>();
+        Map<String, Object> map = new HashMap<>();
 
-        Date nowDate = new Date();
-        SimpleDateFormat dateFormat = new SimpleDateFormat("YYYYMMddHHmm");
+        map.put("baseDate", "20230103");
+        map.put("baseTime", "1400");
+        map.put("category", "TMP");
+        map.put("fcstDate", "20230103");
+        map.put("fcstTime", "1500");
+        map.put("fcstValue", 0);
+        map.put("nx", 61.0);
+        map.put("ny", 127.0);
 
-        //요청시간을 Date로 parsing 후 time가져오기
-        Date reqDate = dateFormat.parse(reqDateStr);
-        long reqDateTime = reqDate.getTime();
+        list.add(map);
 
-        //현재시간을 요청시간의 형태로 format 후 time 가져오기
-        try {
-            nowDate = dateFormat.parse(dateFormat.format(nowDate));
-        } catch (ParseException e) {
-            throw new RuntimeException(e);
-        }
-        long curDateTime = nowDate.getTime();
+        System.out.println(list.get(0));
 
-        //분으로 표현
-        long minute = (curDateTime - reqDateTime) / 60000;
-        System.out.println("요청시간 : " + reqDate);
-        System.out.println("현재시간 : " + nowDate);
-        System.out.println(minute+"분 차이");
+//        item=[{baseDate=20230103, baseTime=1400, category=TMP, fcstDate=, fcstTime=, fcstValue=0, =61.0, ny=127.0}, {baseDate=20230103, baseTime=1400, category=UUU, fcstDate=20230103, fcstTime=1500, fcstValue=2.1, nx=61.0, ny=127.0}]
     }
 }
