@@ -2,26 +2,27 @@ package com;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.TimeZone;
 
 public class fooNote {
     public static void main(String[] args) throws ParseException {
-        List<Map<String, Object>> list = new ArrayList<>();
-        Map<String, Object> map = new HashMap<>();
+        //현재시간 Date
+        LocalDate now = LocalDate.now();
 
-        map.put("baseDate", "20230103");
-        map.put("baseTime", "1400");
-        map.put("category", "TMP");
-        map.put("fcstDate", "20230103");
-        map.put("fcstTime", "1500");
-        map.put("fcstValue", 0);
-        map.put("nx", 61.0);
-        map.put("ny", 127.0);
+        // 포맷 정의
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyyMMdd");
 
-        list.add(map);
+        // 포맷 적용
+        String formatedNow = now.format(dtf);
 
-        System.out.println(list.get(0));
+        // 결과 출력
+        System.out.println(formatedNow);
 
-//        item=[{baseDate=20230103, baseTime=1400, category=TMP, fcstDate=, fcstTime=, fcstValue=0, =61.0, ny=127.0}, {baseDate=20230103, baseTime=1400, category=UUU, fcstDate=20230103, fcstTime=1500, fcstValue=2.1, nx=61.0, ny=127.0}]
     }
 }
