@@ -1,28 +1,27 @@
 package com;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.ZoneId;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.TimeZone;
 
 public class fooNote {
-    public static void main(String[] args) throws ParseException {
-        //현재시간 Date
-        LocalDate now = LocalDate.now();
+    public static void main(String[] args) {
 
-        // 포맷 정의
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyyMMdd");
+        LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyyMMddHHmm");
+        String nowDate = now.format(dtf);
 
-        // 포맷 적용
-        String formatedNow = now.format(dtf);
+        System.out.println(now);
 
-        // 결과 출력
-        System.out.println(formatedNow);
+        LocalDateTime result = now.plusHours(10);
+        result.format(dtf);
+        System.out.println(result.format(dtf));
 
+        result = now.minusMonths(1).minusDays(10);
+        System.out.println(result.format(dtf));
     }
+
+
 }
