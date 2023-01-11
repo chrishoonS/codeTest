@@ -1,58 +1,32 @@
 package com;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Calendar;
-import java.util.Date;
+import java.time.Duration;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.Period;
+import java.time.temporal.ChronoUnit;
 
 public class fooNote {
     public static void main(String[] args) {
 
-        LocalDateTime now = LocalDateTime.now();
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyyMMddHHmm");
-        DateTimeFormatter dtf1 = DateTimeFormatter.ofPattern("HHmm");
-        DateTimeFormatter dtf2 = DateTimeFormatter.ofPattern("yyyyMMdd");
-        String nowDate = now.format(dtf);
+        LocalTime startTime = LocalTime.of(15, 42);
+        LocalTime endTime = LocalTime.of(16, 42);
 
-        System.out.println(nowDate);
+        Duration between1 = Duration.between(startTime, endTime);
+        System.out.println("초 간격 = " + between1.getSeconds());
+        System.out.println("나노 초 간격 = " + between1.getNano());
+        System.out.println("간격이 음수인지 확인 = " + between1.isNegative());
+        System.out.println("간격이 0인지 확인 = " + between1.isZero());
 
-        LocalDateTime result = now.minusHours(16);
-        System.out.println(result.format(dtf));
-        System.out.println(result.format(dtf1));
-        System.out.println(result.format(dtf2));
+        LocalDate startDate = LocalDate.of(2021,3,11);
+        LocalDate endDate = LocalDate.of(2021, 4, 15);
 
-        result = now.minusMonths(1).minusDays(10);
-        System.out.println();
-        System.out.println(result.format(dtf2));
-
-
-
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmm");
-
-        Date d1 = null;
-        Date d2 = null;
-        Date d3 = null;
-        Date d4 = null;
-        Date d5 = null;
-
-        try {
-            d1 = sdf.parse("202101010000");
-            d2 = sdf.parse("202101020000");
-            d3 = sdf.parse("202101030000");
-            d4 = sdf.parse("202101020011");
-            d5 = sdf.parse("202101020011");
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        System.out.println("============================");
-        System.out.println(d1.before(d2));  //true
-        System.out.println(d4.equals(d5));  //true
-        System.out.println(d2.equals(d3));  //false
-        System.out.println(d1.after(d3)); //false
-
-
+        Period between2 = Period.between(startDate, endDate);
+        System.out.println("년간격 = " + between2.getYears());
+        System.out.println("월간격 = " + between2.getMonths());
+        System.out.println("일자간격 = " + between2.getDays());
+        System.out.println("between.getUnits() = " + between2.getUnits());
+        System.out.println("between.get(ChronoUnit.DAYS) = " + between2.get(ChronoUnit.DAYS));
     }
 
 }
