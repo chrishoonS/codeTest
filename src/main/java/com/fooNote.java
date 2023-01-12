@@ -4,57 +4,42 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Calendar;
-import java.util.Date;
+import java.util.*;
 
 public class fooNote {
     public static void main(String[] args) {
 
-        LocalDateTime now = LocalDateTime.now();
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyyMMddHHmm");
-        DateTimeFormatter dtf1 = DateTimeFormatter.ofPattern("HHmm");
-        DateTimeFormatter dtf2 = DateTimeFormatter.ofPattern("yyyyMMdd");
-        String nowDate = now.format(dtf);
+        //리스트 선언
+        List<Map<String, Object>> list = new ArrayList();
+        Map<String, Object> map = new HashMap<>();
 
+        map.put("test1", "test");
+        map.put("test2", 222222);
 
-        System.out.println(nowDate);
-        System.out.println();
+        //테스트 값입력
+        list.add(null);
+        list.add(map);
 
-        LocalDateTime result = now.minusHours(16);
-        System.out.println(result);
-        System.out.println(result.format(dtf));
-        System.out.println(result.format(dtf1));
-        System.out.println(result.format(dtf2));
+        System.out.println("list value :" + list);
 
-        result = now.minusMonths(1).minusDays(10);
-        System.out.println();
-        System.out.println(result.format(dtf2));
+        //리스트 값 체크
+        if(list.isEmpty()) {
 
-
-
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmm");
-
-        Date d1 = null;
-        Date d2 = null;
-        Date d3 = null;
-        Date d4 = null;
-        Date d5 = null;
-
-        try {
-            d1 = sdf.parse("202101010000");
-            d2 = sdf.parse("202101020000");
-            d3 = sdf.parse("202101030000");
-            d4 = sdf.parse("202101020011");
-            d5 = sdf.parse("202101020011");
-        } catch (ParseException e) {
-            e.printStackTrace();
+            //리스트에 값이 존재하지 않음
+            System.out.println("List is empty");
         }
-        System.out.println("============================");
-        System.out.println(d1.before(d2));  //true
-        System.out.println(d4.equals(d5));  //true
-        System.out.println(d2.equals(d3));  //false
-        System.out.println(d1.after(d3)); //false
+        else {
 
+            //리스트에 값이 존재
+            System.out.println("List is not empty");
+
+            for(int i = 0; i<list.size(); i++) {
+
+                //리스트 안에 값에 대한 null 체크
+                if(list.get(i) == null) {
+                    System.out.println("list["+i+"]의 값은 null 입니다. ");
+                }
+            }
+        }
     }
-
 }
