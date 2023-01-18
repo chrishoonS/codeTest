@@ -9,37 +9,83 @@ import java.util.*;
 public class fooNote {
     public static void main(String[] args) {
 
-        //리스트 선언
-        List<Map<String, Object>> list = new ArrayList();
-        Map<String, Object> map = new HashMap<>();
+        LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter dtfDate = DateTimeFormatter.ofPattern("yyyyMMdd");
 
-        map.put("test1", "test");
-        map.put("test2", 222222);
+        String nowStr = "";
+        String plusStr = "";
+        String result = "";
 
-        //테스트 값입력
-        list.add(null);
-        list.add(map);
+        nowStr = now.format(dtfDate);
+        plusStr = now.plusDays(1).format(dtfDate);
 
-        System.out.println("list value :" + list);
+        System.out.println(nowStr);
+        System.out.println(plusStr);
+//        System.out.println();
+//
+//        System.out.println(setBaseDateTime(now.plusMinutes(796), "getUltraSrtNcst"));
 
-        //리스트 값 체크
-        if(list.isEmpty()) {
+    }
 
-            //리스트에 값이 존재하지 않음
-            System.out.println("List is empty");
+    private static String setBaseDateTime(LocalDateTime now, String urlPath) {
+
+        String result = "";
+
+        DateTimeFormatter dtfFull = DateTimeFormatter.ofPattern("yyyyMMddHHmm");
+        DateTimeFormatter dtfDate = DateTimeFormatter.ofPattern("yyyyMMdd");
+
+        String baseDate = (now.format(dtfFull)).substring(0, 8);
+
+        int mm = 0;             //계산에 의해 더할 시간
+        String addStr = "";     //baseTime 만들어줄 str
+
+        switch (urlPath) {
+            case "getUltraSrtNcst":
+                mm = 15;
+                addStr = "00";
+                break;
+
+            case "getUltraSrtFcst":
+                mm = 10;
+                addStr = "30";
+                break;
+
+            case "getVilageFcst":
+                mm = 45;
+                addStr = "00";
+                break;
         }
-        else {
 
-            //리스트에 값이 존재
-            System.out.println("List is not empty");
+        int baseTimeIndex = 0;
 
-            for(int i = 0; i<list.size(); i++) {
+        if( !urlPath.equals("getVilageFcst") ){ //초단기 실황, 예보
 
-                //리스트 안에 값에 대한 null 체크
-                if(list.get(i) == null) {
-                    System.out.println("list["+i+"]의 값은 null 입니다. ");
+            baseTimeIndex = now.plusMinutes(mm).getHour() / 1;
+
+            if( baseTimeIndex > 0)
+                result = baseDate + String.format("%02d", baseTimeIndex - 1) + addStr;
+            else{
+                if(("getUltraSrtNcst").equals(urlPath)){
+                    baseDate = now.minusDays(1).format(dtfDate);
+                    result = baseDate + "2300";
+                }else{
+                    baseDate = now.minusDays(1).format(dtfDate);
+                    result = baseDate + "2330";
                 }
             }
+
+        } else{ //단기
+
+            baseTimeIndex = now.plusMinutes(mm).getHour() / 3;
+
+            if( baseTimeIndex > 0)
+                result = baseDate + String.format("%02d", (baseTimeIndex * 3) - 1) + addStr;
+            else{
+                baseDate = now.minusDays(1).format(dtfDate);
+                result = baseDate + "2300";
+            }
         }
+
+        return result;
     }
 }
