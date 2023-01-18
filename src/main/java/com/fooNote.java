@@ -1,91 +1,35 @@
 package com;
 
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.*;
+import java.util.Date;
 
 public class fooNote {
     public static void main(String[] args) {
 
-        LocalDateTime now = LocalDateTime.now();
-        DateTimeFormatter dtfDate = DateTimeFormatter.ofPattern("yyyyMMdd");
+        String date1 = "20230119";
+        String date2 = "20230118";
 
-        String nowStr = "";
-        String plusStr = "";
-        String result = "";
+        DateFormat format = new SimpleDateFormat("yyyyMMdd");
 
-        nowStr = now.format(dtfDate);
-        plusStr = now.plusDays(1).format(dtfDate);
+        /* Date타입으로 변경 */
 
-        System.out.println(nowStr);
-        System.out.println(plusStr);
-//        System.out.println();
-//
-//        System.out.println(setBaseDateTime(now.plusMinutes(796), "getUltraSrtNcst"));
+        Date d1 = null;
+        try {
+            d1 = format.parse(date1);
+            Date d2 = format.parse(date2);
+            long Sec = (d1.getTime() - d2.getTime()) / 1000; // 초
+//            long Min = (d1.getTime() - d2.getTime()) / 60000; // 분
+//            long Hour = (d1.getTime() - d2.getTime()) / 3600000; // 시
+            long Days = Sec / (24 * 60 * 60); // 일자수
 
-    }
-
-    private static String setBaseDateTime(LocalDateTime now, String urlPath) {
-
-        String result = "";
-
-        DateTimeFormatter dtfFull = DateTimeFormatter.ofPattern("yyyyMMddHHmm");
-        DateTimeFormatter dtfDate = DateTimeFormatter.ofPattern("yyyyMMdd");
-
-        String baseDate = (now.format(dtfFull)).substring(0, 8);
-
-        int mm = 0;             //계산에 의해 더할 시간
-        String addStr = "";     //baseTime 만들어줄 str
-
-        switch (urlPath) {
-            case "getUltraSrtNcst":
-                mm = 15;
-                addStr = "00";
-                break;
-
-            case "getUltraSrtFcst":
-                mm = 10;
-                addStr = "30";
-                break;
-
-            case "getVilageFcst":
-                mm = 45;
-                addStr = "00";
-                break;
+            System.out.println(Sec + "초 차이");
+//            System.out.println(Min + "분 차이");
+//            System.out.println(Hour + "시 차이");
+            System.out.println(Days + "일 차이");
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
         }
-
-        int baseTimeIndex = 0;
-
-        if( !urlPath.equals("getVilageFcst") ){ //초단기 실황, 예보
-
-            baseTimeIndex = now.plusMinutes(mm).getHour() / 1;
-
-            if( baseTimeIndex > 0)
-                result = baseDate + String.format("%02d", baseTimeIndex - 1) + addStr;
-            else{
-                if(("getUltraSrtNcst").equals(urlPath)){
-                    baseDate = now.minusDays(1).format(dtfDate);
-                    result = baseDate + "2300";
-                }else{
-                    baseDate = now.minusDays(1).format(dtfDate);
-                    result = baseDate + "2330";
-                }
-            }
-
-        } else{ //단기
-
-            baseTimeIndex = now.plusMinutes(mm).getHour() / 3;
-
-            if( baseTimeIndex > 0)
-                result = baseDate + String.format("%02d", (baseTimeIndex * 3) - 1) + addStr;
-            else{
-                baseDate = now.minusDays(1).format(dtfDate);
-                result = baseDate + "2300";
-            }
-        }
-
-        return result;
     }
 }
