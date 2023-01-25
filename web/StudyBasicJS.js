@@ -1558,7 +1558,7 @@ document.write("우리 집 새끼 고양이의 이름은 " + kitty.name + "이�
 
 /**
  * 생성자를 이용한 객체의 생성 : new 연산자를 사용하여 객체를 생성하고 초기화 가능
- * 이때 사용되는 메소드를 생성자(constructor)라고 하며, 이 메소드는 새롭게 생성되는 객체를 초기화하는 역할
+ * 이때 사용되는 메소드를 생성자(constructor)라고 하며, 새롭게 생성되는 객체를 초기화하는 역할
  * 자바스크립트는 원시 타입을 위한 생성자를 미리 정의하여 제공
  * 아래 예제처럼 자바스크립트에서 제공하는 생성자를 사용할 수도 있으며, 사용자가 직접 객체 생성자 함수(object constructor function)를 작성하여 사용 가능
  **/
@@ -1835,7 +1835,7 @@ myDog.hasOwnProperty("class"); // 상속받은 프로퍼티이므로, false를 �
 
 /**
  * propertyIsEnumerable() : 특정 프로퍼티가 해당 객체에 존재하고, 열거할 수 있는 프로퍼티인지를 검사
- * 즉, 이 메소드는 hasOwnProperty() 메소드의 결과가 true이면서, 동시에 열거할 수 있는 프로퍼티인지를 검사
+ * 즉, hasOwnProperty() 메소드의 결과가 true이면서, 동시에 열거할 수 있는 프로퍼티인지를 검사
  **/
 
 function Dog(color, name, age) {
@@ -1893,7 +1893,7 @@ func.toString(); // 함수의 소스 코드가 전부 문자열로 반환됨.
 /**
  * valueOf() : 특정 객체의 원시 타입(primitive type)의 값을 반환
  * 자바스크립트에서는 원시 타입의 값이 기대되는 곳에 객체가 사용되면, 내부적으로 이 메소드를 호출하여 처리
- *만약 어떤 객체가 원시 타입의 값을 가지고 있지 않다면, 이 메소드는 객체 자신을 반환
+ *만약 어떤 객체가 원시 타입의 값을 가지고 있지 않다면, 객체 자신을 반환
  **/
 function func(n) {
     this.number = n;
@@ -2136,13 +2136,384 @@ x === y;                 // 서로 다른 객체이므로 false
 /****************************************************************************************************************************************************/
 /****************************************************************************************************************************************************/
 /**
+ * Number 메소드 : Number 객체에 정의되어 있는 숫자와 관련된 작업을 할 때 사용하는 메소드
  *
- *
+ * 1. Number.parseFloat()
+ * 2. Number.parseInt()
+ * 3. Number.isNaN()
+ * 4. Number.isFinite()
+ * 5. Number.isInteger()
+ * 6. Number.isSafeInteger()
  **/
+/**
+ * Number.parseFloat() : 문자열을 파싱(parsing)하여, 문자열에 포함된 숫자 부분을 실수 형태로 반환
+ * 문자열에 여러 개의 숫자가 존재하면, 그중에서 첫 번째 숫자만을 실수 형태로 반환
+ **/
+
+Number.parseFloat("12");         // 12
+Number.parseFloat("12.34");      // 12.34
+Number.parseFloat("12문자열");   // 12
+Number.parseFloat("12 34 56");   // 12
+Number.parseFloat("문자열 56"); // NaN
+
+/**
+ * Number.parseInt() : 문자열을 파싱하여, 문자열에 포함된 숫자 부분을 정수 형태로 반환
+ * 문자열에 여러 개의 숫자가 존재하면, 그중에서 첫 번째 숫자만을 정수 형태로 반환
+ **/
+
+Number.parseInt("12");         // 12
+Number.parseInt("12.34");      // 12
+Number.parseInt("12문자열");   // 12
+Number.parseInt("12 34 56");   // 12
+Number.parseInt("문자열 56"); // NaN
+
+/**
+ * Number.isNaN() : 전달된 값이 NaN인지 아닌지를 검사
+ * 전역 함수인 isNaN() 함수가 가지고 있던 숫자로의 강제 변환에 따라 발생하는 문제 방지
+ * 오직 숫자인 값에서만 동작하며, 그 값이 NaN인 경우에만 true를 반환
+ **/
+
+Number.isNaN(NaN);       // true
+Number.isNaN(0 / 0);     // true
+// 다음은 전역 함수인 isNaN()에서 잘못된 결과를 반환하는 예제임.
+
+isNaN("NaN");            // true
+isNaN(undefined);        // true
+isNaN("문자열");         // true
+// Number.isNaN() 메소드에서 맞는 결과를 반환하고 있음.
+
+Number.isNaN("NaN");     // false
+Number.isNaN(undefined); // false
+Number.isNaN("문자열");  // false
+
+/**
+ * Number.isFinite() : 전달된 값이 유한한 수인지 아닌지를 검사
+ * 전역 함수인 isFinite() 함수처럼 전달된 값을 숫자로 강제 변환 안함
+ * 오직 셀 수 있는 값에서만 동작하며, 그 값이 유한한 경우에만 true를 반환
+ **/
+
+Number.isFinite(0);        // true
+Number.isFinite(3e45);     // true
+Number.isFinite(Infinity); // false
+Number.isFinite(NaN);      // false
+// 다음은 전역 함수인 isFinite()에서 잘못된 결과를 반환하는 예제임.
+
+isFinite("0");             // true
+isFinite(null);            // true
+// Number.isFinite() 메소드에서는 맞는 결과를 반환하고 있음.
+
+Number.isFinite("0");      // false
+Number.isFinite(null);     // false
+
+/**
+ * Number.isInteger() : 전달된 값이 정수인지 아닌지를 검사
+ * 전달된 값이 정수이면 true를 반환하며, 정수가 아니거나 NaN, Infinity와 같은 값은 모두 false를 반환
+ **/
+
+Number.isInteger(0);        // true
+Number.isInteger(-100);     // true
+Number.isInteger(0.1);      // false
+Number.isInteger("문자열"); // false
+Number.isInteger(Infinity); // false
+Number.isInteger(true);     // false
+
+/**
+ * Number.isSafeInteger() : 전달된 값이 안전한 정수(safe integer)인지 아닌지를 검사
+ * 안전한 정수(safe integer)란 IEEE 754 국제 표준에서 정의한 64비트 부동 소수점 수로 정확히 표현되는 정수( -(2^53 - 1)부터 (2^53 - 1) )
+ **/
+
+Number.isSafeInteger(10);                  // true
+Number.isSafeInteger(Math.pow(2, 53) - 1); // true
+Number.isSafeInteger(Math.pow(2, 53));     // false
+Number.isSafeInteger(Infinity);            // false
+Number.isSafeInteger(NaN);                 // false
+Number.isSafeInteger(3.14);                // false
+
+/**
+ * Math.pow() : 거듭제곱 연산을 수행하는 Math 객체
+ * Number.parseFloat() : 문자열을 파싱하여, 문자열에 포함된 숫자 부분을 실수 형태로 반환
+ * Number.parseInt() : 문자열을 파싱하여, 문자열에 포함된 숫자 부분을 정수 형태로 반환
+ * Number.isNaN() : 전달된 값이 NaN인지 아닌지를 검사
+ * Number.isFinite() : 전달된 값이 유한한 수인지 아닌지를 검사
+ * Number.isInteger() : 전달된 값이 정수인지 아닌지를 검사
+ * Number.isSafeInteger() : 전달된 값이 안전한 정수(safe integer)인지 아닌지를 검사
+ **/
+
+/**
+ * Number.prototype : 모든 Number 인스턴스는 Number.prototype으로부터 메소드와 프로퍼티를 상속
+ * 1. Number.prototype.toExponential()
+ * 2. Number.prototype.toFixed()
+ * 3. Number.prototype.toPrecision()
+ * 4. Number.prototype.toString()
+ * 5. Number.prototype.valueOf()
+ **/
+
+/**
+ * toExponential() : Number 인스턴스의 값을 지수 표기법으로 변환한 후, 그 값을 문자열로 반환
+ * 이때 전달받은 값은 지수 표기법에서 소수 부분의 자릿수로 사용
+ * numObj.toExponential([소수부분의자릿수])
+ **/
+
+var num = 12.3456;       // Number 인스턴스를 생성함.
+num.toExponential();     // 1.23456e+1
+num.toExponential(2);    // 1.23e+1
+num.toExponential(4);    // 1.2346e+1
+12.3456.toExponential(); // 1.23456e+1
+
+/**
+ * toFixed() : Number 인스턴스의 소수 부분 자릿수를 전달받은 값으로 고정한 후, 그 값을 문자열로 반환
+ * numObj.toFixed([소수부분의자릿수])
+ **/
+
+var num = 3.14159265;  // Number 인스턴스를 생성함.
+num.toFixed();         // 3
+num.toFixed(2);        // 3.14
+num.toFixed(4);        // 3.1416
+3.14159265.toFixed(6); // 3.141593
+
+/**
+ * toPrecision() : Number 인스턴스의 가수와 소수 부분을 합친 자릿수를 전달받은 값으로 고정한 후, 그 값을 문자열로 반환
+ * numObj.toPrecision([전체자릿수])
+ **/
+var num = 3.14159265;      // Number 인스턴스를 생성함.
+num.toPrecision();         // 3.14159265
+num.toPrecision(2);        // 3.1
+num.toPrecision(4);        // 3.142
+3.14159265.toPrecision(6); // 3.14159
+
+/**
+ * toString() : Number 인스턴스의 값을 문자열로 반환
+ * 전달받은 값에 해당하는 진법으로 우선 값을 변환한 후, 그 값을 문자열로 반환
+ * numObj.toString([진법])
+ * 숫자 리터럴에 toString() 메소드를 사용할 때에는 반드시 괄호(())를 사용하여 숫자 리터럴을 감싸야 함.
+ * 그렇지 않으면 자바스크립트는 SyntaxError를 발생한 후, 프로그램을 중지
+ **/
+var num = 255;       // Number 인스턴스를 생성함.
+num.toString();      // 255
+(255).toString();    // 255
+(3.14).toString();   // 3.14
+num.toString(2);     // 11111111
+(100).toString(16);  // 64
+(-0xff).toString(2); // -11111111
+
+/**
+ * valueOf() : Number 인스턴스가 가지고 있는 값을 반환
+ * numObj.valueOf()
+ **/
+var numObj = new Number(123); // 123의 값을 가지는 Number 인스턴스를 생성함.
+typeof numObj;                // object
+var num = numObj.valueOf();
+num;                          // 123
+typeof num;                   // number
+
 /****************************************************************************************************************************************************/
+
 /****************************************************************************************************************************************************/
 /**
+ * Math 객체
+ * Math 객체
+ * Math 객체는 수학에서 자주 사용하는 상수와 함수들을 미리 구현해 놓은 자바스크립트 표준 내장 객체입니다.
  *
+ *
+ *
+ * Math 객체는 다른 전역 객체와는 달리 생성자(constructor)가 존재하지 않습니다.
+ *
+ * 따라서 따로 인스턴스를 생성하지 않아도 Math 객체의 모든 메소드나 프로퍼티를 바로 사용할 수 있습니다.
+ *
+ * Math 메소드
+ * 자바스크립트는 웹 페이지에서 수학적 작업을 손쉽게 할 수 있도록 다양한 Math 메소드를 제공하고 있습니다.
+ *
+ * 가장 많이 사용되는 대표적인 Math 메소드는 다음과 같습니다.
+ *
+ *
+ *
+ * 1. Math.min()
+ *
+ * 2. Math.max()
+ *
+ * 3. Math.random()
+ *
+ * 4. Math.round()
+ *
+ * 5. Math.floor()
+ *
+ * 6. Math.ceil()
+ *
+ * 7. Math.sin()
+ *
+ *
+ *
+ * 대부분의 Math 메소드는 웹 브라우저마다 다른 결괏값을 얻을 가능성이 높습니다.
+ *
+ * 심지어 같은 자바스크립트 인터프리터라도 운영체제가 다르면 다른 결괏값을 반환할 수 있습니다.
+ *
+ * 따라서 아주 정확한 결괏값이 필요한 작업에는 Math 메소드는 사용하지 않는 것이 좋습니다.
+ *
+ * Math.min() 메소드
+ * Math.min() 메소드는 인수로 전달받은 값 중에서 가장 작은 수를 반환
+ *
+ * 인수가 전달되지 않으면 Infinity를 반환하며, 인수 중에 비교할 수 없는 값이 포함되어 있으면 NaN을 반환
+ *
+ * 예제
+ * Math.min();                              // Infinity
+ *
+ * Math.min(1, 10, -100, -10, 1000, 0);     // -100
+ *
+ * Math.min(1, 10, -100, -10, "-1000", 0);  // -1000
+ *
+ * Math.min(1, 10, -100, -10, "문자열", 0); // NaN
+ *
+ * 
+ *
+ * Math.max() 메소드
+ * Math.max() 메소드는 인수로 전달받은 값 중에서 가장 큰 수를 반환
+ *
+ * 인수가 전달되지 않으면 -Infinity를 반환하며, 인수 중에 비교할 수 없는 값이 포함되어 있으면 NaN을 반환
+ *
+ * 예제
+ * Math.max();                              // -Infinity
+ *
+ * Math.max(1, 10, -100, -10, 100, 0);      // 100
+ *
+ * Math.max(1, 10, -100, -10, "1000", 0);   // 1000
+ *
+ * Math.max(1, 10, -100, -10, "문자열", 0); // NaN
+ *
+ * 
+ *
+ *
+ * Math.random() 메소드
+ * Math.random() 메소드는 0보다 크거나 같고 1보다 작은 무작위 숫자(random number)를 반환
+ *
+ * 예제
+ * var min = 10, max = 20;
+ *
+ * Math.random();                     // [0, 1)
+ *
+ * Math.random() * (max - min) + min; // [min, max)
+ *
+ * 
+ *
+ *
+ *
+ *
+ * 위의 예제에서 사용된 '['기호는 '크거나 같은'을 나타내며, ']'기호는 '작거나 같은'을 나타내는 기호입니다.
+ * 또한, '('기호는 '보다 큰'을 나타내며, ')'기호는 '보다 작은'을 나타내는 기호입니다.
+ * Math.round() 메소드
+ * Math.round() 메소드는 인수로 전달받은 값을 소수점 첫 번째 자리에서 반올림하여 그 결괏값을 반환
+ *
+ * 예제
+ * Math.round(10.49);  // 10
+ *
+ * Math.round(10.5);   // 11
+ *
+ * Math.round(-10.5);  // -10
+ *
+ * Math.round(-10.51); // -11
+ *
+ * 
+ *
+ *
+ * Math.floor() 메소드
+ * Math.floor() 메소드는 인수로 전달받은 값과 같거나 작은 수 중에서 가장 큰 정수를 반환
+ *
+ * 예제
+ * Math.floor(10.95);  // 10
+ *
+ * Math.floor(11.01);  // 11
+ *
+ * Math.floor(-10.95); // -11
+ *
+ * Math.floor(-11.01); // -12
+ *
+ * 
+ *
+ *
+ * Math.ceil() 메소드
+ * Math.ceil() 메소드는 인수로 전달받은 값과 같거나 큰 수 중에서 가장 작은 정수를 반환
+ *
+ * 예제
+ * Math.ceil(10.95);  // 11
+ *
+ * Math.ceil(11.01);  // 12
+ *
+ * Math.ceil(11);     // 11
+ *
+ * Math.ceil(-10.95); // -10
+ *
+ * Math.ceil(-11.01); // -11
+ *
+ * 
+ *
+ * Math.sin() 메소드
+ * Math.sin() 메소드는 인수로 전달받은 값의 사인(sine) 함숫값을 반환
+ *
+ * 예제
+ *
+ *
+ * Math.sin(0);           // 0
+ *
+ * Math.sin(Math.PI / 2); // 1
+ *
+ *
+ *
+ * 
+ *
+ *
+ *
+ *
+ * 자바스크립트에서 제공하는 삼각 함수에 관한 모든 메소드는 각도의 단위로 라디안(radian)을 사용합니다.
+ *
+ * 이때 라디안 단위와 60분법 단위를 서로 변환하기 위해서는 다음과 같은 공식을 사용합니다.
+ *
+ * 문법
+ * 라디안값 = 60분법값 * (Math.PI / 180)
+ *
+ *
+ *
+ * Math.PI는 수학에서 사용하는 파이(π)값을 나타내는 자바스크립트 상수입니다.
+ * 따라서 대략적인 값으로 3.145159를 나타냅니다.
+ * 자바스크립트 Math 메소드
+ * 메소드    설명
+ * Math.min(x, y, ...)    인수로 전달받은 값 중에서 가장 작은 수를 반환함.
+ * Math.max(x, y, ...)    인수로 전달받은 값 중에서 가장 큰 수를 반환함.
+ * Math.random()    0보다 크거나 같고 1보다 작은 랜덤 숫자(random number)를 반환함.
+ * Math.round(x)    x를 소수점 첫 번째 자리에서 반올림하여 그 결과를 반환함.
+ * Math.floor(x)    x와 같거나 작은 수 중에서 가장 큰 정수를 반환함.
+ * Math.ceil(x)    x와 같거나 큰 수 중에서 가장 작은 정수를 반환함.
+ * Math.abs(x)    x의 절댓값을 반환함.
+ * Math.cbrt(x)    x의 세제곱근을 반환함.
+ * Math.sqrt(x)    x의 제곱근을 반환함.
+ * Math.clz32(x)
+ * x을 32비트 이진수로 변환한 후, 0이 아닌 비트의 개수를 반환함.
+ *
+ * Math.exp(x)    ex 의 값을 반환함. (e : 오일러의 수)
+ * Math.expm1(x)    1 - ex 의 값을 반환함.
+ * Math.fround(x)    x와 가장 근접한 32비트 부동 소수점 수(single precision float)를 반환함.
+ * Math.hypot(x, y, ...)    인수로 전달받은 값들을 각각 제곱한 후 더한 총합의 제곱근을 반환함.
+ * Math.imul(x, y)    인수로 전달받은 두 값의 32비트 곱셈의 결과를 반환함.
+ * Math.log(x)    x의 자연로그 값을 반환함. (ln x)
+ * Math.log1p(x)    ln(1 + x)의 값을 반환함.
+ * Math.log10(x)    x의 10을 밑으로 가지는 로그 값을 반환함.
+ * Math.log2(x)    x의 2를 밑으로 가지는 로그 값을 반환함.
+ * Math.pow(x, y)    x의 y승을 반환함.
+ * Math.sign(x)    x의 부호 값을 반환함.
+ * Math.trunc(x)    x의 모든 소수 부분을 삭제하고 정수 부분만을 반환함.
+ * Math.sin(x), Math.cos(x), Math.tan(x),Math.asin(x), Math.acos(x), Math.atan(x), Math.asinh(x), Math.acosh(x), Math.atanh(x), Math.atan2(x)
+ *
+ * x의 해당 삼각 함숫값을 반환함.
+ * 자바스크립트 Math 프로퍼티
+ * 자바스크립트는 수학에서 사용하는 다양한 상수들을 Math 프로퍼티를 이용해 제공하고 있습니다.
+ *
+ * 프로퍼티    설명    대략값
+ * Math.E    오일러의 수(Euler's constant)라고 불리며, 자연로그(natural logarithms)의 밑(base) 값    2.718
+ * Math.LN2    2의 자연로그 값    0.693
+ * Math.LN10    10의 자연로그 값    2.303
+ * Math.LOG2E    오일러 수(e)의 밑 값이 2인 로그 값    1.443
+ * Math.LOG10E    오일러 수(e)의 밑 값이 10인 로그 값    0.434
+ * Math.PI    원의 원주를 지름으로 나눈 비율(원주율) 값    3.14159
+ * Math.SQRT1_2    2의 제곱근의 역수 값    0.707
+ * Math.SQRT2    2의 제곱근 값    1.414
  *
  **/
 /****************************************************************************************************************************************************/
