@@ -102,8 +102,8 @@ var fourthNum = 10e-6; // 0.00001
  * 큰따옴표는 작은따옴표로 둘러싸인 문자열에만 포함될 수 있으며, 작은따옴표는 큰따옴표로 둘러싸인 문자열에만 포함 가능
  * 문자열을 더하여 숫자를 문자열로 자동 변환하여, 두 문자열을 연결하는 연산을 수행
  **/
-var firstStr = "이것도 문자열입니다.";      // 큰따옴표를 사용한 문자열
-var secondStr = '이것도 문자열입니다.';     // 작은따옴표를 사용한 문자열
+var firstStr = "이것도 문자열";      // 큰따옴표를 사용한 문자열
+var secondStr = '이것도 문자열';     // 작은따옴표를 사용한 문자열
 var thirdStr = "나의 이름은 '홍길동'이야."  // 작은따옴표는 큰따옴표로 둘러싸인 문자열에만 포함될 수 있음.
 var fourthStr = '나의 이름은 "홍길동"이야.' // 큰따옴표는 작은따옴표로 둘러싸인 문자열에만 포함될 수 있음.
 
@@ -149,9 +149,9 @@ typeof null;      // object타입 반환
  * null과 undefined는 동등 연산자(==)와 일치 연산자(===)로 비교할 때 그 결괏값이 다르므로 주의
  * null과 undefined는 타입을 제외하면 같은 의미지만, 타입이 다르므로 일치하지는 않습니다.
  **/
-var num;            // 초기화하지 않았으므로 undefined 값을 반환함.
+var num;            // 초기화하지 않았으므로 undefined 값을 반환
 var str = null;     // object 타입의 null 값
-typeof secondNum;   // 정의되지 않은 변수에 접근하면 undefined 값을 반환함.
+typeof secondNum;   // 정의되지 않은 변수에 접근하면 undefined 값을 반환
 null ==  undefined; // true
 null === undefined; // false
 
@@ -163,7 +163,7 @@ null === undefined; // false
 var dog = { name: "해피", age: 3 }; // 객체의 생성
 
 // 객체의 프로퍼티 참조
-document.getElementById("result").innerHTML = "강아지의 이름은 " + dog.name + "이고, 나이는 " + dog.age + "살 입니다.";
+document.getElementById("result").innerHTML = "강아지의 이름은 " + dog.name + "이고, 나이는 " + dog.age + "살 ";
 /****************************************************************************************************************************************************/
 /**
  * 타입 변환(type conversion): 자바스크립트는 타입 검사가 매우 유연한 언어
@@ -216,28 +216,28 @@ false.toString(); // 문자열 "false"
  * 자바스크립트에서 날짜(Date) 객체는 문자열과 숫자로 모두 변환할 수 있는 유일한 타입
  * 날짜(Date) 객체는 날짜를 숫자로 변환하는 메소드를 별도로 제공
  *
- * 1. getDate(): 날짜 중 일자를 숫자로 반환함. (1 ~ 31)
- * 2. getDay() : 날짜 중 요일을 숫자로 반환함. (일요일 : 0 ~ 토요일 : 6)
- * 3. getFullYear() : 날짜 중 연도를 4자리 숫자로 반환함. (yyyy년)
- * 4. getMonth() : 날짜 중 월을 숫자로 반환함. (1월 : 0 ~ 12월 : 11)
- * 5. getTime() : 1970년 1월 1일부터 현재까지의 시간을 밀리초(millisecond) 단위의 숫자로 반환함.
- * 6. getHours() : 시간 중 시를 숫자로 반환함. (0 ~ 23)
- * 7. getMinutes() : 시간 중 분을 숫자로 반환함. (0 ~ 59)
- * 8. getSeconds() : 시간 중 초를 숫자로 반환함. (0 ~ 59)
- * 9. getMilliseconds() : 시간 중 초를 밀리초(millisecond) 단위의 숫자로 반환함. (0 ~ 999)
+ * 1. getDate(): 날짜 중 일자를 숫자로 반환 (1 ~ 31)
+ * 2. getDay() : 날짜 중 요일을 숫자로 반환 (일요일 : 0 ~ 토요일 : 6)
+ * 3. getFullYear() : 날짜 중 연도를 4자리 숫자로 반환 (yyyy년)
+ * 4. getMonth() : 날짜 중 월을 숫자로 반환 (1월 : 0 ~ 12월 : 11)
+ * 5. getTime() : 1970년 1월 1일부터 현재까지의 시간을 밀리초(millisecond) 단위의 숫자로 반환
+ * 6. getHours() : 시간 중 시를 숫자로 반환 (0 ~ 23)
+ * 7. getMinutes() : 시간 중 분을 숫자로 반환 (0 ~ 59)
+ * 8. getSeconds() : 시간 중 초를 숫자로 반환 (0 ~ 59)
+ * 9. getMilliseconds() : 시간 중 초를 밀리초(millisecond) 단위의 숫자로 반환 (0 ~ 999)
  **/
 String(Date());        // Mon May 16 2016 19:35:25 GMT+0900
 Date().toString();     // Mon May 16 2016 19:35:25 GMT+0900
 var date = new Date(); // Date 객체 생성
 date.getFullYear();    // 2016
-date.getTime();        // 1463394925632 -> 1970년 1월 1일부터 현재까지의 시간을 밀리초 단위의 숫자로 반환함.
+date.getTime();        // 1463394925632 -> 1970년 1월 1일부터 현재까지의 시간을 밀리초 단위의 숫자로 반환
 
 /**
  * 문자열을 숫자로 변환
  * 문자열을 숫자로 변환하는 가장 간단한 방법은 Number() 함수를 사용
  * 자바스크립트는 문자열을 숫자로 변환해 주는 두 개의 전역 함수를 별도로 제공
- * 1. parseInt(): 문자열을 파싱하여 특정 진법의 정수를 반환함.
- * 2. parseFloat() : 문자열을 파싱하여 부동 소수점 수를 반환함.
+ * 1. parseInt(): 문자열을 파싱하여 특정 진법의 정수를 반환
+ * 2. parseFloat() : 문자열을 파싱하여 부동 소수점 수를 반환
  **/
 
 /**
@@ -302,7 +302,7 @@ num = 10; // 10
  var z = 12 + "월"                 // 피연산자가 하나라도 문자열이면 문자열 결합 연산을 수행함.
 
 /**
- * 삼항 연산자(ternary operator) : 피연산자를 세 개나 가지는 조건 연산자입니다.
+ * 삼항 연산자(ternary operator) : 피연산자를 세 개나 가지는 조건 연산자
  *
  * 표현식 ? 반환값1 : 반환값2
  * 물음표(?) 앞의 표현식에 따라 결괏값이 참이면 반환값1을 반환하고, 결괏값이 거짓이면 반환값2를 반환
@@ -310,15 +310,15 @@ num = 10; // 10
  **/
 
 var x = 3, y = 5;
-var result = (x > y) ? x : y   // x가 더 크면 x를, 그렇지 않으면 y를 반환함.
-document.write("둘 중에 더 큰 수는 " + result + "입니다.");
+var result = (x > y) ? x : y   // x가 더 크면 x를, 그렇지 않으면 y를 반환
+document.write("둘 중에 더 큰 수는 " + result + "");
 
  /**
   * 쉼표 연산자 : for 문에서 사용하면, 루프마다 여러 변수를 동시에 갱신
   **/
   // 루프마다 i의 값은 1씩 증가하고, 동시에 j의 값은 1씩 감소함.
 for (var i = 0, j = 9; i <= j; i++, j--) {
-    document.write("i의 값은 " + i + "이고, j의 값은 " + j + "입니다.<br>");
+    document.write("i의 값은 " + i + "이고, j의 값은 " + j + "<br>");
 }
 
 
@@ -362,7 +362,7 @@ typeof null       // object
  * 피연산자가 특정 객체의 인스턴스이면 참(true)을 반환하고, 특정 객체의 인스턴스가 아니면 거짓(false)을 반환
  * 이 연산자는 두 개의 피연산자를 가지는 이항 연산자이며, 피연산자들의 결합 방향은 왼쪽에서 오른쪽
  **/
-var str = new String("이것은 문자열입니다.");
+var str = new String("이것은 문자열");
 str instanceof Object;  // true
 str instanceof String;  // true
 str instanceof Array;   // false
@@ -375,7 +375,7 @@ str instanceof Boolean; // false
  * 예제처럼 void 연산자는 정의되지 않은 원시 타입의 값을 얻기 위해 void(0)과 같은 형태로 종종 사용
  **/
 
-<a href="javascript:void(0)">이 링크는 동작하지 않습니다.</a>
+<a href="javascript:void(0)">이 링크는 동작 X</a>
 <a href="javascript:void(document.body.style.backgroundColor='yellow')">
     이 링크도 동작하지 않지만, HTML 문서의 배경색을 바꿔줍니다.
 </a>
@@ -513,7 +513,7 @@ switch (typeof xx) {
  * 따라서 case 절과 default 절은 반드시 break 키워드를 포함하고 있어야 정확하게 동작
  **/
 
-var day = new Date().getDay(); // 오늘의 요일을 반환함. (일요일: 0 ~ 토요일: 6)
+var day = new Date().getDay(); // 오늘의 요일을 반환 (일요일: 0 ~ 토요일: 6)
 switch (day) {
     case 1: // 월요일인 경우
     case 2: // 화요일인 경우
@@ -586,7 +586,7 @@ do { // 변수 j의 초깃값은 1이기 때문에 이 do / while 문은 단 한
 } while (j > 3);
 
 /**
- * for 문 : 자체적으로 초기식, 표현식, 증감식을 모두 포함하고 있는 반복문입니다.
+ * for 문 : 자체적으로 초기식, 표현식, 증감식을 모두 포함하고 있는 반복문
  * 문법
  * for (초기식; 표현식; 증감식) {
     표현식의 결과가 참인 동안 반복적으로 실행하고자 하는 실행문;
@@ -628,7 +628,7 @@ for (var i in obj) {
 }
 
 /**
- * for / of 문 : 반복할 수 있는 객체(iterable objects)를 순회할 수 있도록 해주는 반복문입니다.
+ * for / of 문 : 반복할 수 있는 객체(iterable objects)를 순회할 수 있도록 해주는 반복문
  * 자바스크립트에서 반복할 수 있는 객체에는 Array, Map, Set, arguments
  *
  * 문법
@@ -636,7 +636,7 @@ for (var i in obj) {
  *      객체의 모든 열거할 수 있는 프로퍼티의 개수만큼 반복적으로 실행하고자 하는 실행문;
  * }
  *
- * for / of 문은 익스플로러에서 지원하지 않습니다.
+ * for / of 문은 익스플로러에서 지원 X
 **/
 var arr = [3, 4, 5];
 for (var i = 0; i < arr.length; i++) { // 배열 arr의 모든 요소의 인덱스(index)를 출력함.
@@ -710,7 +710,7 @@ var topic = "자바스크립트";
 
 for (var i = 0; i < lectures.length; i++) {
     if (lectures[i] == topic) {
-        document.write(topic + " 과목은 " + (i + 1) + "번째 과목입니다.");
+        document.write(topic + " 과목은 " + (i + 1) + "번째 과목");
         break; // 원하는 값을 찾은 후에는 더 이상 for 문을 반복하지 않고 빠져나감.
      }
  }
@@ -761,11 +761,11 @@ arr[1] = 10;      // 배열의 두 번째 요소에 숫자 10을 대입함. 배�
 arr[2] = element; // 배열의 세 번째 요소에 변수 element의 값을 대입함. 배열의 길이는 2에서 3으로 늘어남.
 
 document.write("배열 arr의 요소에는 [" + arr + "]가 있습니다.<br>"); // 배열의 요소를 모두 출력함.
-document.write("배열 arr의 길이는 " + arr.length + "입니다.<br>");   // 배열의 길이를 출력함.
+document.write("배열 arr의 길이는 " + arr.length + "<br>");   // 배열의 길이를 출력함.
 
 delete arr[2];    // 배열의 세 번째 요소를 삭제함. 하지만 배열의 길이는 변하지 않음.
 document.write("배열 arr의 요소에는 [" + arr + "]가 있습니다.<br>"); // 배열의 요소를 모두 출력함.
-document.write("배열 arr의 길이는 " + arr.length + "입니다.");       // 배열의 길이를 출력함.
+document.write("배열 arr의 길이는 " + arr.length + "");       // 배열의 길이를 출력함.
 
 /**
  * 위의 예제에서 세 번째 실행문은 배열의 현재 길이보다 더 큰 인덱스에 요소를 저장
@@ -834,7 +834,7 @@ var arr = new Array(); // 빈 배열 객체를 생성함.
 arr[99] = "JavaScript" // 배열 arr의 100번째 위치에 문자열을 삽입함.
 // 100번째 요소를 삽입했기 때문에 배열의 길이는 100으로 늘어남.
 
-document.write("배열의 길이는 " + arr.length + "입니다.");
+document.write("배열의 길이는 " + arr.length + "");
 
 /**
  * 다차원 배열 : 배열 요소가 또 다른 배열인 배열
@@ -889,7 +889,7 @@ str[0] = "";          // 자바스크립트의 문자열은 읽기 전용이므�
 
 /**
  * 자바스크립트에서 배열 여부 확인
- * 자바스크립트에서는 배열이라는 타입(type)을 별도로 제공하지 않습니다.
+ * 자바스크립트에서는 배열이라는 타입(type)을 별도로 제공 X
  * 자바스크립트 배열은 객체(object) 타입이 되며, typeof 연산자를 사용하면 'object'를 반환
  *
  * 배열여부 확인 방법
@@ -947,7 +947,7 @@ document.write(addNum(2, 3));
  *     함수가 호출되었을 때 실행하고자 하는 실행문;
  * }
  *
- * 함수 이름(function name)은 함수를 구분하는 식별자(identifier)입니다.
+ * 함수 이름(function name)은 함수를 구분하는 식별자(identifier)
  * 매개변수(parameter)란 함수를 호출할 때 인수(argument)로 전달된 값을 함수 내부에서 사용할 수 있게 해주는 변수
 **/
 // addNum라는 이름의 함수를 정의함.
@@ -971,7 +971,7 @@ addNum(2, 3);              // addNum() 함수에 인수로 2와 3을 전달하�
  **/
 
 function multiNum(x, y) {
-    return xy;         // x와 y를 곱한 결과를 반환함.
+    return xy;         // x와 y를 곱한 결과를 반환
 }
 
 var num = multiNum(3, 4); // multiNum() 함수가 호출된 후, 그 반환값이 변수 num에 저장됨.
@@ -1026,11 +1026,11 @@ document.write(sqrNum(4));       // 변수 sqrNum를 함수처럼 호출함.
 function localNum() {
     var num = 10; // 지역 변수 num에 숫자 10을 대입함.
 
-    document.write("함수 내부에서 변수 num의 타입은 " + typeof num + "입니다.<br>"); // number
+    document.write("함수 내부에서 변수 num의 타입은 " + typeof num + "<br>"); // number
 }
 
 localNum();       // 함수 localNum()을 호출함.
-document.write("함수의 호출이 끝난 뒤 변수 num의 타입은 " + typeof num + "입니다."); // undefined
+document.write("함수의 호출이 끝난 뒤 변수 num의 타입은 " + typeof num + ""); // undefined
 
 /** 전역 변수(global variable) : 함수의 외부에서 선언된 변수를 가리킵니다.
  * 이러한 전역 변수는 프로그램의 어느 영역에서나 접근할 수 있으며, 웹 페이지가 닫혀야만 메모리에서 사라짐
@@ -1042,21 +1042,21 @@ document.write("함수의 호출이 끝난 뒤 변수 num의 타입은 " + typeo
 
 var num = 10; // 전역 변수 num을 선언함.
 function globalNum1() {
-    document.write("함수 내부에서 변수 num의 값은 " + num + "입니다.<br>"); // 10
+    document.write("함수 내부에서 변수 num의 값은 " + num + "<br>"); // 10
 
     num = 20; // 전역 변수 num의 값을 함수 내부에서 변경함.
 }
 
 globalNum1();  // 함수 globalNum()을 호출함.
-document.write("함수의 호출이 끝난 뒤 변수 num의 값은 " + num + "입니다."); // 20
+document.write("함수의 호출이 끝난 뒤 변수 num의 값은 " + num + ""); // 20
 
 function globalNum2() {
     num = 10; // var 키워드를 사용하지 않고 변수 num을 선언함.
-    document.write("함수 내부에서 변수 num의 값은 " + num + "입니다.<br>"); // 10
+    document.write("함수 내부에서 변수 num의 값은 " + num + "<br>"); // 10
 }
 
 globalNum2();  // 함수 globalNum()을 호출함.
-document.write("함수의 호출이 끝난 뒤 변수 num의 값은 " + num + "입니다."); // 10
+document.write("함수의 호출이 끝난 뒤 변수 num의 값은 " + num + ""); // 10
 
 
 var num = 10; // 전역 변수 num을 선언함.
@@ -1064,11 +1064,11 @@ function globalNum3() {
 
     var num = 20; // 같은 이름의 지역 변수 num을 선언함.
 
-    document.write("함수 내부에서 변수 num의 값은 " + num + "입니다.<br>"); // 20
+    document.write("함수 내부에서 변수 num의 값은 " + num + "<br>"); // 20
 
 }
 globalNum3(); // 함수 globalNum()을 호출함.
-document.write("함수의 호출이 끝난 뒤 변수 num의 값은 " + num + "입니다."); // 10
+document.write("함수의 호출이 끝난 뒤 변수 num의 값은 " + num + ""); // 10
 
 
 var num = 10; // 전역 변수 num을 선언함.
@@ -1076,8 +1076,8 @@ var num = 10; // 전역 변수 num을 선언함.
 function globalNum() {
 
     var num = 20; // 같은 이름의 지역 변수 num을 선언함.
-    document.write("함수 내부에서 지역 변수 num의 값은 " + num + "입니다.<br>");        //20
-    document.write("함수 내부에서 전역 변수 num의 값은 " + window.num + "입니다.<br>"); //10
+    document.write("함수 내부에서 지역 변수 num의 값은 " + num + "<br>");        //20
+    document.write("함수 내부에서 전역 변수 num의 값은 " + window.num + "<br>"); //10
 }
 
 globalNum(); // 함수 globalNum()을 호출함.
@@ -1120,9 +1120,9 @@ document.write(parentFunc());
 var globalNum = 10;     // globalNum을 전역 변수로 선언
 
 function printNum() {
-    document.write("지역 변수 globalNum 선언 전의 globalNum의 값은 " + globalNum + "입니다.<br>"); // ①
+    document.write("지역 변수 globalNum 선언 전의 globalNum의 값은 " + globalNum + "<br>"); // ①
     var globalNum = 20; // globalNum을 지역 변수로 선언함 ②
-    document.write("지역 변수 globalNum 선언 후의 globalNum의 값은 " + globalNum + "입니다.<br>");
+    document.write("지역 변수 globalNum 선언 후의 globalNum의 값은 " + globalNum + "<br>");
 }
 printNum();
 
@@ -1135,9 +1135,9 @@ var globalNum = 10;
 
 function printNum() {
     var globalNum; // 함수 호이스팅에 의해 변수의 선언 부분이 함수의 맨 처음 부분으로 이동
-    document.write("지역 변수 globalNum 선언 전의 globalNum의 값은 " + globalNum + "입니다.<br>"); //undefined
+    document.write("지역 변수 globalNum 선언 전의 globalNum의 값은 " + globalNum + "<br>"); //undefined
     globalNum = 20;
-    document.write("지역 변수 globalNum 선언 후의 globalNum의 값은 " + globalNum + "입니다.<br>");
+    document.write("지역 변수 globalNum 선언 후의 globalNum의 값은 " + globalNum + "<br>");
 }
 printNum();
 
@@ -1287,7 +1287,7 @@ sub(10, 1, 5, 8); // 10 - 1 - 5 - 8 = -4
  **/
 
 /**
- * eval() : 문자열로 표현된 자바스크립트 코드를 실행하는 함수입니다.
+ * eval() : 문자열로 표현된 자바스크립트 코드를 실행하는 함수
  *
  * 문법
  * eval("문자열");
@@ -1433,7 +1433,7 @@ Number("12 34 56");   // NaN
 Number("123 초콜릿"); // NaN
 Number(true);         // 1
 Number(false);        // 0
-Number(new Date());   // 현재 날짜에 해당하는 숫자를 반환함.
+Number(new Date());   // 현재 날짜에 해당하는 숫자를 반환
 Number(null);         // 0
 
 /**
@@ -1445,7 +1445,7 @@ Number(null);         // 0
 String(123);        // 123
 String(123.456);    // 123.456
 String("123");      // 123
-String(new Date());       // 현재 날짜에 해당하는 문자열을 반환함.
+String(new Date());       // 현재 날짜에 해당하는 문자열을 반환
 String(null);       // null
 String(true);       // true
 String(false);      // false
@@ -1500,7 +1500,7 @@ var person = {
     name: "홍길동",      // 이름 프로퍼티를 정의함.
     birthday: "030219",  // 생년월일 프로퍼티를 정의함.
     pId: "1234567",      // 개인 id 프로퍼티를 정의함.
-    fullId: function() { // 생년월일과 개인 id를 합쳐서 주민등록번호를 반환함.
+    fullId: function() { // 생년월일과 개인 id를 합쳐서 주민등록번호를 반환
         return this.birthday + this.pId;
     }
 };
@@ -1537,7 +1537,7 @@ person.fullId;  // function () { return this.birthday + this.pId; } <- 이 자�
  * 인스턴스(instance) : 위와 같은 방법으로 생성되어 메모리에 대입된 객체
  *
  * 리터럴 표기를 이용한 객체의 생성
- * 자바스크립트에서 객체를 생성하는 가장 쉬운 방법은 리터럴 표기(literal notation)를 이용하는 방법입니다.
+ * 자바스크립트에서 객체를 생성하는 가장 쉬운 방법은 리터럴 표기(literal notation)를 이용하는 방법
  *
  * 문법
    var 객체이름 = {
@@ -1554,7 +1554,7 @@ var kitty = {
     age: 1,
     weight: 0.1
 };
-document.write("우리 집 새끼 고양이의 이름은 " + kitty.name + "이고, 종은 " + kitty.family + "입니다.");
+document.write("우리 집 새끼 고양이의 이름은 " + kitty.name + "이고, 종은 " + kitty.family + "");
 
 /**
  * 생성자를 이용한 객체의 생성 : new 연산자를 사용하여 객체를 생성하고 초기화 가능
@@ -1564,7 +1564,7 @@ document.write("우리 집 새끼 고양이의 이름은 " + kitty.name + "이�
  **/
 
 var day = new Date(); // new 연산자를 사용하여 Date 타입의 객체를 생성함.
-document.write("올해는 " + day.getFullYear() + "년입니다.");
+document.write("올해는 " + day.getFullYear() + "년");
 
 /**
  * Object.create() 메소드를 이용한 객체의 생성
@@ -1602,9 +1602,9 @@ Object.getPrototypeOf(obj); // 객체의 프로토타입을 반환해 줌.
  * 프로토타입 체인(prototype chain) : 자바스크립트에서는 객체 이니셜라이저를 사용해 생성된 같은 타입의 객체들은 모두 같은 프로토타입
  * 또한, new 연산자를 사용해 생성한 객체는 생성자의 프로토타입을 자신의 프로토타입으로 상속
  **/
-var obj = new Object(); // 이 객체의 프로토타입은 Object.prototype입니다.
-var arr = new Array();  // 이 객체의 프로토타입은 Array.prototype입니다.
-var date = new Date();  // 이 객체의 프로토타입은 Date.prototype입니다.
+var obj = new Object(); // 이 객체의 프로토타입은 Object.prototype
+var arr = new Array();  // 이 객체의 프로토타입은 Array.prototype
+var date = new Date();  // 이 객체의 프로토타입은 Date.prototype
 
 /**
  * 하지만 Object.prototype 객체는 어떠한 프로토타입도 가지지 않으며, 아무런 프로퍼티도 상속받지 않음
@@ -1628,7 +1628,7 @@ function Dog(color, name, age) { // 개에 관한 생성자 함수를 작성함.
 
 var myDog = new Dog("흰색", "마루", 1); // 이 객체는 Dog라는 프로토타입을 가짐.
 
-document.write("우리 집 강아지는 " + myDog.name + "라는 이름의 " + myDog.color + " 털이 매력적인 강아지입니다.");
+document.write("우리 집 강아지는 " + myDog.name + "라는 이름의 " + myDog.color + " 털이 매력적인 강아지");
 
 /**
  * 객체 생성자 함수를 작성할 때에는 관례상 이름의 첫 문자만을 대문자로 작성
@@ -1647,7 +1647,7 @@ myDog.family = "시베리안 허스키"; // 품종에 관한 프로퍼티를 추
 myDog.breed = function() {        // 털색을 포함한 품종을 반환해 주는 메소드를 추가함.
     return this.color + " " + this.family;
 }
-document.write("우리 집 강아지는 " + myDog.breed() + "입니다.");
+document.write("우리 집 강아지는 " + myDog.breed() + "");
 
 /**
  * 위의 예제에서 새롭게 추가된 weight 프로퍼티와 breed() 메소드는 오직 myDog 인스턴스에만 추가
@@ -1668,7 +1668,7 @@ function Dog(color, name, age) {
 
 var myDog = new Dog("흰색", "마루", 1);
 var hisDog = new Dog("갈색", "콩이", 3);
-document.write("우리 집 강아지는 " + myDog.family + "이고, 친구네 집 강아지도 " + hisDog.family + "입니다.");
+document.write("우리 집 강아지는 " + myDog.family + "이고, 친구네 집 강아지도 " + hisDog.family + "");
 
 /**
  * prototype 프로퍼티 : prototype 프로퍼티를 이용하면 현재 존재하고 있는 프로토타입에 새로운 프로퍼티나 메소드를 손쉽게 추가 가능
@@ -1690,9 +1690,9 @@ Dog.prototype.breed = function() {
 var myDog = new Dog("흰색", "마루", 1);
 var hisDog = new Dog("갈색", "콩이", 3);
 
-document.write("우리 집 강아지는 " + myDog.family + "이고, 친구네 집 강아지도 " + hisDog.family + "입니다.");
-document.write("우리 집 강아지의 품종은 " + myDog.breed() + "입니다.<br>");
-document.write("친구네 집 강아지의 품종은 " + hisDog.breed() + "입니다.");
+document.write("우리 집 강아지는 " + myDog.family + "이고, 친구네 집 강아지도 " + hisDog.family + "");
+document.write("우리 집 강아지의 품종은 " + myDog.breed() + "<br>");
+document.write("친구네 집 강아지의 품종은 " + hisDog.breed() + "");
 
 /**
  * 직접 생성한 프로토타입은 위와 같이 새로운 프로퍼티나 메소드를 마음껏 추가하거나 삭제 가능
@@ -1733,7 +1733,7 @@ function Dog(color, name, age) {
 var myDog = new Dog("흰색", "마루", 1);
 delete myDog.age; // age 프로퍼티를 삭제함.
 // age 프로퍼티가 삭제되었기 때문에 undefined를 출력함.
-document.write("우리집 강아지의 나이는 " + myDog.age + "입니다.");
+document.write("우리집 강아지의 나이는 " + myDog.age + "");
 
 /**
  * 직접 생성한 프로토타입은 위와 같이 새로운 프로퍼티나 메소드를 마음껏 추가하거나 삭제 가능
@@ -1758,14 +1758,14 @@ var myDog = new Dog("흰색", "마루", 1);
 // color 프로퍼티의 enumerable 속성을 false로 설정함.
 
 Object.defineProperty(myDog, 'color', {enumerable : false} );
-// 객체가 가진 고유 프로퍼티 중에서 열거할 수 있는 프로퍼티 이름을 배열에 담아 반환함.
+// 객체가 가진 고유 프로퍼티 중에서 열거할 수 있는 프로퍼티 이름을 배열에 담아 반환
 
 document.write(Object.keys(myDog) + "<br>");       // name, age
-// 객체가 가진 모든 고유 프로퍼티의 이름을 배열에 담아 반환함.
+// 객체가 가진 모든 고유 프로퍼티의 이름을 배열에 담아 반환
 
 document.write(Object.getOwnPropertyNames(myDog)); // color, name, age
 
-Object.defineProperty() //메소드는 ECMAScript 5부터 추가된 객체에 프로퍼티를 추가해주는 메소드입니다.
+Object.defineProperty() //메소드는 ECMAScript 5부터 추가된 객체에 프로퍼티를 추가해주는 메소드
 // 이때 추가하는 프로퍼티의 속성까지도 설정 가능
 
 /**
@@ -1831,7 +1831,7 @@ function Dog(color, name, age, family) {
 var myDog = new Dog("검정색", "곰", 3, "불독");
 myDog.hasOwnProperty("color"); // true
 myDog.hasOwnProperty("breed"); // true
-myDog.hasOwnProperty("class"); // 상속받은 프로퍼티이므로, false를 반환함.
+myDog.hasOwnProperty("class"); // 상속받은 프로퍼티이므로, false를 반환
 
 /**
  * propertyIsEnumerable() : 특정 프로퍼티가 해당 객체에 존재하고, 열거할 수 있는 프로퍼티인지를 검사
@@ -1921,7 +1921,7 @@ document.write(myFunc + 5); // ② : 9
 /**
  * getter와 setter : 접근자 프로퍼티라고 부릅니다.
  * getter : 특정 프로퍼티의 값을 받아오기 위한 메소드
- * setter : 특정 프로퍼티의 값을 설정하기 위한 메소드입니다.
+ * setter : 특정 프로퍼티의 값을 설정하기 위한 메소드
  **/
 
 var gildong = { age: 18 };
@@ -2029,7 +2029,7 @@ num.toString(2);       //  2진법으로 변환 : 100000000
 num.toString(8);       //  8진법으로 변환 : 400
 num.toString(10);      // 10진법으로 변환 : 256
 num.toString(16);      // 16진법으로 변환 : 100
-// 2진수로 변환한 결괏값을 문자열로 반환함.
+// 2진수로 변환한 결괏값을 문자열로 반환
 num.toString(2);       // 100000000
 // 문자열을 숫자로 나눴기 때문에 자동으로 10진수로 변환되어 산술 연산된 결괏값
 (num.toString(2) / 2); // 50000000
@@ -2039,9 +2039,9 @@ num.toString(2);       // 100000000
  * Infinity : 자바스크립트에서는 양의 무한대를 의미하는 Infinity 값과 음의 무한대를 의미하는 -Infinity 값을 사용 가능
  * Infinity 값은 사용자가 임의로 수정할 수 없는 읽기 전용 값이며, 자바스크립트의 어떤 수보다도 큰 수로 취급
  **/
-var x = 10 / 0;         // 숫자를 0으로 나누면 Infinity를 반환함.
-var y = Infinity1000 // Infinity에 어떠한 수를 산술 연산해도 Infinity를 반환함.
-var z = 1 / Infinity    // Infinity의 역수는 0을 반환함.
+var x = 10 / 0;         // 숫자를 0으로 나누면 Infinity를 반환
+var y = Infinity1000 // Infinity에 어떠한 수를 산술 연산해도 Infinity를 반환
+var z = 1 / Infinity    // Infinity의 역수는 0을 반환
 
 x;                      // Infinity
 y;                      // Infinity
@@ -2053,14 +2053,14 @@ z;                      // 0
  * 자바스크립트의 전역 함수 중 하나인 isNaN() 함수를 사용하면, 전달받은 값이 숫자인지 아닌지를 판단
  * 
  * null, undefined, NaN, Infinity에 대한 비교
- * - null은 object 타입이며, 아직 '값'이 정해지지 않은 것을 의미하는 값입니다.
+ * - null은 object 타입이며, 아직 '값'이 정해지지 않은 것을 의미하는 값
  * - undefined는 null과는 달리 하나의 타입이며, '타입'이 정해지지 않은 것을 의미하는 값이기도 합니다.
- * - NaN은 number 타입이며, '숫자가 아님'을 의미하는 숫자입니다.
- * - Infinity는 number 타입이며, '무한대'를 의미하는 숫자입니다.
+ * - NaN은 number 타입이며, '숫자가 아님'을 의미하는 숫자
+ * - Infinity는 number 타입이며, '무한대'를 의미하는 숫자
  **/
 var x = 100 - "10";     // "10"은 자동으로 숫자로 변환되어 계산됨.
-var y = 100 - "문자열"; // "문자열"은 숫자로 변환할 수 없기 때문에 NaN을 반환함.
-var z = 0 / 0;          // 0을 0으로 나눌 수 없기 때문에 NaN을 반환함.
+var y = 100 - "문자열"; // "문자열"은 숫자로 변환할 수 없기 때문에 NaN을 반환
+var z = 0 / 0;          // 0을 0으로 나눌 수 없기 때문에 NaN을 반환
 
 x;                      // 90
 y;                      // NaN
@@ -2071,7 +2071,7 @@ z;                      // NaN
 if(isNaN(x)) { // 전달된 값이 숫자인지 아닌지를 판단
     document.write("변수 x의 값은 숫자가 아닙니다.");
 } else {
-    document.write("변수 x의 값은 숫자입니다.");
+    document.write("변수 x의 값은 숫자");
 }
 
 /**
@@ -2310,210 +2310,47 @@ typeof num;                   // number
 
 /****************************************************************************************************************************************************/
 /**
- * Math 객체
- * Math 객체
- * Math 객체는 수학에서 자주 사용하는 상수와 함수들을 미리 구현해 놓은 자바스크립트 표준 내장 객체입니다.
- *
- *
- *
- * Math 객체는 다른 전역 객체와는 달리 생성자(constructor)가 존재하지 않습니다.
- *
- * 따라서 따로 인스턴스를 생성하지 않아도 Math 객체의 모든 메소드나 프로퍼티를 바로 사용할 수 있습니다.
- *
- * Math 메소드
- * 자바스크립트는 웹 페이지에서 수학적 작업을 손쉽게 할 수 있도록 다양한 Math 메소드를 제공하고 있습니다.
- *
- * 가장 많이 사용되는 대표적인 Math 메소드는 다음과 같습니다.
- *
- *
- *
- * 1. Math.min()
- *
- * 2. Math.max()
- *
- * 3. Math.random()
- *
- * 4. Math.round()
- *
- * 5. Math.floor()
- *
- * 6. Math.ceil()
- *
- * 7. Math.sin()
- *
- *
- *
- * 대부분의 Math 메소드는 웹 브라우저마다 다른 결괏값을 얻을 가능성이 높습니다.
- *
- * 심지어 같은 자바스크립트 인터프리터라도 운영체제가 다르면 다른 결괏값을 반환할 수 있습니다.
- *
- * 따라서 아주 정확한 결괏값이 필요한 작업에는 Math 메소드는 사용하지 않는 것이 좋습니다.
- *
- * Math.min() 메소드
- * Math.min() 메소드는 인수로 전달받은 값 중에서 가장 작은 수를 반환
- *
- * 인수가 전달되지 않으면 Infinity를 반환하며, 인수 중에 비교할 수 없는 값이 포함되어 있으면 NaN을 반환
- *
- * 예제
- * Math.min();                              // Infinity
- *
- * Math.min(1, 10, -100, -10, 1000, 0);     // -100
- *
- * Math.min(1, 10, -100, -10, "-1000", 0);  // -1000
- *
- * Math.min(1, 10, -100, -10, "문자열", 0); // NaN
- *
- * 
- *
- * Math.max() 메소드
- * Math.max() 메소드는 인수로 전달받은 값 중에서 가장 큰 수를 반환
- *
- * 인수가 전달되지 않으면 -Infinity를 반환하며, 인수 중에 비교할 수 없는 값이 포함되어 있으면 NaN을 반환
- *
- * 예제
- * Math.max();                              // -Infinity
- *
- * Math.max(1, 10, -100, -10, 100, 0);      // 100
- *
- * Math.max(1, 10, -100, -10, "1000", 0);   // 1000
- *
- * Math.max(1, 10, -100, -10, "문자열", 0); // NaN
- *
- * 
- *
- *
- * Math.random() 메소드
- * Math.random() 메소드는 0보다 크거나 같고 1보다 작은 무작위 숫자(random number)를 반환
- *
- * 예제
- * var min = 10, max = 20;
- *
- * Math.random();                     // [0, 1)
- *
- * Math.random() * (max - min) + min; // [min, max)
- *
- * 
- *
- *
- *
- *
- * 위의 예제에서 사용된 '['기호는 '크거나 같은'을 나타내며, ']'기호는 '작거나 같은'을 나타내는 기호입니다.
- * 또한, '('기호는 '보다 큰'을 나타내며, ')'기호는 '보다 작은'을 나타내는 기호입니다.
- * Math.round() 메소드
- * Math.round() 메소드는 인수로 전달받은 값을 소수점 첫 번째 자리에서 반올림하여 그 결괏값을 반환
- *
- * 예제
- * Math.round(10.49);  // 10
- *
- * Math.round(10.5);   // 11
- *
- * Math.round(-10.5);  // -10
- *
- * Math.round(-10.51); // -11
- *
- * 
- *
- *
- * Math.floor() 메소드
- * Math.floor() 메소드는 인수로 전달받은 값과 같거나 작은 수 중에서 가장 큰 정수를 반환
- *
- * 예제
- * Math.floor(10.95);  // 10
- *
- * Math.floor(11.01);  // 11
- *
- * Math.floor(-10.95); // -11
- *
- * Math.floor(-11.01); // -12
- *
- * 
- *
- *
- * Math.ceil() 메소드
- * Math.ceil() 메소드는 인수로 전달받은 값과 같거나 큰 수 중에서 가장 작은 정수를 반환
- *
- * 예제
- * Math.ceil(10.95);  // 11
- *
- * Math.ceil(11.01);  // 12
- *
- * Math.ceil(11);     // 11
- *
- * Math.ceil(-10.95); // -10
- *
- * Math.ceil(-11.01); // -11
- *
- * 
- *
- * Math.sin() 메소드
- * Math.sin() 메소드는 인수로 전달받은 값의 사인(sine) 함숫값을 반환
- *
- * 예제
- *
- *
- * Math.sin(0);           // 0
- *
- * Math.sin(Math.PI / 2); // 1
- *
- *
- *
- * 
- *
- *
- *
- *
- * 자바스크립트에서 제공하는 삼각 함수에 관한 모든 메소드는 각도의 단위로 라디안(radian)을 사용합니다.
- *
- * 이때 라디안 단위와 60분법 단위를 서로 변환하기 위해서는 다음과 같은 공식을 사용합니다.
- *
- * 문법
- * 라디안값 = 60분법값 * (Math.PI / 180)
- *
- *
- *
- * Math.PI는 수학에서 사용하는 파이(π)값을 나타내는 자바스크립트 상수입니다.
- * 따라서 대략적인 값으로 3.145159를 나타냅니다.
- * 자바스크립트 Math 메소드
- * 메소드    설명
- * Math.min(x, y, ...)    인수로 전달받은 값 중에서 가장 작은 수를 반환함.
- * Math.max(x, y, ...)    인수로 전달받은 값 중에서 가장 큰 수를 반환함.
- * Math.random()    0보다 크거나 같고 1보다 작은 랜덤 숫자(random number)를 반환함.
- * Math.round(x)    x를 소수점 첫 번째 자리에서 반올림하여 그 결과를 반환함.
- * Math.floor(x)    x와 같거나 작은 수 중에서 가장 큰 정수를 반환함.
- * Math.ceil(x)    x와 같거나 큰 수 중에서 가장 작은 정수를 반환함.
- * Math.abs(x)    x의 절댓값을 반환함.
- * Math.cbrt(x)    x의 세제곱근을 반환함.
- * Math.sqrt(x)    x의 제곱근을 반환함.
- * Math.clz32(x)
- * x을 32비트 이진수로 변환한 후, 0이 아닌 비트의 개수를 반환함.
- *
- * Math.exp(x)    ex 의 값을 반환함. (e : 오일러의 수)
- * Math.expm1(x)    1 - ex 의 값을 반환함.
- * Math.fround(x)    x와 가장 근접한 32비트 부동 소수점 수(single precision float)를 반환함.
- * Math.hypot(x, y, ...)    인수로 전달받은 값들을 각각 제곱한 후 더한 총합의 제곱근을 반환함.
- * Math.imul(x, y)    인수로 전달받은 두 값의 32비트 곱셈의 결과를 반환함.
- * Math.log(x)    x의 자연로그 값을 반환함. (ln x)
- * Math.log1p(x)    ln(1 + x)의 값을 반환함.
- * Math.log10(x)    x의 10을 밑으로 가지는 로그 값을 반환함.
- * Math.log2(x)    x의 2를 밑으로 가지는 로그 값을 반환함.
- * Math.pow(x, y)    x의 y승을 반환함.
- * Math.sign(x)    x의 부호 값을 반환함.
- * Math.trunc(x)    x의 모든 소수 부분을 삭제하고 정수 부분만을 반환함.
- * Math.sin(x), Math.cos(x), Math.tan(x),Math.asin(x), Math.acos(x), Math.atan(x), Math.asinh(x), Math.acosh(x), Math.atanh(x), Math.atan2(x)
- *
- * x의 해당 삼각 함숫값을 반환함.
- * 자바스크립트 Math 프로퍼티
- * 자바스크립트는 수학에서 사용하는 다양한 상수들을 Math 프로퍼티를 이용해 제공하고 있습니다.
- *
- * 프로퍼티    설명    대략값
- * Math.E    오일러의 수(Euler's constant)라고 불리며, 자연로그(natural logarithms)의 밑(base) 값    2.718
- * Math.LN2    2의 자연로그 값    0.693
- * Math.LN10    10의 자연로그 값    2.303
- * Math.LOG2E    오일러 수(e)의 밑 값이 2인 로그 값    1.443
- * Math.LOG10E    오일러 수(e)의 밑 값이 10인 로그 값    0.434
- * Math.PI    원의 원주를 지름으로 나눈 비율(원주율) 값    3.14159
- * Math.SQRT1_2    2의 제곱근의 역수 값    0.707
- * Math.SQRT2    2의 제곱근 값    1.414
+ * Math 객체 : 수학에서 자주 사용하는 상수와 함수들을 미리 구현해 놓은 자바스크립트 표준 내장 객체
+ * Math 객체는 다른 전역 객체와는 달리 생성자(constructor)가 존재 X
+ * 따라서 따로 인스턴스를 생성하지 않아도 Math 객체의 모든 메소드나 프로퍼티를 바로 사용 가능
+ *
+ * Math 메소드 : 자바스크립트는 웹 페이지에서 수학적 작업을 손쉽게 할 수 있도록 다양한 Math 메소드를 제공
+ *
+ * 자주 쓰이는 메소드
+ * Math.min(x, y, ...) : 인수로 전달받은 값 중에서 가장 작은 수를 반환
+ * Math.max(x, y, ...) : 인수로 전달받은 값 중에서 가장 큰 수를 반환
+ * Math.random() : 0보다 크거나 같고 1보다 작은 랜덤 숫자(random number)를 반환
+ * Math.round(x) : x를 소수점 첫 번째 자리에서 반올림하여 그 결과를 반환
+ * Math.floor(x) : x와 같거나 작은 수 중에서 가장 큰 정수를 반환
+ * Math.ceil(x) : x와 같거나 큰 수 중에서 가장 작은 정수를 반환
+ * Math.abs(x) : x의 절댓값을 반환
+ * Math.cbrt(x) : x의 세제곱근을 반환
+ * Math.sqrt(x) : x의 제곱근을 반환
+ * Math.clz32(x) : x을 32비트 이진수로 변환한 후, 0이 아닌 비트의 개수를 반환
+ *
+ * 종종 쓰이는 메소드
+ * Math.exp(x) : ex 의 값을 반환 (e : 오일러의 수)
+ * Math.expm1(x) : 1 - ex 의 값을 반환
+ * Math.fround(x) : x와 가장 근접한 32비트 부동 소수점 수(single precision float)를 반환
+ * Math.hypot(x, y, ...) : 인수로 전달받은 값들을 각각 제곱한 후 더한 총합의 제곱근을 반환
+ * Math.imul(x, y) : 인수로 전달받은 두 값의 32비트 곱셈의 결과를 반환
+ * Math.log(x) : x의 자연로그 값을 반환 (ln x)
+ * Math.log1p(x) : ln(1 + x)의 값을 반환
+ * Math.log10(x) : x의 10을 밑으로 가지는 로그 값을 반환
+ * Math.log2(x) : x의 2를 밑으로 가지는 로그 값을 반환
+ * Math.pow(x, y) : x의 y승을 반환
+ * Math.sign(x) : x의 부호 값을 반환
+ * Math.trunc(x) : x의 모든 소수 부분을 삭제하고 정수 부분만을 반환
+ *
+ * Math 프로퍼티 : 자바스크립트는 수학에서 사용하는 다양한 상수들을 Math 프로퍼티를 이용해 제공
+ * Math.E : 오일러의 수(Euler's constant), 자연로그(natural logarithms)의 밑(base) 값, 2.718
+ * Math.LN2 : 2의 자연로그 값, 0.693
+ * Math.LN10 : 10의 자연로그 값, 2.303
+ * Math.LOG2E : 오일러 수(e)의 밑 값이 2인 로그 값, 1.443
+ * Math.LOG10E : 오일러 수(e)의 밑 값이 10인 로그 값, 0.434
+ * Math.PI : 원의 원주를 지름으로 나눈 비율(원주율) 값, 3.14159
+ * Math.SQRT1_2 : 2의 제곱근의 역수 값, 0.707
+ * Math.SQRT2 : 2의 제곱근 값, 1.414
  *
  **/
 /****************************************************************************************************************************************************/
