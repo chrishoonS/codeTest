@@ -49,7 +49,7 @@ str.innerHTML = "이 문장으로 바뀌었습니다!";
 
 /**
  * 3. document.write() 메소드
- * document.write() 메소드는 웹 페이지가 로딩될 때 실행되면, 웹 페이지에 가장 먼저 데이터를 출력
+ * document.write() : 웹 페이지가 로딩될 때 실행되면, 웹 페이지에 가장 먼저 데이터를 출력
  * 대부분 테스트나 디버깅을 위해 사용
  * but, 웹 페이지의 모든 내용이 로딩된 후에 document.write() 메소드가 실행되면, 웹 페이지 내에 먼저 로딩된 모든 데이터를 지우고 자신의 데이터를 출력하므로 이점 주의할것!!
  **/
@@ -372,7 +372,7 @@ str instanceof Boolean; // false
 /**
  * void 연산자 : 어떤 타입의 값이 오던지 상관없이 언제나 undefined 값만을 반환
  * 이 연산자는 피연산자가 단 하나뿐인 단항 연산자이며, 피연산자의 결합 방향은 오른쪽에서 왼쪽
- * 예제처럼 void 연산자는 정의되지 않은 원시 타입의 값을 얻기 위해 void(0)과 같은 형태로 종종 사용
+처럼 void 연산자는 정의되지 않은 원시 타입의 값을 얻기 위해 void(0)과 같은 형태로 종종 사용
  **/
 
 <a href="javascript:void(0)">이 링크는 동작 X</a>
@@ -919,7 +919,7 @@ function isArray(a) {
 var arr = [1, true, "JavaScript"];          // 배열 생성
 document.write(arr.constructor);            // constructor 프로퍼티의 값 출력
 document.write(arr.constructor.toString()); // toString() 메소드를 사용하여 constructor 프로퍼티의 값을 문자열로 변환
-document.write(arr.constructor.toString().indexOf("Array")); // indexOf() 메소드를 사용하여 해당 문자열에서 "Array"라는 부분 문자열이 시작하는 인덱스를 구함, indexOf() 메소드는 인수로 전달받은 문자열을 해당 문자열에서 찾지 못하면, 언제나 -1을 반환
+document.write(arr.constructor.toString().indexOf("Array")); // indexOf() 메소드를 사용하여 해당 문자열에서 "Array"라는 부분 문자열이 시작하는 인덱스를 구함, indexOf()는 인수로 전달받은 문자열을 해당 문자열에서 찾지 못하면, 언제나 -1을 반환
 document.write(isArray(arr))                // true
 
 /**
@@ -1354,7 +1354,7 @@ parseFloat("초콜릿 123"); // NaN
  * parseInt(): 문자열을 파싱하여 정수로 반환
  * 문법
  * parseInt("문자열");
- * 예제처럼 parseInt() 함수에 두 번째 인수로 특정 진법을 전달하면, 해당 진법에 맞는 정수로 반환
+처럼 parseInt() 함수에 두 번째 인수로 특정 진법을 전달하면, 해당 진법에 맞는 정수로 반환
  * 또한, 전달받은 문자열의 시작이 "0x"로 시작하면, parseInt() 함수는 해당 문자열을 16진수로 인식
  **/
 parseInt("123");        // 123
@@ -1569,7 +1569,7 @@ document.write("올해는 " + day.getFullYear() + "년");
 /**
  * Object.create() 메소드를 이용한 객체의 생성
  * Object.create() 메소드를 이용하여 객체를 생성 가능
- * Object.create() 메소드는 지정된 프로토타입(prototype) 객체와 프로퍼티를 가지고 새로운 객체를 생성
+ * Object.create()는 지정된 프로토타입(prototype) 객체와 프로퍼티를 가지고 새로운 객체를 생성
  * 따라서 이 메소드를 이용하면 사용자가 프로토타입 객체를 직접 명시할 수 있으므로, 상당히 유용하게 사용
  *
  * 문법
@@ -2356,13 +2356,296 @@ typeof num;                   // number
 /****************************************************************************************************************************************************/
 /****************************************************************************************************************************************************/
 /**
+ * Date 객체 : 자바스크립트에서는 Date 객체를 사용하여 매 순간 변화하는 시간과 날짜에 관한 정보를 손쉽게 제공
+ * Date 객체는 연월일, 시분초의 정보와 함께 밀리초(millisecond)의 정보도 함께 제공
  *
+ * 1. 연도(year) : 1900년(00) ~ 1999년(99)
+ * 2. 월(month) : 1월(0) ~ 12월(11)
+ * 3. 일(day) : 1일(1) ~ 31일(31)
+ * 4. 시(hours) : 0시(0) ~ 23시(23)
+ * 5. 분(minutes) : 0분(0) ~ 59분(59)
+ * 6. 초(seconds) : 0초(0) ~ 59초(59)
  *
+ * 자바스크립트에서 월(month)을 나타낼 때는 1월이 0으로 표현되고, 12월이 11로 표현된다는 사실에 유의!!
+ * 
+ * Date 객체 초기화
+ * 1. new Date()
+ * 2. new Date("날짜를 나타내는 문자열")
+ * 3. new Date(밀리초)
+ * 4. new Date(년, 월, 일, 시, 분, 초, 밀리초)
+ * Date 객체를 생성할 때 어떠한 인수도 전달하지 않으면, 현재 날짜와 시간을 가지고 Date 객체를 생성
+ * Date 객체를 생성할 때 인수가 전달되면, 그 형태에 따라 특정 날짜와 시간을 가리키는 Date 객체를 생성
+ * 자바스크립트에서 날짜 계산의 모든 기준은 1970년 1월 1일 00:00:00(UTC, 협정세계시)부터!!
+ * 또한, 하루는 86,400,000 밀리초(millisecond)로 계산
  **/
+var date = new Date(); // Date 객체 생성
+document.write(date);
+
+new Date("December 14, 1977 13:30:00");                             // 날짜를 나타내는 문자열
+new Date(80000000);                                                 // 1970년 1월 1일 0시부터 해당 밀리초만큼 지난 날짜
+new Date(16, 5, 25);                                     // 3개의 숫자로 나타내는 날짜이며, 시간은 자동으로 0시 0분 0초로 설정됨.
+new Date(16, 5, 25, 15, 40, 0);    // 7개의 숫자로 나타내는 날짜
+new Date(2016, 5, 25, 15, 40, 0);  // 2000년대를 표기하고자 할 때에는 연도를 전부 표기해야 함.
+
+/**
+ * 자바스크립트 날짜 양식(date format)
+ * 1. ISO 날짜 양식
+ * 2. Long 날짜 양식
+ * 3. Short 날짜 양식
+ * 4. Full 날짜 양식
+ **/
+
+/**
+ * ISO 날짜 양식 : ISO 8601은 날짜와 시간을 나타내는 국제 표준 양식
+ * YYYY-MM-DDTHH:MM:SS // T는 UTC(협정세계시)를 나타내는 문자로 시간까지 표현할 때에는 반드시 사용해야 함.
+ * YYYY-MM-DD
+ * YYYY-MM
+ * YYYY
+ **/
+new Date("1977-12-14T13:30:00"); // 날짜와 시간까지 표현함.
+new Date("1977-12-14");          // 시간이 생략되면 자동으로 09:00:00으로 설정됨.
+new Date("1977-12");             // 일이 생략되면 자동으로 1일로 설정됨.
+new Date("1977");                // 월이 생략되면 자동으로 1월로 설정됨.
+
+/**
+ * Long 날짜 양식
+ * MMM DD YYYY
+ * DD MMM YYYY
+ **/
+new Date("Feb 19 1982");        // MMM DD YYYY
+new Date("19 Feb 1982");        // DD MMM YYYY
+new Date("February 19 1982");   // 월의 축약형 뿐만 아니라 전체 단어도 인식함.
+new Date("FEBRUARY, 19, 1982"); // 쉼표는 무시되며, 대소문자의 구분은 없음.
+
+/**
+ * Short 날짜 양식
+ * MM/DD/YYYY
+ * YYYY/MM/DD
+ **/
+new Date("02/19/1982"); // MM/DD/YYYY
+new Date("1982/02/19"); // YYYY/MM/DD
+//ISO 날짜 양식과 short 날짜 양식에서는 반드시 월일 순서로 날짜가 나와야 하며, 일월 순서로 나온 날짜는 자바스크립트가 제대로 인식 불가
+
+/**
+ * Full 날짜 양식 : 사용하는 날짜 양식으로 표현된 문자열도 날짜로 인식
+ **/
+new Date("Wed May 25 2016 17:00:00 GMT+0900 (Seoul Time)");
+// GMT가 현재 국가와 다른 시간은 현재 국가의 GMT로 변환되어 표현됨.
+
+new Date("Wed May 25 2016 17:00:00 GMT-0500 (New York Time)");
 /****************************************************************************************************************************************************/
+
 /****************************************************************************************************************************************************/
 /**
+ * Date.now() : 1970년 1월 1일 0시 0분 0초부터 현재까지의 시간을 밀리초(millisecond) 단위의 정수로 반환
+ **/
+var nowMiliSec = Date.now();
+nowMiliSec;           // 1970년 1월 1일 00:00:00부터 현재까지의 밀리초
+new Date(nowMiliSec); // new Date()와 같은 결과를 반환함.
+new Date();
+
+
+/**
+ * Date.prototype getter
+ * 모든 Date 인스턴스는 Date.prototype으로부터 메소드와 프로퍼티를 상속 받음
+ * Date.prototype getter 메소드는 날짜와 관련된 정보를 받아오기 위한 메소드
  *
+ * 1. getFullYear()
+ * 2. getDate()
+ * 3. getDay()
+ * 4. getTime()
+ **/
+
+
+// getFullYear() : 현재 연도를 4비트의 숫자(YYYY)로 반환
+var date = new Date();
+document.write("올해는 " + date.getFullYear() + "년입니다."); // 현재 연도를 반환함.
+
+// getDate() : 현재 날짜에 해당하는 숫자를 반환
+var date = new Date();
+document.write("오늘은 " + date.getMonth() + "월 " + date.getDate() + "일입니다."); // 현재 날짜를 반환함.
+
+// getDay() : 현재 요일에 해당하는 숫자를 반환, 자바스크립트에서 일요일(0) ~ 토요일(6)
+var date = new Date();
+var day;
+
+switch (date.getDay()) { // 현재 요일을 반환함.
+    case 0:
+        day = "일";
+        break;
+
+    case 1:
+        day = "월";
+        break;
+    // ...
+    case 6:
+        day = "토";
+        break;
+}
+
+document.write("오늘은 " + day + "요일입니다.");
+
+// 배열을 사용하면 더욱 간단하게 요일을 출력 가능
+var date = new Date();
+var days = ["일", "월", "화", "수", "목", "금", "토"];
+
+document.write("오늘은 " + days[date.getDay()] + "요일입니다.");
+
+// getTime() : 1970년 1월 1일 0시 0분 0초부터 현재까지의 시간을 밀리초 단위로 환산한 값을 숫자로 반환
+var date = new Date();
+var period = date.getTime() / 86400000 // 하루는 86,400,000 밀리초로 계산됨.
+
+document.write("1970년 1월 1일부터 오늘까지 " + period.toFixed() + "일이 지났습니다."); // 소수 부분은 생략함.
+
+자바스크립트 Date.prototype getter 메소드
+메소드    설명    값의 범위
+getDate()
+ *
+현지 시각으로 현재 일자에 해당하는 숫자를 반환함.    1 ~ 31
+getDay()
+ *
+현지 시각으로 현재 요일에 해당하는 숫자를 반환함.    0 ~ 6
+getMonth()    현지 시각으로 현재 월에 해당하는 숫자를 반환함.    0 ~ 11
+getFullYear()
+ *
+현지 시각으로 현재 연도를 4비트의 숫자(YYYY)로 반환함.    YYYY
+getHours()
+ *
+현지 시각으로 현재 시각에 해당하는 숫자를 반환함.    0 ~ 23
+getMilliseconds()
+ *
+현지 시각으로 현재 시각의 밀리초에 해당하는 숫자를 반환함.    0 ~ 999
+getMinutes()
+ *
+현지 시각으로 현재 시각의 분에 해당하는 숫자를 반환함.    0 ~ 59
+getSeconds()
+ *
+현지 시각으로 현재 시각의 초에 해당하는 숫자를 반환함.    0 ~ 59
+getTime()
+ *
+1970년 1월 1일 0시 0분 0초부터 현재까지의 시간을 밀리초 단위로 환산한 값을 숫자로 반환함.    -
+getTimezoneOffset()
+ *
+UTC로부터 현재 시각까지의 시간차를 분 단위로 환산한 값을 숫자로 반환함.    -
+자바스크립트 Date.prototype UTC getter 메소드
+메소드    설명
+getUTCDate()
+ *
+협정세계시(UTC)로 현재 일자에 해당하는 숫자를 반환함.
+getUTCDay()
+ *
+협정세계시(UTC)로 현재 요일에 해당하는 숫자를 반환함.
+getUTCMonth()    협정세계시(UTC)로 현재 월에 해당하는 숫자를 반환함.
+getUTCFullYear()
+ *
+협정세계시(UTC)로 현재 연도를 4비트의 숫자(YYYY)로 반환함.
+getUTCHours()
+ *
+협정세계시(UTC)로 현재 시각에 해당하는 숫자를 반환함.
+getUTCMilliseconds()
+ *
+협정세계시(UTC)로 현재 시각의 밀리초에 해당하는 숫자를 반환함.
+getUTCMinutes()
+ *
+협정세계시(UTC)로 현재 시각의 분에 해당하는 숫자를 반환함.
+getUTCSeconds()
+ *
+협정세계시(UTC)로 현재 시각의 초에 해당하는 숫자를 반환함.
+Date.prototype setter 메소드
+Date.prototype setter 메소드는 날짜와 관련된 정보를 설정하기 위한 메소드입니다.
+ *
+가장 많이 사용되는 대표적인 setter 메소드는 다음과 같습니다.
+ *
+ *
+ *
+1. setFullYear()
+ *
+2. setDate()
+ *
+setFullYear() 메소드
+setFullYear() : Date 객체의 값을 특정 날짜로 설정합니다.
+ *
+
+var date = new Date();
+ *
+date.setFullYear(1982, 1, 19); // 자바스크립트에서 2월은 1임.
+ *
+date.getFullYear();            // 1982
+ *
+date.getMonth();               // 1
+ *
+date.getDate();                // 19
+ *
+
+ *
+setDate() 메소드
+setDate() : Date 객체의 일자 값을 특정 일자로 설정합니다.
+ *
+
+var date = new Date();
+ *
+date.setDate(10);              // Date 객체의 일자 값을 10일로 설정함.
+ *
+document.write(date + "<br>");
+ *
+date.setDate(40);              // 40일을 설정하면, 초과되는 일수만큼 다음달로 넘어감.
+ *
+document.write(date);
+ *
+
+ *
+자바스크립트 Date.prototype setter 메소드
+메소드    설명    값의 범위
+setDate()
+ *
+현지 시각으로 특정 일자를 설정함.
+ *
+1 ~ 31
+setMonth()    현지 시각으로 특정 월을 설정함.    0 ~ 11
+setFullYear()
+ *
+현지 시각으로 특정 연도를 설정함. (연도뿐만 아니라 월과 일자도 설정할 수 있음)    YYYY, MM, DD
+setHours()
+ *
+현지 시각으로 특정 시간을 설정함.    0 ~ 23
+setMilliseconds()
+ *
+현지 시각으로 특정 밀리초를 설정함.    0 ~ 999
+setMinutes()
+ *
+현지 시각으로 특정 분을 설정함.    0 ~ 59
+setSeconds()
+ *
+현지 시각으로 특정 초를 설정함.    0 ~ 59
+setTime()
+ *
+1970년 1월 1일 0시 0분 0초부터 밀리초 단위로 표현되는 특정 시간을 설정함.    -
+ *
+ *
+자바스크립트에서 setDay() : 존재하지 않습니다.
+자바스크립트 Date.prototype UTC setter 메소드
+메소드    설명    값의 범위
+setUTCDate()
+ *
+협정세계시(UTC)로 특정 일자를 설정함.
+ *
+1 ~ 31
+setUTCMonth()    협정세계시(UTC)로 특정 월을 설정함.    0 ~ 11
+setUTCFullYear()
+ *
+협정세계시(UTC)로 특정 연도를 설정함. (연도뿐만 아니라 월과 일자도 설정할 수 있음)    YYYY, MM, DD
+setUTCHours()
+ *
+협정세계시(UTC)로 특정 시간을 설정함.    0 ~ 23
+setUTCMilliseconds()
+ *
+협정세계시(UTC)로 특정 밀리초를 설정함.    0 ~ 999
+setUTCMinutes()
+ *
+협정세계시(UTC)로 특정 분을 설정함.    0 ~ 59
+setUTCSeconds()
+ *
+협정세계시(UTC)로 특정 초를 설정함.    0 ~ 59
  *
  **/
 /****************************************************************************************************************************************************/
