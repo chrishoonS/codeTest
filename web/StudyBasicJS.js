@@ -2774,616 +2774,324 @@ str.trim();
 /****************************************************************************************************************************************************/
 /****************************************************************************************************************************************************/
 /**
- * Array 객체
- * Array 객체
- * 자바스크립트에서 배열(array)은 정렬된 값들의 집합으로 정의되며, Array 객체로 다뤄집니다.
- *
- *
- *
- * 자바스크립트 배열 표현에 대한 더 자세한 사항은 자바스크립트 배열 수업에서 확인 가능
- *
- * 자바스크립트 배열 수업 확인 =>
+ * Array 객체 : 자바스크립트에서 배열(array)은 정렬된 값들의 집합으로 정의되며, Array 객체로 다룸
  *
  * Array 메소드
- * 자바스크립트는 사용자가 배열과 관련된 작업을 손쉽게 할 수 있도록 다양한 메소드를 제공하고 있습니다.
- *
- * Array 메소드는 Array 객체에 정의된 배열과 관련된 작업을 할 때 사용하는 메소드입니다.
- *
- *
- *
  * 1. Array.isArray()
- *
  * 2. Array.from()
- *
  * 3. Array.of()
- *
- * Array.isArray() 메소드
- * Array.isArray() 메소드는 전달받은 값이 Array 객체인지 아닌지를 검사합니다.
- *
- * 예제
- * Array.isArray([]);          // true
- *
- * Array.isArray(new Array()); // true
- *
- * Array.isArray(123);         // false
- *
- * Array.isArray("Array");     // false
- *
- * Array.isArray(true);        // false
- *
-
- *
- * Array.from() 메소드
- * ECMAScript 6부터 추가된 Array.from() 메소드는 다음 객체들을 배열처럼 변환시켜 줍니다.
- *
- *
- *
- * 1. 배열과 비슷한 객체(array-like objects) : length 프로퍼티와 인덱스 된 요소를 가지고 있는 객체
- *
- * 2. 반복할 수 있는 객체(iterable objects) : Map과 Set 객체 및 문자열과 같이 해당 요소를 개별적으로 선택할 수 있는 객체
- *
- *
- *
- * 하지만 이렇게 생성된 객체는 정확히 말하면 Array 객체는 아니며, Array 객체의 자식 클래스(child class)입니다.
- *
- * 예제
- * function arrayFrom() {
- *
- *     return Array.from(arguments);
- *
- * }
- *
- * Array.from(arrayFrom(1, 2, 3));        // [1, 2, 3]
- *
- * var myMap = new Map([[1, 2], [3, 4]]);
- *
- * Array.from(myMap);                     // [1, 2, 3, 4]
- *
- * Array.from("JavaScript");              // [J,a,v,a,S,c,r,i,p,t]
- *
-
- *
- *
- *
- * Array.from() 메소드는 파이어폭스 32.0 이상의 버전에서만 지원합니다.
- * Array.of() 메소드
- * ECMAScript 6부터 추가된 Array.of() 메소드는 인수의 수나 타입에 상관없이 인수로 전달받은 값을 가지고 새로운 Array 인스턴스를 생성합니다.
- *
- * 이때 Array.of() 메소드와 Array 객체 생성자와의 차이로는 정수로 전달된 인수의 처리 방식에 있습니다.
- *
- * 예제
- *
- *
- * new Array(10); // [,,,,,,,,,] -> 10개의 배열 요소를 가지는 빈 배열을 생성함.
- *
- * Array.of(10);  // [10] -> 한 개(숫자 10)의 배열 요소를 가지는 배열을 생성함.
- *
- *
- *
-
- *
- *
- *
- * 위의 예제에서 Array 객체 생성자에 인수로 정수 10을 전달하면, 생성자는 길이가 10인 빈 배열을 생성합니다.
- *
- * 하지만 Array.of() 메소드에 인수로 정수 10을 전달하면, 정수 10을 배열 요소로 가지는 길이가 1인 배열을 생성합니다.
- *
- *
- *
- * Array.of() 메소드는 익스플로러, 오페라, 사파리에서 지원 X
- * 자바스크립트 Array 메소드
- * 메소드    설명
- * Array.isArray()    전달된 값이 Array 객체인지 아닌지를 검사함.
- * Array.from()    배열과 비슷한 객체와 반복할 수 있는 객체를 배열처럼 변환함.
- * Array.of()    인수의 수나 타입에 상관없이 인수로 전달받은 값을 가지고 새로운 Array 인스턴스를 생성함.
- *
  **/
+
+//Array.isArray() : 전달받은 값이 Array 객체인지 아닌지를 검사
+
+Array.isArray([]);          // true
+Array.isArray(new Array()); // true
+Array.isArray(123);         // false
+Array.isArray("Array");     // false
+Array.isArray(true);        // false
+
+/**
+ * Array.from() : ECMAScript 6부터 추가된 Array.from() 메소드는 다음 객체들을 배열처럼 변환
+ * 1. 배열과 비슷한 객체(array-like objects) : length 프로퍼티와 인덱스 된 요소를 가지고 있는 객체
+ * 2. 반복할 수 있는 객체(iterable objects) : Map과 Set 객체 및 문자열과 같이 해당 요소를 개별적으로 선택할 수 있는 객체
+ * 하지만 이렇게 생성된 객체는 정확히 말하면 Array 객체는 아니며, Array 객체의 자식 클래스(child class)
+ * Array.from() 메소드는 파이어폭스 32.0 이상의 버전에서만 지원
+**/
+
+function arrayFrom() {
+    return Array.from(arguments);
+}
+
+Array.from(arrayFrom(1, 2, 3));        // [1, 2, 3]
+var myMap = new Map([[1, 2], [3, 4]]);
+Array.from(myMap);                     // [1, 2, 3, 4]
+Array.from("JavaScript");              // [J,a,v,a,S,c,r,i,p,t]
+
+/**
+ * Array.of() : ECMAScript 6부터 추가된 Array.of() 메소드는 인수의 수나 타입에 상관없이 인수로 전달받은 값을 가지고 새로운 Array 인스턴스를 생성
+ * 이때 Array.of() 메소드와 Array 객체 생성자와의 차이로는 정수로 전달된 인수의 처리 방식에 있음
+ * 아래 예제에서 Array 객체 생성자에 인수로 정수 10을 전달하면, 생성자는 길이가 10인 빈 배열 생성
+ * 하지만 Array.of() 메소드에 인수로 정수 10을 전달하면, 정수 10을 배열 요소로 가지는 길이가 1인 배열 생성
+ * Array.of() 메소드는 익스플로러, 오페라, 사파리에서 지원 X
+ **/
+new Array(10); // [,,,,,,,,,] -> 10개의 배열 요소를 가지는 빈 배열을 생성함.
+Array.of(10);  // [10] -> 한 개(숫자 10)의 배열 요소를 가지는 배열을 생성함.
+
 /****************************************************************************************************************************************************/
+
 /****************************************************************************************************************************************************/
 /**
  * Array 메소드
- * Array.prototype 메소드
- * 모든 Array 인스턴스는 Array.prototype으로부터 메소드와 프로퍼티를 상속받습니다.
  *
- * 이렇게 상속받은 Array.prototype 메소드는 크게 다음과 같이 구분 가능
- *
- *
- *
+ * Array.prototype 메소드 : 모든 Array 인스턴스는 Array.prototype으로부터 메소드와 프로퍼티를 상속
  * 1. 원본 배열을 변경하는 메소드
- *
  * 2. 원본 배열은 변경하지 않고 참조만 하는 메소드
- *
  * 3. 원본 배열을 반복적으로 참조하는 메소드
- *
+ **/
+
+/**
  * 원본 배열을 변경하는 Array.prototype 메소드
- * 다음 메소드는 원본 배열을 직접 변경하는 메소드입니다.
- *
- *
- *
  * 1. push()
- *
  * 2. pop()
- *
  * 3. shift()
- *
  * 4. unshift()
- *
  * 5. reverse()
- *
  * 6. sort()
- *
  * 7. splice()
- *
- * push() 메소드
- * push() 메소드는 하나 이상의 요소를 배열의 가장 마지막에 추가합니다.
- *
+ **/
+
+/**
+ * push() : 하나 이상의 요소를 배열의 가장 마지막에 추가합니다.
  * 원본 배열은 추가한 요소의 수만큼 길이(length)가 늘어나게 되며, 요소를 성공적으로 추가하면 배열의 총 길이를 반환
- *
- * 예제
- * var arr = [1, true, "JavaScript"];
- *
- * arr.length;               // 3
- *
- * arr.push("자바스크립트");
- *
- * arr.length;               // 4
- *
- * arr;                      // [1,true,JavaScript,자바스크립트]
- *
- * arr.push(2, "거짓");
- *
- * arr.length;               // 6
- *
- * arr;                      // [1,true,JavaScript,자바스크립트,2,거짓]
- *
+ **/
+var arr = [1, true, "JavaScript"];
+arr.length;               // 3
+arr.push("자바스크립트");
+arr.length;               // 4
+arr;                      // [1,true,JavaScript,자바스크립트]
+arr.push(2, "거짓");
+arr.length;               // 6
+arr;                      // [1,true,JavaScript,자바스크립트,2,거짓]
 
- *
- * pop() 메소드
- * pop() 메소드는 배열의 가장 마지막 요소를 제거하고, 그 제거된 요소를 반환
- *
- * 따라서 pop() 메소드를 실행할 때마다 배열의 길이는 1씩 줄어들게
- *
- * 예제
- * var arr = [1, true, "JavaScript", "자바스크립트"];
- *
- * arr.length;  // 4
- *
- * arr.pop();   // 자바스크립트
- *
- * arr.length;  // 3
- *
- * arr.pop();   // JavaScript
- *
- * arr.length); // 2
- *
- * arr;         // [1,true]
- *
+/**
+ * pop() : 배열의 가장 마지막 요소를 제거하고, 그 제거된 요소를 반환
+ * 따라서 pop() 메소드를 실행할 때마다 배열의 길이는 1씩 줄어듦
+ **/
+var arr = [1, true, "JavaScript", "자바스크립트"];
+arr.length;  // 4
+arr.pop();   // 자바스크립트
+arr.length;  // 3
+arr.pop();   // JavaScript
+arr.length; // 2
+arr;         // [1,true]
 
- *
- * shift() 메소드
- * shift() 메소드는 pop() 메소드와는 달리 배열의 가장 마지막 요소가 아닌 첫 요소를 제거하고, 그 제거된 요소를 반환
- *
- * 따라서 shift() 메소드도 실행할 때마다 배열의 길이가 1씩 줄어들게
- *
- * 예제
- * var arr = [1, true, "JavaScript", "자바스크립트"];
- *
- * arr.length;  // 4
- *
- * arr.shift(); // 1
- *
- * arr.length;  // 3
- *
- * arr.shift(); // true
- *
- * arr.length;  // 2
- *
- * arr;         // [JavaScript,자바스크립트]
- *
+/**
+ * shift() : pop() 메소드와는 달리 배열의 가장 마지막 요소가 아닌 첫 요소를 제거하고, 그 제거된 요소를 반환
+ * 따라서 shift() 메소드도 실행할 때마다 배열의 길이가 1씩 줄어듦
+ **/
+var arr = [1, true, "JavaScript", "자바스크립트"];
+arr.length;  // 4
+arr.shift(); // 1
+arr.length;  // 3
+arr.shift(); // true
+arr.length;  // 2
+arr;         // [JavaScript,자바스크립트]
 
- *
- * unshift() 메소드
- * unshift() 메소드는 하나 이상의 요소를 배열의 가장 앞에 추가합니다.
- *
+/**
+ * unshift() : 하나 이상의 요소를 배열의 가장 앞에 추가
  * 원본 배열은 추가한 요소의 수만큼 길이(length)가 늘어나게 되며, 요소를 성공적으로 추가하면 배열의 총 길이를 반환
- *
- * 예제
- * var arr = [1, true, "JavaScript"];
- *
- * arr.length;                  // 3
- *
- * arr.unshift("자바스크립트");
- *
- * arr.length;                  // 4
- *
- * arr;                         // [자바스크립트,1,true,JavaScript]
- *
- * arr.unshift(2, "거짓");
- *
- * arr.length;                  // 6
- *
- * arr;                         // [2,거짓,자바스크립트,1,true,JavaScript]
- *
+ **/
+var arr = [1, true, "JavaScript"];
+arr.length;                  // 3
+arr.unshift("자바스크립트");
+arr.length;                  // 4
+arr;                         // [자바스크립트,1,true,JavaScript]
+arr.unshift(2, "거짓");
+arr.length;                  // 6
+arr;                         // [2,거짓,자바스크립트,1,true,JavaScript]
 
- *
- *
- *
- * pop()과 push() 메소드를 사용하면 배열을 스택(stack)이라는 데이터 구조처럼 사용할 수 있으며,
- * shift()와 push() 메소드를 사용하면 배열을 큐(queue)라는 데이터 구조처럼 사용 가능
- * reverse() 메소드
- * reverse() 메소드는 배열 요소의 순서를 전부 반대로 교체합니다.
- *
- * 즉, 가장 앞에 있던 요소가 가장 뒤에 위치하며, 가장 뒤에 있던 요소는 가장 앞에 위치하게
- *
- * 예제
- *
- *
- * var arr = [1, true, "JavaScript", "자바스크립트"];
- *
- * arr.reverse(); // [자바스크립트,JavaScript,true,1]]
- *
- *
- *
+/**
+ * pop()과 push() 메소드를 사용하면 배열을 스택(stack)이라는 데이터 구조처럼 사용할 수 있으며(LIFO),
+ * shift()와 push() 메소드를 사용하면 배열을 큐(queue)라는 데이터 구조처럼 사용 가능(FIFO)
+ **/
 
- *
- * sort() 메소드
- * sort() 메소드는 해당 배열의 배열 요소들을 알파벳 순서에 따라 정렬합니다.
- *
- * 이 메소드는 배열 요소를 모두 문자열로 보고 정렬하므로, 숫자나 불리언과 같은 타입의 요소들은 잘못 정렬될 수도 있습니다.
- *
- * 예제
- * var strArr = ["로마", "나라", "감자", "다람쥐"]; // 한글은 ㄱ,ㄴ,ㄷ순으로 정렬됨.
- *
- * var numArr = [10, 21, 1, 2, 3];                  // 숫자는 각 자릿수 별로 비교된 후 정렬됨.
- *
- * strArr.sort(); // [감자,나라,다람쥐,로마]
- *
- * numArr.sort(); // [1,10,2,21,3]
- *
+/**
+ * reverse() : 배열 요소의 순서를 전부 반대로 교체
+ * 즉, 가장 앞에 있던 요소가 가장 뒤에 위치하며, 가장 뒤에 있던 요소는 가장 앞에 위치!
+ **/
+var arr = [1, true, "JavaScript", "자바스크립트"];
+arr.reverse(); // [자바스크립트,JavaScript,true,1]]
 
- *
- * splice() 메소드
- * splice() 메소드는 기존의 배열 요소를 제거하거나 새로운 배열 요소를 추가하여 배열의 내용을 변경합니다.
- *
- *
- *
- * 첫 번째 인수는 새로운 요소가 삽입될 위치의 인덱스이며, 두 번째 인수는 제거할 요소의 개수입니다.
- *
+/**
+ * sort() : 해당 배열의 배열 요소들을 알파벳 순서에 따라 정렬
+ * 이 메소드는 배열 요소를 모두 문자열로 보고 정렬하므로, 숫자나 불리언과 같은 타입의 요소들은 잘못 정렬 될 수도 있음.
+ **/
+var strArr = ["로마", "나라", "감자", "다람쥐"]; // 한글은 ㄱ,ㄴ,ㄷ순으로 정렬됨.
+var numArr = [10, 21, 1, 2, 3];                  // 숫자는 각 자릿수 별로 비교된 후 정렬됨.
+strArr.sort(); // [감자,나라,다람쥐,로마]
+numArr.sort(); // [1,10,2,21,3]
+
+/**
+ * splice() : 기존의 배열 요소를 제거하거나 새로운 배열 요소를 추가하여 배열의 내용을 변경
+ * 첫 번째 인수는 새로운 요소가 삽입될 위치의 인덱스, 두 번째 인수는 제거할 요소의 개수
  * 그 이후의 인수들은 모두 배열 요소로서 지정된 인덱스부터 차례대로 삽입
- *
  * 이 메소드는 배열에서 제거된 요소를 배열의 형태로 반환하며, 아무 요소도 제거되지 않았으면 빈 배열을 반환
- *
- * 예제
- * var arr = [1, true, "JavaScript", "자바스크립트"];
- *
- * // 인덱스 1의 요소부터 2개의 요소를 제거한 후, false와 "C언어"를 그 자리에 삽입함.
- *
- * var removedElement = arr.splice(1, 2, false, "C언어");
- *
- * arr;            // [1,false,C언어,자바스크립트]
- *
- * removedElement; // [true,JavaScript]
- *
+ **/
 
- *
- * 자바스크립트 Array.prototype 메소드
- * 메소드    설명
- * push()
- *
- * 하나 이상의 요소를 배열의 가장 마지막에 추가하고, 배열의 총 길이를 반환함.
- * pop()
- *
- * 배열의 가장 마지막 요소를 제거하고, 그 제거된 요소를 반환함.
- * shift()
- *
- * 배열의 가장 첫 요소를 제거하고, 그 제거된 요소를 반환함.
- * unshift()
- *
- * 하나 이상의 요소를 배열의 가장 앞에 추가하고, 배열의 총 길이를 반환함.
- * reverse()
- *
- * 배열 요소의 순서를 전부 반대로 교체함.
- * sort()
- *
- * 해당 배열의 배열 요소들을 알파벳 순서에 따라 정렬함.
- * splice()
- *
- * 기존의 배열 요소를 제거하거나 새로운 배열 요소를 추가하여 배열의 내용을 변경함.
- * copyWithin()    해당 배열에서 일련의 요소들을 복사하여, 명시된 위치의 요소들을 교체함.
- * fill()    시작 인덱스부터 종료 인덱스 바로 앞까지의 모든 배열 요소를 특정 값으로 교체함.
+var arr = [1, true, "JavaScript", "자바스크립트"];
+// 인덱스 1의 요소부터 2개의 요소를 제거한 후, false와 "C언어"를 그 자리에 삽입함.
+var removedElement = arr.splice(1, 2, false, "C언어");
+arr;            // [1,false,C언어,자바스크립트]
+removedElement; // [true,JavaScript]
+
+/**
+ * 기타 메소드
+ * copyWithin() : 해당 배열에서 일련의 요소들을 복사하여, 명시된 위치의 요소들을 교체
+ * fill() : 시작 인덱스부터 종료 인덱스 바로 앞까지의 모든 배열 요소를 특정 값으로 교체
+ **/
+
+/**
  * 원본 배열은 변경하지 않고 참조만 하는 메소드
- * 다음 메소드는 원본 배열을 직접 변경하지는 않고, 참조만 하는 메소드입니다.
- *
- *
  *
  * 1. join()
- *
  * 2. slice()
- *
  * 3. concat()
- *
  * 4. toString()
- *
- * join() 메소드
- * join() 메소드는 배열의 모든 요소를 하나의 문자열로 반환
- *
- *
- *
+ **/
+
+/**
+ * join() : 배열의 모든 요소를 하나의 문자열로 반환
  * 인수로 전달받은 문자열은 배열 요소 사이를 구분 짓는 구분자로 사용
- *
  * 만약 인수를 전달받지 않으면 기본값으로 쉼표(,)를 구분자로 사용합니다.
- *
- * 예제
- * var arr = [1, true, "JavaScript"];
- *
- * arr.join();      // 1,true,JavaScript
- *
- * arr.join(' + '); // 1 + true + JavaScript
- *
- * arr.join(' ');   // 1 true JavaScript
- *
- * arr.join('');    // 1trueJavaScript
- *
+ **/
+var arr = [1, true, "JavaScript"];
 
- *
- * slice() 메소드
- * slice() 메소드는 전달받은 시작 인덱스부터 종료 인덱스 바로 앞까지의 모든 배열 요소를 추출하여 새로운 배열을 반환
- *
- * 인수로 종료 인덱스가 전달되지 않으면 마지막 배열 요소까지 모두 추출합니다.
- *
- * 예제
- * var arr = [1, true, "JavaScript", "자바스크립트"];
- *
- * arr.slice(1, 3); // [true,JavaScript]
- *
- * arr.slice(1);    // [true,JavaScript,자바스크립트 ]
- *
+arr.join();      // 1,true,JavaScript
+arr.join(' + '); // 1 + true + JavaScript
+arr.join(' ');   // 1 true JavaScript
+arr.join('');    // 1trueJavaScript
 
- *
- * concat() 메소드
- * concat() 메소드는 해당 배열의 뒤에 인수로 전달받은 배열을 합쳐서 만든 새로운 배열을 반환
- *
- * 예제
- * var arr = [1, true, "JavaScript"];
- *
- * arr.concat([2, false, "문자열"]); // [1,true,JavaScript,2,false,문자열]
- *
- * arr.concat([2], [3, 4]);          // [1,true,JavaScript,2,3,4] -> 2개 이상의 배열도 한 번에 합칠 수 있음.
- *
- *
- * arr.concat("다섯", [6, 7]);       // [1,true,JavaScript,다섯,6,7] -> 값과 배열도 한 번에 합칠 수 있음.
- *
+/**
+ * slice() : 전달받은 시작 인덱스부터 종료 인덱스 바로 앞까지의 모든 배열 요소를 추출하여 새로운 배열을 반환
+ * 인수로 종료 인덱스가 전달되지 않으면 마지막 배열 요소까지 모두 추출
+ **/
+var arr = [1, true, "JavaScript", "자바스크립트"];
+arr.slice(1, 3); // [true,JavaScript]
+arr.slice(1);    // [true,JavaScript,자바스크립트 ]
 
- *
- * toString() 메소드
- * toString() 메소드는 해당 배열의 모든 요소를 하나의 문자열로 반환
- *
+/**
+ * concat() : 해당 배열의 뒤에 인수로 전달받은 배열을 합쳐서 만든 새로운 배열을 반환
+ **/
+var arr = [1, true, "JavaScript"];
+arr.concat([2, false, "문자열"]); // [1,true,JavaScript,2,false,문자열]
+arr.concat([2], [3, 4]);          // [1,true,JavaScript,2,3,4] -> 2개 이상의 배열도 한 번에 합칠 수 있음.
+arr.concat("다섯", [6, 7]);       // [1,true,JavaScript,다섯,6,7] -> 값과 배열도 한 번에 합칠 수 있음.
+
+/**
+ * toString() : 해당 배열의 모든 요소를 하나의 문자열로 반환
  * 이때 배열 요소의 사이에는 자동으로 쉼표(,)가 삽입
- *
- * 예제
- *
- *
- * var arr = [1, true, "JavaScript"];
- *
- * arr.toString(); // '1,true,JavaScript'
- *
- *
- *
+ **/
+var arr = [1, true, "JavaScript"];
+arr.toString(); // '1,true,JavaScript'
 
- *
- * 자바스크립트 Array.prototype 메소드
- * 메소드    설명
- * join()
- *
- * 배열의 모든 요소를 하나의 문자열로 반환함.
- * slice()
- *
- * 전달받은 시작 인덱스부터 종료 인덱스 바로 앞까지의 모든 배열 요소를 추출하여 만든 새로운 배열을 반환함.
- * concat()
- *
- * 해당 배열의 뒤에 인수로 전달받은 배열을 합쳐서 만든 새로운 배열을 반환함.
- * toString()
- *
- * 해당 배열의 모든 요소를 하나의 문자열로 반환함.
- * toLocaleString()    해당 배열의 모든 요소를 하나의 문자열로 반환함.
- * indexOf()    전달받은 값과 동일한 배열 요소가 처음으로 등장하는 위치의 인덱스를 반환함.
- * lastIndexOf()    전달받은 값과 동일한 배열 요소가 마지막으로 등장하는 위치의 인덱스를 반환함.
+/**
+ * 기타 메소드
+ * toLocaleString() : 해당 배열의 모든 요소를 하나의 문자열로 반환
+ * indexOf() : 전달받은 값과 동일한 배열 요소가 처음으로 등장하는 위치의 인덱스를 반환
+ * lastIndexOf() : 전달받은 값과 동일한 배열 요소가 마지막으로 등장하는 위치의 인덱스를 반환
+ **/
+
+/**
  * 원본 배열을 반복적으로 참조하는 메소드
- * 다음 메소드는 원본 배열을 변경하지 않고, 반복적으로 참조만 하는 메소드입니다.
- *
- *
- *
  * 1. forEach()
- *
  * 2. map()
- *
  * 3. filter()
- *
  * 4. every()
- *
  * 5. some()
- *
  * 6. reduce()
- *
  * 7. reduceRight()
- *
  * 8. entries()
- *
  * 9. keys()
- *
  * 10. values()
- *
- * forEach() 메소드
- * forEach() 메소드는 해당 배열의 모든 요소에 대하여 반복적으로 명시된 콜백 함수를 실행합니다.
- *
- * 예제
- * var arr = [1, true, "JavaScript"];
- *
- * function printArr(value, index, array) {
- * 
- *     document.write("arr[" + index + "] = " + value + "<br>");
- * 
- * }
- *
- * arr.forEach(printArr); // 배열 arr의 각 요소마다 printArr() 함수가 호출됨.
- *
+ **/
 
- *
- * map() 메소드
- * map() 메소드는 해당 배열의 모든 요소에 대하여 반복적으로 명시된 콜백 함수를 실행한 후, 그 실행 결과를 새로운 배열에 담아 반환
- *
- * 예제
- * var arr = [1, -2, 3, -4];
- *
- * // 배열 arr의 각 요소마다 Math.abs() 함수가 호출되고 그 결괏값이 배열로 저장됨.
- *
- * var absoluteValues = arr.map(Math.abs);
- *
- * absoluteValues; // [1,2,3,4]
- *
+/**
+ * forEach() : 해당 배열의 모든 요소에 대하여 반복적으로 명시된 콜백 함수를 실행
+ **/
+var arr = [1, true, "JavaScript"];
 
- *
- * filter() 메소드
- * filter() 메소드는 해당 배열의 모든 요소에 대하여 반복적으로 명시된 콜백 함수를 실행한 후, 그 결괏값이 true인 요소들만을 새로운 배열에 담아 반환
- *
- * 예제
- * var arr = [-10, 5, 100, -20, 40];
- *
- * function compareValue(value) {
- * 
- *     return value < 10;
- * 
- * }
- *
- * var lessTen = arr.filter(compareValue);
- *
- * lessTen; // [-10,5,-20]
- *
+function printArr(value, index, array) {
+    document.write("arr[" + index + "] = " + value + "<br>");
+}
 
- *
- * every() 메소드
- * every() 메소드는 해당 배열의 모든 요소에 대하여 반복적으로 명시된 콜백 함수를 실행한 후, 그 결괏값이 모두 true일 때에만 true를 반환
- *
- * 예제
- * var arr = [-10, 5, -20, 4];
- *
- * function compareValue(value) {
- * 
- *     return value < 10; // 배열의 모든 요소가 10보다 작음.
- * 
- * }
- *
- * arr.every(compareValue); // true
- *
+arr.forEach(printArr); // 배열 arr의 각 요소마다 printArr() 함수가 호출됨.
 
- *
- * some() 메소드
- * some() 메소드는 해당 배열의 모든 요소에 대하여 반복적으로 명시된 콜백 함수를 실행한 후, 그 결괏값이 하나라도 true이면 true를 반환
- *
- * 예제
- * var arr = [10, 25, -20, 14];
- *
- * function compareValue(value) {
- * 
- *     return value < 10; // 배열 요소 중 -20만이 10보다 작음.
- * 
- * }
- *
- * arr.some(compareValue); // true
- *
+/**
+ * map() : 해당 배열의 모든 요소에 대하여 반복적으로 명시된 콜백 함수를 실행한 후, 그 실행 결과를 새로운 배열에 담아 반환
+ **/
+var arr = [1, -2, 3, -4];
 
- *
- * reduce() 메소드
- * reduce() 메소드는 해당 배열의 모든 요소를 하나의 값으로 줄이기 위해, 두 개의 인수를 전달받는 콜백 함수를 실행합니다.
- *
- *
- *
- * 이때 명시된 콜백 함수에 배열의 첫 번째 요소와 두 번째 요소를 인수로 전달하고 실행합니다.
- *
- * 그 결과 반환된 결괏값과 세 번째 요소를 다시 인수로 전달하고 실행합니다.
- *
+// 배열 arr의 각 요소마다 Math.abs() 함수가 호출되고 그 결괏값이 배열로 저장됨.
+var absoluteValues = arr.map(Math.abs);
+absoluteValues; // [1,2,3,4]
+
+/**
+ * filter() : 해당 배열의 모든 요소에 대하여 반복적으로 명시된 콜백 함수를 실행한 후, 그 결괏값이 true인 요소들만을 새로운 배열에 담아 반환
+ **/
+
+var arr = [-10, 5, 100, -20, 40];
+function compareValue(value) {
+    return value < 10;
+}
+
+var lessTen = arr.filter(compareValue);
+lessTen; // [-10,5,-20]
+
+/**
+ * every() : 해당 배열의 모든 요소에 대하여 반복적으로 명시된 콜백 함수를 실행한 후, 그 결괏값이 모두 true일 때에만 true를 반환
+ **/
+var arr = [-10, 5, -20, 4];
+
+function compareValue(value) {
+    return value < 10; // 배열의 모든 요소가 10보다 작음.
+}
+arr.every(compareValue); // true
+
+/**
+ * some() : 해당 배열의 모든 요소에 대하여 반복적으로 명시된 콜백 함수를 실행한 후, 그 결괏값이 하나라도 true이면 true를 반환
+ **/
+var arr = [10, 25, -20, 14];
+
+function compareValue(value) {
+    return value < 10; // 배열 요소 중 -20만이 10보다 작음.
+}
+arr.some(compareValue); // true
+
+/**
+ * reduce() : 해당 배열의 모든 요소를 하나의 값으로 줄이기 위해, 두 개의 인수를 전달받는 콜백 함수를 실행합니다.
+ * 이때 명시된 콜백 함수에 배열의 첫 번째 요소와 두 번째 요소를 인수로 전달하고 실행
+ * 그 결과 반환된 결괏값과 세 번째 요소를 다시 인수로 전달하고 실행
  * 이러한 동작을 반복하여 모든 배열 요소를 인수로 전달하고, 마지막으로 반환된 결괏값을 반환
- *
- *
- *
- * 예제
- * var arr = [1, 2, 3, 4, 5];
- *
- * function sumOfValues(x, y) {
- * 
- *     return x - y;
- * 
- * }
- *
- * arr.reduce(sumOfValues); // 1 - 2 - 3 - 4 - 5 = -13
- *
+ **/
+var arr = [1, 2, 3, 4, 5];
 
- *
- * reduceRight() 메소드
- * reduceRight() 메소드는 reduce() 메소드와 같은 방식으로 실행되며, 배열의 마지막 요소부터 줄이기 시작합니다.
- *
- * 예제
- * var arr = [1, 2, 3, 4, 5];
- *
- * function sumOfValues(x, y) {
- * 
- *     return x - y;
- * 
- * }
- *
- * arr.reduceRight(sumOfValues); // 5 - 4 - 3 - 2 - 1 = -5
- *
+function sumOfValues(x, y) {
+    return x - y;
+}
+arr.reduce(sumOfValues); // 1 - 2 - 3 - 4 - 5 = -13
 
- *
- * entries() 메소드
- * entries() 메소드는 배열 요소별로 키(key)와 값(value)의 한 쌍으로 이루어진 새로운 배열 반복자 객체(Array Iterator Object)를 배열 형태로 반환
- *
+/**
+ * reduceRight() : reduce() 메소드와 같은 방식으로 실행되며, 배열의 마지막 요소부터 줄이기 시작
+ **/
+var arr = [1, 2, 3, 4, 5];
+
+function sumOfValues(x, y) {
+    return x - y;
+}
+
+arr.reduceRight(sumOfValues); // 5 - 4 - 3 - 2 - 1 = -5
+
+/**
+ * entries() : 배열 요소별로 키(key)와 값(value)의 한 쌍으로 이루어진 새로운 배열 반복자 객체(Array Iterator Object)를 배열 형태로 반환
  * 이때 키에는 인덱스가 저장되며, 값에는 배열 요소의 값이 저장
- *
- * 예제
- * var arr = [1, true, "JavaScript"];
- *
- * var arrEntries = arr.entries();
- *
- * for (var entry of arrEntries) {
- * 
- *     document.write(entry + "<br>"); // 배열의 인덱스별로 키(key)와 값(value)의 한 쌍을 출력함.
- * 
- * }
- *
+ **/
+var arr = [1, true, "JavaScript"];
+var arrEntries = arr.entries();
 
- *
- *
- *
- * for / of 문은 익스플로러에서 지원 X
- * 자바스크립트 Array.prototype 메소드
- * 메소드    설명
- * forEach()    해당 배열의 모든 요소에 대하여 반복적으로 명시된 콜백 함수를 실행함.
- * map()    해당 배열의 모든 요소에 대하여 반복적으로 명시된 콜백 함수를 실행한 후, 그 실행 결과를 새로운 배열로 반환함.
- * filter()    해당 배열의 모든 요소에 대하여 반복적으로 명시된 콜백 함수를 실행한 후, 그 결괏값이 true인 요소들만을 새로운 배열에 담아 반환함.
- * every()    해당 배열의 모든 요소에 대하여 반복적으로 명시된 콜백 함수를 실행한 후, 그 결괏값이 모두 true일 때에만 true를 반환함.
- * some()    해당 배열의 모든 요소에 대하여 반복적으로 명시된 콜백 함수를 실행한 후, 그 결괏값이 하나라도 true이면 true를 반환함.
- * reduce()
- * 해당 배열의 모든 요소를 하나의 값으로 줄이기 위해, 두 개의 인수를 전달받는 콜백 함수를 실행함.
- *
- * (배열의 첫 번째 요소부터 시작함.)
- *
- * reduceRight()
- * 해당 배열의 모든 요소를 하나의 값으로 줄이기 위해, 두 개의 인수를 전달받는 콜백 함수를 실행함.
- *
- * (배열의 마지막 요소부터 시작함.)
- *
- * entries()    배열 요소별로 키와 값의 한 쌍으로 이루어진 새로운 배열 반복자 객체(Array Iterator Object)를 배열 형태로 반환함.
- * keys()
- * 배열 요소별로 키(key)만 포함하는 새로운 배열 반복자 객체를 배열 형태로 반환함.
- *
- * values()    배열 요소별로 값(value)만 포함하는 새로운 배열 반복자 객체를 배열 형태로 반환함.
- * find()    검사를 위해 전달받은 함수를 만족하는 배열 요소의 값을 반환함. 만족하는 값이 없으면 undefined를 반환함.
- * findIndex()
- * 검사를 위해 전달받은 함수를 만족하는 배열 요소의 인덱스를 반환함. 만족하는 값이 없으면 -1을 반환함.
+for (var entry of arrEntries) {
+    document.write(entry + "<br>"); // 배열의 인덱스별로 키(key)와 값(value)의 한 쌍을 출력함.
+}
+
+/**
+ * 기타 메서드
+ * keys() : 배열 요소별로 키(key)만 포함하는 새로운 배열 반복자 객체를 배열 형태로 반환
+ * values() : 배열 요소별로 값(value)만 포함하는 새로운 배열 반복자 객체를 배열 형태로 반환
+ * find() : 검사를 위해 전달받은 함수를 만족하는 배열 요소의 값을 반환, 만족하는 값이 없으면 undefined를 반환
+ * findIndex() : 검사를 위해 전달받은 함수를 만족하는 배열 요소의 인덱스를 반환, 만족하는 값이 없으면 -1을 반환함.
  *
  **/
 /****************************************************************************************************************************************************/
+
 /****************************************************************************************************************************************************/
 /**
  *
