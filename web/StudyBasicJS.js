@@ -3087,7 +3087,7 @@ for (var entry of arrEntries) {
  * keys() : 배열 요소별로 키(key)만 포함하는 새로운 배열 반복자 객체를 배열 형태로 반환
  * values() : 배열 요소별로 값(value)만 포함하는 새로운 배열 반복자 객체를 배열 형태로 반환
  * find() : 검사를 위해 전달받은 함수를 만족하는 배열 요소의 값을 반환, 만족하는 값이 없으면 undefined를 반환
- * findIndex() : 검사를 위해 전달받은 함수를 만족하는 배열 요소의 인덱스를 반환, 만족하는 값이 없으면 -1을 반환함.
+ * findIndex() : 검사를 위해 전달받은 함수를 만족하는 배열 요소의 인덱스를 반환, 만족하는 값이 없으면 -1을 반환
  *
  **/
 /****************************************************************************************************************************************************/
@@ -3126,130 +3126,57 @@ for (var entry of arrEntries) {
 /****************************************************************************************************************************************************/
 /****************************************************************************************************************************************************/
 /**
- * Document 객체
- * Document 객체는 웹 페이지 그 자체를 의미합니다.
+ * Document 객체 : 웹 페이지 그 자체를 의미합니다.
+ * 웹 페이지에 존재하는 HTML 요소에 접근하고자 할 때는 반드시 Document 객체부터 시작!
  *
- * 웹 페이지에 존재하는 HTML 요소에 접근하고자 할 때는 반드시 Document 객체부터 시작해야 합니다.
- *
- * Document 메소드
- * Document 객체는 HTML 요소와 관련된 작업을 도와주는 다양한 메소드를 제공합니다.
- *
- *
- *
- *  - HTML 요소의 선택
- *
- *  - HTML 요소의 생성
- *
- *  - HTML 이벤트 핸들러 추가
- *
- *  - HTML 객체의 선택
- *
+ * Document 메소드 : HTML 요소와 관련된 작업을 도와주는 다양한 메소드를 제공
  * HTML 요소의 선택
- * HTML 요소를 선택하기 위해 제공되는 메소드는 다음과 같습니다.
- *
- * 메소드    설명
- * document.getElementsByTagName(태그이름)
- *
- * 해당 태그 이름의 요소를 모두 선택함.
- *
- * document.getElementById(아이디)
- *
- * 해당 아이디의 요소를 선택함.
- *
- * document.getElementsByClassName(클래스이름)
- *
- * 해당 클래스에 속한 요소를 모두 선택함.
- * document.getElementsByName(name속성값)    해당 name 속성값을 가지는 요소를 모두 선택함.
- * document.querySelectorAll(선택자)    해당 선택자로 선택되는 요소를 모두 선택함.
- *
- *
- * 이 중에서 document.querySelectorAll() 메소드는 브라우저별로 지원 여부가 다릅니다.
- *
- * document.querySelectorAll() 메소드를 지원하는 주요 웹 브라우저의 버전은 다음과 같습니다.
- *
- * 메소드    ie    chrome    firefox    safari    opera
- * document.querySelectorAll()
- *
- * 9.0
- * 1.0
- *
- * 3.5
- *
- * 3.2
- *
- * 10.0
+ * HTML 요소의 생성
+ * HTML 이벤트 핸들러 추가
+ * HTML 객체의 선택
+ * 
+ * HTML 요소의 선택
+ * document.getElementsByTagName(태그이름) : 해당 태그 이름의 요소를 모두 선택
+ * document.getElementById(아이디) : 해당 아이디의 요소를 선택
+ * document.getElementsByClassName(클래스이름) : 해당 클래스에 속한 요소를 모두 선택
+ * document.getElementsByName(name속성값) : 해당 name 속성값을 가지는 요소를 모두 선택
+ * document.querySelectorAll(선택자) : 해당 선택자로 선택되는 요소를 모두 선택
+ * 이 중에서 document.querySelectorAll() 메소드는 브라우저별로 지원 여부가 다름
  *
  * HTML 요소의 생성
- * 새로운 HTML 요소를 생성하기 위해 제공되는 메소드는 다음과 같습니다.
- *
- * 메소드    설명
- * document.createElement(HTML요소)
- *
- * 지정된 HTML 요소를 생성함.
- *
- * document.write(텍스트)    HTML 출력 스트림을 통해 텍스트를 출력함.
+ * document.createElement(HTML요소) : 지정된 HTML 요소를 생성
+ * document.write(텍스트) : HTML 출력 스트림을 통해 텍스트를 출력
+ * 
  * HTML 이벤트 핸들러 추가
- * HTML 요소에 이벤트 핸들러를 추가하기 위해 제공되는 메소드는 다음과 같습니다.
- *
- * 메소드    설명
  * document.getElementById(아이디).onclick = function(){ 실행할 코드 }
- *
- * 마우스 클릭 이벤트와 연결될 이벤트 핸들러 코드를 추가함.
+ * 마우스 클릭 이벤트와 연결될 이벤트 핸들러 코드를 추가
+ * 
  * HTML 객체의 선택
- * HTML DOM Level 1은 1998년에 정의되어, HTML5에서도 계속 사용되고 있습니다.
- *
- * 그 후 2004년에는 HTML DOM Level 3가 새롭게 정의되어, Level 1과 같이 사용되고 있습니다.
- *
- *
- *
- *
- * 이러한 HTML DOM에서 제공하는 객체 집합(object collection)을 이용하면 HTML 객체를 손쉽게 선택할 수 있습니다.
- *
- * 객체 집합    설명    DOM Level
- * document.anchors    name 속성을 가지는 <a>요소를 모두 반환함.    1
- * document.applets    applet 요소를 모두 반환함. (HTML5에서 제외됨)    1
- * document.body    <body>요소를 반환함.    1
- * document.cookie    HTML 문서의 쿠키(cookie)를 반환함.    1
- * document.domain
- * HTML 문서가 위치한 서버의 도메인 네임(domain name)을 반환함.
- *
- * 1
- * document.forms    <form>요소를 모두 반환함.    1
- * document.images    <img>요소를 모두 반환함.    1
- * document.links    href 속성을 가지는 <area>요소와 <a>요소를 모두 반환함.    1
- * document.referrer    링크(linking)되어 있는 문서의 URI를 반환함.    1
- * document.title    <title>요소를 반환함.    1
- * document.URL    HTML 문서의 완전한 URL 주소를 반환함.    1
- * document.baseURI    HTML 문서의 절대 URI(absolute base URI)를 반환함.    3
- * document.doctype    HTML 문서의 문서 타입(doctype)을 반환함.    3
- * document.documentElement
- *
- * <html>요소를 반환함.    3
- * document.documentMode
- *
- * 웹 브라우저가 사용하고 있는 모드를 반환함.    3
- * document.documentURI
- *
- * HTML 문서의 URI를 반환함.    3
- * document.domConfig    HTML DOM 설정을 반환함. (더는 사용하지 않음)    3
- * document.embeds    <embed>요소를 모두 반환함.    3
- * document.head    <head>요소를 반환함.    3
- * document.implementation
- *
- * HTML DOM 구현(implementation)을 반환함.    3
- * document.inputEncoding
- *
- * HTML 문서의 문자 인코딩(character set) 형식을 반환함.    3
- * document.lastModified
- *
- * HTML 문서의 마지막 갱신 날짜 및 시간을 반환함    3
- * document.readyState
- *
- * HTML 문서의 로딩 상태(loading status)를 반환함.    3
- * document.scripts    <script>요소를 모두 반환함.    3
- * document.strictErrorChecking
- *
- * 오류의 강제 검사 여부를 반환함.    3
+ * document.anchors : name 속성을 가지는 <a>요소를 모두 반환
+ * document.applets : applet 요소를 모두 반환 (HTML5에서 제외됨)
+ * document.body : <body>요소를 반환
+ * document.cookie : HTML 문서의 쿠키(cookie)를 반환
+ * document.domain HTML 문서가 위치한 서버의 도메인 네임(domain name)을 반환
+ * document.forms : <form>요소를 모두 반환
+ * document.images : <img>요소를 모두 반환
+ * document.links : href 속성을 가지는 <area>요소와 <a>요소를 모두 반환
+ * document.referrer : 링크(linking)되어 있는 문서의 URI를 반환
+ * document.title : <title>요소를 반환
+ * document.URL : HTML 문서의 완전한 URL 주소를 반환
+ * document.baseURI : HTML 문서의 절대 URI(absolute base URI)를 반환
+ * document.doctype : HTML 문서의 문서 타입(doctype)을 반환
+ * document.documentElement <html>요소를 반환
+ * document.documentMode : 웹 브라우저가 사용하고 있는 모드를 반환
+ * document.documentURI HTML 문서의 URI를 반환
+ * document.domConfig : HTML DOM 설정을 반환 (더는 사용하지 않음)
+ * document.embeds : <embed>요소를 모두 반환
+ * document.head : <head>요소를 반환
+ * document.implementation : HTML DOM 구현(implementation)을 반환
+ * document.inputEncoding : HTML 문서의 문자 인코딩(character set) 형식을 반환
+ * document.lastModified : HTML 문서의 마지막 갱신 날짜 및 시간을 반환함
+ * document.readyState : HTML 문서의 로딩 상태(loading status)를 반환
+ * document.scripts : <script>요소를 모두 반환
+ * document.strictErrorChecking : 오류의 강제 검사 여부를 반환
  *
  **/
 /****************************************************************************************************************************************************/
