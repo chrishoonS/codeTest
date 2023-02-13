@@ -3100,14 +3100,14 @@ for (var entry of arrEntries) {
  *
  * https://tcpschool.com/javascript/js_dom_concept => 여기 계층구조 도표 확인
  *
- * 자바스크립트는 이러한 객체 모델을 이용하여 다음과 같은 작업을 할 수 있습니다.
- * - 자바스크립트는 새로운 HTML 요소나 속성을 추가할 수 있습니다.
- * - 자바스크립트는 존재하는 HTML 요소나 속성을 제거할 수 있습니다.
- * - 자바스크립트는 HTML 문서의 모든 HTML 요소를 변경할 수 있습니다.
- * - 자바스크립트는 HTML 문서의 모든 HTML 속성을 변경할 수 있습니다.
- * - 자바스크립트는 HTML 문서의 모든 CSS 스타일을 변경할 수 있습니다.
- * - 자바스크립트는 HTML 문서에 새로운 HTML 이벤트를 추가할 수 있습니다.
- * - 자바스크립트는 HTML 문서의 모든 HTML 이벤트에 반응할 수 있습니다.
+ * 자바스크립트는 이러한 객체 모델을 이용하여 다음과 같은 작업을  가능
+ * - 자바스크립트는 새로운 HTML 요소나 속성을 추가 가능
+ * - 자바스크립트는 존재하는 HTML 요소나 속성을 제거 가능
+ * - 자바스크립트는 HTML 문서의 모든 HTML 요소를 변경 가능
+ * - 자바스크립트는 HTML 문서의 모든 HTML 속성을 변경 가능
+ * - 자바스크립트는 HTML 문서의 모든 CSS 스타일을 변경 가능
+ * - 자바스크립트는 HTML 문서에 새로운 HTML 이벤트를 추가 가능
+ * - 자바스크립트는 HTML 문서의 모든 HTML 이벤트에 반응 가능
  *
  * W3C DOM 표준은 세 가지 모델로 구분됩니다.
  * 1. Core DOM : 모든 문서 타입을 위한 DOM 모델
@@ -3120,7 +3120,7 @@ for (var entry of arrEntries) {
  *
  * XML DOM
  * XML DOM은 XML 문서에 접근하여, 그 문서를 다루는 표준화된 방법을 정의
- * 모든 XML 요소는 XML DOM를 통해 접근할 수 있습니다.
+ * 모든 XML 요소는 XML DOM를 통해 접근 가능
  *
  **/
 /****************************************************************************************************************************************************/
@@ -3182,9 +3182,79 @@ for (var entry of arrEntries) {
 /****************************************************************************************************************************************************/
 /****************************************************************************************************************************************************/
 /**
+ * DOM 요소의 선택 : HTML 요소를 다루기 위해서는 우선 해당 요소를 선택해야함.
  *
- *
+ * 1. HTML 태그 이름(tag name)을 이용한 선택
+ * 2. 아이디(id)를 이용한 선택
+ * 3. 클래스(class)를 이용한 선택
+ * 4. name 속성(attribute)을 이용한 선택
+ * 5. CSS 선택자(selector)를 이용한 선택
+ * 6. HTML 객체 집합(object collection)을 이용한 선택
  **/
+
+/** HTML 태그 이름(tag name)을 이용한 선택
+ * getElementsByTagName() 메소드는 HTML 태그 이름을 이용하여 HTML 요소를 선택
+ * item() 메소드는 해당 HTML 객체 집합(obejct collection)에서 전달받은 인덱스에 해당하는 요소를 반환
+ * HTML 요소의 style 프로퍼티를 이용하면, 해당 요소의 CSS 스타일을 변경 가능
+ * 아이디(id)를 이용한 선택
+ **/
+var selectedItem = document.getElementsByTagName("li"); // 모든 <li> 요소를 선택함.
+
+for (var i = 0; i < selectedItem.length; i++) {
+    selectedItem.item(i).style.color = "red"; // 선택된 모든 요소의 텍스트 색상을 변경함.
+}
+
+/**
+ * getElementById() 메소드는 아이디를 이용하여 HTML 요소를 선택
+ * 자바스크립트에서 아이디(id)를 이용한 선택은 해당 아이디를 가지고 있는 요소 중에서 첫 번째 요소 단 하나만을 선택
+ * 따라서 여러 요소를 선택하고 싶을 때는 태그 이름이나 클래스와 같은 다른 방법을 사용
+ **/
+var selectedItem = document.getElementById("even"); // 아이디가 "even"인 요소를 선택함.
+selectedItem.style.color = "red"; // 선택된 요소의 텍스트 색상을 변경함.
+
+// getElementsByClassName() 메소드는 클래스 이름을 이용하여 HTML 요소를 선택
+var selectedItem = document.getElementsByClassName("odd"); // 클래스가 "odd"인 모든 요소를 선택함.
+
+for (var i = 0; i < selectedItem.length; i++) {
+    selectedItem.item(i).style.color = "red"; // 선택된 모든 요소의 텍스트 색상을 변경함.
+}
+
+//getElementByName() 메소드는 HTML 요소의 name 속성을 이용하여 HTML 요소를 선택
+var selectedItem = document.getElementsByName("first"); // name 속성값이 "first"인 모든 요소를 선택함.
+for (var i = 0; i < selectedItem.length; i++) {
+    selectedItem.item(i).style.color = "red"; // 선택된 모든 요소의 텍스트 색상을 변경함.
+}
+
+//querySelectorAll() 메소드는 CSS 선택자(아이디, 클래스, 속성, 속성값 등)를 이용하여 HTML 요소를 선택
+var selectedItem = document.querySelectorAll("li.odd"); // 클래스가 "odd"인 요소 중에서 <li> 요소만을 선택함.
+for (var i = 0; i < selectedItem.length; i++) {
+    selectedItem.item(i).style.color = "red"; // 선택된 모든 요소의 텍스트 색상을 변경함.
+}
+
+//HTML DOM에서 제공하는 객체 집합(object collection)을 이용하여 HTML 요소를 선택 가능
+var title = document.title; // <title> 요소를 선택함.
+document.write(title);
+
+/**
+ * HTML DOM을 이용하면 HTML 요소의 내용(content)이나 속성값 등을 손쉽게 변경 가능
+ * HTML 요소의 내용을 변경하는 가장 쉬운 방법은 innerHTML 프로퍼티를 이용하는 것!
+ **/
+var str = document.getElementById("text");
+str.innerHTML = "이 문장으로 바뀌었습니다!";
+
+//HTML 요소의 속성 이름을 이용하면 속성값도 변경 가능
+var link = document.getElementById("link");          // 아이디가 "link"인 요소를 선택함.
+link.href = "/javascript/intro"; // 해당 요소의 href 속성값을 변경함.
+link.innerHTML = "자바스크립트 수업 바로 가기!";     // 해당 요소의 내용을 변경함.
+
+/**
+ * HTML DOM을 이용하면 HTML 요소의 스타일(style)도 손쉽게 변경 가능
+ * style 프로퍼티를 이용하여 HTML 요소에 CSS 스타일을 적용합니다.
+ **/
+var str = document.getElementById("text");                 // 아이디가 "text"인 요소를 선택함.
+function changeRedColor() { str.style.color = "red"; }     // 해당 요소의 글자색을 빨간색으로 변경함.
+function changeBlackColor() { str.style.color = "black"; } // 해당 요소의 글자색을 검정색으로 변경함.
+
 /****************************************************************************************************************************************************/
 /****************************************************************************************************************************************************/
 /**
