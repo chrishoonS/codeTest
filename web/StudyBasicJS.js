@@ -3376,340 +3376,162 @@ function printLastChild() {
 /****************************************************************************************************************************************************/
 /****************************************************************************************************************************************************/
 /**
-노드 리스트(node list)
-노드 리스트는 getElementsByTagName() 메소드나 childNodes 프로퍼티의 값으로 반환되는 객체
- *
-이 객체는 HTML 문서와 같은 순서로 문서 내의 모든 노드를 리스트 형태로 저장하고 있습니다.
- *
- *
- *
-리스트의 각 노드는 0부터 시작하는 인덱스를 이용하여 접근가능
- *
- *
- *
-Node List
- *
- *
- *
-예제
-// 아이디가 "list"인 요소의 모든 자식 노드들을 선택함.
- *
-var listItems = document.getElementById("list").childNodes;
- *
-// 자식 노드들 중 첫 번째 li 요소의 내용을 변경함.
- *
-listItems[1].firstChild.nodeValue = "HTML 요소의 내용을 변경했어요!";
- *
-
- *
- *
- *
-위의 예제에서 자식 노드 중 첫 번째 <li>요소를 선택할 때 인덱스로 0이 아닌 1을 사용합니다.
- *
-그 이유는 HTML DOM에서 각 요소 노드 다음에는 별도의 텍스트 노드가 존재하기 때문
- *
-따라서 아이디가 "list"인 요소의 자식 노드 리스트의 첫 번째 노드에는 아이디가 "list"인 요소 다음에 존재하는 텍스트 노드가 저장됩니다.
- *
- *
- *
-다음 예제는 이러한 요소 노드 사이에 존재하는 텍스트 노드를 확인하는 예제
- *
-예제
-// 아이디가 "list"인 요소의 모든 자식 노드들을 선택함.
- *
-var listItems = document.getElementById("list").childNodes;
- *
- *
- *
-// 자식 노드들 중 첫 번째 노드의 값을 출력함.
- *
-document.write(listItems[0].nodeValue + "<br>");
- *
-// 자식 노드들 중 두 번째 노드의 자식 노드 중 첫 번째 노드의 값을 출력함.
- *
-document.write(listItems[1].firstChild.nodeValue + "<br>");
- *
-// 자식 노드들 중 세 번째 노드의 값을 출력함.
- *
-document.write(listItems[2].nodeValue);
- *
-
- *
- *
- *
-위의 예제는 각 요소 노드 다음에 또 다른 텍스트 노드가 존재함을 보여줍니다.
- *
-따라서 노드 리스트에 인덱스를 이용하여 접근할 때는 이러한 텍스트 노드의 존재를 반드시 염두에 두어야 합니다.
- *
- *
- *
-노드 리스트 객체는 리스트에 노드를 추가하거나 삭제되면 자신의 상태 정보를 스스로 갱신합니다.
- *
- *
-따라서 이 객체의 length 프로퍼티 값은 언제나 노드 리스트가 저장하고 있는 노드들의 총 개수를 나타냅니다.
- *
- *
- *
-예제
-var listItems = document.getElementsByTagName("li");              // 모든 <li> 요소들을 선택함.
- *
-document.getElementById("text").innerHTML =
- *
-"이 노드 리스트의 길이는 " + listItems.length + "개 <br>"; // 모든 자식 노드들의 개수를 반환함.
- *
-function changeTextColor() {
- *
-    for (var i = 0; i < listItems.length; i++) {
- *
-        listItems[i].style.color = "orange";                      // 모든 자식 노드들의 글자색을 변경함.
- *
-    }
- *
-}
- *
+ * 노드 리스트(node list)
+ * getElementsByTagName() 메소드나 childNodes 프로퍼티의 값으로 반환되는 객체
+ * 이 객체는 HTML 문서와 같은 순서로 문서 내의 모든 노드를 리스트 형태로 저장
+ * 리스트의 각 노드는 0부터 시작하는 인덱스를 이용하여 접근가능
  **/
+
+// 아이디가 "list"인 요소의 모든 자식 노드들을 선택함.
+var listItems = document.getElementById("list").childNodes;
+
+// 자식 노드들 중 첫 번째 li 요소의 내용을 변경함.
+listItems[1].firstChild.nodeValue = "HTML 요소의 내용을 변경했어요!";
+
+/**
+ * 위의 예제에서 자식 노드 중 첫 번째 <li>요소를 선택할 때 인덱스로 0이 아닌 1을 사용
+ * 그 이유는 HTML DOM에서 각 요소 노드 다음에는 별도의 텍스트 노드가 존재하기 때문
+ * 따라서 아이디가 "list"인 요소의 자식 노드 리스트의 첫 번째 노드에는 아이디가 "list"인 요소 다음에 존재하는 텍스트 노드가 저장
+ **/
+// 아이디가 "list"인 요소의 모든 자식 노드들을 선택함.
+var listItems = document.getElementById("list").childNodes;
+
+// 자식 노드들 중 첫 번째 노드의 값을 출력함.
+document.write(listItems[0].nodeValue + "<br>");
+
+// 자식 노드들 중 두 번째 노드의 자식 노드 중 첫 번째 노드의 값을 출력함.
+document.write(listItems[1].firstChild.nodeValue + "<br>");
+
+// 자식 노드들 중 세 번째 노드의 값을 출력함.
+document.write(listItems[2].nodeValue);
+/**
+ * 위의 예제는 각 요소 노드 다음에 또 다른 텍스트 노드가 존재함을 표시
+ * 따라서 노드 리스트에 인덱스를 이용하여 접근할 때는 이러한 텍스트 노드의 존재를 반드시 염두!
+ * 노드 리스트 객체는 리스트에 노드를 추가하거나 삭제되면 자신의 상태 정보를 스스로 갱신
+ * 따라서 이 객체의 length 프로퍼티 값 = 언제나 노드 리스트가 저장하고 있는 노드들의 총 개수!
+ **/
+var listItems = document.getElementsByTagName("li");              // 모든 <li> 요소들을 선택함.
+document.getElementById("text").innerHTML = "이 노드 리스트의 길이는 " + listItems.length + "개 <br>"; // 모든 자식 노드들의 개수를 반환함.
+
+function changeTextColor() {
+    for (var i = 0; i < listItems.length; i++) {
+        listItems[i].style.color = "orange";                      // 모든 자식 노드들의 글자색을 변경함.
+    }
+}
 /****************************************************************************************************************************************************/
 /****************************************************************************************************************************************************/
 /**
-노드의 관리
-노드의 추가
-다음 메소드를 사용하면 특정 위치에 새로운 노드를 추가가능
- *
- *
- *
-1. appendChild()
- *
-2. insertBefore()
- *
-3. insertData()
- *
-appendChild() 메소드
-appendChild() 메소드는 새로운 노드를 해당 노드의 자식 노드 리스트(child node list)의 맨 마지막에 추가합니다.
- *
-예제
+ * appendChild() : 새로운 노드를 해당 노드의 자식 노드 리스트(child node list)의 맨 마지막에 추가
+ **/
+
 function appendNode() {
- *
     var parent = document.getElementById("list");  // 아이디가 "list"인 요소를 선택함.
- *
     var newItem = document.getElementById("item"); // 아이디가 "item"인 요소를 선택함.
- *
     parent.appendChild(newItem);                   // 해당 요소의 맨 마지막 자식 노드로 추가함.
- *
 }
- *
 
+/**
+ * insertBefore() : 새로운 노드를 특정 자식 노드 바로 앞에 추가
  *
-insertBefore() 메소드
-insertBefore() 메소드는 새로운 노드를 특정 자식 노드 바로 앞에 추가합니다.
+ * 원형
+ * 부모노드.insertBefore(새로운자식노드, 기준자식노드);
  *
- *
- *
-insertBefore() 메소드의 원형은 다음과 같습니다.
- *
-원형
-부모노드.insertBefore(새로운자식노드, 기준자식노드);
- *
- *
- *
-1. 새로운 자식 노드 : 자식 노드 리스트(child node list)에 새롭게 추가할 자식 노드를 전달합니다.
- *
-2. 기준 자식 노드 : 새로운 노드를 삽입할 때 기준이 되는 노드로, 이 노드 바로 앞에 새로운 노드가 추가됩니다.
- *
- *
- *
-예제
+ * 새로운 자식 노드 : 자식 노드 리스트(child node list)에 새롭게 추가할 자식 노드를 전달
+ * 기준 자식 노드 : 새로운 노드를 삽입할 때 기준이 되는 노드로, 이 노드 바로 앞에 새로운 노드가 추가
+ * 기준 자식 노드에 null 값을 전달하면 새로운 노드는 자식 노드 리스트의 맨 마지막 노드로 추가
+ * 즉, appendChild() 메소드와 완전히 같은 동작!
+ **/
+
 function appendNode() {
- *
     var parent = document.getElementById("list");           // 아이디가 "list"인 요소를 선택함.
- *
     var criteriaItem = document.getElementById("criteria"); // 아이디가 "criteria"인 요소를 선택함.
- *
- *
     var newItem = document.getElementById("item");          // 아이디가 "item"인 요소를 선택함.
- *
- *
     parent.insertBefore(newItem, criteriaItem); // 해당 노드를 기준이 되는 자식 노드의 바로 앞에 추가함.
- *
 }
- *
 
+/**
+ * insertData() : 텍스트 노드의 텍스트 데이터에 새로운 텍스트를 추가
  *
+ * 원형
+ * 텍스트노드.insertData(오프셋, 새로운데이터);
  *
- *
-기준 자식 노드에 null 값을 전달하면 새로운 노드는 자식 노드 리스트의 맨 마지막 노드로 추가됩니다.
- *
-즉, appendChild() 메소드와 완전히 같은 동작을 하게 됩니다.
- *
-insertData() 메소드
-insertData() 메소드는 텍스트 노드의 텍스트 데이터에 새로운 텍스트를 추가합니다.
- *
- *
- *
-insertData() 메소드의 원형은 다음과 같습니다.
- *
-원형
-텍스트노드.insertData(오프셋, 새로운데이터);
- *
- *
- *
-1. 오프셋(offset) : 오프셋 값은 0부터 시작하며, 기존 텍스트 데이터의 몇 번째 위치부터 추가할지를 전달합니다.
- *
-2. 새로운 데이터 : 새로이 삽입할 텍스트 데이터를 전달합니다.
- *
- *
- *
-예제
+ * 오프셋(offset) : 오프셋 값은 0부터 시작하며, 기존 텍스트 데이터의 몇 번째 위치부터 추가할지를 전달합니다.
+ * 새로운 데이터 : 새로이 삽입할 텍스트 데이터를 전달합니다.
+ **/
 var text = document.getElementById("text").firstChild; // 아이디가 "text"인 요소의 텍스트 노드를 선택함.
- *
+
 function appendText() {
- *
     text.insertData(6, " 나른한 "); // 텍스트 노드의 6번째 문자부터 " 나른한 "이란 텍스트를 추가함.
- *
 }
- *
 
- *
-노드의 생성
-생성할 노드의 종류에 따라 다음과 같은 메소드를 사용가능
- *
- *
- *
-1. createElement()
- *
-2. createAttribute()
- *
-3. createTextNode()
- *
-요소 노드의 생성
-createElement() 메소드를 사용하여 새로운 요소 노드를 만들 수 있습니다.
- *
-예제
+/**
+ * 요소 노드의 생성 : createElement() 메소드를 사용하여 새로운 요소 노드 생성
+ **/
 function createNode() {
- *
     var criteriaNode = document.getElementById("text"); // 기준이 되는 요소로 아이디가 "text"인 요소를 선택함.
- *
     var newNode = document.createElement("p");          // 새로운 <p> 요소를 생성함.
- *
     newNode.innerHTML = "새로운 단락";
- *
     document.body.insertBefore(newNode, criteriaNode);  // 새로운 요소를 기준이 되는 요소 바로 앞에 추가함.
- *
 }
- *
 
- *
-속성 노드의 생성
-createAttribute() 메소드를 사용하여 새로운 속성 노드를 만들 수 있습니다.
- *
- *
- *
-만약 같은 이름의 속성 노드가 이미 존재하면, 기존의 속성 노드는 새로운 속성 노드로 대체됩니다.
- *
-이미 존재하는 요소 노드에 속성 노드를 생성하고자 할 때에는 setAttribute() 메소드를 사용가능
- *
-예제
+/**
+ * 속성 노드의 생성 : createAttribute() 메소드를 사용하여 새로운 속성 노드 생성
+ * 만약 같은 이름의 속성 노드가 이미 존재하면, 기존의 속성 노드는 새로운 속성 노드로 대체
+ * 이미 존재하는 요소 노드에 속성 노드를 생성하고자 할 때에는 setAttribute() 메소드를 사용가능
+ **/
 function createNode() {
- *
     var text = document.getElementById("text");           // 아이디가 "text"인 요소를 선택함.
- *
     var newAttribute = document.createAttribute("style"); // 새로운 style 속성 노드를 생성함.
- *
     newAttribute.value = "color:red";
- *
     text.setAttributeNode(newAttribute);                  // 해당 요소의 속성 노드로 추가함.
- *
 }
- *
 
- *
-텍스트 노드의 생성
-createTextNode() 메소드를 사용하여 새로운 텍스트 노드를 만들 수 있습니다.
- *
-예제
+/**
+ * 텍스트 노드의 생성 : createTextNode() 메소드를 사용하여 새로운 텍스트 노드를 만들 수 있습니다.
+ **/
 function createNode() {
- *
     var elementNode = document.getElementById("text");           // 아이디가 "text"인 요소를 선택함.
- *
     var newText = document.createTextNode("새로운 텍스트에요!"); // 새로운 텍스트 노드를 생성함.
- *
     elementNode.appendChild(newText);                            // 해당 요소의 자식 노드로 추가함.
- *
 }
- *
 
- *
-노드의 제거
-다음 메소드를 사용하면 특정 노드를 제거가능
- *
- *
- *
-1. removeChild()
- *
-2. removeAttribute()
- *
-removeChild() 메소드
-removeChild() 메소드는 자식 노드 리스트에서 특정 자식 노드를 제거합니다.
- *
- *
- *
-이 메소드는 성공적으로 노드가 제거되면 제거된 노드를 반환
- *
-노드가 제거될 때에는 제거되는 노드의 모든 자식 노드들도 다 같이 제거됩니다.
- *
-예제
+/**
+ * 노드의 제거
+ * 1. removeChild()
+ * 2. removeAttribute()
+ **/
+
+/**
+ * removeChild() : 자식 노드 리스트에서 특정 자식 노드를 제거
+ * 이 메소드는 성공적으로 노드가 제거되면 제거된 노드를 반환
+ * 노드가 제거될 때에는 제거되는 노드의 모든 자식 노드들도 다 같이 제거
+ **/
 var parent = document.getElementById("list");      // 아이디가 "list"인 요소를 선택함.
- *
 var removedItem = document.getElementById("item"); // 아이디가 "item"인 요소를 선택함.
- *
 parent.removeChild(removedItem);                   // 지정된 요소를 삭제함.
- *
 
- *
-removeAttribute() 메소드
-removeAttribute() 메소드는 속성의 이름을 이용하여 특정 속성 노드를 제거합니다.
- *
-예제
- *
- *
+/**
+ * removeAttribute() : 속성의 이름을 이용하여 특정 속성 노드를 제거
+ **/
 var text = document.getElementById("text"); // 아이디가 "text"인 요소를 선택함.
- *
 text.removeAttribute("style");              // 해당 요소의 "style" 속성을 제거함.
- *
- *
- *
 
+/**
+ * 노드의 복제
+ * cloneNode() : 기존의 존재하는 노드와 똑같은 새로운 노드를 생성하여 반환
  *
-노드의 복제
-cloneNode() 메소드를 사용하면 특정 노드를 복제가능
- *
-cloneNode() 메소드
-cloneNode() 메소드는 기존의 존재하는 노드와 똑같은 새로운 노드를 생성하여 반환
- *
- *
- *
-cloneNode() 메소드의 원형은 다음과 같습니다.
- *
-원형
-복제할노드.cloneNode(자식노드복제여부);
- *
- *
- *
-- 자식 노드 복제 여부 : 전달된 값이 true이면 복제되는 노드의 모든 속성 노드와 자식 노드도 같이 복제하며, false이면 속성 노드만 복제하고 자식 노드는 복제하지 않습니다.
- *
- *
- *
-예제
-function cloneElement() {
- *
-    var parent = document.getElementById("list");     // 아이디가 "list"인 요소를 선택함.
- *
-    var originItem = document.getElementById("item"); // 아이디가 "item"인 요소를 선택함.
- *
-    parent.appendChild(originItem.cloneNode(true));   // 해당 노드를 복제하여 리스트의 맨 마지막에 추가함.
- *
-}
+ * 원형
+ * 복제할노드.cloneNode(자식노드복제여부);
+ * 자식 노드 복제 여부 : 전달된 값이 true이면 복제되는 노드의 모든 속성 노드와 자식 노드도 같이 복제
+ * false이면 속성 노드만 복제하고 자식 노드는 복제하지 않음
  *
  **/
+
+function cloneElement() {
+    var parent = document.getElementById("list");     // 아이디가 "list"인 요소를 선택함.
+    var originItem = document.getElementById("item"); // 아이디가 "item"인 요소를 선택함.
+    parent.appendChild(originItem.cloneNode(true));   // 해당 노드를 복제하여 리스트의 맨 마지막에 추가함.
+}
 /****************************************************************************************************************************************************/
 /****************************************************************************************************************************************************/
 /**
