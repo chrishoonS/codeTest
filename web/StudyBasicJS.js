@@ -3198,7 +3198,7 @@ for (var entry of arrEntries) {
  * HTML 요소의 style 프로퍼티를 이용하면, 해당 요소의 CSS 스타일을 변경 가능
  * 아이디(id)를 이용한 선택
  **/
-var selectedItem = document.getElementsByTagName("li"); // 모든 <li> 요소를 선택함.
+var selectedItem = document.getElementsByTagName("li"); // 모든 <li> 요소를 선택
 
 for (var i = 0; i < selectedItem.length; i++) {
     selectedItem.item(i).style.color = "red"; // 선택된 모든 요소의 텍스트 색상을 변경함.
@@ -3209,30 +3209,30 @@ for (var i = 0; i < selectedItem.length; i++) {
  * 자바스크립트에서 아이디(id)를 이용한 선택은 해당 아이디를 가지고 있는 요소 중에서 첫 번째 요소 단 하나만을 선택
  * 따라서 여러 요소를 선택하고 싶을 때는 태그 이름이나 클래스와 같은 다른 방법을 사용
  **/
-var selectedItem = document.getElementById("even"); // 아이디가 "even"인 요소를 선택함.
+var selectedItem = document.getElementById("even"); // 아이디가 "even"인 요소를 선택
 selectedItem.style.color = "red"; // 선택된 요소의 텍스트 색상을 변경함.
 
 // getElementsByClassName() 메소드는 클래스 이름을 이용하여 HTML 요소를 선택
-var selectedItem = document.getElementsByClassName("odd"); // 클래스가 "odd"인 모든 요소를 선택함.
+var selectedItem = document.getElementsByClassName("odd"); // 클래스가 "odd"인 모든 요소를 선택
 
 for (var i = 0; i < selectedItem.length; i++) {
     selectedItem.item(i).style.color = "red"; // 선택된 모든 요소의 텍스트 색상을 변경함.
 }
 
 //getElementByName() 메소드는 HTML 요소의 name 속성을 이용하여 HTML 요소를 선택
-var selectedItem = document.getElementsByName("first"); // name 속성값이 "first"인 모든 요소를 선택함.
+var selectedItem = document.getElementsByName("first"); // name 속성값이 "first"인 모든 요소를 선택
 for (var i = 0; i < selectedItem.length; i++) {
     selectedItem.item(i).style.color = "red"; // 선택된 모든 요소의 텍스트 색상을 변경함.
 }
 
 //querySelectorAll() 메소드는 CSS 선택자(아이디, 클래스, 속성, 속성값 등)를 이용하여 HTML 요소를 선택
-var selectedItem = document.querySelectorAll("li.odd"); // 클래스가 "odd"인 요소 중에서 <li> 요소만을 선택함.
+var selectedItem = document.querySelectorAll("li.odd"); // 클래스가 "odd"인 요소 중에서 <li> 요소만을 선택
 for (var i = 0; i < selectedItem.length; i++) {
     selectedItem.item(i).style.color = "red"; // 선택된 모든 요소의 텍스트 색상을 변경함.
 }
 
 //HTML DOM에서 제공하는 객체 집합(object collection)을 이용하여 HTML 요소를 선택 가능
-var title = document.title; // <title> 요소를 선택함.
+var title = document.title; // <title> 요소를 선택
 document.write(title);
 
 /**
@@ -3243,7 +3243,7 @@ var str = document.getElementById("text");
 str.innerHTML = "이 문장으로 바뀌었습니다!";
 
 //HTML 요소의 속성 이름을 이용하면 속성값도 변경 가능
-var link = document.getElementById("link");          // 아이디가 "link"인 요소를 선택함.
+var link = document.getElementById("link");          // 아이디가 "link"인 요소를 선택
 link.href = "/javascript/intro"; // 해당 요소의 href 속성값을 변경함.
 link.innerHTML = "자바스크립트 수업 바로 가기!";     // 해당 요소의 내용을 변경함.
 
@@ -3251,7 +3251,7 @@ link.innerHTML = "자바스크립트 수업 바로 가기!";     // 해당 요�
  * HTML DOM을 이용하면 HTML 요소의 스타일(style)도 손쉽게 변경 가능
  * style 프로퍼티를 이용하여 HTML 요소에 CSS 스타일을 적용합니다.
  **/
-var str = document.getElementById("text");                 // 아이디가 "text"인 요소를 선택함.
+var str = document.getElementById("text");                 // 아이디가 "text"인 요소를 선택
 function changeRedColor() { str.style.color = "red"; }     // 해당 요소의 글자색을 빨간색으로 변경함.
 function changeBlackColor() { str.style.color = "black"; } // 해당 요소의 글자색을 검정색으로 변경함.
 
@@ -3317,9 +3317,9 @@ function changeBlackColor() { str.style.color = "black"; } // 해당 요소의 �
  * 속성 노드(attribute node) : 속성 이름
  * 텍스트 노드(text node) : #text
  **/
-//HTML 문서의 모든 자식 노드 중에서 두 번째 노드의 이름을 선택함.
+//HTML 문서의 모든 자식 노드 중에서 두 번째 노드의 이름을 선택
 document.getElementById("document").innerHTML = document.childNodes[1].nodeName;           // HTML
-// html 노드의 모든 자식 노드 중에서 첫 번째 노드의 이름을 선택함.
+// html 노드의 모든 자식 노드 중에서 첫 번째 노드의 이름을 선택
 document.getElementById("html").innerHTML = document.childNodes[1].childNodes[0].nodeName; // HEAD
 /**
  * 위의 예제에서 HTML 문서의 첫 번째 자식 노드는 <!DOCTYPE html>이며, 두 번째 자식 노드는 <html>
@@ -3331,7 +3331,7 @@ document.getElementById("html").innerHTML = document.childNodes[1].childNodes[0]
  * 텍스트 노드(text node) : 해당 텍스트 문자열
  * 이러한 innerHTML 프로퍼티 대신에 firstChild.nodeValue를 사용해도 같은 결과
  **/
-// 아이디가 "heading"인 요소의 첫 번째 자식 노드의 노드값을 선택함.
+// 아이디가 "heading"인 요소의 첫 번째 자식 노드의 노드값을 선택
 var headingText = document.getElementById("heading").firstChild.nodeValue;
 document.getElementById("text1").innerHTML = headingText;
 document.getElementById("text1").firstChild.nodeValue = headingText;
@@ -3344,7 +3344,7 @@ document.getElementById("text1").firstChild.nodeValue = headingText;
  * 주석 노드(comment node) : 8
  * 문서 노드(document node) : 9
  **/
-// 아이디가 "heading"인 요소의 첫 번째 자식 노드의 타입을 선택함.
+// 아이디가 "heading"인 요소의 첫 번째 자식 노드의 타입을 선택
 var headingType = document.getElementById("heading").firstChild.nodeType;
 document.getElementById("head").innerHTML = headingType;           // 3
 document.getElementById("document").innerHTML = document.nodeType; // 9
@@ -3382,7 +3382,7 @@ function printLastChild() {
  * 리스트의 각 노드는 0부터 시작하는 인덱스를 이용하여 접근가능
  **/
 
-// 아이디가 "list"인 요소의 모든 자식 노드들을 선택함.
+// 아이디가 "list"인 요소의 모든 자식 노드들을 선택
 var listItems = document.getElementById("list").childNodes;
 
 // 자식 노드들 중 첫 번째 li 요소의 내용을 변경함.
@@ -3393,7 +3393,7 @@ listItems[1].firstChild.nodeValue = "HTML 요소의 내용을 변경했어요!";
  * 그 이유는 HTML DOM에서 각 요소 노드 다음에는 별도의 텍스트 노드가 존재하기 때문
  * 따라서 아이디가 "list"인 요소의 자식 노드 리스트의 첫 번째 노드에는 아이디가 "list"인 요소 다음에 존재하는 텍스트 노드가 저장
  **/
-// 아이디가 "list"인 요소의 모든 자식 노드들을 선택함.
+// 아이디가 "list"인 요소의 모든 자식 노드들을 선택
 var listItems = document.getElementById("list").childNodes;
 
 // 자식 노드들 중 첫 번째 노드의 값을 출력함.
@@ -3410,7 +3410,7 @@ document.write(listItems[2].nodeValue);
  * 노드 리스트 객체는 리스트에 노드를 추가하거나 삭제되면 자신의 상태 정보를 스스로 갱신
  * 따라서 이 객체의 length 프로퍼티 값 = 언제나 노드 리스트가 저장하고 있는 노드들의 총 개수!
  **/
-var listItems = document.getElementsByTagName("li");              // 모든 <li> 요소들을 선택함.
+var listItems = document.getElementsByTagName("li");              // 모든 <li> 요소들을 선택
 document.getElementById("text").innerHTML = "이 노드 리스트의 길이는 " + listItems.length + "개 <br>"; // 모든 자식 노드들의 개수를 반환함.
 
 function changeTextColor() {
@@ -3425,8 +3425,8 @@ function changeTextColor() {
  **/
 
 function appendNode() {
-    var parent = document.getElementById("list");  // 아이디가 "list"인 요소를 선택함.
-    var newItem = document.getElementById("item"); // 아이디가 "item"인 요소를 선택함.
+    var parent = document.getElementById("list");  // 아이디가 "list"인 요소를 선택
+    var newItem = document.getElementById("item"); // 아이디가 "item"인 요소를 선택
     parent.appendChild(newItem);                   // 해당 요소의 맨 마지막 자식 노드로 추가함.
 }
 
@@ -3443,9 +3443,9 @@ function appendNode() {
  **/
 
 function appendNode() {
-    var parent = document.getElementById("list");           // 아이디가 "list"인 요소를 선택함.
-    var criteriaItem = document.getElementById("criteria"); // 아이디가 "criteria"인 요소를 선택함.
-    var newItem = document.getElementById("item");          // 아이디가 "item"인 요소를 선택함.
+    var parent = document.getElementById("list");           // 아이디가 "list"인 요소를 선택
+    var criteriaItem = document.getElementById("criteria"); // 아이디가 "criteria"인 요소를 선택
+    var newItem = document.getElementById("item");          // 아이디가 "item"인 요소를 선택
     parent.insertBefore(newItem, criteriaItem); // 해당 노드를 기준이 되는 자식 노드의 바로 앞에 추가함.
 }
 
@@ -3458,7 +3458,7 @@ function appendNode() {
  * 오프셋(offset) : 오프셋 값은 0부터 시작하며, 기존 텍스트 데이터의 몇 번째 위치부터 추가할지를 전달합니다.
  * 새로운 데이터 : 새로이 삽입할 텍스트 데이터를 전달합니다.
  **/
-var text = document.getElementById("text").firstChild; // 아이디가 "text"인 요소의 텍스트 노드를 선택함.
+var text = document.getElementById("text").firstChild; // 아이디가 "text"인 요소의 텍스트 노드를 선택
 
 function appendText() {
     text.insertData(6, " 나른한 "); // 텍스트 노드의 6번째 문자부터 " 나른한 "이란 텍스트를 추가함.
@@ -3468,7 +3468,7 @@ function appendText() {
  * 요소 노드의 생성 : createElement() 메소드를 사용하여 새로운 요소 노드 생성
  **/
 function createNode() {
-    var criteriaNode = document.getElementById("text"); // 기준이 되는 요소로 아이디가 "text"인 요소를 선택함.
+    var criteriaNode = document.getElementById("text"); // 기준이 되는 요소로 아이디가 "text"인 요소를 선택
     var newNode = document.createElement("p");          // 새로운 <p> 요소를 생성함.
     newNode.innerHTML = "새로운 단락";
     document.body.insertBefore(newNode, criteriaNode);  // 새로운 요소를 기준이 되는 요소 바로 앞에 추가함.
@@ -3480,7 +3480,7 @@ function createNode() {
  * 이미 존재하는 요소 노드에 속성 노드를 생성하고자 할 때에는 setAttribute() 메소드를 사용가능
  **/
 function createNode() {
-    var text = document.getElementById("text");           // 아이디가 "text"인 요소를 선택함.
+    var text = document.getElementById("text");           // 아이디가 "text"인 요소를 선택
     var newAttribute = document.createAttribute("style"); // 새로운 style 속성 노드를 생성함.
     newAttribute.value = "color:red";
     text.setAttributeNode(newAttribute);                  // 해당 요소의 속성 노드로 추가함.
@@ -3490,7 +3490,7 @@ function createNode() {
  * 텍스트 노드의 생성 : createTextNode() 메소드를 사용하여 새로운 텍스트 노드를 만들 수 있습니다.
  **/
 function createNode() {
-    var elementNode = document.getElementById("text");           // 아이디가 "text"인 요소를 선택함.
+    var elementNode = document.getElementById("text");           // 아이디가 "text"인 요소를 선택
     var newText = document.createTextNode("새로운 텍스트에요!"); // 새로운 텍스트 노드를 생성함.
     elementNode.appendChild(newText);                            // 해당 요소의 자식 노드로 추가함.
 }
@@ -3506,14 +3506,14 @@ function createNode() {
  * 이 메소드는 성공적으로 노드가 제거되면 제거된 노드를 반환
  * 노드가 제거될 때에는 제거되는 노드의 모든 자식 노드들도 다 같이 제거
  **/
-var parent = document.getElementById("list");      // 아이디가 "list"인 요소를 선택함.
-var removedItem = document.getElementById("item"); // 아이디가 "item"인 요소를 선택함.
+var parent = document.getElementById("list");      // 아이디가 "list"인 요소를 선택
+var removedItem = document.getElementById("item"); // 아이디가 "item"인 요소를 선택
 parent.removeChild(removedItem);                   // 지정된 요소를 삭제함.
 
 /**
  * removeAttribute() : 속성의 이름을 이용하여 특정 속성 노드를 제거
  **/
-var text = document.getElementById("text"); // 아이디가 "text"인 요소를 선택함.
+var text = document.getElementById("text"); // 아이디가 "text"인 요소를 선택
 text.removeAttribute("style");              // 해당 요소의 "style" 속성을 제거함.
 
 /**
@@ -3528,126 +3528,74 @@ text.removeAttribute("style");              // 해당 요소의 "style" 속성�
  **/
 
 function cloneElement() {
-    var parent = document.getElementById("list");     // 아이디가 "list"인 요소를 선택함.
-    var originItem = document.getElementById("item"); // 아이디가 "item"인 요소를 선택함.
+    var parent = document.getElementById("list");     // 아이디가 "list"인 요소를 선택
+    var originItem = document.getElementById("item"); // 아이디가 "item"인 요소를 선택
     parent.appendChild(originItem.cloneNode(true));   // 해당 노드를 복제하여 리스트의 맨 마지막에 추가함.
 }
 /****************************************************************************************************************************************************/
 /****************************************************************************************************************************************************/
 /**
-노드의 조작
-노드의 값 변경
-nodeValue 프로퍼티를 사용하면 특정 노드의 값을 변경가능
- *
-또한, setAttribute() 메소드는 속성 노드의 속성값을 변경할 수 있게 해줍니다.
- *
-요소 노드의 텍스트
-요소 노드는 자신이 직접 텍스트값을 가지지는 않습니다.
- *
-요소 노드의 텍스트는 요소 노드의 자식 노드인 텍스트 노드(text node)에 저장됩니다.
- *
-따라서 요소 노드의 텍스트 값을 확인하거나 변경하고자 할 때는 요소 노드에 포함된 텍스트 노드에 접근해야 합니다.
- *
-텍스트 노드의 값 변경
-nodeValue 프로퍼티를 사용하여 텍스트 노드의 값을 변경가능
- *
-예제
-var para = document.getElementById("text"); // 아이디가 "text"인 요소를 선택함.
- *
-function changeText() {
- *
-    para.firstChild.nodeValue = "텍스트 변경 완료!";
- *
-}
- *
-
- *
-속성 노드의 값 변경
-속성 노드는 nodeValue 프로퍼티뿐만 아니라 setAttribute() 메소드를 사용하여 값을 변경가능
- *
-setAttribute() 메소드는 속성값을 변경하려는 속성이 존재하지 않으면, 먼저 해당 속성을 생성한 후에 속성값을 설정합니다.
- *
-예제
-var para;
- *
-function changeAttribute() {
- *
-    // 모든 <p> 요소중에서 첫 번째 요소에 클래스 속성값으로 "para"를 설정함.
- *
-    document.getElementsByTagName("p")[0].setAttribute("class", "para");
- *
-    // 클래스가 설정되면 해당 클래스에 설정되어 있던 스타일이 자동으로 적용됨.
- *
-}
- *
-
- *
-요소 노드의 교체
-replaceChild() 메소드를 사용하면 기존의 요소 노드를 새로운 요소 노드로 교체가능
- *
- *
- *
-replaceChild() 메소드의 원형은 다음과 같습니다.
- *
-원형
-교체할노드 = 부모노드.replaceChild(새로운자식노드, 기존자식노드);
- *
- *
- *
-1. 새로운 자식 노드 : 자식 노드 리스트에 새롭게 추가할 요소 노드를 전달합니다.
- *
-2. 기존 자식 노드 : 자식 노드 리스트에서 제거할 요소 노드를 전달합니다.
- *
- *
- *
-다음 예제는 자식 노드 중에서 첫 번째 요소를 삭제하고, 그 대신에 세 번째 요소를 첫 번째 요소 자리에 삽입하는 예제
- *
-예제
-var parent = document.getElementById("parent"); // 부모 노드를 선택함.
- *
-var first = document.getElementById("first");
- *
-var third = document.getElementById("third");
- *
-function changeNode() {
- *
-    parent.replaceChild(third, first);          // first 요소를 삭제하고, 그 대신 third 요소를 삽입함.
- *
-}
- *
-
- *
-텍스트 노드의 데이터 교체
-replaceData() 메소드를 사용하면 텍스트 노드의 텍스트 데이터를 바꿀 수 있습니다.
- *
- *
- *
-replaceData() 메소드의 원형은 다음과 같습니다.
- *
-원형
-텍스트노드.replaceData(오프셋, 교체할문자수, 새로운데이터);
- *
- *
- *
-1. 오프셋(offset) : 오프셋 값은 0부터 시작하며, 기존 텍스트 데이터의 몇 번째 문자부터 교체할지를 전달합니다.
- *
-2. 교체할 문자 수 : 기존 텍스트 노드의 데이터로부터 교체할 총 문자 수를 전달합니다.
- *
-3. 새로운 데이터 : 새로이 삽입할 텍스트 데이터를 전달합니다.
- *
- *
- *
-예제
-var text = document.getElementById("text").firstChild; // 아이디가 "text"인 요소의 텍스트 노드를 선택함.
- *
-function changeText() {
- *
-    text.replaceData(7, 4, "저녁 7"); // 텍스트 노드의 7번째 문자부터 4개의 문자를 "저녁 7"로 교체함.
- *
-}
- *
+ * 노드의 조작
+ * 노드의 값 변경 : nodeValue 프로퍼티를 사용하면 특정 노드의 값을 변경가능
+ * 또한, setAttribute() 메소드는 속성 노드의 속성값을 변경 가능
+ * 요소 노드의 텍스트 : 요소 노드는 자신이 직접 텍스트값 X
+ * 요소 노드의 텍스트는 요소 노드의 자식 노드인 텍스트 노드(text node)에 저장
+ * 따라서 요소 노드의 텍스트 값을 확인하거나 변경하고자 할 때는 요소 노드에 포함된 텍스트 노드에 접근해야 함!
+ * 텍스트 노드의 값 변경 : nodeValue 프로퍼티를 사용하여 텍스트 노드의 값을 변경 가능
  **/
+var para = document.getElementById("text"); // 아이디가 "text"인 요소를 선택
+
+function changeText() {
+    para.firstChild.nodeValue = "텍스트 변경 완료!";
+}
+
+/**
+ * 속성 노드의 값 변경 : nodeValue 프로퍼티뿐만 아니라 setAttribute() 메소드를 사용하여 값을 변경가능
+ * setAttribute() 메소드는 속성값을 변경하려는 속성이 존재하지 않으면, 먼저 해당 속성을 생성한 후에 속성값을 설정
+ **/
+var para;
+
+function changeAttribute() {
+    // 모든 <p> 요소중에서 첫 번째 요소에 클래스 속성값으로 "para"를 설정함.
+    document.getElementsByTagName("p")[0].setAttribute("class", "para");
+    // 클래스가 설정되면 해당 클래스에 설정되어 있던 스타일이 자동으로 적용됨.
+}
+
+/**
+ * 요소 노드의 교체 : replaceChild() 메소드를 사용하면 기존의 요소 노드를 새로운 요소 노드로 교체가능
+ *
+ * 원형
+ * 교체 할 노드 = 부모노드.replaceChild(새로운자식노드, 기존자식노드);
+ *
+ * 1. 새로운 자식 노드 : 자식 노드 리스트에 새롭게 추가할 요소 노드를 전달
+ * 2. 기존 자식 노드 : 자식 노드 리스트에서 제거할 요소 노드를 전달
+ **/
+var parent = document.getElementById("parent"); // 부모 노드를 선택
+var first = document.getElementById("first");
+var third = document.getElementById("third");
+
+function changeNode() {
+    parent.replaceChild(third, first);          // first 요소를 삭제하고, 그 대신 third 요소를 삽입함.
+}
+
+/**
+ * replaceData() : 사용하면 텍스트 노드의 텍스트 데이터를 바꿀 수 있습니다.
+ *
+ * 원형
+ * 텍스트노드.replaceData(오프셋, 교체할문자수, 새로운데이터);
+ *
+ * 1. 오프셋(offset) : 오프셋 값은 0부터 시작하며, 기존 텍스트 데이터의 몇 번째 문자부터 교체할지를 전달
+ * 2. 교체할 문자 수 : 기존 텍스트 노드의 데이터로부터 교체할 총 문자 수를 전달
+ * 3. 새로운 데이터 : 새로이 삽입할 텍스트 데이터를 전달
+ **/
+
+var text = document.getElementById("text").firstChild; // 아이디가 "text"인 요소의 텍스트 노드를 선택
+
+function changeText() {
+    text.replaceData(7, 4, "저녁 7"); // 텍스트 노드의 7번째 문자부터 4개의 문자를 "저녁 7"로 교체함.
+}
 /****************************************************************************************************************************************************/
+
 /****************************************************************************************************************************************************/
 /**
  *
