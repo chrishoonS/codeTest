@@ -3598,13 +3598,172 @@ function changeText() {
 
 /****************************************************************************************************************************************************/
 /**
+ * Window 객체
+ * 브라우저 객체 모델(BOM)이란?
+ * 자바스크립트를 이용하면 브라우저의 정보에 접근하거나 브라우저의 여러 기능들을 제어 가능
+ * 이때 사용할 수 있는 객체 모델이 바로 브라우저 객체 모델(BOM, Browser Object Model)
+ * 브라우저 객체 모델(BOM)은 문서 객체 모델(DOM)과는 달리 W3C의 표준 객체 모델 X
+ * 하지만 이 모델은 자바스크립트가 브라우저의 기능적인 요소들을 직접 제어하고 관리할 방법을 제공
+ * 자바스크립트에서는 이러한 BOM 모델의 객체들을 전역 객체(global object)로 사용 가능
  *
+ * Window 객체 : window 객체는 웹 브라우저의 창(window)을 나타내는 객체로, 대부분의 웹 브라우저에서 지원
+ * 자바스크립트의 모든 객체, 전역 함수, 전역 변수들은 자동으로 window 객체의 프로퍼티가 됨
+ * window 객체의 메소드는 전역 함수이며, window 객체의 프로퍼티는 전역 변수가 됨.
+ * 문서 객체 모델(DOM)의 요소들도 모두 window 객체의 프로퍼티가 됨.
  *
+ * 브라우저 창 크기 조절
+ * window 객체의 innerHeight와 innerWidth 프로퍼티를 이용하면, 브라우저의 창 크기를 설정 가능
+ * 여기서 브라우저 창이란 웹 브라우저의 뷰포트(viewport)를 의미하며, 브라우저의 툴바나 스크롤 바는 포함 X
+ **/
+
+// 기본 문법
+window.innerHeight
+window.innerWidth
+
+// 익스플로러 5부터 7버전만을 위한 문법 1
+document.documentElement.clientHeight
+document.documentElement.clientWidth
+
+// 익스플로러 5부터 7버전만을 위한 문법 2
+document.body.clientHeight
+document.body.clientWidth
+
+//다음 예제는 위의 문법들을 이용하여 모든 브라우저에서 창의 크기를 반환하는 예제
+var windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+var windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+document.write("웹 브라우저의 너비는 " + windowWidth + "픽셀이고, 높이는 " + windowHeight + "픽셀입니다.");
+
+/**
+ * window 객체의 모든 메소드나 프로퍼티를 사용할 때는 window라는 접두사를 생략 가능
+ * 따라서 위의 예제에서 window.innerWidth 대신 그냥 innerWidth를 사용해도 정상적으로 동작
+ **/
+
+alert("전역 함수 호출시 window 접두사 생략 가능함!");                     // 전역 함수
+document.write("현재 브라우저의 수평 위치는 " + screenX + "입니다.<br>"); // 전역 변수
+document.write("현재 브라우저의 수직 위치는 " + screenY + "입니다.<br>"); // 전역 변수
+document.write(document.title);                                           // 전역 객체
+
+/**
+ * 위의 예제처럼 자바스크립트의 모든 전역 객체, 전역 함수, 전역 변수를 사용할 때는 window 접두사를 생략 가능
+ * screenX는 해당 브라우저 창의 왼쪽 모서리와 사용자 스크린의 왼쪽 모서리 사이의 거리를 반환
+ * 또한, screenY는 해당 브라우저 창의 위쪽 모서리와 사용자 스크린의 위쪽 모서리 사이의 거리를 반환
+ *
+ * 브라우저 새 창 열기
+ * window 객체의 open() 메소드를 이용하면, 새로운 브라우저 창을 열 수 있음
+ * 또한, 새로운 브라우저 창의 세부적인 옵션들도 일일이 설정 가능
+ * */
+//다음 예제는 메뉴바, 주소창, 크기조절 손잡이, 스크롤 바, 상태 바만을 가지는 새로운 브라우저 창을 여는 예제입니다.
+
+var newWindowObj;
+// 변수 strWindowFeatures를 통해 새롭게 여는 브라우저 창의 옵션들을 일일이 설정할 수 있음.
+
+var strWindowFeatures = "menubar = yes,location = yes,resizable = yes,scrollbars = yes,status = yes";
+
+function openWindow() {
+    newWindowObj = window.open("/html/intro", "HTML 개요", strWindowFeatures);
+}
+
+/**
+ * 브라우저 창 닫기
+ * window 객체의 close() 메소드를 이용하면, 현재 브라우저나 특정 브라우저 창을 닫을 수 있습니다.
+ **/
+function openWindow() {
+    newWindowObj = window.open("/html/intro", "HTML 개요", strWindowFeatures);
+}
+
+function closeNewWindow() { // 새롭게 연 브라우저 창을 window 객체를 이용하여 다시 닫을 수 있음.
+    newWindowObj.close();
+}
+
+/**
+ * Document 객체
+ * window 객체의 가장 중요한 프로퍼티 중 하나가 바로 document 객체
+ * document 객체는 브라우저 창에 표시되는 내용에 해당하는 문서(document)를 나타내는 객체
  **/
 /****************************************************************************************************************************************************/
 /****************************************************************************************************************************************************/
 /**
+Location 객체
+location 객체는 현재 브라우저에 표시된 HTML 문서의 주소를 얻거나, 브라우저에 새 문서를 불러올 때 사용 가능
  *
+ *
+ *
+이 객체는 Window 객체의 location 프로퍼티와 Document 객체의 location 프로퍼티에 같이 연결되어 있습니다.
+ *
+location 객체의 프로퍼티와 메소드를 이용하면, 현재 문서의 URL 주소를 다양하게 해석하여 처리 가능
+ *
+현재 문서의 URL 주소
+location 객체의 href 프로퍼티는 현재 문서의 전체 URL 주소를 문자열로 반환
+ *
+예제
+ *
+ *
+document.write("현재 문서의 주소는 " + location.href + "입니다.");
+ *
+ *
+ *
+
+ *
+현재 문서의 호스트 이름
+location 객체의 hostname 프로퍼티는 현재 문서의 인터넷 호스트 이름을 반환
+ *
+예제
+ *
+ *
+document.write("현재 문서의 호스트 이름은 " + location.hostname + "입니다.");
+ *
+ *
+ *
+
+ *
+ *
+ *
+host, hostname, port, hash와 같은 location 객체의 주요 프로퍼티는 URL 주소의 다양한 특성을 저장하고 있습니다.
+이와 같은 프로퍼티는 Link 객체를 통해서도 제공됩니다.
+현재 문서의 파일 경로명
+location 객체의 pathname 프로퍼티는 현재 문서의 파일 경로명을 반환
+ *
+예제
+ *
+ *
+document.write("현재 문서의 파일 경로명은 " + location.pathname + "입니다.");
+ *
+ *
+ *
+
+ *
+ *
+ *
+호스트 이름(host name)과 파일 경로명(path name)을 합쳐 URL(Uniform Resource Locator)이라고 부릅니다.
+ *
+이러한 URL은 브라우저가 웹 서버로 컨텐츠를 요청할 때, 해당 컨텐츠가 어디에 있는지를 알려주기 위한 규약입니다.
+ *
+현재 창에 문서 불러오기
+location 객체의 assign() 메소드는 브라우저 창에 지정된 URL 주소에 존재하는 문서를 불러옵니다.
+ *
+반면에 replace() 메소드는 새 문서를 불러오기 전에, 현재 문서를 브라우저의 히스토리에서 제거한다는 점이 assign() 메소드와 다릅니다.
+ *
+ *
+location 객체의 reload() 메소드는 브라우저 창에 현재 문서를 다시 불러옵니다.
+ *
+예제
+function openDocument() {
+ *
+    location.assign("/index.php");
+ *
+}
+ *
+function openDocumentWithReplace() {
+ *
+    location.replace("/index.php");
+ *
+}
+ *
+
+ *
+ *
+ *
+현재 문서를 브라우저의 히스토리에서 제거한다는 의미는 브라우저의 뒤로 가기 버튼을 눌러도 이전 페이지로 다시 돌아갈 수 없다는 의미입니다.
  *
  **/
 /****************************************************************************************************************************************************/
