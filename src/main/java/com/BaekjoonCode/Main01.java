@@ -1,11 +1,9 @@
 package com.BaekjoonCode;
 
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Scanner;
-import java.util.StringTokenizer;
 
 public class Main01 {
 //    [2557]
@@ -162,13 +160,22 @@ public class Main01 {
 //    }
 
 //    [25083]
-    public static void main(String[] args) {
-        System.out.println("         ,r'\"7\n" +
-                "r`-_   ,'  ,/\n" +
-                " \\. \". L_r'\n" +
-                "   `~\\/\n" +
-                "      |\n" +
-                "      |");
-
+//    public static void main(String[] args) {
+//        System.out.println("         ,r'\"7\n" +
+//                "r`-_   ,'  ,/\n" +
+//                " \\. \". L_r'\n" +
+//                "   `~\\/\n" +
+//                "      |\n" +
+//                "      |");
+//
+//    }
+//    [11382]
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String[] s = br.readLine().split(" ");
+        long A = Long.parseLong(s[0]);
+        long B = Long.parseLong(s[1]);
+        long C = Long.parseLong(s[2]);
+        System.out.println(A+B+C);
     }
 }
