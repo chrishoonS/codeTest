@@ -417,16 +417,16 @@ if (x = y) {
 }
 
 /**
- * 위의 예제는 변수 x와 y의 값이 같으면 두 변수가 같다는 문자열을 출력하려고 하는 예제
+ * 위의 는 변수 x와 y의 값이 같으면 두 변수가 같다는 문자열을 출력하려고 하는 
  * 하지만 if 문의 표현식에서 동등 연산자(==)를 사용해야 할 곳에 잘못해서 대입 연산자(=)을 사용
- * 따라서 위의 예제는 다음과 같이 수정해야만 정상적으로 동작
+ * 따라서 위의 는 다음과 같이 수정해야만 정상적으로 동작
  **/
 if (x == y) {
     document.write("두 변수 x와 y는 같습니다.");
 }
 
 /**
- * 또한, 위의 예제가 실제로 if 문의 표현식 내에서 변수 x에 변수 y의 값을 대입 했을수도 있음
+ * 또한, 위의 가 실제로 if 문의 표현식 내에서 변수 x에 변수 y의 값을 대입 했을수도 있음
  * 그럴 때는 코드를 다음과 같이 수정해야만 그 의미를 제대로 전달 가능
  * 하지만 if 문과 같은 제어문의 표현식에 위와 같이 대입문을 사용하는 것은 지양
  **/
@@ -508,7 +508,7 @@ switch (typeof xx) {
 }
 
 /**
- * 위의 예제에서 변수 xx는 string 타입이므로, 두 번째 case 절의 document.write() 메소드가 맨 먼저 실행
+ * 위의 에서 변수 xx는 string 타입이므로, 두 번째 case 절의 document.write() 메소드가 맨 먼저 실행
  * 하지만 break 키워드가 없으므로, 두 번째 case 절 이후에 나오는 모든 실행문이 모두 실행될 것
  * 따라서 case 절과 default 절은 반드시 break 키워드를 포함하고 있어야 정확하게 동작
  **/
@@ -544,7 +544,7 @@ switch (day) {
  **/
 
 /**
- * while 문 : 특정 조건을 만족할 때까지 계속해서 주어진 실행문을 반복 실행합니다.
+ * while 문 : 특정 조건을 만족할 때까지 계속해서 주어진 실행문을 반복 실행
  *
  * 문법
  * while (표현식) {
@@ -568,7 +568,7 @@ while (i < 10) { // 변수 i가 10보다 작을 때만 while 문을 반복함.
 
 /**
  * do / while
- * do / while 문은 먼저 루프를 한 번 실행한 후에 표현식을 검사합니다.
+ * do / while 문은 먼저 루프를 한 번 실행한 후에 표현식을 검사
  * 표현식의 결과와 상관없이 무조건 한 번은 루프를 실행
  * 문법
  * do {
@@ -768,7 +768,7 @@ document.write("배열 arr의 요소에는 [" + arr + "]가 있습니다.<br>");
 document.write("배열 arr의 길이는 " + arr.length + "");       // 배열의 길이를 출력함.
 
 /**
- * 위의 예제에서 세 번째 실행문은 배열의 현재 길이보다 더 큰 인덱스에 요소를 저장
+ * 위의 에서 세 번째 실행문은 배열의 현재 길이보다 더 큰 인덱스에 요소를 저장
  * 자바스크립트에서는 이렇게 배열의 길이를 넘는 인덱스에 요소를 저장하는 것을 허용
  * 이때 배열의 길이는 자동으로 해당 인덱스 증가
  **/
@@ -795,9 +795,9 @@ document.write(arr + "<br>"); // 1,true,Java,Script,100,,,,,,자바스크립트
 document.write(arr[7]);       // undefined
 
 /**
- * 위의 예제에서 배열 arr의 길이는 최종적으로 11
+ * 위의 에서 배열 arr의 길이는 최종적으로 11
  * 이때 배열 요소가 존재하는 인덱스는 0, 1, 2, 3, 4, 10뿐이며, 나머지 인덱스에는 배열 요소가 존재 X
- * 이렇게 인덱스에 대응하는 배열 요소가 없는 부분을 배열의 홀(hole)이라고 합니다.
+ * 이렇게 인덱스에 대응하는 배열 요소가 없는 부분을 배열의 홀(hole)이라고 
  * 자바스크립트에서는 이러한 배열의 홀(hole)을 undefined 값을 가지는 요소처럼 취급
  * 배열의 홀을 참조하게 되면 undefined 값을 반환
  *
@@ -910,7 +910,7 @@ document.write(123 instanceof Array); // false
 
  /** constructor 프로퍼티 문법
   * function Array() {[native code]}
-  * 다음 예제와 같이 toString() 메소드와 indexOf() 메소드를 함께 사용하면 해당 변수의 배열 여부를 확인 가능
+  * 다음 와 같이 toString() 메소드와 indexOf() 메소드를 함께 사용하면 해당 변수의 배열 여부를 확인 가능
   **/
 function isArray(a) {
     return a.constructor.toString().indexOf("Array") > -1;
@@ -923,7 +923,7 @@ document.write(arr.constructor.toString().indexOf("Array")); // indexOf() 메소
 document.write(isArray(arr))                // true
 
 /**
- * 함수(function) : 하나의 특별한 목적의 작업을 수행하도록 설계된 독립적인 블록을 의미합니다.
+ * 함수(function) : 하나의 특별한 목적의 작업을 수행하도록 설계된 독립적인 블록을 의미
  * 이러한 함수는 필요할 때마다 호출하여 해당 작업을 반복해서 수행 가능
  **/
 function addNum(x, y) {
@@ -958,7 +958,7 @@ function addNum(x, y) {    // x, y는 이 함수의 매개변수임.
 addNum(2, 3);              // addNum() 함수에 인수로 2와 3을 전달하여 호출함.
 
 /**
- * 위의 예제에서 매개변수 x에는 인수 2가 저장되고, y에는 인수 3이 저장되어 사용
+ * 위의 에서 매개변수 x에는 인수 2가 저장되고, y에는 인수 3이 저장되어 사용
  * 이렇게 인수와 매개변수는 개수뿐만 아니라 순서 또한 매우 중요하게 적용
  * 함수의 인수(argument)란 함수가 호출될 때 함수로 값을 전달해주는 변수나 상수를 의미
  **/
@@ -990,9 +990,9 @@ document.write(num);
  *
  * 함수의 호출
  * var sum = addNum(3, 5); // 함수 addNum()을 호출하면서, 인수로 3과 5를 전달
- *                         // 함수의 호출이 끝난 뒤에는 그 반환값을 변수 sum에 대입합니다.
+ *                         // 함수의 호출이 끝난 뒤에는 그 반환값을 변수 sum에 대입
  *
- * 위의 예제에서 인수(argument)로 전달된 숫자 3과 5는 함수에서 정의된  매개변수(parameter) x와 y에 각각 대입
+ * 위의 에서 인수(argument)로 전달된 숫자 3과 5는 함수에서 정의된  매개변수(parameter) x와 y에 각각 대입
  * 따라서 호출된 함수의 내부에서는 매개변수 x와 y에 각각 3과 5가 대입되어 계산
  *
  * 값으로서의 함수 : 자바스크립트에서 함수는 문법적 구문일뿐만 아니라 값(value)도 가능
@@ -1115,7 +1115,7 @@ document.write(parentFunc());
 /**
  * 함수 호이스팅(hoisting) : 함수의 유효 범위라는 것은 함수 안에서 선언된 모든 변수는 함수 전체에 걸쳐 유효
  * 그런데 이 유효 범위의 적용이 변수가 선언되기 전에도 똑같이 적용
- * 즉, 자바스크립트 함수 안에 있는 모든 변수의 선언은 함수의 맨 처음으로 이동된 것처럼 동작합니다.
+ * 즉, 자바스크립트 함수 안에 있는 모든 변수의 선언은 함수의 맨 처음으로 이동된 것처럼 동작
  **/
 var globalNum = 10;     // globalNum을 전역 변수로 선언
 
@@ -1127,7 +1127,7 @@ function printNum() {
 printNum();
 
 /**
- * 위의 예제 ①의 시점에서는 변수 globalNum가 전역 변수를 가리킨다고 생각하기 쉽습니다.
+ * 위의  ①의 시점에서는 변수 globalNum가 전역 변수를 가리킨다고 생각하기 쉽습니다.
  * 하지만 자바스크립트 내부에서는 함수 호이스팅에 의해 다음과 같이 코드가 변경되어 처리
  **/
 //호이스팅 후의 코드
@@ -1142,7 +1142,7 @@ function printNum() {
 printNum();
 
 /**
- * 위의 예제 ①의 시점에서는 globalNum라는 지역 변수가 선언만 되어 있고, 아직 초기화만 안 된 상태
+ * 위의  ①의 시점에서는 globalNum라는 지역 변수가 선언만 되어 있고, 아직 초기화만 안 된 상태
  * 따라서 이때 globalNum 변수에 접근하면 아직 초기화되지 않은 변수에 접근했으므로, undefined 값을 반환
  * 실제로 변수가 초기화되는 시점은 원래 코드에서 변수가 선언된 ②의 시점
  * 자바스크립트에서는 함수 호이스팅이 자동으로 수행되지만, 항상 함수 블록의 첫 부분에 변수를 선언 지향
@@ -1165,7 +1165,7 @@ addNum(1);       // 인수로 1을 전달하여 함수를 호출함. -> NaN
 addNum();        // 인수로 아무것도 전달하지 않고 함수를 호출함. -> NaN
 
 /**
- * 위의 예제에서 addNum() 함수를 호출할 때 인수가 세 개보다 적게 전달되면, 계산할 수 없다는 의미인 NaN을 반환
+ * 위의 에서 addNum() 함수를 호출할 때 인수가 세 개보다 적게 전달되면, 계산할 수 없다는 의미인 NaN을 반환
  * 그 이유는 전달되지 않은 나머지 값이 자동으로 undefined 값으로 설정되어, 산술 연산을 수행할 수 없기 때문
 **/
 
@@ -1243,7 +1243,7 @@ mul(3);    // 3
 
 /**
  * 나머지 매개변수(rest parameter) : 생략 접두사(...)를 사용하여 특정 위치의 인수부터 마지막 인수까지를 한 번에 지정
- * 다음 예제는 첫 번째 인수에서 두 번째 인수부터 마지막 인수까지를 뺀 후 그 결과를 반환하는 예제
+ * 다음 는 첫 번째 인수에서 두 번째 인수부터 마지막 인수까지를 뺀 후 그 결과를 반환하는 
  **/
 function sub() {
     var firstNum = arguments[0];                  // 첫 번째 인수에서
@@ -1299,7 +1299,7 @@ document.write(a + "<br>" + b);
 
 /**
  * isFinite(): 전달된 값이 유한한 수인지를 검사하여 그 결과를 반환
- * 만약 인수로 전달된 값이 숫자가 아니라면, 숫자로 변환하여 검사합니다.
+ * 만약 인수로 전달된 값이 숫자가 아니라면, 숫자로 변환하여 검사
  *
  * 문법
  * isFinite(검사할값);
@@ -1385,8 +1385,8 @@ document.write(enc1 + "<br>" + enc2);
 
 /**
  * decodeURI()와 decodeURIComponent()
- * decodeURI() : encodeURI() 함수나 다른 방법으로 만들어진 URI(Uniform Resource Identifier)를 해독합니다.
- * decodeURIComponent() : encodeURIComponent() 함수나 다른 방법으로 만들어진 URI 컴포넌트를 해독합니다.
+ * decodeURI() : encodeURI() 함수나 다른 방법으로 만들어진 URI(Uniform Resource Identifier)를 해독
+ * decodeURIComponent() : encodeURIComponent() 함수나 다른 방법으로 만들어진 URI 컴포넌트를 해독
  *
  * 문법
  * decodeURI(해독할URI);
@@ -1560,7 +1560,7 @@ document.write("우리 집 새끼 고양이의 이름은 " + kitty.name + "이�
  * 생성자를 이용한 객체의 생성 : new 연산자를 사용하여 객체를 생성하고 초기화 가능
  * 이때 사용되는 메소드를 생성자(constructor)라고 하며, 새롭게 생성되는 객체를 초기화하는 역할
  * 자바스크립트는 원시 타입을 위한 생성자를 미리 정의하여 제공
- * 아래 예제처럼 자바스크립트에서 제공하는 생성자를 사용할 수도 있으며, 사용자가 직접 객체 생성자 함수(object constructor function)를 작성하여 사용 가능
+ * 아래 처럼 자바스크립트에서 제공하는 생성자를 사용할 수도 있으며, 사용자가 직접 객체 생성자 함수(object constructor function)를 작성하여 사용 가능
  **/
 
 var day = new Date(); // new 연산자를 사용하여 Date 타입의 객체를 생성함.
@@ -1650,7 +1650,7 @@ myDog.breed = function() {        // 털색을 포함한 품종을 반환해 주
 document.write("우리 집 강아지는 " + myDog.breed() + "");
 
 /**
- * 위의 예제에서 새롭게 추가된 weight 프로퍼티와 breed() 메소드는 오직 myDog 인스턴스에만 추가
+ * 위의 에서 새롭게 추가된 weight 프로퍼티와 breed() 메소드는 오직 myDog 인스턴스에만 추가
  * 이미 생성된 다른 Dog 객체나 차후에 생성되는 어떠한 다른 Dog 객체에도 추가되지 않음
  *
  * 프로토타입에 프로퍼티 및 메소드 추가 : 프로토타입의 경우에는 생성자 함수에 직접 추가해야만 이후에 생성되는 모든 다른 객체에도 적용 가능
@@ -1789,9 +1789,9 @@ document.write((hisDog == herDog) + "<br>");  // true
 document.write((hisDog === herDog) + "<br>"); // true
 
 /**
- * 위의 예제에서 myDog과 hisDog 객체는 가지고 있는 프로퍼티의 값이 모두 같습니다.
+ * 위의 에서 myDog과 hisDog 객체는 가지고 있는 프로퍼티의 값이 모두 같습니다.
  * 하지만 이 두 객체는 별개의 객체이므로, 동등(==) 연산자와 일치(===) 연산자로 비교해도 모두 false를 반환
- * 위의 예제에서는 변수 herDog에 hisDog 객체를 대입
+ * 위의 에서는 변수 herDog에 hisDog 객체를 대입
  * 이렇게 객체를 대입한 변수를 객체 레퍼런스(object reference)라고 하며, 이제부터 변수 herDog은 hisDog 객체를 가리키게 됩니다.
  * 즉, 객체 레퍼런스는 객체 자체를 저장하는 것이 아니라, 객체가 위치한 주소를 저장
  * 따라서 변수 herDog과 hisDog을 동등 연산자와 일치 연산자로 비교하면, 모두 true를 반환
@@ -1858,7 +1858,7 @@ document.write(myDog.propertyIsEnumerable("age"));            // true
  **/
 
 /**
- * isPrototypeOf() : 특정 객체의 프로토타입 체인에 현재 객체가 존재하는지를 검사합니다.
+ * isPrototypeOf() : 특정 객체의 프로토타입 체인에 현재 객체가 존재하는지를 검사
  **/
 var day = new Date(); // Date 객체를 생성함.
 
@@ -1909,11 +1909,11 @@ func.prototype.valueOf = function() { // valueOf() 메소드를 정의함.
 document.write(myFunc + 5); // ② : 9
 
 /**
- * 위의 예제 ① 부분에서는 산술 연산을 위해 number 타입의 값을 기대하는 곳에 myFunc 객체가 사용
+ * 위의  ① 부분에서는 산술 연산을 위해 number 타입의 값을 기대하는 곳에 myFunc 객체가 사용
  * 따라서 자바스크립트는 내부적으로 해당 객체의 valueOf() 메소드를 호출
  * 하지만 이 객체의 valueOf() 메소드는 아직 정의되지 않았으므로, 해당 객체 자신을 반환
  * 따라서 산술 연산이 아닌 문자열 결합 연산이 수행
- * 그 후에 예제에서는 prototype 프로퍼티를 이용하여 valueOf() 메소드를 정의
+ * 그 후에 에서는 prototype 프로퍼티를 이용하여 valueOf() 메소드를 정의
  * 따라서 ② 부분에서는 내부적으로 호출된 valueOf() 메소드가 해당 객체의 number 프로퍼티 값을 반환
  * 따라서 정상적으로 산술 연산이 수행
  **/
@@ -1930,7 +1930,7 @@ Object.defineProperty(gildong, "americanAge", { get: function() { return this.ag
 document.write(gildong.americanAge); // 17
 
 /**
- * 위의 예제에서는 gildong 객체에 americanAge라는 프로퍼티를 추가할 때 get 키워드를 사용하여 getter 메소드를 정의
+ * 위의 에서는 gildong 객체에 americanAge라는 프로퍼티를 추가할 때 get 키워드를 사용하여 getter 메소드를 정의
  * 따라서 해당 프로퍼티를 참조하려고 할 때는 내부적으로 미리 정의한 getter 메소드가 자동으로 호출될 것
  **/
 var gildong = { age: 18 };
@@ -1942,7 +1942,7 @@ gildong.changeAge = 5;
 document.write(gildong.age); // 15
 
 /**
- * 위의 예제에서는 gildong 객체에 changeAge라는 프로퍼티를 추가할 때 set 키워드를 사용하여 setter 메소드를 정의
+ * 위의 에서는 gildong 객체에 changeAge라는 프로퍼티를 추가할 때 set 키워드를 사용하여 setter 메소드를 정의
  * 따라서 해당 프로퍼티의 값을 변경하려고 할 때는 내부적으로 미리 정의한 setter 메소드가 자동으로 호출
  **/
 /****************************************************************************************************************************************************/
@@ -1959,7 +1959,7 @@ var str = "문자열";   // 문자열 생성
 var len = str.length; // 문자열 프로퍼티인 length 사용
 
 /**
- * 위의 예제에서 생성한 문자열 리터럴 str은 객체가 아닌데도 length 프로퍼티를 사용 가능
+ * 위의 에서 생성한 문자열 리터럴 str은 객체가 아닌데도 length 프로퍼티를 사용 가능
  * 프로그램이 문자열 리터럴 str의 프로퍼티를 참조하려고 하면, 자바스크립트는 new String(str)을 호출한 것처럼 문자열 리터럴을 객체로 자동 변환해주기 때문!
  * 이렇게 생성된 임시 객체는 String 객체의 메소드를 상속받아 프로퍼티를 참조하는 데 사용
  * 이후 프로퍼티의 참조가 끝나면 사용된 임시 객체는 자동으로 삭제
@@ -1993,7 +1993,7 @@ typeof strObj;                // object 타입
  * 0 ~ 51 비트  : 총 52비트의 가수 부분
  * 52 ~ 62 비트 : 총 11비트의 지수 부분
  * 63 비트      : 총 1비트의 부호 부분
- * 이러한 64비트 부동 소수점 수의 정밀도는 정수부는 15자리까지, 소수부는 17자리까지만 유효합니다.
+ * 이러한 64비트 부동 소수점 수의 정밀도는 정수부는 15자리까지, 소수부는 17자리까지만 유효
  **/
 var x = 999999999999999;  // 15자리의 정수부
 var y = 9999999999999999; // 16자리의 정수부
@@ -2004,7 +2004,7 @@ y; // 10000000000000000
 z; // 0.30000000000000004
 
 /** 
- * 위의 예제에서 변수 z의 값을 살펴보면 오차가 발생했음을 알 수 있음.
+ * 위의 에서 변수 z의 값을 살펴보면 오차가 발생했음을 알 수 있음.
  * 이렇게 부동 소수점 수를 가지고 수행하는 산술 연산의 결괏값은 언제나 오차가 발생할 수 있음.
  * 이것은 자바스크립트만의 문제가 아닌 부동 소수점 수를 가지고 실수를 표현하는 모든 프로그래밍 언어에서의 문제점
  * 자바스크립트에서는 이러한 오차를 없애기 위해 정수의 형태로 먼저 변환하여 계산을 수행하고, 다시 실수의 형태로 재변환하는 방법을 사용할 수도 있음.
@@ -2021,7 +2021,7 @@ var y = 29;   // 10진법으로 표현된 10진수 29
 x + y;        // 두 수 모두 10진법으로 자동으로 변환되어 계산됨. -> 200
 
 /**
- * 위의 예제처럼 자바스크립트에서는 산술 연산 시 모든 수가 10진수로 자동 변환되어 계산
+ * 위의 처럼 자바스크립트에서는 산술 연산 시 모든 수가 10진수로 자동 변환되어 계산
  * 또한, 숫자에 toString() 메소드를 사용하여 해당 숫자를 여러 진법의 형태로 변환 가능
  **/
 var num = 256;
@@ -2054,7 +2054,7 @@ z;                      // 0
  * 
  * null, undefined, NaN, Infinity에 대한 비교
  * - null은 object 타입이며, 아직 '값'이 정해지지 않은 것을 의미하는 값
- * - undefined는 null과는 달리 하나의 타입이며, '타입'이 정해지지 않은 것을 의미하는 값이기도 합니다.
+ * - undefined는 null과는 달리 하나의 타입이며, '타입'이 정해지지 않은 것을 의미하는 값이기도 
  * - NaN은 number 타입이며, '숫자가 아님'을 의미하는 숫자
  * - Infinity는 number 타입이며, '무한대'를 의미하는 숫자
  **/
@@ -2175,7 +2175,7 @@ Number.parseInt("문자열 56"); // NaN
 
 Number.isNaN(NaN);       // true
 Number.isNaN(0 / 0);     // true
-// 다음은 전역 함수인 isNaN()에서 잘못된 결과를 반환하는 예제임.
+// 다음은 전역 함수인 isNaN()에서 잘못된 결과를 반환하는 임.
 
 isNaN("NaN");            // true
 isNaN(undefined);        // true
@@ -2196,7 +2196,7 @@ Number.isFinite(0);        // true
 Number.isFinite(3e45);     // true
 Number.isFinite(Infinity); // false
 Number.isFinite(NaN);      // false
-// 다음은 전역 함수인 isFinite()에서 잘못된 결과를 반환하는 예제임.
+// 다음은 전역 함수인 isFinite()에서 잘못된 결과를 반환하는 임.
 
 isFinite("0");             // true
 isFinite(null);            // true
@@ -2604,11 +2604,11 @@ String.fromCodePoint(0x00A2);
 String.fromCodePoint() //메소드는 사파리, 익스플로러에서 지원 X
 
 document.write("이 문자열은 아주 긴 문자열 \
-따라서 몇 번에 걸친 줄 나누기가 필요합니다. \
+따라서 몇 번에 걸친 줄 나누기가 필요 \
 자바스크립트에서는 역슬래시와 문자 결합 연산자를 사용하여 줄을 나눌 수 있습니다.<br>");
 
 document.write("이 문자열은 아주 긴 문자열" +
-" 따라서 몇 번에 걸친 줄 나누기가 필요합니다." +
+" 따라서 몇 번에 걸친 줄 나누기가 필요" +
 " 자바스크립트에서는 역슬래시와 문자 결합 연산자를 사용하여 줄을 나눌 수 있습니다.");
 
 /**
@@ -2727,7 +2727,7 @@ str.concat("는 너무 멋져요!");                      // 자바스크립트�
 str.concat("는 너무 멋져요!", " 그리고 유용해요."); // 자바스크립트는 너무 멋져요! 그리고 유용해요!
 str;                                                // 자바스크립트
 /**
- * 위의 예제에서 여러 번 concat() 메소드를 실행한 후의 변수 str의 문자열은 여전히 처음과 같습니다.
+ * 위의 에서 여러 번 concat() 메소드를 실행한 후의 변수 str의 문자열은 여전히 처음과 같습니다.
  * 이처럼 자바스크립트에서 String 인스턴스의 값은 변경될 수(immutable) 없습니다.
  * 따라서 모든 String 메소드는 결괏값으로 새로운 문자열을 생성하여 반환
  **/
@@ -2810,7 +2810,7 @@ Array.from("JavaScript");              // [J,a,v,a,S,c,r,i,p,t]
 /**
  * Array.of() : ECMAScript 6부터 추가된 Array.of() 메소드는 인수의 수나 타입에 상관없이 인수로 전달받은 값을 가지고 새로운 Array 인스턴스를 생성
  * 이때 Array.of() 메소드와 Array 객체 생성자와의 차이로는 정수로 전달된 인수의 처리 방식에 있음
- * 아래 예제에서 Array 객체 생성자에 인수로 정수 10을 전달하면, 생성자는 길이가 10인 빈 배열 생성
+ * 아래 에서 Array 객체 생성자에 인수로 정수 10을 전달하면, 생성자는 길이가 10인 빈 배열 생성
  * 하지만 Array.of() 메소드에 인수로 정수 10을 전달하면, 정수 10을 배열 요소로 가지는 길이가 1인 배열 생성
  * Array.of() 메소드는 익스플로러, 오페라, 사파리에서 지원 X
  **/
@@ -2841,7 +2841,7 @@ Array.of(10);  // [10] -> 한 개(숫자 10)의 배열 요소를 가지는 배�
  **/
 
 /**
- * push() : 하나 이상의 요소를 배열의 가장 마지막에 추가합니다.
+ * push() : 하나 이상의 요소를 배열의 가장 마지막에 추가
  * 원본 배열은 추가한 요소의 수만큼 길이(length)가 늘어나게 되며, 요소를 성공적으로 추가하면 배열의 총 길이를 반환
  **/
 var arr = [1, true, "JavaScript"];
@@ -3048,7 +3048,7 @@ function compareValue(value) {
 arr.some(compareValue); // true
 
 /**
- * reduce() : 해당 배열의 모든 요소를 하나의 값으로 줄이기 위해, 두 개의 인수를 전달받는 콜백 함수를 실행합니다.
+ * reduce() : 해당 배열의 모든 요소를 하나의 값으로 줄이기 위해, 두 개의 인수를 전달받는 콜백 함수를 실행
  * 이때 명시된 콜백 함수에 배열의 첫 번째 요소와 두 번째 요소를 인수로 전달하고 실행
  * 그 결과 반환된 결괏값과 세 번째 요소를 다시 인수로 전달하고 실행
  * 이러한 동작을 반복하여 모든 배열 요소를 인수로 전달하고, 마지막으로 반환된 결괏값을 반환
@@ -3126,7 +3126,7 @@ for (var entry of arrEntries) {
 /****************************************************************************************************************************************************/
 /****************************************************************************************************************************************************/
 /**
- * Document 객체 : 웹 페이지 그 자체를 의미합니다.
+ * Document 객체 : 웹 페이지 그 자체를 의미
  * 웹 페이지에 존재하는 HTML 요소에 접근하고자 할 때는 반드시 Document 객체부터 시작!
  *
  * Document 메소드 : HTML 요소와 관련된 작업을 도와주는 다양한 메소드를 제공
@@ -3249,7 +3249,7 @@ link.innerHTML = "자바스크립트 수업 바로 가기!";     // 해당 요�
 
 /**
  * HTML DOM을 이용하면 HTML 요소의 스타일(style)도 손쉽게 변경 가능
- * style 프로퍼티를 이용하여 HTML 요소에 CSS 스타일을 적용합니다.
+ * style 프로퍼티를 이용하여 HTML 요소에 CSS 스타일을 적용
  **/
 var str = document.getElementById("text");                 // 아이디가 "text"인 요소를 선택
 function changeRedColor() { str.style.color = "red"; }     // 해당 요소의 글자색을 빨간색으로 변경함.
@@ -3322,7 +3322,7 @@ document.getElementById("document").innerHTML = document.childNodes[1].nodeName;
 // html 노드의 모든 자식 노드 중에서 첫 번째 노드의 이름을 선택
 document.getElementById("html").innerHTML = document.childNodes[1].childNodes[0].nodeName; // HEAD
 /**
- * 위의 예제에서 HTML 문서의 첫 번째 자식 노드는 <!DOCTYPE html>이며, 두 번째 자식 노드는 <html>
+ * 위의 에서 HTML 문서의 첫 번째 자식 노드는 <!DOCTYPE html>이며, 두 번째 자식 노드는 <html>
  * 또한, <html>노드의 첫 번째 자식 노드는 <head>이며, 세 번째 자식 노드는 <body>
  *
  * nodeValue : 노드의 값을 저장
@@ -3353,7 +3353,7 @@ document.getElementById("document").innerHTML = document.nodeType; // 9
  * 빈 텍스트 노드의 처리
  * 현재 대부분의 주요 웹 브라우저는 모두 W3C DOM 모델을 지원하지만, 그 처리 방식에 있어 약간씩의 차이 존재
  * 그중에서도 가장 큰 차이점은 띄어쓰기와 줄 바꿈을 처리하는 방식
- * 파이어폭스나 기타 브라우저들은 띄어쓰기나 줄 바꿈을 텍스트 노드(text node)로 취급합니다.
+ * 파이어폭스나 기타 브라우저들은 띄어쓰기나 줄 바꿈을 텍스트 노드(text node)로 취급
  * 따라서 자식 노드나 형제 노드를 이용하여 원하는 노드에 접근하려고 하면 브라우저 간에 차이가 발생
  * 이 차이를 없애는 가장 손쉬운 방법은 nodeType 프로퍼티를 사용하여 선택된 요소의 타입을 검사하는 것
  **/
@@ -3371,7 +3371,7 @@ function printLastChild() {
     findLastChild(parentNode);
     document.getElementById("nodename").innerHTML = lastNode.nodeName;
 }
-// 위의 예제에서 마지막 자식 노드를 찾은 후에, 찾은 노드의 타입이 요소 노드가 아니면 그 앞의 노드를 다시 검사
+// 위의 에서 마지막 자식 노드를 찾은 후에, 찾은 노드의 타입이 요소 노드가 아니면 그 앞의 노드를 다시 검사
 // 이 방식을 사용하면 모든 브라우저에서 마지막 자식 노드로 같은 요소 노드를 선택 가능
 /****************************************************************************************************************************************************/
 /****************************************************************************************************************************************************/
@@ -3389,7 +3389,7 @@ var listItems = document.getElementById("list").childNodes;
 listItems[1].firstChild.nodeValue = "HTML 요소의 내용을 변경했어요!";
 
 /**
- * 위의 예제에서 자식 노드 중 첫 번째 <li>요소를 선택할 때 인덱스로 0이 아닌 1을 사용
+ * 위의 에서 자식 노드 중 첫 번째 <li>요소를 선택할 때 인덱스로 0이 아닌 1을 사용
  * 그 이유는 HTML DOM에서 각 요소 노드 다음에는 별도의 텍스트 노드가 존재하기 때문
  * 따라서 아이디가 "list"인 요소의 자식 노드 리스트의 첫 번째 노드에는 아이디가 "list"인 요소 다음에 존재하는 텍스트 노드가 저장
  **/
@@ -3405,7 +3405,7 @@ document.write(listItems[1].firstChild.nodeValue + "<br>");
 // 자식 노드들 중 세 번째 노드의 값을 출력함.
 document.write(listItems[2].nodeValue);
 /**
- * 위의 예제는 각 요소 노드 다음에 또 다른 텍스트 노드가 존재함을 표시
+ * 위의 는 각 요소 노드 다음에 또 다른 텍스트 노드가 존재함을 표시
  * 따라서 노드 리스트에 인덱스를 이용하여 접근할 때는 이러한 텍스트 노드의 존재를 반드시 염두!
  * 노드 리스트 객체는 리스트에 노드를 추가하거나 삭제되면 자신의 상태 정보를 스스로 갱신
  * 따라서 이 객체의 length 프로퍼티 값 = 언제나 노드 리스트가 저장하고 있는 노드들의 총 개수!
@@ -3455,8 +3455,8 @@ function appendNode() {
  * 원형
  * 텍스트노드.insertData(오프셋, 새로운데이터);
  *
- * 오프셋(offset) : 오프셋 값은 0부터 시작하며, 기존 텍스트 데이터의 몇 번째 위치부터 추가할지를 전달합니다.
- * 새로운 데이터 : 새로이 삽입할 텍스트 데이터를 전달합니다.
+ * 오프셋(offset) : 오프셋 값은 0부터 시작하며, 기존 텍스트 데이터의 몇 번째 위치부터 추가할지를 전달
+ * 새로운 데이터 : 새로이 삽입할 텍스트 데이터를 전달
  **/
 var text = document.getElementById("text").firstChild; // 아이디가 "text"인 요소의 텍스트 노드를 선택
 
@@ -3628,14 +3628,14 @@ document.documentElement.clientWidth
 document.body.clientHeight
 document.body.clientWidth
 
-//다음 예제는 위의 문법들을 이용하여 모든 브라우저에서 창의 크기를 반환하는 예제
+//다음 는 위의 문법들을 이용하여 모든 브라우저에서 창의 크기를 반환하는 
 var windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 var windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 document.write("웹 브라우저의 너비는 " + windowWidth + "픽셀이고, 높이는 " + windowHeight + "픽셀입니다.");
 
 /**
  * window 객체의 모든 메소드나 프로퍼티를 사용할 때는 window라는 접두사를 생략 가능
- * 따라서 위의 예제에서 window.innerWidth 대신 그냥 innerWidth를 사용해도 정상적으로 동작
+ * 따라서 위의 에서 window.innerWidth 대신 그냥 innerWidth를 사용해도 정상적으로 동작
  **/
 
 alert("전역 함수 호출시 window 접두사 생략 가능함!");                     // 전역 함수
@@ -3644,7 +3644,7 @@ document.write("현재 브라우저의 수직 위치는 " + screenY + "입니다
 document.write(document.title);                                           // 전역 객체
 
 /**
- * 위의 예제처럼 자바스크립트의 모든 전역 객체, 전역 함수, 전역 변수를 사용할 때는 window 접두사를 생략 가능
+ * 위의 처럼 자바스크립트의 모든 전역 객체, 전역 함수, 전역 변수를 사용할 때는 window 접두사를 생략 가능
  * screenX는 해당 브라우저 창의 왼쪽 모서리와 사용자 스크린의 왼쪽 모서리 사이의 거리를 반환
  * 또한, screenY는 해당 브라우저 창의 위쪽 모서리와 사용자 스크린의 위쪽 모서리 사이의 거리를 반환
  *
@@ -3652,7 +3652,7 @@ document.write(document.title);                                           // 전
  * window 객체의 open() 메소드를 이용하면, 새로운 브라우저 창을 열 수 있음
  * 또한, 새로운 브라우저 창의 세부적인 옵션들도 일일이 설정 가능
  * */
-//다음 예제는 메뉴바, 주소창, 크기조절 손잡이, 스크롤 바, 상태 바만을 가지는 새로운 브라우저 창을 여는 예제입니다.
+//다음 는 메뉴바, 주소창, 크기조절 손잡이, 스크롤 바, 상태 바만을 가지는 새로운 브라우저 창을 여는 입니다.
 
 var newWindowObj;
 // 변수 strWindowFeatures를 통해 새롭게 여는 브라우저 창의 옵션들을 일일이 설정할 수 있음.
@@ -3800,7 +3800,7 @@ document.write("사용자 화면의 한 픽셀당 표시할 수 있는 비트수
  *
  * 브라우저 스니핑(browser sniffing)
  * 과거에는 방문자의 웹 브라우저의 종류를 미리 파악하여 조치함으로써, 브라우저 간의 호환성을 유지
- * 이렇게 호환성을 유지하는 방법을 브라우저 스니핑(browser sniffing)이라고 합니다.
+ * 이렇게 호환성을 유지하는 방법을 브라우저 스니핑(browser sniffing)이라고 
  *
  * navigator 객체는 이러한 브라우저 스니핑에서 사용할 수 있는 다양한 표준 프로퍼티 및 비표준 프로퍼티를 제공
  * 하지만 현재는 이 방법보다 필요한 프로퍼티만을 간단하게 테스트하는 기능 테스팅 방법을 더 많이 사용
@@ -3870,16 +3870,160 @@ if (navigator.cookieEnabled) {
 
 /****************************************************************************************************************************************************/
 /**
+ * 대화 상자(dialog box)
+ * 1. alert()
+ * 2. confirm()
+ * 3. prompt()
+ **/
+
+/**
+ * alert() 메소드
+ * window 객체의 alert() 메소드는 사용자에게 간단한 메시지를 보여주고, 그에 대한 사용자의 확인을 대기함.
+ * 사용자는 대화 상자의 확인 버튼을 눌러야만 다른 작업을 진행 가능
+ * window 객체의 모든 메소드나 프로퍼티를 사용할 때 window 접두사 생략가능
+ * 
+ * 문법
+ * window.alert("간단한 메시지");
+ **/
+
+function alertDialogBox() {
+    alert("확인을 누를 때까지 다른 작업을 할 수 없어요!");
+}
+
+/**
+ * confirm() 메소드
+ * window 객체의 confirm() 메소드는 사용자에게 간단한 메시지를 보여주고, 사용자가 확인이나 취소를 누르면 그 결과를 불리언 값으로 반환
  *
- *
+ * 문법
+ * window.confirm("간단한 메시지");
+ * 사용자가 확인을 누르면 true를 반환, 취소를 누르면 false를 반환
+ **/
+
+function confirmDialogBox() {
+    var str;
+    if (confirm("확인이나 취소를 눌러주세요!") == true) {
+        str = "당신은 확인을 눌렀습니다!";
+    } else {
+        str = "당신은 취소을 눌렀습니다!";
+    }
+    document.getElementById("text").innerHTML = str;
+}
+
+/**
+ * prompt() 메소드
+ * window 객체의 prompt() 메소드는 사용자에게 간단한 메시지를 보여주고, 사용자가 입력한 문자열을 반환
+ * 사용자가 대화 상자에 입력한 텍스트를 문자열 타입으로 반환
+ * 
+ * 문법
+ * window.prompt("간단한 메시지" + "입력란의 기본 메시지");
+ **/
+
+function promptDialogBox() {
+    var inputStr = prompt("당신의 이름을 입력해 주세요 : ", "홍길동");
+    if (inputStr != null) {
+        document.getElementById("text").innerHTML = "당신의 이름은 " + inputStr + "입니다.";
+    }
+}
+
+/**
+ * 위에서 살펴본 대화 상자 이외에도 showModalDialog() 메소드를 이용하면, 좀 더 복잡한 대화 상자 가능
+ * 하지만 이러한 대화 상자는 모두 사용자의 응답이 있을 때까지 브라우저의 실행을 강제로 중단
+ * 따라서 사용자 측면에서 보면 불편할 수도 있으므로, 대화 상자는 될 수 있으면 자주 사용하지 않는 것이 좋음.
  **/
 /****************************************************************************************************************************************************/
 
 /****************************************************************************************************************************************************/
 /**
+ * 타이머(timer)
+ * window 객체는 일정 시간이 지난 뒤에 함수를 호출할 수 있도록 다음 메소드를 제공
+ * 1. setTimeout()
+ * 2. setInterval()
  *
- *
+ * 또한, 이렇게 설정된 함수의 호출을 취소할 수 있도록 다음 메소드를 제공
+ * 3. clearTimeout()
+ * 4. clearInterval()
  **/
+
+/**
+ * setTimeout() 메소드
+ * setTimeout() 메소드는 명시된 시간이 지난 뒤에 지정된 함수를 호출
+ *
+ * 문법
+ * window.setTimeout(호출할함수, 지연시간);
+ *
+ * 이 메소드가 성공적으로 호출되면, 설정된 timeoutID를 반환
+ * 이 메소드는 밀리초(milliseconds) 단위로 지연 시간을 설정 가능
+ **/
+function startTimeout() {
+    setTimeout(printCurrentDate, 2000);
+}
+
+function printCurrentDate() {
+    document.getElementById("date").innerHTML = new Date();
+}
+
+/**
+ * setInterval() 메소드
+ * setInterval() 메소드는 지정된 시간 간격마다 지정된 함수를 반복적으로 호출
+ *
+ * 문법
+ * window.setInterval(호출할함수, 지연시간);
+ *
+ * 이 메소드가 성공적으로 호출되면, 설정된 timeoutID를 반환
+ * 이 메소드는 밀리초(milliseconds) 단위로 시간 간격을 설정 가능
+ **/
+
+function startInterval() {
+    setInterval(printCurrentDate, 2000);
+}
+
+function printCurrentDate() {
+    document.getElementById("date").innerHTML += new Date() + "<br>";
+}
+
+/**
+ * clearTimeout() 메소드
+ * setTimeout() 메소드의 반환값을 clearTimeout() 메소드의 인수로 전달하면, 계획된 함수의 호출을 취소 가능
+ * 이 메소드는 setTimeout() 메소드에 의해 함수가 호출되기 전에 실행되어야 호출을 취소 가능
+ * 함수가 호출된 이후에 이 메소드를 호출하면 동작 X
+ **/
+window.clearTimeout(timeoutID);
+
+var timeoutId;
+
+function startTimeout() {
+    timeoutId = setTimeout(printCurrentDate, 2000);
+}
+
+function cancelTimeout() {
+    clearTimeout(timeoutId);
+}
+
+function printCurrentDate() {
+    document.getElementById("date").innerHTML += new Date() + "<br>";
+}
+
+/**
+ * clearInterval() 메소드
+ * setInterval() 메소드의 반환값을 clearInterval() 메소드의 인수로 전달하면, 반복되는 함수의 호출을 취소 가능
+ *
+ * 문법
+ * window.clearInterval(timeoutID);
+ **/
+
+var timeoutId;
+
+function startInterval() {
+    timeoutId = setInterval(printCurrentDate, 2000);
+}
+
+function cancelInterval() {
+    clearInterval(timeoutId);
+}
+
+function printCurrentDate() {
+    document.getElementById("date").innerHTML += new Date() + "<br>";
+}
 /****************************************************************************************************************************************************/
 
 /****************************************************************************************************************************************************/
