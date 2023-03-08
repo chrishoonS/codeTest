@@ -3,7 +3,7 @@ package com.BaekjoonCode;
 import java.util.Scanner;
 
 //1330
-//public class Main02 {
+public class Main02 {
 //    public static void main(String[] args) {
 //        Scanner sc = new Scanner(System.in);
 //        int a, b;
@@ -45,17 +45,18 @@ import java.util.Scanner;
 //public class Main02 {
 //    public static void main(String[] args) {
 //        Scanner sc = new Scanner(System.in);
-//        int hh, mm;
-//        hh = sc.nextInt();
-//        mm = sc.nextInt();
-//        sc.close();
-//        if (mm < 45){
-//            hh--;
-//            mm = 60 - (45-mm);
-//            if (hh < 0) hh = 23;
-//            System.out.print(hh+" "+mm);
-//        } else System.out.print(hh+" "+(mm-45));
+//        int x, y;
+//        x = sc.nextInt();
+//        y = sc.nextInt();
 //
+//        if(x>0 && y>0)
+//            System.out.println(1);
+//        else if(x<0 && y>0)
+//            System.out.println(2);
+//        else if(x>0 && y<0)
+//            System.out.println(4);
+//        else
+//            System.out.println(3);
 //    }
 
 //2884
@@ -97,7 +98,7 @@ import java.util.Scanner;
 //}
 
 //2480
-public class Main02 {
+//public class Main02 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();
