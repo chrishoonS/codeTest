@@ -1,6 +1,62 @@
 package com.BaekjoonCode;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+//10807
+public class Main04 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
+        int[] arr = new int[n];
+
+        //문자열(br.readLine())을 받아 띄어쓰기 기준으로 문자열 분리
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        //구분자를 기준으로 문자열 분리
+//        StringTokenizer st = new StringTokenizer(br.readLine(), ",");
+
+        int num = Integer.parseInt(br.readLine());
+        int cnt = 0; // searchNum과 일치할시 갯수를 올리는 변수
+
+        for(int i=0; i < arr.length; i++){
+            arr[i] = Integer.parseInt(st.nextToken());
+            if(arr[i] == num){
+                cnt++;
+            }
+        }
+
+        System.out.println(cnt);
+        br.close();
+
+    }
+}
+
+//10871
+//public class Main04 {
+//    public static void main(String[] args) throws IOException {
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//
+//        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+//
+//        int N = Integer.parseInt(st.nextToken());
+//        int X = Integer.parseInt(st.nextToken());
+//
+//        StringBuilder sb = new StringBuilder();
+//
+//        st = new StringTokenizer(br.readLine(), " ");
+//
+//        for (int i = 0; i < N; i++) {
+//            int value = Integer.parseInt(st.nextToken());
+//
+//            if (value < X)
+//                sb.append(value).append(' ');
+//        }
+//        System.out.println(sb);
+//    }
+//}
+
 //10818
 //public class Main04 {
 //    public static void main(String[] args) {
@@ -289,36 +345,36 @@ import java.util.Scanner;
 //}
 
 //4344
-public class Main04 {
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-
-        int[] arr;
-
-        int testCase = in.nextInt();
-
-        for(int i = 0 ; i < testCase ; i++) {
-
-            int N = in.nextInt();	//학생 수
-            arr = new int[N];
-
-            double sum = 0;
-
-            for(int j = 0 ; j < N ; j++) {
-                int score = in.nextInt();
-                arr[j] = score;
-                sum += score;
-            }
-
-            double avg = sum / N ;
-            double cnt = 0;
-
-            for(int j = 0 ; j < N ; j++) {
-                if(arr[j] > avg) cnt++;
-            }
-
-            System.out.printf("%.3f%%\n",(cnt/N)*100);
-        }
-        in.close();
-    }
-}
+//public class Main04 {
+//    public static void main(String[] args) {
+//        Scanner in = new Scanner(System.in);
+//
+//        int[] arr;
+//
+//        int testCase = in.nextInt();
+//
+//        for(int i = 0 ; i < testCase ; i++) {
+//
+//            int N = in.nextInt();	//학생 수
+//            arr = new int[N];
+//
+//            double sum = 0;
+//
+//            for(int j = 0 ; j < N ; j++) {
+//                int score = in.nextInt();
+//                arr[j] = score;
+//                sum += score;
+//            }
+//
+//            double avg = sum / N ;
+//            double cnt = 0;
+//
+//            for(int j = 0 ; j < N ; j++) {
+//                if(arr[j] > avg) cnt++;
+//            }
+//
+//            System.out.printf("%.3f%%\n",(cnt/N)*100);
+//        }
+//        in.close();
+//    }
+//}
