@@ -8,21 +8,17 @@ public class Algorithm02 {
         int[] answer = new int[commands.length];
 
         for(int i = 0; i < commands.length; i++){
-            answer[i] = result(commands[i][0], commands[i][1], commands[i][2], array);
+            ArrayList<Integer> list = new ArrayList<>();
+
+            for(int j = commands[i][0] - 1; j < commands[i][1]; j++){
+                list.add(array[j]);
+            }
+
+            Collections.sort(list);
+
+            answer[i] = (int) list.get(commands[i][2]-1);
         }
 
         return answer;
-    }
-
-    public int result(int st, int ed, int _th, int[] array){
-        ArrayList<Integer> list = new ArrayList<>();
-
-        for(int j = st - 1; j < ed; j++){
-            list.add(array[j]);
-        }
-
-        Collections.sort(list);
-
-        return (int) list.get(_th-1);
     }
 }
