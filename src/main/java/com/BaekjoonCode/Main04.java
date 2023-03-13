@@ -18,7 +18,7 @@ public class Main04 {
 //        StringTokenizer st = new StringTokenizer(br.readLine(), ",");
 
         int num = Integer.parseInt(br.readLine());
-        int cnt = 0; // searchNum과 일치할시 갯수를 올리는 변수
+        int cnt = 0;
 
         for(int i=0; i < arr.length; i++){
             arr[i] = Integer.parseInt(st.nextToken());
