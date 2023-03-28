@@ -1,9 +1,6 @@
 package com.BaekjoonCode;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.StringTokenizer;
+import java.util.Scanner;
 
 //2739
 //public class Main03 {
@@ -34,15 +31,15 @@ import java.util.StringTokenizer;
 //}
 
 //8393
-//public class Main03 {
-//    public static void main(String[] args) {
-//        Scanner sc = new Scanner(System.in);
-//        int a = sc.nextInt();
-//        sc.close();
-//
-//        System.out.println(a*(a+1)/2);
-//    }
-//}
+public class Main03 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        sc.close();
+
+        System.out.println(a*(a+1)/2);
+    }
+}
 
 //25304
 //public class Main03 {
@@ -65,20 +62,20 @@ import java.util.StringTokenizer;
 //    }
 
 //25314
-public class Main03 {
-    public static void main(String[] args) throws Exception {
-
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int n = Integer.parseInt(br.readLine());
-
-        StringBuilder sb = new StringBuilder();
-
-        for (int i = 0; i < n/4; i++) {
-            sb.append("long ");
-        }
-        sb.append("int");
-        System.out.println(sb);
-    }
+//public class Main03 {
+//    public static void main(String[] args) throws Exception {
+//
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        int n = Integer.parseInt(br.readLine());
+//
+//        StringBuilder sb = new StringBuilder();
+//
+//        for (int i = 0; i < n/4; i++) {
+//            sb.append("long ");
+//        }
+//        sb.append("int");
+//        System.out.println(sb);
+//    }
 
 
 
@@ -361,4 +358,4 @@ public class Main03 {
 //
 //        System.out.println(cnt);
 //    }
-}
+//}
