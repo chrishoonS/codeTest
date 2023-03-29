@@ -257,7 +257,7 @@ switch (typeof xx) {
 }
 
 /**
- * 위의 에서 변수 xx는 string 타입이므로, 두 번째 case 절의 document.write() 메소드가 맨 먼저 실행
+ * 위의 에서 변수 xx는 string 타입이므로, 두 번째 case 절의 document.write() 메서드가 맨 먼저 실행
  * 하지만 break 키워드가 없으므로, 두 번째 case 절 이후에 나오는 모든 실행문이 모두 실행될 것
  * 따라서 case 절과 default 절은 반드시 break 키워드를 포함하고 있어야 정확하게 동작
  **/
@@ -525,15 +525,15 @@ document.write("배열 arr의 길이는 " + arr.length + "");       // 배열의
 /**
  * 배열 요소의 추가
  * 문법
- * 1. arr.push(추가할 요소);         // push() 메소드를 이용하는 방법
+ * 1. arr.push(추가할 요소);         // push() 메서드를 이용하는 방법
  * 2. arr[arr.length] = 추가할 요소; // length 프로퍼티를 이용하는 방법
  * 3. arr[특정인덱스] = 추가할 요소;    // 특정 인덱스를 지정하여 추가하는 방법
  *
- * push() 메소드와 length 프로퍼티를 이용한 방법은 모두 배열의 제일 끝에 새로운 요소를 추가
+ * push() 메서드와 length 프로퍼티를 이용한 방법은 모두 배열의 제일 끝에 새로운 요소를 추가
 **/
 var arr = [1, true, "Java"];
 
-arr.push("Script");           // push() 메소드를 이용하는 방법
+arr.push("Script");           // push() 메서드를 이용하는 방법
 document.write(arr + "<br>"); // 1,true,Java,Script
 
 arr[arr.length] = 100;        // length 프로퍼티를 이용하는 방법
@@ -565,7 +565,7 @@ document.write(result);
 
 /**
  * Array 객체 : 배열(array)은 정렬된 값들의 집합으로 정의되며, Array 객체로 활용
- * 사용자가 배열과 관련된 작업을 손쉽게 할 수 있도록 다양한 메소드도 제공
+ * 사용자가 배열과 관련된 작업을 손쉽게 할 수 있도록 다양한 메서드도 제공
  **/
 var arr = new Array(10, "문자열", false);
 
@@ -605,7 +605,7 @@ for (var row = 0; row < 3; row++) {
  * 대부분의 프로그래밍 언어가 지원하는 연관 배열을 자바스크립트는 별도로 제공하지는 않습니다.
  * 대신에 인덱스로 문자열을 사용하여 연관 배열처럼 사용할 수 있는 객체(object)를 생성 가능
  * 하지만 이렇게 생성된 배열은 자바스크립트 내부적으로 Array 객체에서 기본 객체로 재선언
- * 따라서 기존에 사용할 수 있었던 모든 Array 메소드와 프로퍼티가 정확하지 않은 결괏값을 반환
+ * 따라서 기존에 사용할 수 있었던 모든 Array 메서드와 프로퍼티가 정확하지 않은 결괏값을 반환
  * ECMAScript 6부터는 이러한 불편함을 해결하기 위해 새로운 데이터 구조인 Map 객체를 별도로 제공
  **/
 
@@ -623,9 +623,9 @@ document.write(arr[0]);     // undefined
  * 문자열을 배열처럼 접근하기
  * 문자열은 변하지 않는 값이므로, 읽기 전용 배열로서 다룰 수 있습니다.
  * 따라서 배열처럼 [] 연산자를 사용하여 문자열을 구성하는 각 문자에 바로 접근 가능
- * 또한, Array 객체가 제공하는 모든 범용 메소드도 사용 가능
- * 문자열의 각 문자는 String 객체에서 제공하는 charAt() 메소드를 사용해도 접근 가능
- * 따라서 문자열을 바로 배열처럼 사용하지 말고, split() 메소드 등을 이용해 먼저 배열로 변환한 후 사용할 것
+ * 또한, Array 객체가 제공하는 모든 범용 메서드도 사용 가능
+ * 문자열의 각 문자는 String 객체에서 제공하는 charAt() 메서드를 사용해도 접근 가능
+ * 따라서 문자열을 바로 배열처럼 사용하지 말고, split() 메서드 등을 이용해 먼저 배열로 변환한 후 사용할 것
  **/
 
 var str = "안녕하세요!";       // 문자열 생성
@@ -642,7 +642,7 @@ str[0] = "";          // 자바스크립트의 문자열은 읽기 전용이므�
  * 자바스크립트 배열은 객체(object) 타입이 되며, typeof 연산자를 사용하면 'object'를 반환
  *
  * 배열여부 확인 방법
- * 1. Array.isArray() 메소드
+ * 1. Array.isArray() 메서드
  * 2. instanceof 연산자
  * 3. constructor 프로퍼티
  * 4. instanceof 연산자
@@ -659,7 +659,7 @@ document.write(123 instanceof Array); // false
 
  /** constructor 프로퍼티 문법
   * function Array() {[native code]}
-  * 다음 와 같이 toString() 메소드와 indexOf() 메소드를 함께 사용하면 해당 변수의 배열 여부를 확인 가능
+  * 다음 와 같이 toString() 메서드와 indexOf() 메서드를 함께 사용하면 해당 변수의 배열 여부를 확인 가능
   **/
 function isArray(a) {
     return a.constructor.toString().indexOf("Array") > -1;
@@ -667,8 +667,8 @@ function isArray(a) {
 
 var arr = [1, true, "JavaScript"];          // 배열 생성
 document.write(arr.constructor);            // constructor 프로퍼티의 값 출력
-document.write(arr.constructor.toString()); // toString() 메소드를 사용하여 constructor 프로퍼티의 값을 문자열로 변환
-document.write(arr.constructor.toString().indexOf("Array")); // indexOf() 메소드를 사용하여 해당 문자열에서 "Array"라는 부분 문자열이 시작하는 인덱스를 구함, indexOf()는 인수로 전달받은 문자열을 해당 문자열에서 찾지 못하면, 언제나 -1을 반환
+document.write(arr.constructor.toString()); // toString() 메서드를 사용하여 constructor 프로퍼티의 값을 문자열로 변환
+document.write(arr.constructor.toString().indexOf("Array")); // indexOf() 메서드를 사용하여 해당 문자열에서 "Array"라는 부분 문자열이 시작하는 인덱스를 구함, indexOf()는 인수로 전달받은 문자열을 해당 문자열에서 찾지 못하면, 언제나 -1을 반환
 document.write(isArray(arr))                // true
 
 /**
@@ -1070,7 +1070,7 @@ isFinite(NaN);       // false
  * isNaN() : 전달된 값이 NaN인지를 검사하여 그 결과를 반환
  * 만약 인수로 전달된 값이 숫자가 아니라면, 숫자로 강제 변환하여 검사
  * 전달된 값이 숫자인지 아닌지를 확인하기 위하여 typeof 연산자를 대신 사용 가능
- * 이 함수는 숫자로의 강제 변환에 따라 예상치 못한 결과를 얻을 수 있으므로 ECMAScript 6부터는 Number.isNaN() 메소드의 사용을 권장
+ * 이 함수는 숫자로의 강제 변환에 따라 예상치 못한 결과를 얻을 수 있으므로 ECMAScript 6부터는 Number.isNaN() 메서드의 사용을 권장
  * 문법
  * isNaN(검사할값);
  **/
@@ -1215,7 +1215,7 @@ String(Boolean(0)); // false
  * cat.age = 0.1
  * cat.weight = 300
  *
- * 메소드(method)
+ * 메서드(method)
  * cat.mew()
  * cat.eat()
  * cat.sleep()
@@ -1225,7 +1225,7 @@ String(Boolean(0)); // false
  * 
  * 자바스크립트 기본 타입(data type) = 객체(object)
  * 객체 : 이름(name)과 값(value)으로 구성된 프로퍼티(property)의 정렬되지 않은 집합
- * 메소드(method) : 프로퍼티의 값이 함수
+ * 메서드(method) : 프로퍼티의 값이 함수
  **/
 
 var cat = "나비"; // 일반적인 변수의 선언
@@ -1258,11 +1258,11 @@ person.name    // 홍길동
 person["name"] // 홍길동
 
 /**
- * 객체의 메소드 참조
+ * 객체의 메서드 참조
  * 문법
- * 객체이름.메소드이름()
- * 메소드를 참조할 때 메소드 이름 뒤에 괄호(())를 붙이지 않으면, 메소드가 아닌 프로퍼티 그 자체를 참조
- * 따라서 괄호를 사용하지 않고 프로퍼티 그 자체를 참조하게 되면 해당 메소드의 정의 그 자체가 반환
+ * 객체이름.메서드이름()
+ * 메서드를 참조할 때 메서드 이름 뒤에 괄호(())를 붙이지 않으면, 메서드가 아닌 프로퍼티 그 자체를 참조
+ * 따라서 괄호를 사용하지 않고 프로퍼티 그 자체를 참조하게 되면 해당 메서드의 정의 그 자체가 반환
  **/
 
 var person = {
@@ -1282,7 +1282,7 @@ person.fullId;  // function () { return this.birthday + this.pId; } <- 이 자�
  * 객체의 생성
  * 1. 리터럴 표기(literal notation)를 이용한 방법
  * 2. 생성자 함수(constructor function)를 이용한 방법
- * 3. Object.create() 메소드를 이용한 방법
+ * 3. Object.create() 메서드를 이용한 방법
  * 인스턴스(instance) : 위와 같은 방법으로 생성되어 메모리에 대입된 객체
  *
  * 리터럴 표기를 이용한 객체의 생성
@@ -1307,7 +1307,7 @@ document.write("우리 집 새끼 고양이의 이름은 " + kitty.name + "이�
 
 /**
  * 생성자를 이용한 객체의 생성 : new 연산자를 사용하여 객체를 생성하고 초기화 가능
- * 이때 사용되는 메소드를 생성자(constructor)라고 하며, 새롭게 생성되는 객체를 초기화하는 역할
+ * 이때 사용되는 메서드를 생성자(constructor)라고 하며, 새롭게 생성되는 객체를 초기화하는 역할
  * 자바스크립트는 원시 타입을 위한 생성자를 미리 정의하여 제공
  * 아래 처럼 자바스크립트에서 제공하는 생성자를 사용할 수도 있으며, 사용자가 직접 객체 생성자 함수(object constructor function)를 작성하여 사용 가능
  **/
@@ -1316,14 +1316,14 @@ var day = new Date(); // new 연산자를 사용하여 Date 타입의 객체를 
 document.write("올해는 " + day.getFullYear() + "년");
 
 /**
- * Object.create() 메소드를 이용한 객체의 생성
- * Object.create() 메소드를 이용하여 객체를 생성 가능
+ * Object.create() 메서드를 이용한 객체의 생성
+ * Object.create() 메서드를 이용하여 객체를 생성 가능
  * Object.create()는 지정된 프로토타입(prototype) 객체와 프로퍼티를 가지고 새로운 객체를 생성
- * 따라서 이 메소드를 이용하면 사용자가 프로토타입 객체를 직접 명시할 수 있으므로, 상당히 유용하게 사용
+ * 따라서 이 메서드를 이용하면 사용자가 프로토타입 객체를 직접 명시할 수 있으므로, 상당히 유용하게 사용
  *
  * 문법
  * Object.create(프로토타입객체[, 새로운객체의프로퍼티1, 새로운객체의프로퍼티2, ...]);
- * Object.create() 메소드의 첫 번째 인수로는 프로토타입으로 사용할 객체를 전달
+ * Object.create() 메서드의 첫 번째 인수로는 프로토타입으로 사용할 객체를 전달
  * 두 번째 인수로는 새로운 객체의 추가할 프로퍼티 정보를 전달
  **/
 
@@ -1337,7 +1337,7 @@ obj.y;                      // y좌표
 Object.getPrototypeOf(obj); // 객체의 프로토타입을 반환해 줌.
 /****************************************************************************************************************************************************/
 /**
- * 상속(inheritance) : 새로운 클래스에서 기존 클래스의 모든 프로퍼티와 메소드를 사용할 수 있는 것
+ * 상속(inheritance) : 새로운 클래스에서 기존 클래스의 모든 프로퍼티와 메서드를 사용할 수 있는 것
  * 상속을 통해 새로운 프로그램의 요구에 맞게 기존 클래스를 수정하여 재사용 가능
  * 또한, 클래스 간의 종속 관계를 형성함으로써 객체의 관계를 조직화 가능
  *
@@ -1345,7 +1345,7 @@ Object.getPrototypeOf(obj); // 객체의 프로토타입을 반환해 줌.
  * 자바스크립트에서는 현재 존재하고 있는 객체를 프로토타입으로 사용하여, 해당 객체를 복제하여 재사용하는 것을 상속이라고 함.
  *
  * 프로토타입(prototype) : 자바스크립트의 모든 객체는 프로토타입(prototype)이라는 객체를 가지고 있음
- * 모든 객체는 그들의 프로토타입으로부터 프로퍼티와 메소드를 상속
+ * 모든 객체는 그들의 프로토타입으로부터 프로퍼티와 메서드를 상속
  * 이처럼 자바스크립트의 모든 객체는 최소한 하나 이상의 다른 객체로부터 상속을 받으며, 이때 상속되는 정보를 제공하는 객체를 프로토타입(prototype)
  *
  * 프로토타입 체인(prototype chain) : 자바스크립트에서는 객체 이니셜라이저를 사용해 생성된 같은 타입의 객체들은 모두 같은 프로토타입
@@ -1381,7 +1381,7 @@ document.write("우리 집 강아지는 " + myDog.name + "라는 이름의 " + m
 
 /**
  * 객체 생성자 함수를 작성할 때에는 관례상 이름의 첫 문자만을 대문자로 작성
- * 객체에 프로퍼티 및 메소드 추가
+ * 객체에 프로퍼티 및 메서드 추가
  **/
 function Dog(color, name, age) {
     this.color = color;
@@ -1393,16 +1393,16 @@ var myDog = new Dog("흰색", "마루", 1);
 
 myDog.family = "시베리안 허스키"; // 품종에 관한 프로퍼티를 추가함.
 
-myDog.breed = function() {        // 털색을 포함한 품종을 반환해 주는 메소드를 추가함.
+myDog.breed = function() {        // 털색을 포함한 품종을 반환해 주는 메서드를 추가함.
     return this.color + " " + this.family;
 }
 document.write("우리 집 강아지는 " + myDog.breed() + "");
 
 /**
- * 위의 에서 새롭게 추가된 weight 프로퍼티와 breed() 메소드는 오직 myDog 인스턴스에만 추가
+ * 위의 에서 새롭게 추가된 weight 프로퍼티와 breed() 메서드는 오직 myDog 인스턴스에만 추가
  * 이미 생성된 다른 Dog 객체나 차후에 생성되는 어떠한 다른 Dog 객체에도 추가되지 않음
  *
- * 프로토타입에 프로퍼티 및 메소드 추가 : 프로토타입의 경우에는 생성자 함수에 직접 추가해야만 이후에 생성되는 모든 다른 객체에도 적용 가능
+ * 프로토타입에 프로퍼티 및 메서드 추가 : 프로토타입의 경우에는 생성자 함수에 직접 추가해야만 이후에 생성되는 모든 다른 객체에도 적용 가능
 **/
 function Dog(color, name, age) {
     this.color = color;
@@ -1420,7 +1420,7 @@ var hisDog = new Dog("갈색", "콩이", 3);
 document.write("우리 집 강아지는 " + myDog.family + "이고, 친구네 집 강아지도 " + hisDog.family + "");
 
 /**
- * prototype 프로퍼티 : prototype 프로퍼티를 이용하면 현재 존재하고 있는 프로토타입에 새로운 프로퍼티나 메소드를 손쉽게 추가 가능
+ * prototype 프로퍼티 : prototype 프로퍼티를 이용하면 현재 존재하고 있는 프로토타입에 새로운 프로퍼티나 메서드를 손쉽게 추가 가능
  **/
 
 function Dog(color, name, age) {
@@ -1430,7 +1430,7 @@ function Dog(color, name, age) {
 }
 // 현재 존재하고 있는 Dog 프로토타입에 family 프로퍼티를 추가함.
 Dog.prototype.family = "시베리안 허스키";
-// 현재 존재하고 있는 Dog 프로토타입에 breed 메소드를 추가함.
+// 현재 존재하고 있는 Dog 프로토타입에 breed 메서드를 추가함.
 
 Dog.prototype.breed = function() {
     return this.color + " " + this.family;
@@ -1444,7 +1444,7 @@ document.write("우리 집 강아지의 품종은 " + myDog.breed() + "<br>");
 document.write("친구네 집 강아지의 품종은 " + hisDog.breed() + "");
 
 /**
- * 직접 생성한 프로토타입은 위와 같이 새로운 프로퍼티나 메소드를 마음껏 추가하거나 삭제 가능
+ * 직접 생성한 프로토타입은 위와 같이 새로운 프로퍼티나 메서드를 마음껏 추가하거나 삭제 가능
  * 물론 자바스크립트 표준 객체의 프로토타입도 임의로 수정할 수 있으나, 심각한 오류가 발생할 가능성이 있음
  * 따라서 자바스크립트 표준 객체의 프로토타입은 수정해서는 안됩니다.
  *
@@ -1455,7 +1455,7 @@ document.write("친구네 집 강아지의 품종은 " + hisDog.breed() + "");
 /**
  * 객체 다루기
  * this 키워드 : 해당 키워드가 사용된 자바스크립트 코드 영역을 포함하고 있는 객체
- * 예를 들어, 메소드 내부에서 사용된 this 키워드는 해당 메소드를 포함하고 있는 객체!
+ * 예를 들어, 메서드 내부에서 사용된 this 키워드는 해당 메서드를 포함하고 있는 객체!
  * 또한, 객체 내부에서 사용된 this 키워드는 객체 그 자신!
  * 이러한 this는 변수가 아닌 키워드이므로, 사용자가 임의로 가리키는 값을 바꿀 수 없습니다.
  * 객체 생성자 함수 내부에서 사용된 this 키워드는 어떠한 값도 가지지 않으며, 단순히 새로운 객체로 대체
@@ -1485,17 +1485,17 @@ delete myDog.age; // age 프로퍼티를 삭제함.
 document.write("우리집 강아지의 나이는 " + myDog.age + "");
 
 /**
- * 직접 생성한 프로토타입은 위와 같이 새로운 프로퍼티나 메소드를 마음껏 추가하거나 삭제 가능
+ * 직접 생성한 프로토타입은 위와 같이 새로운 프로퍼티나 메서드를 마음껏 추가하거나 삭제 가능
  * 물론 자바스크립트 표준 객체의 프로토타입도 임의로 수정할 수 있으나, 심각한 오류가 발생 유발
  *
  * 객체 프로퍼티의 순회
  * 자바스크립트에서는 for / in 문을 사용하여 객체의 모든 프로퍼티를 반복 가능
  * for / in 문은 객체의 모든 열거할 수 있는 프로퍼티(enumerable properties)를 손쉽게 순회
- * 객체의 프로퍼티를 순회하는 방법으로는 for / in 문 이외에도 다음과 같은 메소드를 사용 가능
+ * 객체의 프로퍼티를 순회하는 방법으로는 for / in 문 이외에도 다음과 같은 메서드를 사용 가능
  * 1. Object.keys()
  * 2. Object.getOwnPropertyNames()
- * Object.keys() 메소드는 해당 객체가 가진 고유 프로퍼티 중에서 열거할 수 있는 프로퍼티의 이름을 배열에 담아 반환
- * Object.getOwnPropertyNames() 메소드는 해당 객체가 가진 모든 고유 프로퍼티의 이름을 배열에 담아 반환
+ * Object.keys() 메서드는 해당 객체가 가진 고유 프로퍼티 중에서 열거할 수 있는 프로퍼티의 이름을 배열에 담아 반환
+ * Object.getOwnPropertyNames() 메서드는 해당 객체가 가진 모든 고유 프로퍼티의 이름을 배열에 담아 반환
  **/
 function Dog(color, name, age) {
     this.color = color;
@@ -1514,7 +1514,7 @@ document.write(Object.keys(myDog) + "<br>");       // name, age
 
 document.write(Object.getOwnPropertyNames(myDog)); // color, name, age
 
-Object.defineProperty() //메소드는 ECMAScript 5부터 추가된 객체에 프로퍼티를 추가해주는 메소드
+Object.defineProperty() //메서드는 ECMAScript 5부터 추가된 객체에 프로퍼티를 추가해주는 메서드
 // 이때 추가하는 프로퍼티의 속성까지도 설정 가능
 
 /**
@@ -1551,8 +1551,8 @@ document.write((hisDog === herDog) + "<br>"); // true
 
 /**
  * 객체 프로퍼티(property) : 모든 자바스크립트 객체는 Object 객체와 Object.prototype 객체의 모든 프로퍼티를 상속
- * prototype 프로퍼티를 이용하면 현재 존재하는 프로토타입에 새로운 프로퍼티나 메소드를 손쉽게 추가
- * 객체 메소드(method) : 모든 자바스크립트 객체는 Object 객체와 Object.prototype 객체의 모든 프로퍼티와 메소드를 상속
+ * prototype 프로퍼티를 이용하면 현재 존재하는 프로토타입에 새로운 프로퍼티나 메서드를 손쉽게 추가
+ * 객체 메서드(method) : 모든 자바스크립트 객체는 Object 객체와 Object.prototype 객체의 모든 프로퍼티와 메서드를 상속
  *
  * 1. hasOwnProperty()
  * 2. propertyIsEnumerable()
@@ -1584,7 +1584,7 @@ myDog.hasOwnProperty("class"); // 상속받은 프로퍼티이므로, false를 �
 
 /**
  * propertyIsEnumerable() : 특정 프로퍼티가 해당 객체에 존재하고, 열거할 수 있는 프로퍼티인지를 검사
- * 즉, hasOwnProperty() 메소드의 결과가 true이면서, 동시에 열거할 수 있는 프로퍼티인지를 검사
+ * 즉, hasOwnProperty() 메서드의 결과가 true이면서, 동시에 열거할 수 있는 프로퍼티인지를 검사
  **/
 
 function Dog(color, name, age) {
@@ -1618,7 +1618,7 @@ document.write(Date.prototype.isPrototypeOf(new String())); // false
 /**
  * isExtensible() : 객체에 새로운 프로퍼티를 추가할 수 있는지 여부를 반환
  * 자바스크립트에서 모든 객체는 기본적으로 새로운 프로퍼티를 추가 가능
- * 하지만 preventExtensions() 메소드를 사용하여 해당 객체에 새로운 프로퍼티를 추가할 수 없도록 설정 가능
+ * 하지만 preventExtensions() 메서드를 사용하여 해당 객체에 새로운 프로퍼티를 추가할 수 없도록 설정 가능
  **/
 var day = new Date(); // Date 객체를 생성함.
 // 객체 day에 새로운 프로퍼티를 추가할 수 있는지 검사함.
@@ -1629,7 +1629,7 @@ var myDay = Object.preventExtensions(day);
 document.write(Object.isExtensible(day));          // false
 
 /**
- * toString() : 이 메소드를 호출한 객체의 값을 문자열로 반환
+ * toString() : 이 메서드를 호출한 객체의 값을 문자열로 반환
  **/
 var arr = [10, "문자열", true]; // 배열
 var bool = false;               // 불리언
@@ -1641,7 +1641,7 @@ func.toString(); // 함수의 소스 코드가 전부 문자열로 반환됨.
 
 /**
  * valueOf() : 특정 객체의 원시 타입(primitive type)의 값을 반환
- * 자바스크립트에서는 원시 타입의 값이 기대되는 곳에 객체가 사용되면, 내부적으로 이 메소드를 호출하여 처리
+ * 자바스크립트에서는 원시 타입의 값이 기대되는 곳에 객체가 사용되면, 내부적으로 이 메서드를 호출하여 처리
  *만약 어떤 객체가 원시 타입의 값을 가지고 있지 않다면, 객체 자신을 반환
  **/
 function func(n) {
@@ -1651,7 +1651,7 @@ function func(n) {
 myFunc = new func(4);
 document.write(myFunc + 5); // ① : [object Object]5
 
-func.prototype.valueOf = function() { // valueOf() 메소드를 정의함.
+func.prototype.valueOf = function() { // valueOf() 메서드를 정의함.
     return this.number;
 }
 
@@ -1659,18 +1659,18 @@ document.write(myFunc + 5); // ② : 9
 
 /**
  * 위의  ① 부분에서는 산술 연산을 위해 number 타입의 값을 기대하는 곳에 myFunc 객체가 사용
- * 따라서 자바스크립트는 내부적으로 해당 객체의 valueOf() 메소드를 호출
- * 하지만 이 객체의 valueOf() 메소드는 아직 정의되지 않았으므로, 해당 객체 자신을 반환
+ * 따라서 자바스크립트는 내부적으로 해당 객체의 valueOf() 메서드를 호출
+ * 하지만 이 객체의 valueOf() 메서드는 아직 정의되지 않았으므로, 해당 객체 자신을 반환
  * 따라서 산술 연산이 아닌 문자열 결합 연산이 수행
- * 그 후에 에서는 prototype 프로퍼티를 이용하여 valueOf() 메소드를 정의
- * 따라서 ② 부분에서는 내부적으로 호출된 valueOf() 메소드가 해당 객체의 number 프로퍼티 값을 반환
+ * 그 후에 에서는 prototype 프로퍼티를 이용하여 valueOf() 메서드를 정의
+ * 따라서 ② 부분에서는 내부적으로 호출된 valueOf() 메서드가 해당 객체의 number 프로퍼티 값을 반환
  * 따라서 정상적으로 산술 연산이 수행
  **/
 
 /**
  * getter와 setter : 접근자 프로퍼티라고 부릅니다.
- * getter : 특정 프로퍼티의 값을 받아오기 위한 메소드
- * setter : 특정 프로퍼티의 값을 설정하기 위한 메소드
+ * getter : 특정 프로퍼티의 값을 받아오기 위한 메서드
+ * setter : 특정 프로퍼티의 값을 설정하기 위한 메서드
  **/
 
 var gildong = { age: 18 };
@@ -1679,8 +1679,8 @@ Object.defineProperty(gildong, "americanAge", { get: function() { return this.ag
 document.write(gildong.americanAge); // 17
 
 /**
- * 위의 에서는 gildong 객체에 americanAge라는 프로퍼티를 추가할 때 get 키워드를 사용하여 getter 메소드를 정의
- * 따라서 해당 프로퍼티를 참조하려고 할 때는 내부적으로 미리 정의한 getter 메소드가 자동으로 호출될 것
+ * 위의 에서는 gildong 객체에 americanAge라는 프로퍼티를 추가할 때 get 키워드를 사용하여 getter 메서드를 정의
+ * 따라서 해당 프로퍼티를 참조하려고 할 때는 내부적으로 미리 정의한 getter 메서드가 자동으로 호출될 것
  **/
 var gildong = { age: 18 };
 gildong.age = 20;
@@ -1691,8 +1691,8 @@ gildong.changeAge = 5;
 document.write(gildong.age); // 15
 
 /**
- * 위의 에서는 gildong 객체에 changeAge라는 프로퍼티를 추가할 때 set 키워드를 사용하여 setter 메소드를 정의
- * 따라서 해당 프로퍼티의 값을 변경하려고 할 때는 내부적으로 미리 정의한 setter 메소드가 자동으로 호출
+ * 위의 에서는 gildong 객체에 changeAge라는 프로퍼티를 추가할 때 set 키워드를 사용하여 setter 메서드를 정의
+ * 따라서 해당 프로퍼티의 값을 변경하려고 할 때는 내부적으로 미리 정의한 setter 메서드가 자동으로 호출
  **/
 /****************************************************************************************************************************************************/
 /**
@@ -1710,7 +1710,7 @@ var len = str.length; // 문자열 프로퍼티인 length 사용
 /**
  * 위의 에서 생성한 문자열 리터럴 str은 객체가 아닌데도 length 프로퍼티를 사용 가능
  * 프로그램이 문자열 리터럴 str의 프로퍼티를 참조하려고 하면, 자바스크립트는 new String(str)을 호출한 것처럼 문자열 리터럴을 객체로 자동 변환해주기 때문!
- * 이렇게 생성된 임시 객체는 String 객체의 메소드를 상속받아 프로퍼티를 참조하는 데 사용
+ * 이렇게 생성된 임시 객체는 String 객체의 메서드를 상속받아 프로퍼티를 참조하는 데 사용
  * 이후 프로퍼티의 참조가 끝나면 사용된 임시 객체는 자동으로 삭제
  * 래퍼 객체(wrapper object) : 숫자, 문자열, 불리언 등 원시 타입의 프로퍼티에 접근하려고 할 때 생성되는 임시 객체
  **/
@@ -1771,7 +1771,7 @@ x + y;        // 두 수 모두 10진법으로 자동으로 변환되어 계산�
 
 /**
  * 위의 처럼 자바스크립트에서는 산술 연산 시 모든 수가 10진수로 자동 변환되어 계산
- * 또한, 숫자에 toString() 메소드를 사용하여 해당 숫자를 여러 진법의 형태로 변환 가능
+ * 또한, 숫자에 toString() 메서드를 사용하여 해당 숫자를 여러 진법의 형태로 변환 가능
  **/
 var num = 256;
 num.toString(2);       //  2진법으로 변환 : 100000000
@@ -1885,7 +1885,7 @@ x === y;                 // 서로 다른 객체이므로 false
 /****************************************************************************************************************************************************/
 /****************************************************************************************************************************************************/
 /**
- * Number 메소드 : Number 객체에 정의되어 있는 숫자와 관련된 작업을 할 때 사용하는 메소드
+ * Number 메서드 : Number 객체에 정의되어 있는 숫자와 관련된 작업을 할 때 사용하는 메서드
  *
  * 1. Number.parseFloat()
  * 2. Number.parseInt()
@@ -1929,7 +1929,7 @@ Number.isNaN(0 / 0);     // true
 isNaN("NaN");            // true
 isNaN(undefined);        // true
 isNaN("문자열");         // true
-// Number.isNaN() 메소드에서 맞는 결과를 반환하고 있음.
+// Number.isNaN() 메서드에서 맞는 결과를 반환하고 있음.
 
 Number.isNaN("NaN");     // false
 Number.isNaN(undefined); // false
@@ -1949,7 +1949,7 @@ Number.isFinite(NaN);      // false
 
 isFinite("0");             // true
 isFinite(null);            // true
-// Number.isFinite() 메소드에서는 맞는 결과를 반환하고 있음.
+// Number.isFinite() 메서드에서는 맞는 결과를 반환하고 있음.
 
 Number.isFinite("0");      // false
 Number.isFinite(null);     // false
@@ -1989,7 +1989,7 @@ Number.isSafeInteger(3.14);                // false
  **/
 
 /**
- * Number.prototype : 모든 Number 인스턴스는 Number.prototype으로부터 메소드와 프로퍼티를 상속
+ * Number.prototype : 모든 Number 인스턴스는 Number.prototype으로부터 메서드와 프로퍼티를 상속
  * 1. Number.prototype.toExponential()
  * 2. Number.prototype.toFixed()
  * 3. Number.prototype.toPrecision()
@@ -2034,7 +2034,7 @@ num.toPrecision(4);        // 3.142
  * toString() : Number 인스턴스의 값을 문자열로 반환
  * 전달받은 값에 해당하는 진법으로 우선 값을 변환한 후, 그 값을 문자열로 반환
  * numObj.toString([진법])
- * 숫자 리터럴에 toString() 메소드를 사용할 때에는 반드시 괄호(())를 사용하여 숫자 리터럴을 감싸야 함.
+ * 숫자 리터럴에 toString() 메서드를 사용할 때에는 반드시 괄호(())를 사용하여 숫자 리터럴을 감싸야 함.
  * 그렇지 않으면 자바스크립트는 SyntaxError를 발생한 후, 프로그램을 중지
  **/
 var num = 255;       // Number 인스턴스를 생성함.
@@ -2061,11 +2061,11 @@ typeof num;                   // number
 /**
  * Math 객체 : 수학에서 자주 사용하는 상수와 함수들을 미리 구현해 놓은 자바스크립트 표준 내장 객체
  * Math 객체는 다른 전역 객체와는 달리 생성자(constructor)가 존재 X
- * 따라서 따로 인스턴스를 생성하지 않아도 Math 객체의 모든 메소드나 프로퍼티를 바로 사용 가능
+ * 따라서 따로 인스턴스를 생성하지 않아도 Math 객체의 모든 메서드나 프로퍼티를 바로 사용 가능
  *
- * Math 메소드 : 자바스크립트는 웹 페이지에서 수학적 작업을 손쉽게 할 수 있도록 다양한 Math 메소드를 제공
+ * Math 메서드 : 자바스크립트는 웹 페이지에서 수학적 작업을 손쉽게 할 수 있도록 다양한 Math 메서드를 제공
  *
- * 자주 쓰이는 메소드
+ * 자주 쓰이는 메서드
  * Math.min(x, y, ...) : 인수로 전달받은 값 중에서 가장 작은 수를 반환
  * Math.max(x, y, ...) : 인수로 전달받은 값 중에서 가장 큰 수를 반환
  * Math.random() : 0보다 크거나 같고 1보다 작은 랜덤 숫자(random number)를 반환
@@ -2077,7 +2077,7 @@ typeof num;                   // number
  * Math.sqrt(x) : x의 제곱근을 반환
  * Math.clz32(x) : x을 32비트 이진수로 변환한 후, 0이 아닌 비트의 개수를 반환
  *
- * 종종 쓰이는 메소드
+ * 종종 쓰이는 메서드
  * Math.exp(x) : ex 의 값을 반환 (e : 오일러의 수)
  * Math.expm1(x) : 1 - ex 의 값을 반환
  * Math.fround(x) : x와 가장 근접한 32비트 부동 소수점 수(single precision float)를 반환
@@ -2196,8 +2196,8 @@ new Date();
 
 /**
  * Date.prototype getter
- * 모든 Date 인스턴스는 Date.prototype으로부터 메소드와 프로퍼티를 상속 받음
- * Date.prototype getter 메소드는 날짜와 관련된 정보를 받아오기 위한 메소드
+ * 모든 Date 인스턴스는 Date.prototype으로부터 메서드와 프로퍼티를 상속 받음
+ * Date.prototype getter 메서드는 날짜와 관련된 정보를 받아오기 위한 메서드
  *
  * 1. getFullYear()
  * 2. getDate()
@@ -2247,7 +2247,7 @@ var period = date.getTime() / 86400000 // 하루는 86,400,000 밀리초로 계�
 document.write("1970년 1월 1일부터 오늘까지 " + period.toFixed() + "일이 지났습니다."); // 소수 부분은 생략함.
 
 /**
- * Date.prototype getter 메소드
+ * Date.prototype getter 메서드
  * getDate() : 현지 시각으로 현재 일자에 해당하는 숫자를 반환 / 1 ~ 31
  * getDay() : 현지 시각으로 현재 요일에 해당하는 숫자를 반환 / 0(월) ~ 6(일)
  * getMonth() : 현지 시각으로 현재 월에 해당하는 숫자를 반환 / 0 ~ 11
@@ -2261,7 +2261,7 @@ document.write("1970년 1월 1일부터 오늘까지 " + period.toFixed() + "일
  **/
 
 /**
- * 자바스크립트 Date.prototype UTC getter 메소드
+ * 자바스크립트 Date.prototype UTC getter 메서드
  * getUTCDate() : 협정세계시(UTC)로 현재 일자에 해당하는 숫자를 반환
  * getUTCDay() : 협정세계시(UTC)로 현재 요일에 해당하는 숫자를 반환
  * getUTCMonth() : 협정세계시(UTC)로 현재 월에 해당하는 숫자를 반환
@@ -2273,7 +2273,7 @@ document.write("1970년 1월 1일부터 오늘까지 " + period.toFixed() + "일
  **/
 
 /**
- * Date.prototype setter 메소드 : 날짜와 관련된 정보를 설정하기 위한 메소드
+ * Date.prototype setter 메서드 : 날짜와 관련된 정보를 설정하기 위한 메서드
  * setFullYear() : Date 객체의 값을 특정 날짜로 설정
  * setDate() : Date 객체의 일자 값을 특정 일자로 설정
  **/
@@ -2294,7 +2294,7 @@ document.write(date);
 
 
 /**
- * 자바스크립트 Date.prototype setter 메소드
+ * 자바스크립트 Date.prototype setter 메서드
  * setDate() : 현지 시각으로 특정 일자를 설정함. / 1 ~ 31
  * setMonth()    현지 시각으로 특정 월을 설정함. / 0 ~ 11
  * setFullYear() : 현지 시각으로 특정 연도를 설정함. (연도뿐만 아니라 월과 일자도 설정할 수 있음) / YYYY, MM, DD
@@ -2306,7 +2306,7 @@ document.write(date);
  * setSeconds() : 현지 시각으로 특정 초를 설정함. / 0 ~ 59
  * setTime() : 1970년 1월 1일 0시 0분 0초부터 밀리초 단위로 표현되는 특정 시간을 설정함. / -
  *
- * 자바스크립트 Date.prototype UTC setter 메소드
+ * 자바스크립트 Date.prototype UTC setter 메서드
  * setUTCDate() : 협정세계시(UTC)로 특정 일자를 설정 / 1 ~ 31
  * setUTCMonth() : 협정세계시(UTC)로 특정 월을 설정 / 0 ~ 11
  * setUTCFullYear() : 협정세계시(UTC)로 특정 연도를 설정 (연도뿐만 아니라 월과 일자도 설정할 수 있음) / YYYY, MM, DD
@@ -2350,7 +2350,7 @@ strEng.length; // 6
 '\u00A2';
 // ECMAScript 6부터 새롭게 추가된 유니코드 코드 포인트 이스케이프 방식
 String.fromCodePoint(0x00A2);
-String.fromCodePoint() //메소드는 사파리, 익스플로러에서 지원 X
+String.fromCodePoint() //메서드는 사파리, 익스플로러에서 지원 X
 
 document.write("이 문자열은 아주 긴 문자열 \
 따라서 몇 번에 걸친 줄 나누기가 필요 \
@@ -2381,7 +2381,7 @@ typeof strObj;    // object
 
 /****************************************************************************************************************************************************/
 /**
- * String 메소드 : String 객체에 정의된 문자열과 관련된 작업을 할 때 사용하는 메소드
+ * String 메서드 : String 객체에 정의된 문자열과 관련된 작업을 할 때 사용하는 메서드
  *
  * 1. String.fromCharCode() : 쉼표로 구분되는 일련의 유니코드에 해당하는 문자들로 구성된 문자열을 반환
  * 2. String.fromCodePoint() : 쉼표로 구분되는 일련의 코드 포인트(code point)에 해당하는 문자들로 구성된 문자열을 반환(사파리, 익스플로러에서 지원 X)
@@ -2395,8 +2395,8 @@ String.fromCodePoint(194564);     // "\uD87E\uDC04"
 /**
  *
  * String.raw() : 템플릿 문자열(template string)의 원형을 반환
- * String.prototype : 모든 String 인스턴스는 String.prototype으로부터 메소드와 프로퍼티를 상속받습니다.
- * 이렇게 상속받은 String.prototype 메소드를 이용하면, 다음과 같은 문자열 작업 가능
+ * String.prototype : 모든 String 인스턴스는 String.prototype으로부터 메서드와 프로퍼티를 상속받습니다.
+ * 이렇게 상속받은 String.prototype 메서드를 이용하면, 다음과 같은 문자열 작업 가능
  *
  * 1. 문자열에서의 위치 반환
  * 2. 문자열에서 지정된 위치에 있는 문자 반환
@@ -2406,14 +2406,14 @@ String.fromCodePoint(194564);     // "\uD87E\uDC04"
  * 6. 문자열의 대소문자 변환
  * 7. 문자열 주위의 공백 제거
  * 8. 정규 표현식을 이용한 문자열 조작
- * String 인스턴스의 값은 변경될 수(immutable) 없으므로, 모든 String 메소드는 결괏값으로 새로운 문자열을 생성하여 반환
+ * String 인스턴스의 값은 변경될 수(immutable) 없으므로, 모든 String 메서드는 결괏값으로 새로운 문자열을 생성하여 반환
  **/
 
 /**
  * 문자열에서의 위치 찾기
  * indexOf() : String 인스턴스에서 특정 문자나 문자열이 처음으로 등장하는 위치의 인덱스를 반환
  * lastIndexOf() : String 인스턴스에서 특정 문자나 문자열이 마지막으로 등장하는 위치의 인덱스를 반환
- * 이 메소드들은 문자열을 찾기 시작할 String 인스턴스의 위치를 두 번째 인수로 전달 가능
+ * 이 메서드들은 문자열을 찾기 시작할 String 인스턴스의 위치를 두 번째 인수로 전달 가능
  * 만약 전달받은 특정 문자나 문자열을 찾을 수 없을 때는 -1을 반환
  **/
 
@@ -2476,9 +2476,9 @@ str.concat("는 너무 멋져요!");                      // 자바스크립트�
 str.concat("는 너무 멋져요!", " 그리고 유용해요."); // 자바스크립트는 너무 멋져요! 그리고 유용해요!
 str;                                                // 자바스크립트
 /**
- * 위의 에서 여러 번 concat() 메소드를 실행한 후의 변수 str의 문자열은 여전히 처음과 같습니다.
+ * 위의 에서 여러 번 concat() 메서드를 실행한 후의 변수 str의 문자열은 여전히 처음과 같습니다.
  * 이처럼 자바스크립트에서 String 인스턴스의 값은 변경될 수(immutable) 없습니다.
- * 따라서 모든 String 메소드는 결괏값으로 새로운 문자열을 생성하여 반환
+ * 따라서 모든 String 메서드는 결괏값으로 새로운 문자열을 생성하여 반환
  **/
 
 /**
@@ -2525,7 +2525,7 @@ str.trim();
 /**
  * Array 객체 : 자바스크립트에서 배열(array)은 정렬된 값들의 집합으로 정의되며, Array 객체로 다룸
  *
- * Array 메소드
+ * Array 메서드
  * 1. Array.isArray()
  * 2. Array.from()
  * 3. Array.of()
@@ -2540,11 +2540,11 @@ Array.isArray("Array");     // false
 Array.isArray(true);        // false
 
 /**
- * Array.from() : ECMAScript 6부터 추가된 Array.from() 메소드는 다음 객체들을 배열처럼 변환
+ * Array.from() : ECMAScript 6부터 추가된 Array.from() 메서드는 다음 객체들을 배열처럼 변환
  * 1. 배열과 비슷한 객체(array-like objects) : length 프로퍼티와 인덱스 된 요소를 가지고 있는 객체
  * 2. 반복할 수 있는 객체(iterable objects) : Map과 Set 객체 및 문자열과 같이 해당 요소를 개별적으로 선택할 수 있는 객체
  * 하지만 이렇게 생성된 객체는 정확히 말하면 Array 객체는 아니며, Array 객체의 자식 클래스(child class)
- * Array.from() 메소드는 파이어폭스 32.0 이상의 버전에서만 지원
+ * Array.from() 메서드는 파이어폭스 32.0 이상의 버전에서만 지원
 **/
 
 function arrayFrom() {
@@ -2557,11 +2557,11 @@ Array.from(myMap);                     // [1, 2, 3, 4]
 Array.from("JavaScript");              // [J,a,v,a,S,c,r,i,p,t]
 
 /**
- * Array.of() : ECMAScript 6부터 추가된 Array.of() 메소드는 인수의 수나 타입에 상관없이 인수로 전달받은 값을 가지고 새로운 Array 인스턴스를 생성
- * 이때 Array.of() 메소드와 Array 객체 생성자와의 차이로는 정수로 전달된 인수의 처리 방식에 있음
+ * Array.of() : ECMAScript 6부터 추가된 Array.of() 메서드는 인수의 수나 타입에 상관없이 인수로 전달받은 값을 가지고 새로운 Array 인스턴스를 생성
+ * 이때 Array.of() 메서드와 Array 객체 생성자와의 차이로는 정수로 전달된 인수의 처리 방식에 있음
  * 아래 에서 Array 객체 생성자에 인수로 정수 10을 전달하면, 생성자는 길이가 10인 빈 배열 생성
- * 하지만 Array.of() 메소드에 인수로 정수 10을 전달하면, 정수 10을 배열 요소로 가지는 길이가 1인 배열 생성
- * Array.of() 메소드는 익스플로러, 오페라, 사파리에서 지원 X
+ * 하지만 Array.of() 메서드에 인수로 정수 10을 전달하면, 정수 10을 배열 요소로 가지는 길이가 1인 배열 생성
+ * Array.of() 메서드는 익스플로러, 오페라, 사파리에서 지원 X
  **/
 new Array(10); // [,,,,,,,,,] -> 10개의 배열 요소를 가지는 빈 배열을 생성함.
 Array.of(10);  // [10] -> 한 개(숫자 10)의 배열 요소를 가지는 배열을 생성함.
@@ -2570,16 +2570,16 @@ Array.of(10);  // [10] -> 한 개(숫자 10)의 배열 요소를 가지는 배�
 
 /****************************************************************************************************************************************************/
 /**
- * Array 메소드
+ * Array 메서드
  *
- * Array.prototype 메소드 : 모든 Array 인스턴스는 Array.prototype으로부터 메소드와 프로퍼티를 상속
- * 1. 원본 배열을 변경하는 메소드
- * 2. 원본 배열은 변경하지 않고 참조만 하는 메소드
- * 3. 원본 배열을 반복적으로 참조하는 메소드
+ * Array.prototype 메서드 : 모든 Array 인스턴스는 Array.prototype으로부터 메서드와 프로퍼티를 상속
+ * 1. 원본 배열을 변경하는 메서드
+ * 2. 원본 배열은 변경하지 않고 참조만 하는 메서드
+ * 3. 원본 배열을 반복적으로 참조하는 메서드
  **/
 
 /**
- * 원본 배열을 변경하는 Array.prototype 메소드
+ * 원본 배열을 변경하는 Array.prototype 메서드
  * 1. push()
  * 2. pop()
  * 3. shift()
@@ -2604,7 +2604,7 @@ arr;                      // [1,true,JavaScript,자바스크립트,2,거짓]
 
 /**
  * pop() : 배열의 가장 마지막 요소를 제거하고, 그 제거된 요소를 반환
- * 따라서 pop() 메소드를 실행할 때마다 배열의 길이는 1씩 줄어듦
+ * 따라서 pop() 메서드를 실행할 때마다 배열의 길이는 1씩 줄어듦
  **/
 var arr = [1, true, "JavaScript", "자바스크립트"];
 arr.length;  // 4
@@ -2615,8 +2615,8 @@ arr.length; // 2
 arr;         // [1,true]
 
 /**
- * shift() : pop() 메소드와는 달리 배열의 가장 마지막 요소가 아닌 첫 요소를 제거하고, 그 제거된 요소를 반환
- * 따라서 shift() 메소드도 실행할 때마다 배열의 길이가 1씩 줄어듦
+ * shift() : pop() 메서드와는 달리 배열의 가장 마지막 요소가 아닌 첫 요소를 제거하고, 그 제거된 요소를 반환
+ * 따라서 shift() 메서드도 실행할 때마다 배열의 길이가 1씩 줄어듦
  **/
 var arr = [1, true, "JavaScript", "자바스크립트"];
 arr.length;  // 4
@@ -2640,8 +2640,8 @@ arr.length;                  // 6
 arr;                         // [2,거짓,자바스크립트,1,true,JavaScript]
 
 /**
- * pop()과 push() 메소드를 사용하면 배열을 스택(stack)이라는 데이터 구조처럼 사용할 수 있으며(LIFO),
- * shift()와 push() 메소드를 사용하면 배열을 큐(queue)라는 데이터 구조처럼 사용 가능(FIFO)
+ * pop()과 push() 메서드를 사용하면 배열을 스택(stack)이라는 데이터 구조처럼 사용할 수 있으며(LIFO),
+ * shift()와 push() 메서드를 사용하면 배열을 큐(queue)라는 데이터 구조처럼 사용 가능(FIFO)
  **/
 
 /**
@@ -2653,7 +2653,7 @@ arr.reverse(); // [자바스크립트,JavaScript,true,1]]
 
 /**
  * sort() : 해당 배열의 배열 요소들을 알파벳 순서에 따라 정렬
- * 이 메소드는 배열 요소를 모두 문자열로 보고 정렬하므로, 숫자나 불리언과 같은 타입의 요소들은 잘못 정렬 될 수도 있음.
+ * 이 메서드는 배열 요소를 모두 문자열로 보고 정렬하므로, 숫자나 불리언과 같은 타입의 요소들은 잘못 정렬 될 수도 있음.
  **/
 var strArr = ["로마", "나라", "감자", "다람쥐"]; // 한글은 ㄱ,ㄴ,ㄷ순으로 정렬됨.
 var numArr = [10, 21, 1, 2, 3];                  // 숫자는 각 자릿수 별로 비교된 후 정렬됨.
@@ -2664,7 +2664,7 @@ numArr.sort(); // [1,10,2,21,3]
  * splice() : 기존의 배열 요소를 제거하거나 새로운 배열 요소를 추가하여 배열의 내용을 변경
  * 첫 번째 인수는 새로운 요소가 삽입될 위치의 인덱스, 두 번째 인수는 제거할 요소의 개수
  * 그 이후의 인수들은 모두 배열 요소로서 지정된 인덱스부터 차례대로 삽입
- * 이 메소드는 배열에서 제거된 요소를 배열의 형태로 반환하며, 아무 요소도 제거되지 않았으면 빈 배열을 반환
+ * 이 메서드는 배열에서 제거된 요소를 배열의 형태로 반환하며, 아무 요소도 제거되지 않았으면 빈 배열을 반환
  **/
 
 var arr = [1, true, "JavaScript", "자바스크립트"];
@@ -2674,13 +2674,13 @@ arr;            // [1,false,C언어,자바스크립트]
 removedElement; // [true,JavaScript]
 
 /**
- * 기타 메소드
+ * 기타 메서드
  * copyWithin() : 해당 배열에서 일련의 요소들을 복사하여, 명시된 위치의 요소들을 교체
  * fill() : 시작 인덱스부터 종료 인덱스 바로 앞까지의 모든 배열 요소를 특정 값으로 교체
  **/
 
 /**
- * 원본 배열은 변경하지 않고 참조만 하는 메소드
+ * 원본 배열은 변경하지 않고 참조만 하는 메서드
  *
  * 1. join()
  * 2. slice()
@@ -2724,14 +2724,14 @@ var arr = [1, true, "JavaScript"];
 arr.toString(); // '1,true,JavaScript'
 
 /**
- * 기타 메소드
+ * 기타 메서드
  * toLocaleString() : 해당 배열의 모든 요소를 하나의 문자열로 반환
  * indexOf() : 전달받은 값과 동일한 배열 요소가 처음으로 등장하는 위치의 인덱스를 반환
  * lastIndexOf() : 전달받은 값과 동일한 배열 요소가 마지막으로 등장하는 위치의 인덱스를 반환
  **/
 
 /**
- * 원본 배열을 반복적으로 참조하는 메소드
+ * 원본 배열을 반복적으로 참조하는 메서드
  * 1. forEach()
  * 2. map()
  * 3. filter()
@@ -2810,7 +2810,7 @@ function sumOfValues(x, y) {
 arr.reduce(sumOfValues); // 1 - 2 - 3 - 4 - 5 = -13
 
 /**
- * reduceRight() : reduce() 메소드와 같은 방식으로 실행되며, 배열의 마지막 요소부터 줄이기 시작
+ * reduceRight() : reduce() 메서드와 같은 방식으로 실행되며, 배열의 마지막 요소부터 줄이기 시작
  **/
 var arr = [1, 2, 3, 4, 5];
 
@@ -2878,7 +2878,7 @@ for (var entry of arrEntries) {
  * Document 객체 : 웹 페이지 그 자체를 의미
  * 웹 페이지에 존재하는 HTML 요소에 접근하고자 할 때는 반드시 Document 객체부터 시작!
  *
- * Document 메소드 : HTML 요소와 관련된 작업을 도와주는 다양한 메소드를 제공
+ * Document 메서드 : HTML 요소와 관련된 작업을 도와주는 다양한 메서드를 제공
  * HTML 요소의 선택
  * HTML 요소의 생성
  * HTML 이벤트 핸들러 추가
@@ -2890,7 +2890,7 @@ for (var entry of arrEntries) {
  * document.getElementsByClassName(클래스이름) : 해당 클래스에 속한 요소를 모두 선택
  * document.getElementsByName(name속성값) : 해당 name 속성값을 가지는 요소를 모두 선택
  * document.querySelectorAll(선택자) : 해당 선택자로 선택되는 요소를 모두 선택
- * 이 중에서 document.querySelectorAll() 메소드는 브라우저별로 지원 여부가 다름
+ * 이 중에서 document.querySelectorAll() 메서드는 브라우저별로 지원 여부가 다름
  *
  * HTML 요소의 생성
  * document.createElement(HTML요소) : 지정된 HTML 요소를 생성
@@ -2942,8 +2942,8 @@ for (var entry of arrEntries) {
  **/
 
 /** HTML 태그 이름(tag name)을 이용한 선택
- * getElementsByTagName() 메소드는 HTML 태그 이름을 이용하여 HTML 요소를 선택
- * item() 메소드는 해당 HTML 객체 집합(obejct collection)에서 전달받은 인덱스에 해당하는 요소를 반환
+ * getElementsByTagName() 메서드는 HTML 태그 이름을 이용하여 HTML 요소를 선택
+ * item() 메서드는 해당 HTML 객체 집합(obejct collection)에서 전달받은 인덱스에 해당하는 요소를 반환
  * HTML 요소의 style 프로퍼티를 이용하면, 해당 요소의 CSS 스타일을 변경 가능
  * 아이디(id)를 이용한 선택
  **/
@@ -2954,27 +2954,27 @@ for (var i = 0; i < selectedItem.length; i++) {
 }
 
 /**
- * getElementById() 메소드는 아이디를 이용하여 HTML 요소를 선택
+ * getElementById() 메서드는 아이디를 이용하여 HTML 요소를 선택
  * 자바스크립트에서 아이디(id)를 이용한 선택은 해당 아이디를 가지고 있는 요소 중에서 첫 번째 요소 단 하나만을 선택
  * 따라서 여러 요소를 선택하고 싶을 때는 태그 이름이나 클래스와 같은 다른 방법을 사용
  **/
 var selectedItem = document.getElementById("even"); // 아이디가 "even"인 요소를 선택
 selectedItem.style.color = "red"; // 선택된 요소의 텍스트 색상을 변경함.
 
-// getElementsByClassName() 메소드는 클래스 이름을 이용하여 HTML 요소를 선택
+// getElementsByClassName() 메서드는 클래스 이름을 이용하여 HTML 요소를 선택
 var selectedItem = document.getElementsByClassName("odd"); // 클래스가 "odd"인 모든 요소를 선택
 
 for (var i = 0; i < selectedItem.length; i++) {
     selectedItem.item(i).style.color = "red"; // 선택된 모든 요소의 텍스트 색상을 변경함.
 }
 
-//getElementByName() 메소드는 HTML 요소의 name 속성을 이용하여 HTML 요소를 선택
+//getElementByName() 메서드는 HTML 요소의 name 속성을 이용하여 HTML 요소를 선택
 var selectedItem = document.getElementsByName("first"); // name 속성값이 "first"인 모든 요소를 선택
 for (var i = 0; i < selectedItem.length; i++) {
     selectedItem.item(i).style.color = "red"; // 선택된 모든 요소의 텍스트 색상을 변경함.
 }
 
-//querySelectorAll() 메소드는 CSS 선택자(아이디, 클래스, 속성, 속성값 등)를 이용하여 HTML 요소를 선택
+//querySelectorAll() 메서드는 CSS 선택자(아이디, 클래스, 속성, 속성값 등)를 이용하여 HTML 요소를 선택
 var selectedItem = document.querySelectorAll("li.odd"); // 클래스가 "odd"인 요소 중에서 <li> 요소만을 선택
 for (var i = 0; i < selectedItem.length; i++) {
     selectedItem.item(i).style.color = "red"; // 선택된 모든 요소의 텍스트 색상을 변경함.
@@ -3042,7 +3042,7 @@ function changeBlackColor() { str.style.color = "black"; } // 해당 요소의 �
 /**
  * 노드로의 접근
  * 1. getElementsByTagName() : 특정 태그 이름을 가지는 모든 요소를 노드 리스트의 형태로 반환
- * 따라서 이 메소드가 반환하는 노드 리스트를 이용하면 원하는 노드에 접근가능
+ * 따라서 이 메서드가 반환하는 노드 리스트를 이용하면 원하는 노드에 접근가능
  *
  * 2. 노드 간의 관계를 이용하여 접근하는 방법 : HTML DOM에서 노드 간의 관계는 다음과 같은 프로퍼티로 정의
  * 1. parentNode : 부모 노드
@@ -3126,7 +3126,7 @@ function printLastChild() {
 /****************************************************************************************************************************************************/
 /**
  * 노드 리스트(node list)
- * getElementsByTagName() 메소드나 childNodes 프로퍼티의 값으로 반환되는 객체
+ * getElementsByTagName() 메서드나 childNodes 프로퍼티의 값으로 반환되는 객체
  * 이 객체는 HTML 문서와 같은 순서로 문서 내의 모든 노드를 리스트 형태로 저장
  * 리스트의 각 노드는 0부터 시작하는 인덱스를 이용하여 접근가능
  **/
@@ -3188,7 +3188,7 @@ function appendNode() {
  * 새로운 자식 노드 : 자식 노드 리스트(child node list)에 새롭게 추가할 자식 노드를 전달
  * 기준 자식 노드 : 새로운 노드를 삽입할 때 기준이 되는 노드로, 이 노드 바로 앞에 새로운 노드가 추가
  * 기준 자식 노드에 null 값을 전달하면 새로운 노드는 자식 노드 리스트의 맨 마지막 노드로 추가
- * 즉, appendChild() 메소드와 완전히 같은 동작!
+ * 즉, appendChild() 메서드와 완전히 같은 동작!
  **/
 
 function appendNode() {
@@ -3214,7 +3214,7 @@ function appendText() {
 }
 
 /**
- * 요소 노드의 생성 : createElement() 메소드를 사용하여 새로운 요소 노드 생성
+ * 요소 노드의 생성 : createElement() 메서드를 사용하여 새로운 요소 노드 생성
  **/
 function createNode() {
     var criteriaNode = document.getElementById("text"); // 기준이 되는 요소로 아이디가 "text"인 요소를 선택
@@ -3224,9 +3224,9 @@ function createNode() {
 }
 
 /**
- * 속성 노드의 생성 : createAttribute() 메소드를 사용하여 새로운 속성 노드 생성
+ * 속성 노드의 생성 : createAttribute() 메서드를 사용하여 새로운 속성 노드 생성
  * 만약 같은 이름의 속성 노드가 이미 존재하면, 기존의 속성 노드는 새로운 속성 노드로 대체
- * 이미 존재하는 요소 노드에 속성 노드를 생성하고자 할 때에는 setAttribute() 메소드를 사용가능
+ * 이미 존재하는 요소 노드에 속성 노드를 생성하고자 할 때에는 setAttribute() 메서드를 사용가능
  **/
 function createNode() {
     var text = document.getElementById("text");           // 아이디가 "text"인 요소를 선택
@@ -3236,7 +3236,7 @@ function createNode() {
 }
 
 /**
- * 텍스트 노드의 생성 : createTextNode() 메소드를 사용하여 새로운 텍스트 노드를 만들 수 있습니다.
+ * 텍스트 노드의 생성 : createTextNode() 메서드를 사용하여 새로운 텍스트 노드를 만들 수 있습니다.
  **/
 function createNode() {
     var elementNode = document.getElementById("text");           // 아이디가 "text"인 요소를 선택
@@ -3252,7 +3252,7 @@ function createNode() {
 
 /**
  * removeChild() : 자식 노드 리스트에서 특정 자식 노드를 제거
- * 이 메소드는 성공적으로 노드가 제거되면 제거된 노드를 반환
+ * 이 메서드는 성공적으로 노드가 제거되면 제거된 노드를 반환
  * 노드가 제거될 때에는 제거되는 노드의 모든 자식 노드들도 다 같이 제거
  **/
 var parent = document.getElementById("list");      // 아이디가 "list"인 요소를 선택
@@ -3286,7 +3286,7 @@ function cloneElement() {
 /**
  * 노드의 조작
  * 노드의 값 변경 : nodeValue 프로퍼티를 사용하면 특정 노드의 값을 변경가능
- * 또한, setAttribute() 메소드는 속성 노드의 속성값을 변경 가능
+ * 또한, setAttribute() 메서드는 속성 노드의 속성값을 변경 가능
  * 요소 노드의 텍스트 : 요소 노드는 자신이 직접 텍스트값 X
  * 요소 노드의 텍스트는 요소 노드의 자식 노드인 텍스트 노드(text node)에 저장
  * 따라서 요소 노드의 텍스트 값을 확인하거나 변경하고자 할 때는 요소 노드에 포함된 텍스트 노드에 접근해야 함!
@@ -3299,8 +3299,8 @@ function changeText() {
 }
 
 /**
- * 속성 노드의 값 변경 : nodeValue 프로퍼티뿐만 아니라 setAttribute() 메소드를 사용하여 값을 변경가능
- * setAttribute() 메소드는 속성값을 변경하려는 속성이 존재하지 않으면, 먼저 해당 속성을 생성한 후에 속성값을 설정
+ * 속성 노드의 값 변경 : nodeValue 프로퍼티뿐만 아니라 setAttribute() 메서드를 사용하여 값을 변경가능
+ * setAttribute() 메서드는 속성값을 변경하려는 속성이 존재하지 않으면, 먼저 해당 속성을 생성한 후에 속성값을 설정
  **/
 var para;
 
@@ -3311,7 +3311,7 @@ function changeAttribute() {
 }
 
 /**
- * 요소 노드의 교체 : replaceChild() 메소드를 사용하면 기존의 요소 노드를 새로운 요소 노드로 교체가능
+ * 요소 노드의 교체 : replaceChild() 메서드를 사용하면 기존의 요소 노드를 새로운 요소 노드로 교체가능
  *
  * 원형
  * 교체 할 노드 = 부모노드.replaceChild(새로운자식노드, 기존자식노드);
@@ -3357,7 +3357,7 @@ function changeText() {
  *
  * Window 객체 : window 객체는 웹 브라우저의 창(window)을 나타내는 객체로, 대부분의 웹 브라우저에서 지원
  * 자바스크립트의 모든 객체, 전역 함수, 전역 변수들은 자동으로 window 객체의 프로퍼티가 됨
- * window 객체의 메소드는 전역 함수이며, window 객체의 프로퍼티는 전역 변수가 됨.
+ * window 객체의 메서드는 전역 함수이며, window 객체의 프로퍼티는 전역 변수가 됨.
  * 문서 객체 모델(DOM)의 요소들도 모두 window 객체의 프로퍼티가 됨.
  *
  * 브라우저 창 크기 조절
@@ -3383,7 +3383,7 @@ var windowHeight = window.innerHeight || document.documentElement.clientHeight |
 document.write("웹 브라우저의 너비는 " + windowWidth + "픽셀이고, 높이는 " + windowHeight + "픽셀입니다.");
 
 /**
- * window 객체의 모든 메소드나 프로퍼티를 사용할 때는 window라는 접두사를 생략 가능
+ * window 객체의 모든 메서드나 프로퍼티를 사용할 때는 window라는 접두사를 생략 가능
  * 따라서 위의 에서 window.innerWidth 대신 그냥 innerWidth를 사용해도 정상적으로 동작
  **/
 
@@ -3398,7 +3398,7 @@ document.write(document.title);                                           // 전
  * 또한, screenY는 해당 브라우저 창의 위쪽 모서리와 사용자 스크린의 위쪽 모서리 사이의 거리를 반환
  *
  * 브라우저 새 창 열기
- * window 객체의 open() 메소드를 이용하면, 새로운 브라우저 창을 열 수 있음
+ * window 객체의 open() 메서드를 이용하면, 새로운 브라우저 창을 열 수 있음
  * 또한, 새로운 브라우저 창의 세부적인 옵션들도 일일이 설정 가능
  * */
 //다음 는 메뉴바, 주소창, 크기조절 손잡이, 스크롤 바, 상태 바만을 가지는 새로운 브라우저 창을 여는 입니다.
@@ -3414,7 +3414,7 @@ function openWindow() {
 
 /**
  * 브라우저 창 닫기
- * window 객체의 close() 메소드를 이용하면, 현재 브라우저나 특정 브라우저 창을 닫을 수 있습니다.
+ * window 객체의 close() 메서드를 이용하면, 현재 브라우저나 특정 브라우저 창을 닫을 수 있습니다.
  **/
 function openWindow() {
     newWindowObj = window.open("/html/intro", "HTML 개요", strWindowFeatures);
@@ -3434,7 +3434,7 @@ function closeNewWindow() { // 새롭게 연 브라우저 창을 window 객체�
 /**
  * location 객체 : 현재 브라우저에 표시된 HTML 문서의 주소를 얻거나, 브라우저에 새 문서를 불러올 때 사용 가능
  * 이 객체는 Window 객체의 location 프로퍼티와 Document 객체의 location 프로퍼티에 같이 연결됨!
- * location 객체의 프로퍼티와 메소드를 이용하면, 현재 문서의 URL 주소를 다양하게 해석하여 처리 가능
+ * location 객체의 프로퍼티와 메서드를 이용하면, 현재 문서의 URL 주소를 다양하게 해석하여 처리 가능
  *
  * 현재 문서의 URL 주소 : location 객체의 href 프로퍼티는 현재 문서의 전체 URL 주소를 문자열로 반환
  **/
@@ -3456,8 +3456,8 @@ document.write("현재 문서의 파일 경로명은 " + location.pathname + "�
 
 /**
  * assign() : 브라우저 창에 지정된 URL 주소에 존재하는 문서를 불러옴
- * replace() : 새 문서를 불러오기 전에, 현재 문서를 브라우저의 히스토리에서 제거한다는 점이 assign() 메소드와 다른점!
- * reload() 메소드는 브라우저 창에 현재 문서를 다시 불러옴!
+ * replace() : 새 문서를 불러오기 전에, 현재 문서를 브라우저의 히스토리에서 제거한다는 점이 assign() 메서드와 다른점!
+ * reload() 메서드는 브라우저 창에 현재 문서를 다시 불러옴!
  * 현재 문서를 브라우저의 히스토리에서 제거한다는 의미는 브라우저의 뒤로 가기 버튼을 눌러도 이전 페이지로 다시 돌아갈 수 없다는 의미
  **/
 function openDocument() {
@@ -3483,8 +3483,8 @@ document.getElementById("text").innerHTML = "현재 브라우저의 히스토리
 
 /**
  * 히스토리 목록 접근하기
- * history 객체에는 브라우저의 뒤로 가기와 앞으로 가기 버튼과 같은 동작을 하는 back()과 forward() 메소드
- * 또한, go() 메소드를 이용하면 인수로 전달받는 정수만큼 히스토리 목록 사이를 이동 가능
+ * history 객체에는 브라우저의 뒤로 가기와 앞으로 가기 버튼과 같은 동작을 하는 back()과 forward() 메서드
+ * 또한, go() 메서드를 이용하면 인수로 전달받는 정수만큼 히스토리 목록 사이를 이동 가능
  * 아래 이전페이지로 가는 버튼은 같은 기능!
  **/
 // 이전 페이지로 가기
@@ -3593,7 +3593,7 @@ document.write("현재 브라우저의 기본 언어 설정은 " + navigator.lan
 
 /**
  * 자바 애플릿 실행 여부
- * navigator 객체의 javaEnabled() 메소드는 현재 사용 중인 브라우저가 자바 애플릿을 실행할 수 있는지를 검사하는 비표준 메소드
+ * navigator 객체의 javaEnabled() 메서드는 현재 사용 중인 브라우저가 자바 애플릿을 실행할 수 있는지를 검사하는 비표준 메서드
  **/
 
 document.write("현재 브라우저는 자바 애플릿를 ");
@@ -3626,10 +3626,10 @@ if (navigator.cookieEnabled) {
  **/
 
 /**
- * alert() 메소드
- * window 객체의 alert() 메소드는 사용자에게 간단한 메시지를 보여주고, 그에 대한 사용자의 확인을 대기함.
+ * alert() 메서드
+ * window 객체의 alert() 메서드는 사용자에게 간단한 메시지를 보여주고, 그에 대한 사용자의 확인을 대기함.
  * 사용자는 대화 상자의 확인 버튼을 눌러야만 다른 작업을 진행 가능
- * window 객체의 모든 메소드나 프로퍼티를 사용할 때 window 접두사 생략가능
+ * window 객체의 모든 메서드나 프로퍼티를 사용할 때 window 접두사 생략가능
  * 
  * 문법
  * window.alert("간단한 메시지");
@@ -3640,8 +3640,8 @@ function alertDialogBox() {
 }
 
 /**
- * confirm() 메소드
- * window 객체의 confirm() 메소드는 사용자에게 간단한 메시지를 보여주고, 사용자가 확인이나 취소를 누르면 그 결과를 불리언 값으로 반환
+ * confirm() 메서드
+ * window 객체의 confirm() 메서드는 사용자에게 간단한 메시지를 보여주고, 사용자가 확인이나 취소를 누르면 그 결과를 불리언 값으로 반환
  *
  * 문법
  * window.confirm("간단한 메시지");
@@ -3659,8 +3659,8 @@ function confirmDialogBox() {
 }
 
 /**
- * prompt() 메소드
- * window 객체의 prompt() 메소드는 사용자에게 간단한 메시지를 보여주고, 사용자가 입력한 문자열을 반환
+ * prompt() 메서드
+ * window 객체의 prompt() 메서드는 사용자에게 간단한 메시지를 보여주고, 사용자가 입력한 문자열을 반환
  * 사용자가 대화 상자에 입력한 텍스트를 문자열 타입으로 반환
  * 
  * 문법
@@ -3675,7 +3675,7 @@ function promptDialogBox() {
 }
 
 /**
- * 위에서 살펴본 대화 상자 이외에도 showModalDialog() 메소드를 이용하면, 좀 더 복잡한 대화 상자 가능
+ * 위에서 살펴본 대화 상자 이외에도 showModalDialog() 메서드를 이용하면, 좀 더 복잡한 대화 상자 가능
  * 하지만 이러한 대화 상자는 모두 사용자의 응답이 있을 때까지 브라우저의 실행을 강제로 중단
  * 따라서 사용자 측면에서 보면 불편할 수도 있으므로, 대화 상자는 될 수 있으면 자주 사용하지 않는 것이 좋음.
  **/
@@ -3684,24 +3684,24 @@ function promptDialogBox() {
 /****************************************************************************************************************************************************/
 /**
  * 타이머(timer)
- * window 객체는 일정 시간이 지난 뒤에 함수를 호출할 수 있도록 다음 메소드를 제공
+ * window 객체는 일정 시간이 지난 뒤에 함수를 호출할 수 있도록 다음 메서드를 제공
  * 1. setTimeout()
  * 2. setInterval()
  *
- * 또한, 이렇게 설정된 함수의 호출을 취소할 수 있도록 다음 메소드를 제공
+ * 또한, 이렇게 설정된 함수의 호출을 취소할 수 있도록 다음 메서드를 제공
  * 3. clearTimeout()
  * 4. clearInterval()
  **/
 
 /**
- * setTimeout() 메소드
- * setTimeout() 메소드는 명시된 시간이 지난 뒤에 지정된 함수를 호출
+ * setTimeout() 메서드
+ * setTimeout() 메서드는 명시된 시간이 지난 뒤에 지정된 함수를 호출
  *
  * 문법
  * window.setTimeout(호출할함수, 지연시간);
  *
- * 이 메소드가 성공적으로 호출되면, 설정된 timeoutID를 반환
- * 이 메소드는 밀리초(milliseconds) 단위로 지연 시간을 설정 가능
+ * 이 메서드가 성공적으로 호출되면, 설정된 timeoutID를 반환
+ * 이 메서드는 밀리초(milliseconds) 단위로 지연 시간을 설정 가능
  **/
 function startTimeout() {
     setTimeout(printCurrentDate, 2000);
@@ -3712,14 +3712,14 @@ function printCurrentDate() {
 }
 
 /**
- * setInterval() 메소드
- * setInterval() 메소드는 지정된 시간 간격마다 지정된 함수를 반복적으로 호출
+ * setInterval() 메서드
+ * setInterval() 메서드는 지정된 시간 간격마다 지정된 함수를 반복적으로 호출
  *
  * 문법
  * window.setInterval(호출할함수, 지연시간);
  *
- * 이 메소드가 성공적으로 호출되면, 설정된 timeoutID를 반환
- * 이 메소드는 밀리초(milliseconds) 단위로 시간 간격을 설정 가능
+ * 이 메서드가 성공적으로 호출되면, 설정된 timeoutID를 반환
+ * 이 메서드는 밀리초(milliseconds) 단위로 시간 간격을 설정 가능
  **/
 
 function startInterval() {
@@ -3731,10 +3731,10 @@ function printCurrentDate() {
 }
 
 /**
- * clearTimeout() 메소드
- * setTimeout() 메소드의 반환값을 clearTimeout() 메소드의 인수로 전달하면, 계획된 함수의 호출을 취소 가능
- * 이 메소드는 setTimeout() 메소드에 의해 함수가 호출되기 전에 실행되어야 호출을 취소 가능
- * 함수가 호출된 이후에 이 메소드를 호출하면 동작 X
+ * clearTimeout() 메서드
+ * setTimeout() 메서드의 반환값을 clearTimeout() 메서드의 인수로 전달하면, 계획된 함수의 호출을 취소 가능
+ * 이 메서드는 setTimeout() 메서드에 의해 함수가 호출되기 전에 실행되어야 호출을 취소 가능
+ * 함수가 호출된 이후에 이 메서드를 호출하면 동작 X
  **/
 window.clearTimeout(timeoutID);
 
@@ -3753,8 +3753,8 @@ function printCurrentDate() {
 }
 
 /**
- * clearInterval() 메소드
- * setInterval() 메소드의 반환값을 clearInterval() 메소드의 인수로 전달하면, 반복되는 함수의 호출을 취소 가능
+ * clearInterval() 메서드
+ * setInterval() 메서드의 반환값을 clearInterval() 메서드의 인수로 전달하면, 반복되는 함수의 호출을 취소 가능
  *
  * 문법
  * window.clearInterval(timeoutID);
@@ -3813,7 +3813,7 @@ function changeText(element) {
  * 작성된 이벤트 리스너는 먼저 해당 객체나 요소에 등록되어야만 호출 가능
  * 객체나 요소에 이벤트 리스너를 등록하는 방법은 다음과 같습니다.
  * 1. 이벤트의 대상이 되는 객체나 요소에 프로퍼티로 등록하는 방법
- * 2. 객체나 요소의 메소드에 이벤트 리스너를 전달하는 방법
+ * 2. 객체나 요소의 메서드에 이벤트 리스너를 전달하는 방법
  *
  * 객체나 요소에 프로퍼티로 이벤트 리스너를 등록하는 방법
  * 객체나 요소에 프로퍼티로 이벤트 리스너를 등록할 때는 다음과 같은 방법을 사용 가능
@@ -3834,13 +3834,13 @@ window.onload = function() {                    // 이 함수는 HTML 문서가 
 <p onclick="alert('문자열을 클릭했어요!')">이 문자열을 클릭해 보세요!</p>
 
 /**
- * 객체나 요소의 메소드에 이벤트 리스너를 전달하는 방법
+ * 객체나 요소의 메서드에 이벤트 리스너를 전달하는 방법
  * 1. addEventListener()
  * 2. attachEvent()
  **/
 
 /**
- * addEventListener() : 모든 브라우저에서 지원하는 이벤트 리스너 등록을 위한 메소드
+ * addEventListener() : 모든 브라우저에서 지원하는 이벤트 리스너 등록을 위한 메서드
  *
  * 원형
  * 대상객체.addEventListener(이벤트명, 실행할 이벤트리스너, 이벤트 전파방식)
@@ -3857,9 +3857,9 @@ function showText() {
 }
 
 /**
- * 이벤트 리스너를 프로퍼티로 등록할 때는 "on"이 붙은 이벤트 타입을 사용하지만, addEventListener() 메소드에서는 "on"이 붙지 않은 이벤트 타입을 사용해야 함
- * addEventListener() 메소드는 익스플로러 8과 그 이전 버전, 오페라 6과 그 이전 버전에서는 지원 X, 대신에 이와 유사한 동작을 하는 attachEvent() 메소드와 detachEvent() 메소드를 사용해야 함
- * addEventListener() 메소드를 사용하면, 하나의 객체에 여러 개의 이벤트 리스너를 등록 가능
+ * 이벤트 리스너를 프로퍼티로 등록할 때는 "on"이 붙은 이벤트 타입을 사용하지만, addEventListener() 메서드에서는 "on"이 붙지 않은 이벤트 타입을 사용해야 함
+ * addEventListener() 메서드는 익스플로러 8과 그 이전 버전, 오페라 6과 그 이전 버전에서는 지원 X, 대신에 이와 유사한 동작을 하는 attachEvent() 메서드와 detachEvent() 메서드를 사용해야 함
+ * addEventListener() 메서드를 사용하면, 하나의 객체에 여러 개의 이벤트 리스너를 등록 가능
  **/
 
 var btn = document.getElementById("btn");        // 아이디가 "btn"인 요소를 선택함.
@@ -3881,7 +3881,7 @@ function mouseoutBtn() {
 
 /**
  * 이벤트 리스너 삭제
- * removeEventListener() 메소드를 사용하면, 등록된 이벤트 리스너를 손쉽게 삭제 가능
+ * removeEventListener() 메서드를 사용하면, 등록된 이벤트 리스너를 손쉽게 삭제 가능
  **/
 
 function clickBtn() {
@@ -3911,11 +3911,11 @@ function clickBtn(event) {
 
 /**
  * 이벤트 호출 순서
- * addEventListener() 메소드를 사용하면 하나의 이벤트 타입에 여러 개의 이벤트 리스너를 등록 가능
+ * addEventListener() 메서드를 사용하면 하나의 이벤트 타입에 여러 개의 이벤트 리스너를 등록 가능
  * 이때 특정 타입의 이벤트가 발생하면 브라우저는 다음과 같은 순서로 이벤트를 호출
  *
  * 1. 이벤트의 대상이 되는 객체나 요소에 프로퍼티로 등록한 이벤트 리스너를 가장 먼저 호출
- * 2. 그 후 addEventListener() 메소드를 사용하여 등록한 이벤트 리스너를 등록한 순서대로 호출
+ * 2. 그 후 addEventListener() 메서드를 사용하여 등록한 이벤트 리스너를 등록한 순서대로 호출
  *
  * 이벤트 전파(event propagation)
  * 이벤트가 발생했을 때, 브라우저가 이벤트 리스너를 실행시킬 대상 요소를 결정하는 과정
@@ -3942,10 +3942,10 @@ function clickSpan(event) { document.getElementById("text").innerHTML += "span �
  * 캡쳐링 전파 방식은 이벤트가 발생한 요소까지 DOM 트리의 최상위부터 아래쪽으로 내려가면 전파되는 방식
  * 이 전파 방식은 맨 먼저 Window 객체의 리스너가 실행된 후, Document 객체에 등록된 리스너가 실행되고, 또다시 그 자식 요소에 등록된 리스너가 실행
  * 이러한 이벤트의 전파는 이벤트가 발생한 요소까지 이어짐
- * 이 전파 방식을 사용하기 위해서는 addEventListener() 메소드의 세 번째 인수에 true를 전달
+ * 이 전파 방식을 사용하기 위해서는 addEventListener() 메서드의 세 번째 인수에 true를 전달
  * 캡쳐링 전파 방식은 실제 이벤트의 대상이 되는 요소에 이벤트가 전달되기 전에 상위 요소에 등록된 이벤트 리스너가 이를 가로채거나 잡기 가능
  * 이렇게 이벤트를 걸러내어 해당 이벤트 리스너가 호출되지 않도록 하는 기법을 이벤트 취소 기법
- * 캡쳐링 전파 방식은 addEventListener() 메소드를 지원하지 않는 익스플로러 8과 그 이전 버전, 오페라 6과 그 이전 버전에서는 사용 불가
+ * 캡쳐링 전파 방식은 addEventListener() 메서드를 지원하지 않는 익스플로러 8과 그 이전 버전, 오페라 6과 그 이전 버전에서는 사용 불가
  **/
 // 각 요소마다 캡쳐링 방식으로 click 이벤트 리스너를 등록함.
 document.getElementById("divBox").addEventListener("click", clickDiv, true);
@@ -3956,7 +3956,7 @@ document.getElementById("spanBox").addEventListener("click", clickSpan, true);
  * 이벤트 기본 동작의 취소
  * HTML <a>요소에 클릭(click) 이벤트가 발생하면 브라우저는 지정된 주소를 따라가 새로운 웹 페이지를 열게 됨
  * 이렇게 특정 이벤트는 미리 지정된 기본 동작을 가지고 있음
- * 하지만 preventDefalult() 메소드나 returnValue 프로퍼티를 이용하면, 이러한 기본 동작의 실행을 취소 가능
+ * 하지만 preventDefalult() 메서드나 returnValue 프로퍼티를 이용하면, 이러한 기본 동작의 실행을 취소 가능
  **/
 // 각 요소마다 버블링 방식으로 click 이벤트 리스너를 등록함.
 document.getElementById("divBox").addEventListener("click", clickDiv);
@@ -3975,7 +3975,7 @@ function clickLink(event) {
 /**
  * 이벤트 전파의 취소
  * 앞서 살펴본 이벤트의 기본 동작뿐만 아니라 이벤트의 전파도 취소 가능
- * stopPropagation() 메소드나 cancelBubble 프로퍼티를 이용하면, 이러한 이벤트의 전파를 취소 가능
+ * stopPropagation() 메서드나 cancelBubble 프로퍼티를 이용하면, 이러한 이벤트의 전파를 취소 가능
  **/
 
 function clickLink(event) {
@@ -4146,11 +4146,11 @@ targetStr.search(strReg2); // -1
 
 /**
  * 위의 예제에서 첫 번째 정규 표현식은 해당 문자열의 부분 문자열인 "공장"과 총 6번 일치
- * 하지만 search() 메소드는 일치하는 문자열 중에서 첫 번째 문자열의 인덱스만을 반환
+ * 하지만 search() 메서드는 일치하는 문자열 중에서 첫 번째 문자열의 인덱스만을 반환
  * 위의 예제에서 두 번째 정규 표현식은 해당 문자열이 "장 공"이라는 부분 문자열은 포함하고 있지만, 정확히 "장공"이라는 부분 문자열을 포함하지 않으므로, 아무것도 일치 X
  *
  * search() : 해당 문자열에서 인수로 전달받은 정규 표현식과 일치하는 부분 문자열을 찾지 못하면 -1을 반환
- * search()는 해당 문자열에서 인수로 전달받은 정규 표현식과 일치하는 첫 번째 문자열의 위치를 반환해주는 자바스크립트의 String 메소드
+ * search()는 해당 문자열에서 인수로 전달받은 정규 표현식과 일치하는 첫 번째 문자열의 위치를 반환해주는 자바스크립트의 String 메서드
  *
  * 플래그(flags) : 정규 표현식을 생성할 때 플래그를 사용하여 기본 검색 설정을 변경 가능
  * 이렇게 설정된 플래그는 나중에 추가되거나 삭제 불가
@@ -4207,7 +4207,7 @@ var reg = /\w\s\w/; // c 1
  * 두 번째 문자로는 띄어쓰기를 포함한 탭(tab), 줄 바꿈 문자 등의 공백 문자를 검색
  * 마지막 세 번째 문자로 다시 언더스코어(_)를 포함한 영문자 및 숫자를 검색
  * 이처럼 특수 문자를 나열하여 각각의 조건에 해당하는 문자로 이루어진 부분 문자열을 검색 가능
- * match() : 해당 문자열에서 인수로 전달받은 정규 표현식과 일치하는 문자열을 모두 찾아서 하나의 배열로 반환해주는 자바스크립트의 String 메소드
+ * match() : 해당 문자열에서 인수로 전달받은 정규 표현식과 일치하는 문자열을 모두 찾아서 하나의 배열로 반환해주는 자바스크립트의 String 메서드
  **/
 
 var targetStr1 = "abc123abc";   // 7
@@ -4269,9 +4269,9 @@ var engName = targetStr.replace(nameReg, "$2 $3 $1"); // 첫 번째 부분문자
 engName;                                              // Gil Dong Hong
 /**
  * 위의 예제에서 괄호로 묶여진 정규 표현식으로 검색되는 세 개의 부분 문자열은 차례대로 저장됩니다.
- * 이때 replace() 메소드에서는 이렇게 저장된 부분 문자열을 $1, $2, ..., $n 표현을 이용하여 사용 가능
+ * 이때 replace() 메서드에서는 이렇게 저장된 부분 문자열을 $1, $2, ..., $n 표현을 이용하여 사용 가능
  * 정규 표현식에서 사용되는 괄호(())를 "capturing parentheses"
- * 이렇게 저장된 부분 문자열은 replace() 메소드에서 사용할 수도 있지만, 정규 표현식 내부에서 바로 사용 가능
+ * 이렇게 저장된 부분 문자열은 replace() 메서드에서 사용할 수도 있지만, 정규 표현식 내부에서 바로 사용 가능
  */
 
 var targetStr = "abc 123 abc 123";
@@ -4287,7 +4287,7 @@ targetStr.match(anotherReg); // abc 123 abc 123, abc, 123
  * 하지만 두 번째 정규 표현식에서는 위와 같은 방법으로 저장된 부분 문자열을 정규 표현식 내에서 또다시 사용
  * 이때 정규 표현식 내에서는 \1, \2, ..., \n 표현을 이용하여 저장된 부분 문자열을 사용 가능
  *
- * match() 메소드 : 정규 표현식과 모두 일치하는 부분 문자열뿐만 아니라, 괄호를 사용하여 저장된 부분 문자열도 함께 반환
+ * match() 메서드 : 정규 표현식과 모두 일치하는 부분 문자열뿐만 아니라, 괄호를 사용하여 저장된 부분 문자열도 함께 반환
  * ^a : 단어의 맨 앞에 위치한 해당 패턴만을 검색함. (ex : 'a'로 시작하는 단어의 'a'만을 검색함.)
  * a$ : 단어의 맨 뒤에 위치한 해당 패턴만을 검색함. (ex : 'a'로 끝나는 단어의 'a'만을 검색함.)
 */
@@ -4309,9 +4309,9 @@ secondStr.match(strReg); // p
  * 1. 검색 패턴을 나타내는 정규 표현식은 따옴표나 슬래시(/)로 감싸!
  * 2. 기본 검색 설정을 변경할 수 있는 플래그는 필요할 때만 전달 가능
  *
- * RegExp.prototype 메소드
- * 모든 RegExp 인스턴스는 RegExp.prototype으로부터 메소드와 프로퍼티를 상속받음
- * 이렇게 상속받은 RegExp.prototype 메소드를 사용하여 정규 표현식을 표현 가능
+ * RegExp.prototype 메서드
+ * 모든 RegExp 인스턴스는 RegExp.prototype으로부터 메서드와 프로퍼티를 상속받음
+ * 이렇게 상속받은 RegExp.prototype 메서드를 사용하여 정규 표현식을 표현 가능
  * 1. RegExp.prototype.exec()
  * 2. RegExp.prototype.test()
  *

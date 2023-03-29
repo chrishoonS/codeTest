@@ -69,12 +69,12 @@ public class Excercise04 {
         Stream<String> stream6 = Stream.concat(stream4, stream5);
 
         //filter() = 스트림에서 뽑아져 나오는 데이터에서 특정 데이터 골라냄
-        //1~9까지 뽑아내는 스트림 생성 후, filter 메소드에 짝수 선별 람다식을 넘겨주면 짝수데이터만 뽑아주는 스트림 객체 생성
+        //1~9까지 뽑아내는 스트림 생성 후, filter 메서드에 짝수 선별 람다식을 넘겨주면 짝수데이터만 뽑아주는 스트림 객체 생성
         Stream<Integer> stream7 = IntStream.range(1,10).boxed();
         stream7.filter(v -> (v%2)==0).forEach(System.out::println);
 
         //map() = 값을 변환해주는 람다식을 받아
-        //1~9까지 뽑아내는 스트림 생성 후, filter 메소드로 짝수데이터만 뽑은후 10을 곱해 스트림 객체 생성
+        //1~9까지 뽑아내는 스트림 생성 후, filter 메서드로 짝수데이터만 뽑은후 10을 곱해 스트림 객체 생성
         Stream<Integer> stream8 = IntStream.range(1,10).boxed();
         stream8.filter(v -> (v%2)==0).map(v -> v*10).forEach(System.out::println);
 

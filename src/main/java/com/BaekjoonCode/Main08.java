@@ -155,7 +155,7 @@ import java.io.InputStreamReader;
 //
 //        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 //        StringBuilder sb = new StringBuilder();
-//        get_prime();	// 소수를 얻는 메소드 실행
+//        get_prime();	// 소수를 얻는 메서드 실행
 //
 //        while(true){
 //            int n = Integer.parseInt(br.readLine());

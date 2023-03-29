@@ -12,7 +12,7 @@ public class Son extends Parent{
     }
 
     public void showInfo(){
-        super.showInfo();       //부모 클래스 메소드 호출
+        super.showInfo();       //부모 클래스 메서드 호출
 
         String name = "둘째아들";
         int age = 28;

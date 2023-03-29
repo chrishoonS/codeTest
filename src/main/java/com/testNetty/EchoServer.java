@@ -36,8 +36,8 @@ public class EchoServer {
 
         /** ServerBootstrap 생성 및 설정
          * netty Server를 생성하기 위한 helper Class인 ServerBootstrap 인스턴스 생성
-         * 만들어둔 EventLoopGroup을 bootstrap의 group() 메소드로 세팅
-         * 채널 생성시, NIO Socket을 이용한 채널을 생성하도록 channel() 메소드에 NioServerSocketChannel.class를 인자로 넘겨줌
+         * 만들어둔 EventLoopGroup을 bootstrap의 group() 메서드로 세팅
+         * 채널 생성시, NIO Socket을 이용한 채널을 생성하도록 channel() 메서드에 NioServerSocketChannel.class를 인자로 넘겨줌
          * TCP 설정은 childOption()으로 설정, TCP_NODELAY, SO_KEEPALIVE 설정은 이 서버 소켓으로 연결되어 생성되는 Connection의 특성
          **/
         ServerBootstrap bootstrap = new ServerBootstrap();
