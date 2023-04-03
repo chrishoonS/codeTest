@@ -413,13 +413,370 @@ $(function() {
 
 /****************************************************************************************************************************************************/
 /**
+ * 요소의 추가
+ * 제이쿼리는 새로운 요소나 콘텐츠를 손쉽게 추가할 수 있도록 여러 메서드를 제공
  *
+ * 기존 요소의 내부에 추가
+ * 다음 메서드를 사용하면 기존 요소의 내부에 새로운 요소나 콘텐츠를 추가 가능
+ *
+ * 1. .append()
+ * 2. .prepend()
+ * 3. .appendTo()
+ * 4. .prependTo()
+ *
+ * .append()
+ * .append() 메서드는 선택한 요소의 '마지막'에 새로운 요소나 콘텐츠를 추가
  **/
+
+$(function() {
+
+    $("button").on("click", function() {
+
+        $("#list").append("<li>새로 추가된 아이템이에요!</li>");
+
+    });
+
+});
+
+//.prepend() : 선택한 요소의 '처음'에 새로운 요소나 콘텐츠를 추가
+$(function() {
+
+    $("button").on("click", function() {
+
+        $("li").prepend("새로 추가된 콘텐츠에요!");
+
+    });
+
+});
+
+// .appendTo() : 선택한 요소를 '해당 요소의 마지막'에 삽입합니다.
+// .append() 메서드와 같지만, 소스(source)와 타겟(target)의 위치가 서로 반대
+
+$(function() {
+
+    $("#firstBtn").on("click", function() {
+        // id가 "list"인 요소의 맨 마지막에 id가 "firstItem"인 요소 추가
+        $("#firstItem").appendTo("#list");
+    });
+});
+
+// .prependTo() : 선택한 요소를 '해당 요소의 처음'에 삽입
+// .prepend() 메서드와 같지만, 소스(source)와 타겟(target)의 위치가 서로 반대입니다.
+
+$(function() {
+    $("button").on("click", function() {
+        $("<b>새로 추가된 콘텐츠에요!</b>").prependTo(".item");
+    });
+});
+
+// .html() : 해당 요소의 HTML 콘텐츠를 반환하거나 설정함.
+// .text() : 해당 요소의 텍스트 콘텐츠를 반환하거나 설정함.
+
+// .before() 메서드
+// .before() 메서드는 선택한 요소의 '바로 앞에' 새로운 요소나 콘텐츠를 추가
+
+$(function() {
+    $("button").on("click", function() {
+        // id가 "firstRow"인 요소의 바로 앞에 새로운 <tr>요소 추가
+        $("#firstRow").before("<tr><td>새로운 행이에요!</td></tr>");
+    });
+});
+
+// .after() 메서드
+// .after() 메서드는 선택한 요소의 '바로 뒤에' 새로운 요소나 콘텐츠를 추가
+$(function() {
+    $("button").on("click", function() {
+        // id가 "firstRow"인 요소의 바로 뒤에 새로운 <tr>요소 추가
+        $("#firstRow").after("<tr><td>새로운 행이에요!</td></tr>");
+    });
+});
+
+// .insertBefore() 메서드
+// .insertBefore() 메서드는 선택한 요소를 '해당 요소의 앞에' 삽입합니다.
+//  동작은 before() 메서드와 같지만, 소스(source)와 타겟(target)의 위치가 서로 반대
+$(function() {
+    $("button").on("click", function() {
+        // id가 "secondColumn"인 요소의 바로 앞에 새로운 <td>요소 추가
+        $("<td>새로운 셀이에요!</td>").insertBefore("#secondColumn");
+    });
+});
+
+// .insertAfter() 메서드
+// .insertAfter() 메서드는 선택한 요소를 '해당 요소의 뒤에' 삽입
+// 동작은 .after() 메서드와 같지만, 소스(source)와 타겟(target)의 위치가 서로 반대
+$(function() {
+    $("button").on("click", function() {
+        // id가 "secondColumn"인 요소의 바로 뒤에 새로운 <td>요소 추가
+        $("<td>새로운 셀이에요!</td>").insertAfter("#secondColumn");
+    });
+});
+
+// .wrap() : '선택한 요소'를 포함하는 새로운 요소를 추가
+$(function() {
+    $("button").on("click", function() {
+        // class가 "content"인 각 요소를 포함하는 새로운 요소 추가
+        $(".content").wrap("<div class='wrapper'></div>");
+    });
+});
+
+// .wrapAll() : '선택한 모든 요소'를 포함하는 새로운 요소를 추가
+$(function() {
+    $("button").on("click", function() {
+        // class가 "content"인 모든 요소를 포함하는 새로운 요소 추가
+        $(".content").wrapAll("<div class='wrapper'></div>");
+    });
+});
+
+// .wrapInner() : '선택한 요소에 포함되는' 새로운 요소를 추가
+$(function() {
+    $("button").on("click", function() {
+        // class가 "content"인 각 요소에 포함되는 새로운 요소 추가
+        $(".content").wrapInner("<div class='wrapper'></div>");
+    });
+});
+
 /****************************************************************************************************************************************************/
 
 /****************************************************************************************************************************************************/
 /**
+ * 요소의 복사
+ * 다음 메서드를 사용하면 선택한 요소나 콘텐츠를 복사하여 새로운 요소나 콘텐츠를 생성 가능
  *
+ *
+ *
+ * 1. .clone()
+ *
+ * .clone() 메서드
+ * .clone() 메서드는 선택한 요소를 복사하여 새로운 요소를 생성합니다.
+ *
+ * 예제
+ * $(function() {
+ * 
+ *     $("button").on("click", function() {
+ * 
+ *         // id가 "firstItem"인 요소를 복사하여 id가 "list"인 요소에 추가함.
+ * 
+ *         $("#firstItem").clone().appendTo("#list");
+ * 
+ *     });
+ * 
+ * });
+ *
+
+ *
+ *
+ *
+ * 다음 예제는 앞서 살펴본 .appendTo() 메서드의 예제입니다.
+ *
+ * 예제
+ * $(function() {
+ * 
+ *     $("#firstBtn").on("click", function() {
+ * 
+ *         // id가 "list"인 요소의 맨 마지막에 id가 "firstItem"인 요소 추가
+ * 
+ *         $("#firstItem").appendTo("#list");
+ * 
+ *     });
+ * 
+ * });
+ *
+
+ *
+ *
+ *
+ * 위의 예제에서 볼 수 있듯이 .clone() 메서드는 기존의 HTML 요소를 복사하여 새로운 HTML 요소를 생성할 뿐입니다.
+ *
+ * 따라서 반드시 .append() 메서드나 .appendTo() 메서드와 같은 다른 메서드를 이용하여 요소를 추가해야 합니다.
+ *
+ * .clone() 메서드를 사용하지 않고 .appendTo() 메서드만을 사용하면, 기존에 존재하는 HTML 요소를 그대로 추가하는 점이 다릅니다.
+ *
+ *
+ *
+ * .appendTo() 메서드는 선택한 요소를 '해당 요소의 마지막'에 삽입해 주는 메서드입니다.
+ * 요소를 복사해주는 메서드
+ * 메서드    설명
+ * .clone()
+ *
+ * 선택한 요소를 복사하여 새로운 요소를 생성함.
+ * 요소의 대체
+ * 다음 메서드를 사용하면 선택한 요소나 콘텐츠를 지정된 요소나 콘텐츠로 대체 가능
+ *
+ *
+ *
+ * 1. .replaceAll()
+ *
+ * 2. .replaceWith()
+ *
+ * .replaceAll() 메서드
+ * .replaceAll() 메서드는 선택한 요소를 지정된 요소로 대체합니다.
+ *
+ * 이 메서드는 인수로 선택자나 제이쿼리 객체, HTML DOM 요소, 배열 등을 전달받을 수 있습니다.
+ *
+ *
+ * 예제
+ * $(function() {
+ * 
+ *     $("button").on("click", function() {
+ * 
+ *         // class가 "item"인 각 요소를 id가 "firstItme"인 요소로 대체함.
+ * 
+ *         $("#firstItem").replaceAll(".item");
+ * 
+ *     });
+ * 
+ * });
+ *
+
+ *
+ * .replaceWith() 메서드
+ * .replaceWith() 메서드는 선택한 요소를 지정된 요소로 대체합니다.
+ *
+ * 이 메서드는 인수로 HTML 코드 형식의 문자열이나 제이쿼리 객체, HTML DOM 요소, 배열 등을 전달받을 수 있습니다.
+ *
+ *
+ * 또한, 선택한 요소를 대체할 수 있는 컨텐츠를 반환하는 함수를 인수로 전달받을 수도 있습니다.
+ *
+ *
+ *
+ *
+ * .replaceWith() 메서드의 동작은 .replaceAll() 메서드와 비슷하지만, 소스(source)와 타겟(target)의 위치가 서로 반대입니다.
+ *
+ * 또한, .replaceWith() 메서드는 지정된 요소로 대체되어 제거된 기존 요소를 반환합니다.
+ *
+ * 예제
+ * $(function() {
+ * 
+ *     $("button").on("click", function() {
+ * 
+ *         // class가 "item"인 모든 요소를 id가 "firstItme"인 요소로 대체함.
+ * 
+ *         $(".item").replaceWith($("#firstItem"));
+ * 
+ *     });
+ * 
+ * });
+ *
+
+ *
+ *
+ *
+ * .replaceAll() 메서드와 .replaceWith() 메서드는 제거된 요소와 관련된 모든 데이터와 이벤트 핸들러도 같이 제거합니다.
+ * 요소를 대체해주는 메서드
+ * 메서드    설명
+ * .replaceAll()
+ *
+ * 선택한 요소를 지정된 요소로 대체함.
+ * .replaceWith()    선택한 모든 요소를 지정된 요소로 대체함.
+ * 요소의 삭제
+ * 다음 메서드를 사용하면 선택한 요소나 콘텐츠를 삭제 가능
+ *
+ *
+ *
+ * 1. .remove()
+ *
+ * 2. .detach()
+ *
+ * 3. .empty()
+ *
+ * 4. .unwrap()
+ *
+ * .remove() 메서드
+ * .remove() 메서드는 선택한 요소를 DOM 트리에서 삭제합니다.
+ *
+ * 이때 삭제되는 요소와 연관된 제이쿼리 데이터나 이벤트도 모두 함께 삭제됩니다.
+ *
+ * 예제
+ * $(function() {
+ * 
+ *     $("button").on("click", function() {
+ * 
+ *         // class가 "content"인 요소 중에서 class가 각각 "first", "second"인 요소를 모두 삭제함.
+ * 
+ *         $(".content").remove(".first, .second");
+ * 
+ *     });
+ * 
+ * });
+ *
+
+ *
+ * .detach() 메서드
+ * .detach() 메서드는 선택한 요소를 DOM 트리에서 삭제합니다.
+ *
+ * 이때 삭제되는 요소와 연관된 제이쿼리 데이터나 이벤트는 삭제되지 않고, 계속 유지됩니다.
+ *
+ *
+ *
+ * .detach() 메서드가 반환하는 제이쿼리 객체를 .append()나 .prepend()와 같은 메서드에 인수로 전달하면 삭제한 요소를 다시 복구할 수도 있습니다.
+ *
+ * 예제
+ * $(function() {
+ * 
+ *     var data;
+ * 
+ *     $("#detachBtn").on("click", function() {
+ * 
+ *         data = $(".content").detach(); // class가 "content"인 요소를 모두 삭제함.
+ * 
+ *     });
+ * 
+ *     $("#restoreBtn").on("click", function() {
+ * 
+ *         $("#container").append(data);  // detach() 메서드로 삭제되었던 모든 요소를 다시 추가함.
+ * 
+ *     });
+ * 
+ * });
+ *
+
+ *
+ * .empty() 메서드
+ * .empty() 메서드는 선택한 요소의 자식 요소를 모두 삭제합니다.
+ *
+ * 이때 .remove()나 .detach() 메서드와는 달리 선택된 요소 그 자체는 삭제되지 않습니다.
+ *
+ * 예제
+ * $(function() {
+ * 
+ *     $("button").on("click", function() {
+ * 
+ *         $("#container").empty(); // id가 "container"인 요소의 자식 요소를 모두 삭제함.
+ * 
+ *     });
+ * 
+ * });
+ *
+
+ *
+ * .unwrap() 메서드
+ * .unwrap() 메서드는 선택한 요소의 부모 요소를 삭제합니다.
+ *
+ * 예제
+ * $(function() {
+ * 
+ *     $("button").on("click", function() {
+ * 
+ *         $("span").unwrap(); // 모든 <span>요소의 부모 요소를 삭제함.
+ * 
+ *     });
+ * 
+ * });
+ *
+
+ *
+ * 요소를 삭제해주는 메서드
+ * 메서드    설명
+ * .remove()
+ *
+ * 선택한 요소를 DOM 트리에서 삭제함. (삭제된 요소와 연관된 제이쿼리 데이터나 이벤트도 같이 삭제됨)
+ * .detach()
+ *
+ * 선택한 요소를 DOM 트리에서 삭제함. (삭제된 요소와 연관된 제이쿼리 데이터나 이벤트는 유지됨)
+ * .empty()
+ *
+ * 선택한 요소의 자식 요소를 모두 삭제함.
+ * .unwrap()    선택한 요소의 부모 요소를 삭제함.
  **/
 /****************************************************************************************************************************************************/
 
