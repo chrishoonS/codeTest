@@ -1,6 +1,9 @@
 package com.BaekjoonCode;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 //2739
 //public class Main03 {
@@ -31,35 +34,39 @@ import java.util.Scanner;
 //}
 
 //8393
-public class Main03 {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int a = sc.nextInt();
-        sc.close();
-
-        System.out.println(a*(a+1)/2);
-    }
-}
+//public class Main03 {
+//    public static void main(String[] args) {
+//        Scanner sc = new Scanner(System.in);
+//        int a = sc.nextInt();
+//        sc.close();
+//
+//        System.out.println(a*(a+1)/2);
+//    }
+//}
 
 //25304
-//public class Main03 {
-//    public static void main(String[] args) throws IOException {
-//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-//        StringTokenizer st;
-//
-//        int X = Integer.parseInt(br.readLine());
-//        int N = Integer.parseInt(br.readLine());
-//
-//        int total = 0;
-//        for(int i = 0; i < N; i++) {
-//            st = new StringTokenizer(br.readLine());
-//            total += Integer.parseInt(st.nextToken()) * Integer.parseInt(st.nextToken());
-//        }
-//        if(X == total)
-//            System.out.println("Yes");
-//        else
-//            System.out.println("No");
-//    }
+public class Main03 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st;
+
+        int X = Integer.parseInt(br.readLine());
+        int N = Integer.parseInt(br.readLine());
+
+        int total = 0;
+        for (int i = 0; i < N; i++) {
+            st = new StringTokenizer(br.readLine());
+            total += Integer.parseInt(st.nextToken()) * Integer.parseInt(st.nextToken());
+        }
+
+        if (X == total)
+            System.out.println("Yes");
+        else
+            System.out.println("No");
+
+
+    }
+}
 
 //25314
 //public class Main03 {
