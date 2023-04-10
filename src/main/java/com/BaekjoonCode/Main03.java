@@ -1,9 +1,7 @@
 package com.BaekjoonCode;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.StringTokenizer;
 
 //2739
 //public class Main03 {
@@ -45,28 +43,28 @@ import java.util.StringTokenizer;
 //}
 
 //25304
-public class Main03 {
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st;
-
-        int X = Integer.parseInt(br.readLine());
-        int N = Integer.parseInt(br.readLine());
-
-        int total = 0;
-        for (int i = 0; i < N; i++) {
-            st = new StringTokenizer(br.readLine());
-            total += Integer.parseInt(st.nextToken()) * Integer.parseInt(st.nextToken());
-        }
-
-        if (X == total)
-            System.out.println("Yes");
-        else
-            System.out.println("No");
-
-
-    }
-}
+//public class Main03 {
+//    public static void main(String[] args) throws IOException {
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        StringTokenizer st;
+//
+//        int X = Integer.parseInt(br.readLine());
+//        int N = Integer.parseInt(br.readLine());
+//
+//        int total = 0;
+//        for (int i = 0; i < N; i++) {
+//            st = new StringTokenizer(br.readLine());
+//            total += Integer.parseInt(st.nextToken()) * Integer.parseInt(st.nextToken());
+//        }
+//
+//        if (X == total)
+//            System.out.println("Yes");
+//        else
+//            System.out.println("No");
+//
+//
+//    }
+//}
 
 //25314
 //public class Main03 {
@@ -77,24 +75,27 @@ public class Main03 {
 //
 //        StringBuilder sb = new StringBuilder();
 //
-//        for (int i = 0; i < n/4; i++) {
+//        for (int i = 0; i < n / 4; i++) {
 //            sb.append("long ");
 //        }
+//
+//        br.close();
+//
 //        sb.append("int");
 //        System.out.println(sb);
 //    }
+//}
 
 
 
-
-//15552
-//public class Main03 {
 /**    기본적으로 자바의 경우 Scanner를 사용해서는 풀 수 없다.
  * java.util.Scanner 자체가 regular expression, 즉 정규식을 빈번하게 사용하기 때문이다.
  * 물론 사용자 입장에서 편리한 점은 있겠지만 알고리즘에서는 사용자가 집적 필요에 따라 파싱(parsing)하는게 더욱 빠르기 때문에 BufferedReader을 쓰게 되는 것이다.
  * Scanner 자체가 입력을 받으면 구문분석을 위해 정규식을 거치게 되고 BufferedReader은 그런 특별한 구문분석이 없어서 속도차이가 발생 할 수 밖에 없다.
  * 우리가 흔히 쓰는 Scanner.nextInt() 만 보더라도 다음과 같은 정규식에 맞는지를 분석한다.
  **/
+//15552
+//public class Main03 {
 //    public static void main(String[] args) throws IOException {
 //        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 //        StringTokenizer st;
@@ -107,6 +108,7 @@ public class Main03 {
 //            System.out.println(a+b);
 //        }
 //    }
+//}
 
 /**
  * 모든 입력은 BufferedReader.readLine() 으로 받았다.
@@ -117,6 +119,7 @@ public class Main03 {
  * ( bw.write((Integer.parseInt(st.nextToken())+Integer.parseInt(st.nextToken()))+ "\n"); )
  * 그리고 거의 필수적으로 버퍼를 비운 뒤(flush) 닫아줘야한다(close).
  **/
+//public class Main03 {
 //    public static void main(String[] args) throws IOException {
 //
 //        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -132,6 +135,7 @@ public class Main03 {
 //        bw.flush();
 //        bw.close();
 //    }
+//}
 
 /**
  * StringBuilder 를 쓰는 방식이다. 알고리즘 자체는 위 방법 1 과 동일하다.
@@ -155,6 +159,7 @@ public class Main03 {
 //        br.close();
 //        System.out.println(sb);
 //    }
+
 /**
  * StringTokenizer 가 속도가 빠르긴 하나 매 반복문마다 생성해주고 함수를 호출해주는 것이 ( 그 것도 한 번씩만 분리하기 위해)
  * 시간이 지연되는 원인 중 하나 일 수 있다. 그래서 이 시간도 줄이기 위해 고안한 방법이 String.substring() 메서드다.
@@ -366,3 +371,29 @@ public class Main03 {
 //        System.out.println(cnt);
 //    }
 //}
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
+import java.util.StringTokenizer;
+
+//10951
+public class Main03 {
+    public static void main(String args[]) throws IOException {
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringBuilder sb = new StringBuilder();
+        StringTokenizer st;
+        String str;
+
+        while( (str=br.readLine()) != null ){
+
+            st = new StringTokenizer(str," ");
+            int a = Integer.parseInt(st.nextToken());
+            int b = Integer.parseInt(st.nextToken());
+            sb.append(a+b).append("\n");
+
+        }
+        System.out.print(sb);
+    }
+}
