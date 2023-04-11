@@ -21,7 +21,7 @@ public class Solution22 {
                 tmpArr[x][y] = num++;
             }
         }
-        print2d(tmpArr);
+
         int k = 0;
         for(int i = 0; i < n; i++) {
             for(int j = 0; j < n; j++) {
@@ -41,7 +41,8 @@ public class Solution22 {
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 System.out.print(result[i][j] + "\t");
-            } System.out.println();
+            }
+            System.out.println();
         }
         System.out.println("----------------------");
     }
