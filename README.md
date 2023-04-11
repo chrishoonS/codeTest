@@ -49,7 +49,7 @@
     </tr>
     <tr>
         <td rowspan="3" align="center">Lv.2</td>
-        <td><a href="https://programmers.co.kr/learn/courses/30/lessons/70129">삼각 달팽이</a></td>
+        <td><a href="https://programmers.co.kr/learn/courses/30/lessons/68645">삼각 달팽이</a></td>
         <td><a href="https://github.com/chrishoonS/codeTest/blob/af4196f452fdb06a0106211912c273362826ae86/src/main/java/com/test/level2/Solution22.java">Solution22.java</a></td>
         <td align="center">:white_check_mark:</td>
         <td></td>
