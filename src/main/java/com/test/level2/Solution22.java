@@ -9,12 +9,12 @@ public class Solution22 {
         int num = 1;        //배열에 들어갈 숫자
 
         for (int i = 0; i < n; i++) {
-            for (int j = i; j < n; j++) {
+            for (int j = i; j < n; j++) { // 대각선 아래
                 if (i%3 == 0) {
                     x++;
-                }else if (i%3 == 1) {
+                }else if (i%3 == 1) { // 가로
                     y++;
-                }else if (i%3 == 2) {
+                }else if (i%3 == 2) { // 대각선 위
                     x--;
                     y--;
                 }
