@@ -90,8 +90,8 @@ function func() {
 }
 
 function createElement() {
-    var criteriaNode = document.getElementById("text");
-    var newNode = document.createElement("p");
+    let criteriaNode = document.getElementById("text");
+    let newNode = document.createElement("p");
     newNode.innerHTML = "새로운 단락입니다.";
     newNode.setAttribute("id", "para");
     document.body.insertBefore(newNode, criteriaNode);
@@ -212,7 +212,7 @@ $(function() {
 
 $(function() {
 
-    var items = $("li"); // <li>요소를 모두 선택하여 변수 items에 저장함.
+    let items = $("li"); // <li>요소를 모두 선택하여 변수 items에 저장함.
 
     $("button").on("click", function() {
 
@@ -306,7 +306,7 @@ $(function() {
 $(function() {
     $("button").on("click", function() {
         // ① <h1>요소의 텍스트를 읽어오는 getter 메서드
-        var newText = $("h1").html();
+        let newText = $("h1").html();
         // ② id가 "text"인 요소에 새로운 텍스트를 설정하는 setter 메서드
         $("#text").html(newText);
     });
@@ -356,7 +356,7 @@ $(function() {
 $(function() {
     $("#getter").on("click", function() {
         // ①
-        var size = "너비는 " + $("#box").width() + "px이고, 높이는 "
+        let size = "너비는 " + $("#box").width() + "px이고, 높이는 "
 
             + $("#box").height() + "px입니다.<br>";
 
@@ -373,7 +373,7 @@ $(function() {
         $("#box").width(w/2).height(h/2);
 
         // ⑤
-        var size = "너비는 " + $("#box").width() + "px이고, 높이는 "
+        let size = "너비는 " + $("#box").width() + "px이고, 높이는 "
         // ⑥
             + $("#box").height() + "px로 변경되었습니다.<br>";
         $("#text").html(size);
@@ -389,7 +389,7 @@ $(function() {
 $(function() {
     $("button").on("click", function() {
         // ① <img>요소의 src 속성값을 읽어오는 getter 메서드
-        var imgSrc = $("img").attr("src");
+        let imgSrc = $("img").attr("src");
 
         // ② <img>요소의 src 속성값을 새로운 값으로 설정하는 setter 메서드
         $("img").attr("src", "/examples/images/img_flag.png");
@@ -606,7 +606,7 @@ $(function() {
 // 이때 삭제되는 요소와 연관된 제이쿼리 데이터나 이벤트는 삭제되지 않고, 계속 유지
 // .detach() 메서드가 반환하는 제이쿼리 객체를 .append()나 .prepend()와 같은 메서드에 인수로 전달하면 삭제한 요소를 다시 복구 가능
 $(function() {
-    var data;
+    let data;
     $("#detachBtn").on("click", function() {
         data = $(".content").detach(); // class가 "content"인 요소를 모두 삭제함.
     });
@@ -930,7 +930,7 @@ $(function() {
 $(function() {
     $("button").on("click", function() {
         // 선택한 <li>요소마다 콜백함수를 실행하여 각 <li>요소의 id 값을 반환함.
-        var ids = $("li").map(function() {
+        let ids = $("li").map(function() {
             return this.id;
         })
         .get()   // 반환된 모든 id 값을 하나의 배열로 반환함.
@@ -981,7 +981,7 @@ inner와 outer
 $(function() {
 
     $("button").on("click", function() {
-        var str = "이 div 요소의 ";
+        let str = "이 div 요소의 ";
         str += "너비는 " + $("#divBox").width() + "픽셀이고,<br>"; // id가 "divBox"인 요소의 너비를 반환함.
         str += "높이는 " + $("#divBox").height() + "픽셀입니다."   // id가 "divBox"인 요소의 높이를 반환함.
         $("#text").html(str);
@@ -991,7 +991,7 @@ $(function() {
 // 이 메소드들을 이용하면 브라우저의 뷰포트(viewport)나 HTML 문서의 크기도 알아낼 수 있습니다.
 $(function() {
     $("button").on("click", function() {
-        var str = "";
+        let str = "";
         str += "브라우저 뷰포트의 크기는 " + $(window).width() + "X" + $(window).height() + "입니다.<br>";
         str += "HTML 문서의 크기는 " + $(document).width() + "X" + $(document).height() + "입니다.";
         $("#text").html(str);
@@ -1008,7 +1008,7 @@ $(function() {
 
 $(function() {
     $("button").on("click", function() {
-        var str = "이 div 요소의 ";
+        let str = "이 div 요소의 ";
         // id가 "divBox"인 요소의 크기를 반환함.
         str += "크기는 " + $("#divBox").width() + "X" + $("#divBox").height() + "이고,<br>";
         // id가 "divBox"인 요소의 패딩 영역을 포함한 크기를 반환함.
@@ -1054,206 +1054,123 @@ $(function() {
 제이쿼리는 선택한 요소의 위치 정보를 손쉽게 얻을 수 있도록 다양한 메소드를 제공합니다.
 
 .offset() 메소드와 .position() 메소드
-.offset() 메소드는 선택한 요소 집합의 첫 번째 요소의 위치를 HTML 문서를 기준으로 반환합니다.
-
-예제
+.offset() 메소드는 선택한 요소 집합의 첫 번째 요소의 위치를 HTML 문서를 기준으로 반환
+또한, .offset() 메소드가 호출될 때 인수를 전달받으면, 선택한 요소의 위치를 인수로 전달받은 값으로 설정
+*/
 $(function() {
-
     $("button").on("click", function() {
-
-        var paraPosition = $("#para").offset(); // id가 "para"인 요소의 위치 정보를 저장함.
-
-        var str = "p 요소의 위치는 ";
-
+        let paraPosition = $("#para").offset(); // id가 "para"인 요소의 위치 정보를 저장함.
+        let str = "p 요소의 위치는 ";
         str += "left가 " + paraPosition.left + "픽셀이고,<br>"; // id가 "para"인 요소의 left 위치를 반환함.
-
         str += "top은 " + paraPosition.top + "픽셀입니다.";     // id가 "para"인 요소의 top 위치를 반환함.
-
         $("#text").html(str);
-
     });
-
 });
 
-코딩연습 ▶
-
-
-
-또한, .offset() 메소드가 호출될 때 인수를 전달받으면, 선택한 요소의 위치를 인수로 전달받은 값으로 설정합니다.
-
-예제
 $(function() {
-
     $("button").on("click", function() {
-
         $("#para").offset({ top: 200, left: 100 }); // id가 "para"인 요소의 위치를 설정함.
-
-        var paraPosition = $("#para").offset();     // id가 "para"인 요소의 위치 정보를 저장함.
-
-        var str = "p 요소의 위치는 ";
-
+        let paraPosition = $("#para").offset();     // id가 "para"인 요소의 위치 정보를 저장함.
+        let str = "p 요소의 위치는 ";
         str += "left가 " + paraPosition.left + "픽셀이고,<br>"; // id가 "para"인 요소의 left 위치를 반환함.
-
         str += "top은 " + paraPosition.top + "픽셀입니다.";     // id가 "para"인 요소의 top 위치를 반환함.
-
         $("#text").html(str);
-
     });
-
 });
 
-코딩연습 ▶
-
-
-
-.position() 메소드는 .offset() 메소드와는 달리, 선택한 요소가 웹 페이지에 위치할 때 기준이 되었던 부모 요소(offset parent)를 기준으로 하는 상대 위치를 반환합니다.
-
-예제
+/*
+.position() 메소드
+.offset() 메소드와는 달리, 선택한 요소가 웹 페이지에 위치할 때 기준이 되었던 부모 요소(offset parent)를 기준으로 하는 상대 위치를 반환
+*/
 $(function() {
-
     $("button").on("click", function() {
-
-        var str = "";
-
-        var offsetPosition = $("#para").offset(); // offset() 메소드를 사용해 id가 "para"인 요소의 위치 정보
+        let str = "";
+        let offsetPosition = $("#para").offset(); // offset() 메소드를 사용해 id가 "para"인 요소의 위치 정보
 
         str += "offset() 메소드를 사용해 구한 p 요소의 위치는<br>";
-
         str += "left가 " + offsetPosition.left + "픽셀이고, ";    // id가 "para"인 요소의 left 위치를 반환함.
-
         str += "top은 " + offsetPosition.top + "픽셀입니다.<br>"; // id가 "para"인 요소의 top 위치를 반환함.
 
-
-        var posPosition = $("#para").position();  // position() 메소드를 사용해 id가 "para"인 요소의 위치 정보
+        let posPosition = $("#para").position();  // position() 메소드를 사용해 id가 "para"인 요소의 위치 정보
 
         str += "position() 메소드를 사용해 구한 p 요소의 위치는<br>";
-
         str += "left가 " + posPosition.left + "픽셀이고, ";       // id가 "para"인 요소의 left 위치를 반환함.
-
         str += "top은 " + posPosition.top + "픽셀입니다.";        // id가 "para"인 요소의 top 위치를 반환함.
 
         $("#text").html(str);
-
     });
-
 });
 
-코딩연습 ▶
+/*
+.offset() 메소드와 .position() 메소드의 차이점
+.offset() 메소드
+HTML 문서(HTML document)를 기준으로 함.
 
+.position() 메소드
+선택한 요소가 웹 페이지에 위치할 때 기준이 되는 부모 요소를 기준으로 함.
 
-
-.offset() 메소드와 .position() 메소드의 차이점은 다음과 같습니다.
-
-.offset() 메소드	.position() 메소드
-HTML 문서(HTML document)를 기준으로 함.	선택한 요소가 웹 페이지에 위치할 때 기준이 되는 부모 요소를 기준으로 함.
 기준이 되는 조상 요소
 .position() 메소드에서 기준으로 사용되는 부모 요소는 .offsetParent() 메소드를 사용하여 확인할 수 있습니다.
+*/
 
-
-예제
 $(function() {
-
     $("button").on("click", function() {
-
         // id가 "para"인 요소가 위치할 때 기준이 된 조상 요소를 선택함.
-
         $("#para").offsetParent()
-
             .css("border", "1px solid red"); // 해당 요소의 CSS 스타일을 변경함.
-
     });
-
 });
 
-코딩연습 ▶
+// 위의 예제에서 아이디가 "para"인 요소를 웹 페이지에 위치시킬 때 기준이 되는 부모 요소는 position 속성값이 relative로 설정된 <ul>요소
+// 이렇게 정적 위치(static position) 지정 방식을 제외한 다른 방식(relative, fixed, absolute)으로 위치가 설정된 요소가 위치를 정할 때 기준이 될 수 있음
+// 만약 위와 같은 위치가 설정된 요소가 존재하지 않으면, <html>요소를 기준
 
-
-
-위의 예제에서 아이디가 "para"인 요소를 웹 페이지에 위치시킬 때 기준이 되는 부모 요소는 position 속성값이 relative로 설정된 <ul>요소입니다.
-
-이렇게 정적 위치(static position) 지정 방식을 제외한 다른 방식(relative, fixed, absolute)으로 위치가 설정된 요소가 위치를 정할 때 기준이 될 수 있습니다.
-
-
-
-
-만약 위와 같은 위치가 설정된 요소가 존재하지 않으면, <html>요소를 기준으로 삼게 됩니다.
-
+/*
 .scrollLeft() 메소드와 .scrollTop() 메소드
-.scrollLeft() 메소드는 선택한 요소 집합의 첫 번째 요소의 수평 스크롤 바의 현재 위치를 얻거나, 해당 요소의 수평 스크롤 바의 위치를 인수로 전달받은 값으로 설정합니다.
+.scrollLeft() 메소드는 선택한 요소 집합의 첫 번째 요소의 수평 스크롤 바의 현재 위치를 얻거나, 해당 요소의 수평 스크롤 바의 위치를 인수로 전달받은 값으로 설정
+또한, .scrollTop() 메소드는 선택한 요소 집합의 첫 번째 요소의 수직 스크롤 바의 현재 위치를 얻거나, 해당 요소의 수직 스크롤 바의 위치를 인수로 전달받은 값으로 설정
+*/
 
-또한, .scrollTop() 메소드는 선택한 요소 집합의 첫 번째 요소의 수직 스크롤 바의 현재 위치를 얻거나, 해당 요소의 수직 스크롤 바의 위치를 인수로 전달받은 값으로 설정합니다.
-
-
-
-다음 예제는 아이디가 divBox인 요소의 수평 스크롤 바와 수직 스크롤 바의 현재 위치를 출력하는 예제입니다.
-
-
-예제
 $(function() {
-
     $("button").on("click", function() {
-
         // id가 "divBox"인 요소의 수평 스크롤 바의 현재 위치를 반환함.
-
-        var str = "수평 스크롤 바의 현재 위치는 left 방향으로 " + $("#divBox").scrollLeft() + "픽셀이고,<br>";
-
+        let str = "수평 스크롤 바의 현재 위치는 left 방향으로 " + $("#divBox").scrollLeft() + "픽셀이고,<br>";
         // id가 "divBox"인 요소의 수직 스크롤 바의 현재 위치를 반환함.
-
         str += "수직 스크롤 바의 현재 위치는 top 방향으로 " + $("#divBox").scrollTop() + "픽셀입니다.";
-
         $("#text").html(str);
-
     });
-
 });
+// 위 예제는 아이디가 divBox인 요소의 수평 스크롤 바와 수직 스크롤 바의 현재 위치를 출력하는 예제
 
-코딩연습 ▶
-
-
-
-다음 예제는 아이디가 divBox인 요소의 수평 스크롤 바와 수직 스크롤 바의 위치를 직접 설정하는 예제입니다.
-
-예제
 $(function() {
-
     $("button").on("click", function() {
-
         $("#divBox").scrollLeft(70); // id가 "divBox"인 요소의 수평 스크롤 바의 위치를 설정함.
-
         $("#divBox").scrollTop(200); // id가 "divBox"인 요소의 수직 스크롤 바의 위치를 설정함.
 
-
-
         // id가 "divBox"인 요소의 수평 스크롤 바의 현재 위치를 반환함.
-
-        var str = "수평 스크롤 바의 현재 위치는 left 방향으로 " + $("#divBox").scrollLeft() + "픽셀이고,<br>";
-
+        let str = "수평 스크롤 바의 현재 위치는 left 방향으로 " + $("#divBox").scrollLeft() + "픽셀이고,<br>";
         // id가 "divBox"인 요소의 수직 스크롤 바의 현재 위치를 반환함.
-
         str += "수직 스크롤 바의 현재 위치는 top 방향으로 " + $("#divBox").scrollTop() + "픽셀입니다.";
-
         $("#text").html(str);
-
     });
-
 });
+// 위 예제는 아이디가 divBox인 요소의 수평 스크롤 바와 수직 스크롤 바의 위치를 직접 설정하는 예제입니다.
 
-코딩연습 ▶
-
-
-요소의 위치에 관한 메소드
-메소드	설명
+/*
 .offset()
-
 선택한 요소 집합의 첫 번째 요소의 위치를 HTML 문서를 기준으로 반환하거나, 선택한 요소의 위치를 인수로 전달받은 값으로 설정함.
-.position()	선택한 요소 집합의 첫 번째 요소의 위치를 해당 요소가 웹 페이지에 위치할 때 기준이 되었던 부모 요소를 기준으로 하는 상대 위치를 반환함.
+
+.position()
+선택한 요소 집합의 첫 번째 요소의 위치를 해당 요소가 웹 페이지에 위치할 때 기준이 되었던 부모 요소를 기준으로 하는 상대 위치를 반환함.
+
 .scrollLeft()
 선택한 요소 집합의 첫 번째 요소의 수평 스크롤 바의 위치를 얻거나, 선택된 요소의 수평 스크롤 바의 위치를 인수로 전달받은 값으로 설정함.
 
 .scrollTop()	선택한 요소 집합의 첫 번째 요소의 수직 스크롤 바의 위치를 얻거나, 선택된 요소의 수직 스크롤 바의 위치를 인수로 전달받은 값으로 설정함.
  */
+
 /****************************************************************************************************************************************************/
-/****************************************************************************************************************************************************/
+
 /*
 
  */
