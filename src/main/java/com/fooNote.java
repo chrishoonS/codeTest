@@ -7,12 +7,12 @@ public class fooNote {
     public static void main(String[] args) {
         Instant start = Instant.now();
 
-        for (long i = 0; i < 1000000000; i++) {
-            long a = i * i;
-        }
+        double a = 1.256;
+
 
         Instant finish = Instant.now();
         long terms = Duration.between(start, finish).toMillis();
         System.out.println("시간차이(ms) : " + terms);
+        System.out.println(String.valueOf(a).substring(0,3));
     }
 }
