@@ -2,10 +2,17 @@ package com;
 
 import org.springframework.util.Assert;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 public class fooNote {
     public static void main(String[] args) {
-        String url = "ttttttt", method = "nullsdfsdfsdf";
-        Assert.notNull(url, "'url' must not be null");
-        Assert.notNull(method, "'method' must not be null");
+        LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter dtfFull     = DateTimeFormatter.ofPattern("yyyyMMddHHmm");
+        String            currentDate = now.format(dtfFull).substring(0, 8);
+
+        System.out.println(now);
+        System.out.println(dtfFull);
+        System.out.println(currentDate);
     }
 }
