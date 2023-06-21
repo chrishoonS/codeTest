@@ -1,11 +1,22 @@
 package com;
 
+import java.time.Duration;
+import java.time.Instant;
 import java.util.Random;
 
 public class fooNote {
     private static final int MAX_RETRIES = 5;
 
     public static void main(String[] args) throws InterruptedException {
+
+        Instant start;
+        Instant finish;
+        long terms = 0L;
+
+        start = Instant.now();
+        System.out.println("Start  Time :::::::::: " + start);
+
+
         for (int i = 0; i <= MAX_RETRIES; i++) {
             try {
                 // 동일한 확률로 0 또는 1 생성
@@ -31,6 +42,11 @@ public class fooNote {
                 }
             }
         }
+        finish = Instant.now();
+
+        terms = Duration.between(start, finish).toMillis();
+        System.out.println("Finish Time :::::::::: " + finish);
+        System.out.println("Terms  Time :::::::::: " + terms + "ms");
     }
 
 }
