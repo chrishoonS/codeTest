@@ -6,32 +6,32 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 //10807
-public class Main04 {
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int n = Integer.parseInt(br.readLine());
-        int[] arr = new int[n];
-
-        //문자열(br.readLine())을 받아 띄어쓰기 기준으로 문자열 분리
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        //구분자를 기준으로 문자열 분리
-//        StringTokenizer st = new StringTokenizer(br.readLine(), ",");
-
-        int num = Integer.parseInt(br.readLine());
-        int cnt = 0;
-
-        for(int i=0; i < arr.length; i++){
-            arr[i] = Integer.parseInt(st.nextToken());
-            if(arr[i] == num){
-                cnt++;
-            }
-        }
-
-        System.out.println(cnt);
-        br.close();
-
-    }
-}
+//public class Main04 {
+//    public static void main(String[] args) throws IOException {
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        int n = Integer.parseInt(br.readLine());
+//        int[] arr = new int[n];
+//
+//        //문자열(br.readLine())을 받아 띄어쓰기 기준으로 문자열 분리
+//        StringTokenizer st = new StringTokenizer(br.readLine());
+//        //구분자를 기준으로 문자열 분리
+////        StringTokenizer st = new StringTokenizer(br.readLine(), ",");
+//
+//        int num = Integer.parseInt(br.readLine());
+//        int cnt = 0;
+//
+//        for(int i=0; i < arr.length; i++){
+//            arr[i] = Integer.parseInt(st.nextToken());
+//            if(arr[i] == num){
+//                cnt++;
+//            }
+//        }
+//
+//        System.out.println(cnt);
+//        br.close();
+//
+//    }
+//}
 
 //10871
 //public class Main04 {
@@ -196,6 +196,27 @@ public class Main04 {
 //        System.out.print(max + "\n" + idx);
 //    }
 //}
+
+//10810
+public class Main04 {
+    public static void main(String args[]) throws IOException {
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringBuilder sb = new StringBuilder();
+        StringTokenizer st;
+        String str;
+
+        while ((str = br.readLine()) != null) {
+
+            st = new StringTokenizer(str, " ");
+            int a = Integer.parseInt(st.nextToken());
+            int b = Integer.parseInt(st.nextToken());
+            sb.append(a + b).append("\n");
+
+        }
+        System.out.print(sb);
+    }
+}
 
 //2577
 //public class Main04 {
