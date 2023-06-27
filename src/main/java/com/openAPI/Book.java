@@ -6,7 +6,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 // 최상위 클래스에서 XML 문서의 루트 Element를 지정하기 위해 사용
 // name은 선택 사항으로 생략하면 클래스 이름이 루트 Element 이름으로 설정
-// 회사 자바 버전 확인할 것. 집 : java11
+// 회사 자바 버전 확인할 것.
+// 집 : java11 / 회사 : 1.8
 @XmlRootElement(name = "book")
 public class Book {
     private Long id;

@@ -1,52 +1,139 @@
 package com;
 
-import java.time.Duration;
-import java.time.Instant;
-import java.util.Random;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 public class fooNote {
-    private static final int MAX_RETRIES = 5;
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
+        LocalDateTime now = LocalDateTime.now();
+        LocalDateTime ldt = LocalDateTime.of(2023, 6, 27, 00, 01, 55);
 
-        Instant start;
-        Instant finish;
-        long terms = 0L;
+        System.out.println(setBaseDateTime(ldt, "getUltraSrtNcst"));
+        System.out.println(setBaseDateTime(ldt, "getUltraSrtFcst"));
+        System.out.println(setBaseDateTime(ldt, "getVilageFcst"));
+    }
+    private static String setBaseDateTime(LocalDateTime now, String urlPath) {
 
-        start = Instant.now();
-        System.out.println("Start  Time :::::::::: " + start);
+        String result = "";
 
+        DateTimeFormatter dtfDate = DateTimeFormatter.ofPattern("yyyyMMdd");
 
-        for (int i = 0; i <= MAX_RETRIES; i++) {
-            try {
-                // 동일한 확률로 0 또는 1 생성
-                int zeroOrOne = new Random().nextInt(2);
+        String baseDate = now.format(dtfDate);
 
-                System.out.println("Random number is.. " + zeroOrOne);
+        int mm = 0;             //계산에 의해 더할 시간
+        String addStr = "";     //baseTime 만들어줄 str
 
-                // 50% java.lang.ArithmeticException 발생 확률: / 0
-                int rand = 1 / zeroOrOne;
-
-                // 성공 시 재시도하지 않음
+        switch (urlPath) {
+            case "getUltraSrtNcst":
+                mm = 15;
+                addStr = "00";
                 break;
-            } catch (Exception ex) {
-                // 예외 처리
-                System.out.println("예외 발생 : " + ex.getMessage());    // 예외를 기록
 
-                // 재시도하기 전에 1초 동안 휴면(선택 사항)
-                Thread.sleep(1000);
+            case "getUltraSrtFcst":
+                mm = 10;
+                addStr = "30";
+                break;
 
-                // 마지막 재시도가 실패하면 예외를 던진다.
-                if (i == MAX_RETRIES) {
-                    throw ex;
+            case "getVilageFcst":
+                mm = 45;
+                addStr = "00";
+                break;
+        }
+
+        String plusDate = now.plusMinutes(mm).format(dtfDate);
+
+        DateFormat format = new SimpleDateFormat("yyyyMMdd");
+
+        long days = 0L, sec = 0L;
+
+        try {
+            Date d1 = format.parse(baseDate);
+            Date d2 = format.parse(plusDate);
+
+            sec = (d2.getTime() - d1.getTime()) / 1000; // 초
+            days = sec / (24 * 60 * 60);                // 일자수
+
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
+
+        int baseTimeIndex = 0;
+
+        if( !urlPath.equals("getVilageFcst") ){ //초단기 실황, 예보
+
+            baseTimeIndex = now.plusMinutes(mm).getHour() / 1;
+
+            if( baseTimeIndex > 0) {
+                result = baseDate + String.format("%02d", baseTimeIndex - 1) + addStr;
+
+            }else{
+
+                if(days > 0){ //시간 더했을때 하루 지난경우
+
+                    if(("getUltraSrtNcst").equals(urlPath)){
+
+                        baseDate = now.minusDays(1).format(dtfDate);
+                        result = baseDate + "2300";
+
+                    }else{
+
+                        baseDate = now.minusDays(1).format(dtfDate);
+                        result = baseDate + "2330";
+
+                    }
+
+                } else{ //시간 더했을 때 하루 안지난 경우(하루 지난 상태에서 전날꺼를 호출해야 할 때)
+
+                    if(("getUltraSrtNcst").equals(urlPath)){
+
+                        if(baseTimeIndex == 0){
+                            baseDate = now.minusDays(1).format(dtfDate);
+                        }
+
+                        result = baseDate + "2300";
+
+                    }else{
+
+                        if(baseTimeIndex == 0){
+                            baseDate = now.minusDays(1).format(dtfDate);
+                        }
+
+                        result = baseDate + "2330";
+                    }
+
+                }
+            }
+
+        } else{ //단기
+
+            baseTimeIndex = now.plusMinutes(mm).getHour() / 3;
+
+            if( baseTimeIndex > 0) {
+                result = baseDate + String.format("%02d", (baseTimeIndex * 3) - 1) + addStr;
+
+            }else{
+                if(days > 0){ //시간 더했을때 하루 지난경우
+
+                    baseDate = now.minusDays(1).format(dtfDate);
+                    result = baseDate + "2300";
+
+                } else{ //하루 안지난 경우
+
+                    if(baseTimeIndex == 0){
+                        baseDate = now.minusDays(1).format(dtfDate);
+                    }
+
+                    result = baseDate + "2300";
                 }
             }
         }
-        finish = Instant.now();
 
-        terms = Duration.between(start, finish).toMillis();
-        System.out.println("Finish Time :::::::::: " + finish);
-        System.out.println("Terms  Time :::::::::: " + terms + "ms");
+        return result;
     }
 
 }
