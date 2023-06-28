@@ -11,11 +11,43 @@ public class fooNote {
 
     public static void main(String[] args) {
         LocalDateTime now = LocalDateTime.now();
-        LocalDateTime ldt = LocalDateTime.of(2023, 6, 27, 00, 01, 55);
+        LocalDateTime ldt = LocalDateTime.of(2023, 6, 28, 00, 01, 55);
+        LocalDateTime ldt2 = LocalDateTime.of(2023, 6, 28, 00, 05, 00);
+        LocalDateTime ldt3 = LocalDateTime.of(2023, 6, 28, 01, 59, 55);
+        LocalDateTime ldt4 = LocalDateTime.of(2023, 6, 28, 02, 00, 00);
+        LocalDateTime ldt5 = LocalDateTime.of(2023, 6, 28, 02, 14, 00);
 
-        System.out.println(setBaseDateTime(ldt, "getUltraSrtNcst"));
-        System.out.println(setBaseDateTime(ldt, "getUltraSrtFcst"));
-        System.out.println(setBaseDateTime(ldt, "getVilageFcst"));
+        System.out.println("now : " + setBaseDateTime(now, "getUltraSrtNcst"));
+        System.out.println("now : " + setBaseDateTime(now, "getUltraSrtFcst"));
+        System.out.println("now : " + setBaseDateTime(now, "getVilageFcst"));
+        System.out.println("----------------------------------------");
+        System.out.println("ldt : " + setBaseDateTime(ldt, "getUltraSrtNcst"));
+        System.out.println("ldt : " + setBaseDateTime(ldt, "getUltraSrtFcst"));
+        System.out.println("ldt : " + setBaseDateTime(ldt, "getVilageFcst"));
+        System.out.println("----------------------------------------");
+        System.out.println("ldt2 : " + setBaseDateTime(ldt2, "getUltraSrtNcst"));
+        System.out.println("ldt2 : " + setBaseDateTime(ldt2, "getUltraSrtFcst"));
+        System.out.println("ldt2 : " + setBaseDateTime(ldt2, "getVilageFcst"));
+        System.out.println("----------------------------------------");
+        System.out.println("ldt3 : " + setBaseDateTime(ldt3, "getUltraSrtNcst"));
+        System.out.println("ldt3 : " + setBaseDateTime(ldt3, "getUltraSrtFcst"));
+        System.out.println("ldt3 : " + setBaseDateTime(ldt3, "getVilageFcst"));
+        System.out.println("----------------------------------------");
+        System.out.println("ldt4 : " + setBaseDateTime(ldt4, "getUltraSrtNcst"));
+        System.out.println("ldt4 : " + setBaseDateTime(ldt4, "getUltraSrtFcst"));
+        System.out.println("ldt4 : " + setBaseDateTime(ldt4, "getVilageFcst"));
+        System.out.println("----------------------------------------");
+        System.out.println("ldt5 : " + setBaseDateTime(ldt5, "getUltraSrtNcst"));
+        System.out.println("ldt5 : " + setBaseDateTime(ldt5, "getUltraSrtFcst"));
+        System.out.println("ldt5 : " + setBaseDateTime(ldt5, "getVilageFcst"));
+        System.out.println("----------------------------------------");
+
+//        System.out.println("현재시각기준 : " + setMidTmFc(now));
+//        System.out.println("0001기준 : " + setMidTmFc(ldt));
+//        System.out.println("0005기준 : " + setMidTmFc(ldt2));
+//        System.out.println("0559기준 : " + setMidTmFc(ldt3));
+//        System.out.println("0600기준 : " + setMidTmFc(ldt4));
+//        System.out.println("0605기준 : " + setMidTmFc(ldt5));
     }
     private static String setBaseDateTime(LocalDateTime now, String urlPath) {
 
@@ -131,6 +163,44 @@ public class fooNote {
                     result = baseDate + "2300";
                 }
             }
+        }
+
+        return result;
+    }
+
+    private static String setMidTmFc(LocalDateTime now) {
+
+        //1일 2회, 발표시각 : 0600, 1800
+        //전날1805 ~ 0604 0605이후 당일 0600 나머지 전날 1800
+        //0605 ~ 1804 1805이후 당일 1800 나머지 당일 0600
+
+        String result = "";
+        DateTimeFormatter dtfDate = DateTimeFormatter.ofPattern("yyyyMMdd");
+
+        String currentDate = now.format(dtfDate);
+
+        int hour = now.getHour();
+        int hourBefore5 = now.minusMinutes(5).getHour();
+        int timeIndex = hourBefore5 / 6;
+
+        // 현재시간이 5분을 빼고난 시간보다 크거나 같을때
+        if (hour >= hourBefore5){
+            if(timeIndex < 1){
+                //0000~0604
+                result = now.minusDays(1).format(dtfDate) + "1800";
+
+            } else if( timeIndex >= 1 && timeIndex < 3 ){
+                //0605~1804
+                result = currentDate + "0600";
+
+            }else {
+                //1805~
+                result = currentDate + "1800";
+            }
+
+        }else{
+            //5분을 뺐을때 어제인 경우
+            result = now.minusDays(1).format(dtfDate) + "1800";
         }
 
         return result;
