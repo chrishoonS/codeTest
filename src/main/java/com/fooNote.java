@@ -11,12 +11,18 @@ public class fooNote {
 
     public static void main(String[] args) {
         LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter dtfFull     = DateTimeFormatter.ofPattern("yyyyMMddHHmm");
+        String            currentDate = now.format(dtfFull).substring(0, 8);
+
+
         LocalDateTime ldt = LocalDateTime.of(2023, 6, 28, 00, 01, 55);
         LocalDateTime ldt2 = LocalDateTime.of(2023, 6, 28, 00, 05, 00);
         LocalDateTime ldt3 = LocalDateTime.of(2023, 6, 28, 01, 59, 55);
         LocalDateTime ldt4 = LocalDateTime.of(2023, 6, 28, 02, 00, 00);
         LocalDateTime ldt5 = LocalDateTime.of(2023, 6, 28, 02, 14, 00);
 
+        System.out.println(Integer.parseInt(currentDate.substring(6,8)) > Integer.parseInt(setBaseDateTime(ldt, "getVilageFcst").substring(6,8)));
+        System.out.println("----------------------------------------");
         System.out.println("now : " + setBaseDateTime(now, "getUltraSrtNcst"));
         System.out.println("now : " + setBaseDateTime(now, "getUltraSrtFcst"));
         System.out.println("now : " + setBaseDateTime(now, "getVilageFcst"));
@@ -25,21 +31,21 @@ public class fooNote {
         System.out.println("ldt : " + setBaseDateTime(ldt, "getUltraSrtFcst"));
         System.out.println("ldt : " + setBaseDateTime(ldt, "getVilageFcst"));
         System.out.println("----------------------------------------");
-        System.out.println("ldt2 : " + setBaseDateTime(ldt2, "getUltraSrtNcst"));
-        System.out.println("ldt2 : " + setBaseDateTime(ldt2, "getUltraSrtFcst"));
-        System.out.println("ldt2 : " + setBaseDateTime(ldt2, "getVilageFcst"));
-        System.out.println("----------------------------------------");
-        System.out.println("ldt3 : " + setBaseDateTime(ldt3, "getUltraSrtNcst"));
-        System.out.println("ldt3 : " + setBaseDateTime(ldt3, "getUltraSrtFcst"));
-        System.out.println("ldt3 : " + setBaseDateTime(ldt3, "getVilageFcst"));
-        System.out.println("----------------------------------------");
-        System.out.println("ldt4 : " + setBaseDateTime(ldt4, "getUltraSrtNcst"));
-        System.out.println("ldt4 : " + setBaseDateTime(ldt4, "getUltraSrtFcst"));
-        System.out.println("ldt4 : " + setBaseDateTime(ldt4, "getVilageFcst"));
-        System.out.println("----------------------------------------");
-        System.out.println("ldt5 : " + setBaseDateTime(ldt5, "getUltraSrtNcst"));
-        System.out.println("ldt5 : " + setBaseDateTime(ldt5, "getUltraSrtFcst"));
-        System.out.println("ldt5 : " + setBaseDateTime(ldt5, "getVilageFcst"));
+//        System.out.println("ldt2 : " + setBaseDateTime(ldt2, "getUltraSrtNcst"));
+//        System.out.println("ldt2 : " + setBaseDateTime(ldt2, "getUltraSrtFcst"));
+//        System.out.println("ldt2 : " + setBaseDateTime(ldt2, "getVilageFcst"));
+//        System.out.println("----------------------------------------");
+//        System.out.println("ldt3 : " + setBaseDateTime(ldt3, "getUltraSrtNcst"));
+//        System.out.println("ldt3 : " + setBaseDateTime(ldt3, "getUltraSrtFcst"));
+//        System.out.println("ldt3 : " + setBaseDateTime(ldt3, "getVilageFcst"));
+//        System.out.println("----------------------------------------");
+//        System.out.println("ldt4 : " + setBaseDateTime(ldt4, "getUltraSrtNcst"));
+//        System.out.println("ldt4 : " + setBaseDateTime(ldt4, "getUltraSrtFcst"));
+//        System.out.println("ldt4 : " + setBaseDateTime(ldt4, "getVilageFcst"));
+//        System.out.println("----------------------------------------");
+//        System.out.println("ldt5 : " + setBaseDateTime(ldt5, "getUltraSrtNcst"));
+//        System.out.println("ldt5 : " + setBaseDateTime(ldt5, "getUltraSrtFcst"));
+//        System.out.println("ldt5 : " + setBaseDateTime(ldt5, "getVilageFcst"));
         System.out.println("----------------------------------------");
 
 //        System.out.println("현재시각기준 : " + setMidTmFc(now));
