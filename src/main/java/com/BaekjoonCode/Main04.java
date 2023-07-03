@@ -1,8 +1,6 @@
 package com.BaekjoonCode;
 
 import java.io.*;
-import java.util.Arrays;
-import java.util.StringTokenizer;
 
 //10807
 //public class Main04 {
