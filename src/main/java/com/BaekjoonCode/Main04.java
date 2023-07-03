@@ -1,8 +1,6 @@
 package com.BaekjoonCode;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.StringTokenizer;
 
 //10807
@@ -199,23 +197,38 @@ import java.util.StringTokenizer;
 
 //10810
 public class Main04 {
-    public static void main(String args[]) throws IOException {
+    public static void main(String[] args) throws IOException{
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringBuilder sb = new StringBuilder();
-        StringTokenizer st;
-        String str;
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        while ((str = br.readLine()) != null) {
+        StringTokenizer st = new StringTokenizer(br.readLine()); // StringTokenizer로 N과 M, " "(공백)으로 구분
 
-            st = new StringTokenizer(str, " ");
-            int a = Integer.parseInt(st.nextToken());
-            int b = Integer.parseInt(st.nextToken());
-            sb.append(a + b).append("\n");
+        int N = Integer.parseInt(st.nextToken());
+        int M = Integer.parseInt(st.nextToken());
 
+        //바구니 배열
+        int[] basket = new int[N];
+
+        for(int i = 0; i < M; i++) {
+            st = new StringTokenizer(br.readLine());			 // StringTokenizer로 " "(공백)으로 구분
+
+            int startBasket = Integer.parseInt(st.nextToken());
+            int endBasket = Integer.parseInt(st.nextToken());
+            int ballNo = Integer.parseInt(st.nextToken());
+
+            for(int j = startBasket - 1; j < endBasket; j++) {
+                basket[j] = ballNo;
+            }
         }
-        System.out.print(sb);
+        for(int k = 0; k < basket.length; k++) {
+            bw.write(basket[k] + " ");
+        }
+        br.close();
+        bw.flush();
+        bw.close();
     }
+
 }
 
 //2577
