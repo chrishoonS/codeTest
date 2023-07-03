@@ -1,6 +1,7 @@
 package com.BaekjoonCode;
 
 import java.io.*;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
 //10807
@@ -196,6 +197,43 @@ import java.util.StringTokenizer;
 //}
 
 //10810
+//public class Main04 {
+//    public static void main(String[] args) throws IOException{
+//
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+//
+//        StringTokenizer st = new StringTokenizer(br.readLine()); // StringTokenizer로 N과 M, " "(공백)으로 구분
+//
+//        int N = Integer.parseInt(st.nextToken());
+//        int M = Integer.parseInt(st.nextToken());
+//
+//        //바구니 배열
+//        int[] basket = new int[N];
+//
+//        for(int i = 0; i < M; i++) {
+//            st = new StringTokenizer(br.readLine());			 // StringTokenizer로 " "(공백)으로 구분
+//
+//            int startBasket = Integer.parseInt(st.nextToken());
+//            int endBasket = Integer.parseInt(st.nextToken());
+//            int ballNo = Integer.parseInt(st.nextToken());
+//
+//            for(int j = startBasket - 1; j < endBasket; j++) {
+//                basket[j] = ballNo;
+//            }
+//        }
+//        for(int k = 0; k < basket.length; k++) {
+//            bw.write(basket[k] + " ");
+//        }
+//        br.close();
+//        bw.flush();
+//        bw.close();
+//    }
+//
+//}
+
+// 10813
+// 바구니 총 5개, 둘째줄부터 4개 줄에 걸쳐 공 교환방법
 public class Main04 {
     public static void main(String[] args) throws IOException{
 
@@ -204,23 +242,32 @@ public class Main04 {
 
         StringTokenizer st = new StringTokenizer(br.readLine()); // StringTokenizer로 N과 M, " "(공백)으로 구분
 
-        int N = Integer.parseInt(st.nextToken());
-        int M = Integer.parseInt(st.nextToken());
+        int N = Integer.parseInt(st.nextToken());   // 1~N개 바구니 갯수
+        int M = Integer.parseInt(st.nextToken());   // M번의 공 교환 방법
 
-        //바구니 배열
+        // index : 바구니 숫자
+        // value : 바구니 안에 들어있는 공 숫자
         int[] basket = new int[N];
+        for (int i = 0; i < basket.length; i++) { // 바구니의 공 초기화
+            basket[i] = i+1;
+        }
+//        System.out.println(Arrays.toString(basket));
 
         for(int i = 0; i < M; i++) {
             st = new StringTokenizer(br.readLine());			 // StringTokenizer로 " "(공백)으로 구분
 
-            int startBasket = Integer.parseInt(st.nextToken());
-            int endBasket = Integer.parseInt(st.nextToken());
-            int ballNo = Integer.parseInt(st.nextToken());
+            int changeBall1 = Integer.parseInt(st.nextToken());
+            int changeBall2 = Integer.parseInt(st.nextToken());
 
-            for(int j = startBasket - 1; j < endBasket; j++) {
-                basket[j] = ballNo;
-            }
+            int tmp = basket[changeBall1-1];
+
+            basket[changeBall1-1] = basket[changeBall2-1];
+            basket[changeBall2-1] = tmp;
+
+//            System.out.println((i+1) + "번째");
+//            System.out.println(Arrays.toString(basket));
         }
+
         for(int k = 0; k < basket.length; k++) {
             bw.write(basket[k] + " ");
         }
