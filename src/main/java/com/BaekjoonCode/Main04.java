@@ -199,7 +199,10 @@ import java.util.StringTokenizer;
 //10810
 //public class Main04 {
 //    public static void main(String[] args) throws IOException{
-//
+
+// BufferedReader의 Garbage Collector에 의하여 사용되지않는 자원이 정리되기 전에 연속/반복적으로 BufferedReader가 close 되지않고 사용되면 정상적으로 reading이 되지지 않는다.
+// BufferedWriter의 close()를 해주어야 한다고 명시한 이유는, 자원 관리의 중요성 이유로, 자바에서는 자원관리를 쉽게 해주는 Garbage Collector가 있기 때문에 큰문제가 되지 않을 수 있습니다.
+// Native언어의 경우 자원관리를 프로그래머가 직접 해야하는 경우가 많기 때문에, 자원관리를 해주는 습관을 들이는 것이 좋다.
 //        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 //        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 //
@@ -234,49 +237,77 @@ import java.util.StringTokenizer;
 
 // 10813
 // 바구니 총 5개, 둘째줄부터 4개 줄에 걸쳐 공 교환방법
+//public class Main04 {
+//    public static void main(String[] args) throws IOException{
+//
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+//
+//        StringTokenizer st = new StringTokenizer(br.readLine()); // StringTokenizer로 N과 M, " "(공백)으로 구분
+//
+//        int N = Integer.parseInt(st.nextToken());   // 1~N개 바구니 갯수
+//        int M = Integer.parseInt(st.nextToken());   // M번의 공 교환 방법
+//
+//        // index : 바구니 숫자
+//        // value : 바구니 안에 들어있는 공 숫자
+//        int[] basket = new int[N];
+//        for (int i = 0; i < basket.length; i++) { // 바구니의 공 초기화
+//            basket[i] = i+1;
+//        }
+////        System.out.println(Arrays.toString(basket));
+//
+//        for(int i = 0; i < M; i++) {
+//            st = new StringTokenizer(br.readLine());			 // StringTokenizer로 " "(공백)으로 구분
+//
+//            int changeBall1 = Integer.parseInt(st.nextToken());
+//            int changeBall2 = Integer.parseInt(st.nextToken());
+//
+//            int tmp = basket[changeBall1-1];
+//
+//            basket[changeBall1-1] = basket[changeBall2-1];
+//            basket[changeBall2-1] = tmp;
+//
+////            System.out.println((i+1) + "번째");
+////            System.out.println(Arrays.toString(basket));
+//        }
+//
+//        for(int k = 0; k < basket.length; k++) {
+//            bw.write(basket[k] + " ");
+//        }
+//        br.close();
+//        bw.flush();
+//        bw.close();
+//    }
+//
+//}
+
+// 5597
 public class Main04 {
     public static void main(String[] args) throws IOException{
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        StringTokenizer st = new StringTokenizer(br.readLine()); // StringTokenizer로 N과 M, " "(공백)으로 구분
-
-        int N = Integer.parseInt(st.nextToken());   // 1~N개 바구니 갯수
-        int M = Integer.parseInt(st.nextToken());   // M번의 공 교환 방법
-
-        // index : 바구니 숫자
-        // value : 바구니 안에 들어있는 공 숫자
-        int[] basket = new int[N];
-        for (int i = 0; i < basket.length; i++) { // 바구니의 공 초기화
-            basket[i] = i+1;
-        }
-//        System.out.println(Arrays.toString(basket));
-
-        for(int i = 0; i < M; i++) {
-            st = new StringTokenizer(br.readLine());			 // StringTokenizer로 " "(공백)으로 구분
-
-            int changeBall1 = Integer.parseInt(st.nextToken());
-            int changeBall2 = Integer.parseInt(st.nextToken());
-
-            int tmp = basket[changeBall1-1];
-
-            basket[changeBall1-1] = basket[changeBall2-1];
-            basket[changeBall2-1] = tmp;
-
-//            System.out.println((i+1) + "번째");
-//            System.out.println(Arrays.toString(basket));
+        boolean[] arr = new boolean[30];
+        //온 사람은 출석 체크
+        for (int i = 0; i < 28; i++) {
+            int n = Integer.parseInt(br.readLine());
+            arr[n-1] = true;
         }
 
-        for(int k = 0; k < basket.length; k++) {
-            bw.write(basket[k] + " ");
+        for (int i = 0; i < arr.length; i++) {
+            if (!arr[i]){
+                bw.write((i+1) + "\n");  //나중에 이거 출력 안되는 이유 찾아보기 -> bw.flush를 반드시 붙여줘야함.
+                bw.flush();
+            }
         }
+
         br.close();
-        bw.flush();
         bw.close();
     }
 
 }
+
 
 //2577
 //public class Main04 {
