@@ -1,6 +1,8 @@
 package com.BaekjoonCode;
 
 import java.io.*;
+import java.util.Arrays;
+import java.util.StringTokenizer;
 
 //10807
 //public class Main04 {
@@ -280,31 +282,71 @@ import java.io.*;
 //}
 
 // 5597
+//public class Main04 {
+//    public static void main(String[] args) throws IOException{
+//
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+//
+//        boolean[] arr = new boolean[30];
+//        //온 사람은 출석 체크
+//        for (int i = 0; i < 28; i++) {
+//            int n = Integer.parseInt(br.readLine());
+//            arr[n-1] = true;
+//        }
+//
+//        for (int i = 0; i < arr.length; i++) {
+//            if (!arr[i]){
+//                bw.write((i+1) + "\n");  //나중에 이거 출력 안되는 이유 찾아보기 -> bw.flush를 반드시 붙여줘야함.
+//                bw.flush();
+//            }
+//        }
+//
+//        br.close();
+//        bw.close();
+//    }
+//
+//}
+
+// 10811
 public class Main04 {
+
     public static void main(String[] args) throws IOException{
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 
-        boolean[] arr = new boolean[30];
-        //온 사람은 출석 체크
-        for (int i = 0; i < 28; i++) {
-            int n = Integer.parseInt(br.readLine());
-            arr[n-1] = true;
+        int n = Integer.parseInt(st.nextToken());
+        int m = Integer.parseInt(st.nextToken());
+
+        int[] array = new int[n];
+
+        for(int i=0; i<array.length; i++) {
+            array[i] = i+1;
         }
 
-        for (int i = 0; i < arr.length; i++) {
-            if (!arr[i]){
-                bw.write((i+1) + "\n");  //나중에 이거 출력 안되는 이유 찾아보기 -> bw.flush를 반드시 붙여줘야함.
-                bw.flush();
+        System.out.println(Arrays.toString(array));
+
+        for(int j=0; j<m; j++) {
+            st = new StringTokenizer(br.readLine(), " ");
+            int x = Integer.parseInt(st.nextToken())-1;
+            int y = Integer.parseInt(st.nextToken())-1;
+
+            for(int k=x; k<=y; k++, y--) {
+                int temp = array[k];
+                array[k] = array[y];
+                array[y] = temp;
             }
         }
 
-        br.close();
-        bw.close();
-    }
+        for(int z=0; z<array.length; z++)
+            System.out.print(array[z] + " ");
 
+        br.close();
+
+    }
 }
+
 
 
 //2577
