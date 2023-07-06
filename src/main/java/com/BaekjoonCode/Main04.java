@@ -310,44 +310,40 @@ import java.util.StringTokenizer;
 
 // 10811
 public class Main04 {
-
-    public static void main(String[] args) throws IOException{
-
+    public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        StringBuilder sb = new StringBuilder();
 
-        int n = Integer.parseInt(st.nextToken());
-        int m = Integer.parseInt(st.nextToken());
+        int N = Integer.parseInt(st.nextToken());
+        int M = Integer.parseInt(st.nextToken());
 
-        int[] array = new int[n];
-
-        for(int i=0; i<array.length; i++) {
-            array[i] = i+1;
+        // 바구니 초기 셋팅
+        int[] basket = new int[N];
+        for(int i = 0; i < N; i++) {
+            basket[i] = i+1;
         }
+        System.out.println(Arrays.toString(basket));
 
-        System.out.println(Arrays.toString(array));
-
-        for(int j=0; j<m; j++) {
-            st = new StringTokenizer(br.readLine(), " ");
-            int x = Integer.parseInt(st.nextToken())-1;
-            int y = Integer.parseInt(st.nextToken())-1;
-
-            for(int k=x; k<=y; k++, y--) {
-                int temp = array[k];
-                array[k] = array[y];
-                array[y] = temp;
-            }
-        }
-
-        for(int z=0; z<array.length; z++)
-            System.out.print(array[z] + " ");
-
-        br.close();
-
+        // 역순 순서 입력 받는 부분
+//        for(int i = 0; i < M; i++) {
+//            st = new StringTokenizer(br.readLine());
+//            int I = Integer.parseInt(st.nextToken());
+//            int J = Integer.parseInt(st.nextToken());
+//
+//            for(int j=I; j<=(I+J)/2; j++) {
+//                int tmp = basket[j];
+//                basket[j] = basket[J + I - j];
+//                basket[J + I - j] = tmp;
+//            }
+//            System.out.println(Arrays.toString(basket));
+//        }
+//        for(int i = 0; i < N; i++) {
+//            sb.append(basket[i]).append(" ");
+//        }
+//        System.out.println(sb);
     }
 }
-
-
 
 //2577
 //public class Main04 {
