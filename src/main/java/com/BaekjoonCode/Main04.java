@@ -1,7 +1,8 @@
 package com.BaekjoonCode;
 
-import java.io.*;
-import java.util.Arrays;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 //10807
@@ -312,38 +313,67 @@ import java.util.StringTokenizer;
 public class Main04 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        StringBuilder sb = new StringBuilder();
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 
-        int N = Integer.parseInt(st.nextToken());
-        int M = Integer.parseInt(st.nextToken());
+        int n = Integer.parseInt(st.nextToken());
+        int m = Integer.parseInt(st.nextToken());
 
-        // 바구니 초기 셋팅
-        int[] basket = new int[N];
-        for(int i = 0; i < N; i++) {
+        int[] basket = new int[n];
+
+        //초기 바구니 셋팅
+        for(int i=0; i < basket.length; i++) {
             basket[i] = i+1;
         }
-        System.out.println(Arrays.toString(basket));
 
-        // 역순 순서 입력 받는 부분
-//        for(int i = 0; i < M; i++) {
-//            st = new StringTokenizer(br.readLine());
-//            int I = Integer.parseInt(st.nextToken());
-//            int J = Integer.parseInt(st.nextToken());
-//
-//            for(int j=I; j<=(I+J)/2; j++) {
-//                int tmp = basket[j];
-//                basket[j] = basket[J + I - j];
-//                basket[J + I - j] = tmp;
-//            }
-//            System.out.println(Arrays.toString(basket));
-//        }
-//        for(int i = 0; i < N; i++) {
-//            sb.append(basket[i]).append(" ");
-//        }
-//        System.out.println(sb);
+        for(int j=0; j<m; j++) {
+            st = new StringTokenizer(br.readLine(), " ");
+            // 바구니의 넘버링에 -1을 해야 basket 배열의 인덱스가 됨!
+            int x = Integer.parseInt(st.nextToken())-1;
+            int y = Integer.parseInt(st.nextToken())-1;
+
+            for(int k=x; k<=y; k++, y--) {
+                int tmp = basket[k];    // 임시로 바구니의 공을 담을 변수
+                basket[k] = basket[y];  // 자리바꾸기
+                basket[y] = tmp;        // 임시로 받은 값 넣으면 바뀜
+            }
+        }
+
+        //하나씩 꺼내서 붙이기
+        for(int z=0; z<basket.length; z++)
+            System.out.print(basket[z] + " ");
+
+        br.close();
     }
 }
+
+// 10811 다른풀이
+//public class Main {
+//    public static void main(String[] args) throws IOException {
+//        StringBuilder sb = new StringBuilder();
+//        int n = read();
+//        int[] lst = new int[n];
+//        for (int i = 0; i < n; i++) lst[i] = i + 1;
+//        int m = read();
+//        for (int j = 0; j < m; j++) {
+//            int a = read() - 1;
+//            int b = read() - 1;
+//            for (int l = 0; l < (b - a + 1) / 2; l++) {
+//                int tmp = lst[a + l];
+//                lst[a + l] = lst[b - l];
+//                lst[b - l] = tmp;
+//            }
+//
+//        }
+//        for (int k = 0; k < n; k++) sb.append(lst[k]).append(' ');
+//        System.out.print(sb);
+//
+//    }
+//    static int read() throws IOException{
+//        int c, n = System.in.read() & 15;
+//        while ((c = System.in.read()) > 32) n = (n << 3) + (n << 1) + (c & 15);
+//        return n;
+//    }
+//}
 
 //2577
 //public class Main04 {
