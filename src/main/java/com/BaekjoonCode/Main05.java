@@ -204,11 +204,8 @@ public class Main05 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
 
-        while(true){
-            String str = br.readLine();
-
-            if (str == null || str.isEmpty())
-                break;
+        String str = "";
+        while ((str = br.readLine()) != null) { //입력과 동시에 null 체크
             sb.append(str).append("\n");
         }
         br.close();
