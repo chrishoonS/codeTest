@@ -1,6 +1,47 @@
 package com.BaekjoonCode;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+//    [25083] 새싹
+//    public static void main(String[] args) {
+//        System.out.println("         ,r'\"7\n" +
+//                "r`-_   ,'  ,/\n" +
+//                " \\. \". L_r'\n" +
+//                "   `~\\/\n" +
+//                "      |\n" +
+//                "      |");
+//
+//    }
+
+// [2444] 별 찍기 - 7
+public class Main06 {
+    public static void main(String[] args) throws IOException {BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
+        StringBuilder sb = new StringBuilder();
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n-i; j++) {
+                sb.append(" ");
+            }
+            for (int j = 1; j <= 2*i-1; j++) {
+                sb.append("*");
+            }
+            sb.append("\n");
+        }
+        for (int i = n-1; i >= 1; i--) {
+            for (int j = 1; j <= n-i; j++) {
+                sb.append(" ");
+            }
+            for (int j = 1; j <= 2*i-1; j++) {
+                sb.append("*");
+            }
+            sb.append("\n");
+        }
+        System.out.print(sb);
+    }
+}
 
 //11654
 //public class Main06 {
@@ -10,72 +51,6 @@ import java.util.Scanner;
 //    }
 //}
 
-//11720
-//public class Main06 {
-//    public static void main(String[] args) throws IOException {
-//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-//        int a = Integer.parseInt(br.readLine());
-//        String b = br.readLine();
-//        int sum = 0;
-//        for (int i = 0; i < a; i++) {
-//            sum += b.charAt(i) - '0';
-//        }
-//        br.close();
-//        System.out.println(sum);
-//    }
-//}
-
-//10809
-//public class Main06 {
-//    public static void main(String[] args) throws IOException {
-//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-//        String s = br.readLine();
-//
-//        int[] arr = new int[26];
-//
-//        for(int i = 0; i < arr.length; i++) {
-//            arr[i] = -1;
-//        }
-//
-//        for(int i = 0; i < s.length(); i++) {
-//            char ch = s.charAt(i);
-//
-//            if(arr[ch - 'a'] == -1) {
-//                arr[ch - 'a'] = i;
-//            }
-//        }
-//
-//        for(int val : arr) {
-//            System.out.print(val + " ");
-//        }
-//
-//    }
-//}
-
-//2675
-//public class Main06 {
-//    public static void main(String[] args) throws IOException {
-//        Scanner sc = new Scanner(System.in);
-//        int n = sc.nextInt();
-//        int[] noArr = new int[n];
-//        String[] sArr = new String[n];
-//        for (int i = 0; i < n; i++) {
-//            int no = sc.nextInt();
-//            String s = sc.next();
-//            noArr[i] = no;
-//            sArr[i] = s;
-//        }
-//        for (int i = 0; i < n; i++) {
-//            char[] ch = sArr[i].toCharArray(); //A,B,C
-//            for (int j = 0; j < ch.length; j++) {//3,5
-//                for (int k = 0; k < noArr[i]; k++) { //3
-//                    System.out.print(ch[j]);
-//                }
-//            }
-//            System.out.println();
-//        }
-//    }
-//}
 
 //1157
 //public class Main06 {
@@ -102,74 +77,7 @@ import java.util.Scanner;
 //    }
 //}
 
-// 1152
-//public class Main06 {
-//    public static void main(String[] args) throws IOException{
-//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-//        String s = br.readLine();
-//        String[] arr = s.trim().split(" ");
-//        int cnt = 0;
-//        for (int i = 0; i < arr.length; i++) {
-//            if (arr[i].isEmpty() || arr[i].isBlank()) continue;
-//            else cnt++;
-//        }
-//        System.out.println(cnt);
-//    }
-//}
 
-// 1152
-//public class Main06 {
-//    public static void main(String[] args) throws IOException{
-//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-//        String s = br.readLine();
-//        String[] arr = s.trim().split(" ");
-//        int cnt = 0;
-//        for (int i = 0; i < arr.length; i++) {
-//            if (arr[i].isEmpty() || arr[i].isBlank()) continue;
-//            else cnt++;
-//        }
-//        System.out.println(cnt);
-//    }
-//}
-
-// 2908
-//public class Main06 {
-//    public static void main(String[] args) throws IOException{
-//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-//
-//        StringTokenizer st = new StringTokenizer(br.readLine()," ");
-//
-//        int a = Integer.parseInt(new StringBuilder(st.nextToken()).reverse().toString());
-//        int b = Integer.parseInt(new StringBuilder(st.nextToken()).reverse().toString());
-//
-//        System.out.print(a > b ? a:b);
-//    }
-//}
-
-// 5622
-//public class Main06 {
-//    public static void main(String[] args) throws IOException{
-//        //숫자 1을 걸려면 총 2초가
-//        //WA -> 눌러야할 숫자 9,2 -> 총 13초
-//        // 2 ABC / 3 DEF / 4 GHI / 5 JKL / 6 MNO / 7 PQRS / 8 TUV / 9 WXYZ
-//        //ASCII
-//        // 656667 / 686970 / 717273 / 747576 / 777879/ 80818283 / 848586 / 87888990
-//        Scanner sc = new Scanner(System.in);
-//        String s = sc.next();
-//        int sum = 0;
-//        for (int i = 0; i < s.length(); i++) {
-//            if(s.charAt(i)-65 <= 2) sum += 3;
-//            else if (s.charAt(i)-65 > 2 && s.charAt(i)-65 <= 5) sum += 4;
-//            else if (s.charAt(i)-65 > 5 && s.charAt(i)-65 <= 8) sum += 5;
-//            else if (s.charAt(i)-65 > 8 && s.charAt(i)-65 <= 11) sum += 6;
-//            else if (s.charAt(i)-65 > 11 && s.charAt(i)-65 <= 14) sum += 7;
-//            else if (s.charAt(i)-65 > 14 && s.charAt(i)-65 <= 18) sum += 8;
-//            else if (s.charAt(i)-65 > 18 && s.charAt(i)-65 <= 21) sum += 9;
-//            else if (s.charAt(i)-65 > 21 && s.charAt(i)-65 <= 25) sum += 10;
-//        }
-//        System.out.println(sum);
-//    }
-//}
 
 // 2941
 //public class Main06 {
@@ -187,37 +95,113 @@ import java.util.Scanner;
 //}
 
 //1316
-public class Main06 {
-    static Scanner sc = new Scanner(System.in);
+//public class Main06 {
+//    static Scanner sc = new Scanner(System.in);
+//
+//    public static void main(String[] args) {
+//
+//        int count = 0;
+//        int N = sc.nextInt();
+//
+//        for (int i = 0; i < N; i++) {
+//            if (check() == true) count++;
+//        }
+//        System.out.println(count);
+//    }
+//
+//    public static boolean check() {
+//        boolean[] check = new boolean[26];
+//        int prev = 0;       //이전 문자열 계산을 위한 변수
+//        String str = sc.next();
+//
+//        for(int i = 0; i < str.length(); i++) {
+//            int now = str.charAt(i);	// 현재 i번째 문자열 저장
+//            if (prev != now) {
+//                // 해당 문자가 처음 나오는 경우 (false 인 경우)
+//                if ( check[now - 'a'] == false ) {
+//                    check[now - 'a'] = true;
+//                    prev = now;
+//                }
+//                // 해당 문자가 이미 나온 적이 있는 경우 (그룹단어가 아니게 됨)
+//                else return false;
+//            }
+//        }
+//        return true;
+//    }
+//}
 
-    public static void main(String[] args) {
+//15596
+//public class Main06 {
+//    long sum(int[] a){
+//        long result = 0;
+//        for (int i : a) {
+//            result += i;
+//        }
+//        return result;
+//    }
+//}
 
-        int count = 0;
-        int N = sc.nextInt();
+//4673
+//public class Main06 {
+//    public static void main(String[] args) {
+//
+//        boolean[] check = new boolean[10001];
+//
+//        for (int i = 1; i < 10001; i++){
+//            int n = checkNum(i);
+//
+//            if(n < 10001) check[n] = true;
+//        }
+//
+//        StringBuilder sb = new StringBuilder();
+//
+//        for (int i = 1; i < 10001; i++) {
+//            if (!check[i]) sb.append(i).append('\n');
+//        }
+//        System.out.println(sb);
+//    }
+//
+//    public static int checkNum(int number){
+//        int sum = number;
+//
+//        while(number != 0){
+//            sum = sum + (number % 10);
+//            number = number / 10;
+//        }
+//        return sum;
+//    }
+//}
 
-        for (int i = 0; i < N; i++) {
-            if (check() == true) count++;
-        }
-        System.out.println(count);
-    }
-
-    public static boolean check() {
-        boolean[] check = new boolean[26];
-        int prev = 0;       //이전 문자열 계산을 위한 변수
-        String str = sc.next();
-
-        for(int i = 0; i < str.length(); i++) {
-            int now = str.charAt(i);	// 현재 i번째 문자열 저장
-            if (prev != now) {
-                // 해당 문자가 처음 나오는 경우 (false 인 경우)
-                if ( check[now - 'a'] == false ) {
-                    check[now - 'a'] = true;
-                    prev = now;
-                }
-                // 해당 문자가 이미 나온 적이 있는 경우 (그룹단어가 아니게 됨)
-                else return false;
-            }
-        }
-        return true;
-    }
-}
+//import java.util.Scanner;
+//
+////1065
+//public class Main06 {
+//    public static void main(String[] args) {
+//        Scanner in = new Scanner(System.in);
+//
+//        System.out.print(hansuFunc(in.nextInt()));
+//        in.close();
+//
+//
+//    }
+//
+//    public static int hansuFunc(int num) {
+//        int hansuCnt = 0;
+//
+//        if (num < 100) return num;
+//        else {
+//            hansuCnt = 99;
+//
+//            for (int i = 100; i <= num; i++) {
+//                int hun = i / 100;
+//                int ten = (i / 10) % 10;
+//                int one = i % 10;
+//
+//                if ((hun - ten) == (ten - one)) hansuCnt++;
+//            }
+//        }
+//
+//        return hansuCnt;
+//    }
+//
+//}
