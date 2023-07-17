@@ -159,16 +159,7 @@ public class Main01 {
 //                    "||_/=\\\\__|");
 //    }
 
-//    [25083]
-//    public static void main(String[] args) {
-//        System.out.println("         ,r'\"7\n" +
-//                "r`-_   ,'  ,/\n" +
-//                " \\. \". L_r'\n" +
-//                "   `~\\/\n" +
-//                "      |\n" +
-//                "      |");
-//
-//    }
+
 //    [11382]
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
