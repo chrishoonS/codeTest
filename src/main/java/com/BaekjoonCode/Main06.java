@@ -3,6 +3,7 @@ package com.BaekjoonCode;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 //    [25083] 새싹
 //    public static void main(String[] args) {
@@ -71,42 +72,42 @@ import java.io.InputStreamReader;
 //    }
 //}
 
-//10998 팰린드롬인지 확인하기
-public class Main06 {
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
-        char[] input = br.readLine().toCharArray();
-        int cnt = 0;
-
-        for (int i = 0; i < input.length; i++) {
-            if(input[i] != input[input.length-1-i])
-                break;
-            else cnt++;
-        }
-
-        if (cnt == input.length) {
-            System.out.println(1);
-        } else {
-            System.out.println(0);
-        }
-        br.close();
-
-        // 좀더 빠른 다른 사람 소스
-//        for( int i = 0; i < str.length/2; i++) {
-//            if( !(str[i] == str[str.length-1-i])) {
-//                System.out.println(0);
-//                return;
-//            }
+//10988 팰린드롬인지 확인하기
+//public class Main06 {
+//    public static void main(String[] args) throws IOException {
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//
+//        char[] input = br.readLine().toCharArray();
+//        int cnt = 0;
+//
+//        for (int i = 0; i < input.length; i++) {
+//            if(input[i] != input[input.length-1-i])
+//                break;
+//            else cnt++;
 //        }
 //
-//        System.out.println(1);
+//        if (cnt == input.length) {
+//            System.out.println(1);
+//        } else {
+//            System.out.println(0);
+//        }
+//        br.close();
+//
+//        // 좀더 빠른 다른 사람 소스
+////        for( int i = 0; i < str.length/2; i++) {
+////            if( !(str[i] == str[str.length-1-i])) {
+////                System.out.println(0);
+////                return;
+////            }
+////        }
+////
+////        System.out.println(1);
+//
+//    }
+//}
 
-    }
-}
 
-
-//1157
+// 1157 단어공부
 //public class Main06 {
 //    public static void main(String[] args) throws IOException{
 //
@@ -133,7 +134,7 @@ public class Main06 {
 
 
 
-// 2941
+// 2941 크로아티아 알파벳
 //public class Main06 {
 //    public static void main(String[] args) throws IOException{
 //        Scanner sc = new Scanner(System.in);
@@ -148,7 +149,7 @@ public class Main06 {
 //    }
 //}
 
-//1316
+//1316 그룹단어 체크
 //public class Main06 {
 //    static Scanner sc = new Scanner(System.in);
 //
@@ -195,6 +196,39 @@ public class Main06 {
 //    }
 //}
 
+
+// 25206 너의 평점은
+// A+	4.5
+// A0	4.0
+// B+	3.5
+// B0	3.0
+// C+	2.5
+// C0	2.0
+// D+	1.5
+// D0	1.0
+// F	0.0
+// P/F 과목의 경우 등급이 P또는 F로 표시되는데, 등급이 P인 과목은 계산에서 제외
+public class Main06 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 0; i < 20; i++) {
+            String subject = st.nextToken();
+            String point = st.nextToken();
+            String grade = st.nextToken();
+
+        }
+        System.out.println(sb);
+
+        br.close();
+
+    }
+}
+
+// 해당 챕터 아닌애들 일단 킵
 //4673
 //public class Main06 {
 //    public static void main(String[] args) {
