@@ -211,22 +211,71 @@ import java.util.StringTokenizer;
 public class Main06 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 
-        StringBuilder sb = new StringBuilder();
+        String str[] = new String[20];
+        double totalSum = 0; // (학점 * 과목평점)의 합
+        double scoreSum = 0; // 학점의 총합
+        String gradeArr[] = {"A+", "A0", "B+", "B0", "C+", "C0", "D+", "D0", "F", "P"};
+        double scoreArr[] = {4.5, 4.0, 3.5, 3.0, 2.5, 2.0, 1.5, 1.0, 0.0, 0.0};
 
-        for (int i = 0; i < 20; i++) {
+        // 전공평점 = (학점 * 과목평점)의 합 / 학점의 총합
+        for (int i = 0; i < str.length; i++) {
+            str[i] = br.readLine();
+            StringTokenizer st = new StringTokenizer(str[i], " ");
             String subject = st.nextToken();
-            String point = st.nextToken();
+            double score = Double.parseDouble(st.nextToken());
             String grade = st.nextToken();
 
+            for (int j = 0; j < gradeArr.length; j++) {
+                if (grade.equals(gradeArr[j])) {
+                    totalSum += score * scoreArr[j];
+                    if (j != 9) { // j=9, P 학점인 경우 패스
+                        scoreSum += score;
+                    }
+                    break;
+                }
+            }
         }
-        System.out.println(sb);
+
+        // 전공평점 = (학점 * 과목평점)의 합 / 학점의 총합
+        double average = totalSum / scoreSum;
+        System.out.printf("%.6f\n", average);
 
         br.close();
-
     }
+
 }
+
+// 25206 다른 풀이
+//public class Main {
+//
+//    public static void main(String[] args) throws Exception {
+//
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//
+//        String[] arr1 = {"A+", "A0", "B+", "B0", "C+", "C0", "D+", "D0", "F"};
+//        double[] arr2 = {4.5, 4.0, 3.5, 3.0, 2.5, 2.0, 1.5, 1.0, 0.0};
+//
+//        double total = 0;
+//        double totalgrade=0;
+//
+//        for(int k=0; k<20; k++) {
+//            String[] str = br.readLine().split(" ");
+//            if(!str[2].equals("P")) {
+//                int idx = Arrays.binarySearch(arr1, str[2]);
+//                totalgrade += arr2[idx]*Double.parseDouble(str[1]);
+//                total += Double.parseDouble(str[1]);
+//
+//            }
+//        }
+//
+//        System.out.println(totalgrade/total);
+//
+//    }
+//
+//}
+
+
 
 // 해당 챕터 아닌애들 일단 킵
 //4673
