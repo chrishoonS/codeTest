@@ -1,8 +1,7 @@
 package com.BaekjoonCode;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
+import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 //10807
@@ -151,7 +150,7 @@ import java.util.StringTokenizer;
 //}
 
 //2562
-//public class Main {
+//public class Main04 {
 //    public static void main(String[] args) throws NumberFormatException, IOException{
 //
 //        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -172,38 +171,18 @@ import java.util.StringTokenizer;
 //        System.out.println(max);
 //        System.out.println(list.indexOf(max) + 1);
 //
-//    }
-//}
-
-//public class Main04 {
-//    public static void main(String[] args) {
-//        Scanner in = new Scanner(System.in);
-//        int[] arr = { in.nextInt(), in.nextInt(), in.nextInt(),
-//                in.nextInt(), in.nextInt(), in.nextInt(),
-//                in.nextInt(), in.nextInt(), in.nextInt() };
-//        in.close();
+//        br.close();
 //
-//        int cnt = 0, max = 0, idx = 0;
-//
-//        for(int value : arr) {
-//            cnt++;
-//
-//            if(value > max) {
-//                max = value;
-//                idx = cnt;
-//            }
-//        }
-//        System.out.print(max + "\n" + idx);
 //    }
 //}
 
 //10810
 //public class Main04 {
 //    public static void main(String[] args) throws IOException{
-
-// BufferedReader의 Garbage Collector에 의하여 사용되지않는 자원이 정리되기 전에 연속/반복적으로 BufferedReader가 close 되지않고 사용되면 정상적으로 reading이 되지지 않는다.
-// BufferedWriter의 close()를 해주어야 한다고 명시한 이유는, 자원 관리의 중요성 이유로, 자바에서는 자원관리를 쉽게 해주는 Garbage Collector가 있기 때문에 큰문제가 되지 않을 수 있습니다.
-// Native언어의 경우 자원관리를 프로그래머가 직접 해야하는 경우가 많기 때문에, 자원관리를 해주는 습관을 들이는 것이 좋다.
+//
+//          // BufferedReader의 Garbage Collector에 의하여 사용되지않는 자원이 정리되기 전에 연속/반복적으로 BufferedReader가 close 되지않고 사용되면 정상적으로 reading이 되지지 않는다.
+//          // BufferedWriter의 close()를 해주어야 한다고 명시한 이유는, 자원 관리의 중요성 이유로, 자바에서는 자원관리를 쉽게 해주는 Garbage Collector가 있기 때문에 큰문제가 되지 않을 수 있습니다.
+//          // Native언어의 경우 자원관리를 프로그래머가 직접 해야하는 경우가 많기 때문에, 자원관리를 해주는 습관을 들이는 것이 좋다.
 //        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 //        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 //
@@ -310,41 +289,41 @@ import java.util.StringTokenizer;
 //}
 
 // 10811
-public class Main04 {
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
-
-        int n = Integer.parseInt(st.nextToken());
-        int m = Integer.parseInt(st.nextToken());
-
-        int[] basket = new int[n];
-
-        //초기 바구니 셋팅
-        for(int i=0; i < basket.length; i++) {
-            basket[i] = i+1;
-        }
-
-        for(int j=0; j<m; j++) {
-            st = new StringTokenizer(br.readLine(), " ");
-            // 바구니의 넘버링에 -1을 해야 basket 배열의 인덱스가 됨!
-            int x = Integer.parseInt(st.nextToken())-1;
-            int y = Integer.parseInt(st.nextToken())-1;
-
-            for(int k=x; k<=y; k++, y--) {
-                int tmp = basket[k];    // 임시로 바구니의 공을 담을 변수
-                basket[k] = basket[y];  // 자리바꾸기
-                basket[y] = tmp;        // 임시로 받은 값 넣으면 바뀜
-            }
-        }
-
-        //하나씩 꺼내서 붙이기
-        for(int z=0; z<basket.length; z++)
-            System.out.print(basket[z] + " ");
-
-        br.close();
-    }
-}
+//public class Main04 {
+//    public static void main(String[] args) throws IOException {
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+//
+//        int n = Integer.parseInt(st.nextToken());
+//        int m = Integer.parseInt(st.nextToken());
+//
+//        int[] basket = new int[n];
+//
+//        //초기 바구니 셋팅
+//        for(int i=0; i < basket.length; i++) {
+//            basket[i] = i+1;
+//        }
+//
+//        for(int j=0; j<m; j++) {
+//            st = new StringTokenizer(br.readLine(), " ");
+//            // 바구니의 넘버링에 -1을 해야 basket 배열의 인덱스가 됨!
+//            int x = Integer.parseInt(st.nextToken())-1;
+//            int y = Integer.parseInt(st.nextToken())-1;
+//
+//            for(int k=x; k<=y; k++, y--) {
+//                int tmp = basket[k];    // 임시로 바구니의 공을 담을 변수
+//                basket[k] = basket[y];  // 자리바꾸기
+//                basket[y] = tmp;        // 임시로 받은 값 넣으면 바뀜
+//            }
+//        }
+//
+//        //하나씩 꺼내서 붙이기
+//        for(int z=0; z<basket.length; z++)
+//            System.out.print(basket[z] + " ");
+//
+//        br.close();
+//    }
+//}
 
 // 10811 다른풀이
 //public class Main {

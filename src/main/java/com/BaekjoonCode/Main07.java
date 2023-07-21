@@ -3,181 +3,149 @@ package com.BaekjoonCode;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.math.BigInteger;
 import java.util.StringTokenizer;
 
-//1712
-//public class Main07 {
-//    public static void main(String[] args) {
-//        Scanner sc = new Scanner(System.in);
-//        int fixAmt = sc.nextInt();   //고정비용
-//        int varAmt = sc.nextInt();   //가변비용
-//        int price = sc.nextInt();   //책정가
-//
-//        if (price <= varAmt) System.out.println(-1);
-//        else System.out.println((fixAmt / (price-varAmt)) + 1);
-//    }
-//}
-
-//2292
-//public class Main07 {
-//    public static void main(String[] args) throws IOException {
-//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-//
-//        /**
-//         * N = 1        1
-//         * N = 2~7      6
-//         * N = 8~19     12
-//         * N = 20~37    18
-//         **/
-//        int N = Integer.parseInt(br.readLine());
-//        int range = 1;
-//        int cnt = 1;
-//        if(N == 1) System.out.println(cnt);
-//        else{
-//            while(N > range){
-//                range = range + (6*cnt);
-//                cnt++;
-//            }
-//            System.out.println(cnt);
-//        }
-//    }
-//}
-
-//2869
-//public class Main{
-//    public static void main(String[] args) throws IOException {
-//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-//        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
-//
-//        int A = Integer.parseInt(st.nextToken());
-//        int B = Integer.parseInt(st.nextToken());
-//        int V = Integer.parseInt(st.nextToken());
-//        int climb = 0;
-//        int day = 0;
-//
-//        while(V > climb){
-//            day++;
-//            climb += A;
-//            if (climb == V)
-//                break;
-//            else{
-//                climb -= B;
-//            }
-//        }
-//        System.out.println(day);
-//    }
-//}
-
-//2869
-//public class Main07 {
-//    public static void main(String[] args) throws IOException {
-//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-//        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
-//
-//        int A = Integer.parseInt(st.nextToken());
-//        int B = Integer.parseInt(st.nextToken());
-//        int V = Integer.parseInt(st.nextToken());
-//        int day = (V-B) / (A-B);
-//        if ((V-B) % (A-B) != 0) day++;
-//
-//        System.out.println(day);
-//    }
-//}
-
-//10250
-//public class Main07 {
-//    public static void main(String[] args) throws IOException {
-//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-//        int T = Integer.parseInt(br.readLine());
-//        int[] ho = new int[T];
-//        for (int i = 0; i < T; i++) {
-//            StringTokenizer st = new StringTokenizer(br.readLine());
-//            int H = Integer.parseInt(st.nextToken());   //높이
-//            int W = Integer.parseInt(st.nextToken());   //층
-//            int N = Integer.parseInt(st.nextToken());   //N번째 손님
-//
-//            if(N % H == 0) System.out.println((H*100) + (N / H));
-//            else System.out.println(((N % H) * 100) + ((N / H) + 1));
-//        }
-//    }
-//}
-
-//2775
-//public class Main07 {
-//    public static void main(String[] args) throws IOException {
-//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-//        /**
-//         * a층의 b호에 살려면 자신의 아래(a-1)층의 1호부터 b호까지 사람들의 수의 합만큼 사람들을 데려와 살아야 한다
-//         * k층 n호에 몇명 사는지 구하기!!!
-//         * 0층엔 1호부터 있고 i호에 i명이 산다
-//         * 2 /1 3/ 2 3
-//         * 1층 1호 = 1
-//         * 1층 2호 = 1+2 = 3
-//         * 1층 3호 = 1+2+3 = 6
-//         * 2층 1호 = 1
-//         * 2층 2호 = 1+3 = 4
-//         * 2층 3호 = 1+3+6 = 10
-//         **/
-//
-//
-//        int[][] arr = new int[15][15];
-//
-//        for (int i = 0; i < arr.length ; i++) {
-//            arr[i][1] = 1;
-//            arr[0][i] = i;
-//        }
-//
-//        for (int i = 1; i < 15; i++) {
-//            for (int j = 2; j < 15; j++) {
-//                arr[i][j] = arr[i][j-1] + arr[i-1][j];
-//            }
-//        }
-//
-//        int T = Integer.parseInt(br.readLine());
-//
-//        for (int i = 0; i < T; i++) {
-//            int k = Integer.parseInt(br.readLine());
-//            int n = Integer.parseInt(br.readLine());
-//            System.out.println(arr[k][n]);
-//        }
-//    }
-//}
-
-
-//2839
-//public class Main07 {
-//    public static void main(String[] args) throws IOException {
-//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-//        int N = Integer.parseInt(br.readLine());
-//
-//        if (N == 4 || N == 7) {
-//            System.out.println(-1);
-//        }
-//        else if (N % 5 == 0) {
-//            System.out.println(N / 5);
-//        }
-//        else if (N % 5 == 1 || N % 5 == 3) {
-//            System.out.println((N / 5) + 1);
-//        }
-//        else if (N % 5 == 2 || N % 5 == 4) {
-//            System.out.println((N / 5) + 2);
-//        }
-//    }
-//}
-
-//10757
+// 2738 행렬의 덧셈
 public class Main07 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
         StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 
-        BigInteger a = new BigInteger(st.nextToken());
-        BigInteger b = new BigInteger(st.nextToken());
+        int N = Integer.parseInt(st.nextToken());
+        int M = Integer.parseInt(st.nextToken());
 
-        a = a.add(b);
+        int[][] arr1 = new int[N][M];
+        int[][] arr2 = new int[N][M];
+        int[][] result = new int[N][M];
 
-        System.out.println(a.toString());
+        for (int i = 0; i < arr1.length; i++) {
+            st = new StringTokenizer(br.readLine(), " ");
+            for (int j = 0; j < arr1[0].length; j++) {
+                arr1[i][j] = Integer.parseInt(st.nextToken());
+            }
+        }
+
+        for (int i = 0; i < arr2.length; i++) {
+            st = new StringTokenizer(br.readLine(), " ");
+            for (int j = 0; j < arr1[0].length; j++) {
+                arr2[i][j] = Integer.parseInt(st.nextToken());
+            }
+        }
+
+        for (int i = 0; i <result.length; i++) {
+            for (int j = 0; j < result[0].length; j++) {
+                result[i][j] = arr1[i][j] + arr2[i][j];
+            }
+        }
+        print2d(arr1);
+        print2d(arr2);
+        print2d(result);
+
+    }
+
+    public static void print2d(int[][] result) {
+        int m = result.length;
+        int n = result[0].length;
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print(result[i][j] + "\t");
+            } System.out.println();
+        }
+        System.out.println("----------------------");
     }
 }
+
+//
+//public class Main {
+//    static Reader in = new Reader();
+//
+//    public static void main(String[] args) throws Exception {
+//        StringBuilder sb = new StringBuilder();
+//
+//        int N = in.nextInt();
+//        int M = in.nextInt();
+//
+//        int[][] mat = new int[N][M];
+//
+//        for(int i = 0; i < N; i++) {
+//            for(int j = 0; j < M; j++) {
+//                mat[i][j] = in.nextInt();
+//            }
+//        }
+//
+//        for(int i = 0; i < N; i++) {
+//            for(int j = 0; j < M; j++) {
+//                sb.append(mat[i][j] + in.nextInt()).append(" ");
+//            }
+//            sb.append("\n");
+//        }
+//
+//        System.out.println(sb);
+//    }
+//
+//    static class Reader {
+//        final int SIZE = 1 << 13;
+//        byte[] buffer = new byte[SIZE];
+//        int index, size;
+//
+//        int nextInt() throws Exception {
+//            int n = 0;
+//            byte c;
+//            while ((c = read()) <= 32)
+//                ;
+//            boolean neg = c == '-' ? true : false;
+//            if (neg)
+//                c = read();
+//            do
+//                n = (n << 3) + (n << 1) + (c & 15);
+//            while (isNumber(c = read()));
+//            if (neg)
+//                return -n;
+//            return n;
+//        }
+//
+//        boolean isNumber(byte c) {
+//            return 47 < c && c < 58;
+//        }
+//
+//        byte read() throws Exception {
+//            if (index == size) {
+//                size = System.in.read(buffer, index = 0, SIZE);
+//                if (size < 0)
+//                    buffer[0] = -1;
+//            }
+//            return buffer[index++];
+//        }
+//    }
+//}
+
+
+//public class Main {
+//    public static void main(String[] args) throws IOException {
+//        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+//        StringBuilder output = new StringBuilder();
+//        StringTokenizer tokens = new StringTokenizer(reader.readLine());
+//
+//        int N = Integer.parseInt(tokens.nextToken());
+//        int M = Integer.parseInt(tokens.nextToken());
+//
+//        int[][] matrix = new int[N][M];
+//
+//        for(int i = 0; i < N; i++) {
+//            tokens = new StringTokenizer(reader.readLine());
+//            for(int j = 0; j < M; j++) {
+//                matrix[i][j] = Integer.parseInt(tokens.nextToken());
+//            }
+//        }
+//
+//        for(int i = 0; i < N; i++) {
+//            tokens = new StringTokenizer(reader.readLine());
+//            for(int j = 0; j < M; j++) {
+//                matrix[i][j] += Integer.parseInt(tokens.nextToken());
+//                output.append(matrix[i][j]).append(" ");
+//            }
+//            output.append("\n");
+//        }
+//        System.out.print(output);
+//    }
+//}
