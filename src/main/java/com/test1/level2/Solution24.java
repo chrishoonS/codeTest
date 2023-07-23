@@ -4,8 +4,8 @@ public class Solution24 {
     int[] answer;
     public int[] solution(int[][] arr) {
         answer = new int[2];
-        print2d(arr);
         quadZip(arr,0,0, arr.length);
+        print2d(arr);
         return answer;
     }
 
