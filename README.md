@@ -590,7 +590,7 @@
     </tr>
     <tr>
         <td><a href="https://programmers.co.kr/learn/courses/30/lessons/178871">달리기 경주</a></td>
-        <td><a href="https://github.com/chrishoonS/codeTest/blob/af4196f452fdb06a0106211912c273362826ae86/src/main/java/com/test3/level1/Excercise30.java">Excercise30.java</a></td>
+        <td><a href="https://github.com/chrishoonS/codeTest/blob/af4196f452fdb06a0106211912c273362826ae86/src/main/java/com/test3/level1/Excercise31.java">Excercise31.java</a></td>
         <td align="center">:white_check_mark:</td>
         <td></td>
     </tr>
