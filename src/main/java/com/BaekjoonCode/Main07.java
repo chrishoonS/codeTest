@@ -3,6 +3,7 @@ package com.BaekjoonCode;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 // 2738 행렬의 덧셈
 //public class Main07 {
@@ -271,35 +272,28 @@ import java.io.InputStreamReader;
 //    }
 //}
 
-
+// 2563 색종이
 public class Main07 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int total = 0;                              //교집합 영역의 넓이
+        int N = Integer.parseInt(br.readLine());    //색종이 개수
+        boolean[][] arr = new boolean[100][100];    //도화지
 
-        int max = 0;    // 최대값 담는 변수
-        int x=0, y=0;   // 최대값이 있는 이차원 배열 인덱스
+        for (int i = 0; i < N; i++) {
+            StringTokenizer st = new StringTokenizer(br.readLine());
+            int x = Integer.parseInt(st.nextToken());
+            int y = Integer.parseInt(st.nextToken());
 
-        int[][] arr = new int[9][9];
-
-        for (int i = 0; i < 9; i++) {
-            // 첫번째 줄을 입력받아 공백(" ")울 기준으로 문자열 배열을 만듦
-            String[] strArr = br.readLine().split(" ");
-
-            for (int j = 0; j < strArr.length; j++) {
-                // 만든 문자열 배열을 parsing 해서 arr 배열 만들어주기
-                arr[i][j] = Integer.parseInt(strArr[j]);
-
-                // arr을 이용해 최대값을 찾는 로직
-                if(max < arr[i][j]){
-                    max = arr[i][j];
-                    x = i+1;
-                    y = j+1;
+            for (int j = x; j < x+10; j++) {
+                for (int k = y; k < y+10; k++) {
+                    if (!arr[j][k]) {
+                        arr[j][k] = true;
+                        total++;
+                    }
                 }
             }
-
         }
-
-        System.out.println(max + "\n" + x + " " + y);
-        br.close();
+        System.out.print(total);
     }
 }

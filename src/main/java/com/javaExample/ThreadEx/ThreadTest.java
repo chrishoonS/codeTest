@@ -13,7 +13,7 @@ import javax.swing.*;
  * 다시 실행하려면 새로운 쓰레드를 생성후 start() 호출
  * start() : 메서드 호출시 새로운 쓰레드가 작업을 실행하는데 필요한 새로운 call stack 생성 후 run() 호출
  * run() 메서드 수행이 종료된 쓰레드는 call stack 비워지면서 생성된 call stack도 소멸
- * 출처 : https://codingwell.tistory.com/76
+ * 출처 : https://codingwell.tistory.com/76, https://ttl-blog.tistory.com/779
  **/
 public class ThreadTest {
     public static void main(String[] args) {
