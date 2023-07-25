@@ -3,33 +3,35 @@ package com.BaekjoonCode;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.StringTokenizer;
 
 // 2745 진법변환
-public class Main08 {
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
-
-        String N = st.nextToken();
-        int B = Integer.parseInt(st.nextToken());
-        int tmp = 1;
-        int result = 0;
-
-        for (int i = N.length()-1; i >= 0; i--) {
-            char c = N.charAt(i);
-
-            if('A'<= c && c <= 'Z')
-                result += (c-'A'+10) * tmp;
-            else
-                result += (c-'0') * tmp;
-
-            tmp *= B;
-        }
-
-        System.out.println(result);
-    }
-}
+//public class Main08 {
+//    public static void main(String[] args) throws IOException {
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+//
+//        String N = st.nextToken();
+//        int B = Integer.parseInt(st.nextToken());
+//        int tmp = 1;
+//        int result = 0;
+//
+//        for (int i = N.length()-1; i >= 0; i--) {
+//            char c = N.charAt(i);
+//
+//            if('A'<= c && c <= 'Z')
+//                result += (c-'A'+10) * tmp;   // 'A' = 65(ASCII code)
+//            else
+//                result += (c-'0') * tmp;      // '0' = 48(ASCII code) 로 int형으로 형변환 가능
+//
+//            tmp *= B;
+//        }
+//
+//        System.out.println(result);
+//    }
+//}
 
 
 // 다른풀이
@@ -53,10 +55,88 @@ public class Main08 {
 //    }
 //}
 
+// 11005 진법 변환 2
+public class Main08 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 
+        int N = Integer.parseInt(st.nextToken());
+        int B = Integer.parseInt(st.nextToken());
 
+        String result = "";
 
+        List<Character> list = new ArrayList<>();
 
+        while (N > 0) {
+            if (N % B < 10)
+                list.add((char) (N % B + '0'));
+            else
+                list.add((char) (N % B - 10 + 'A'));
+
+            N /= B;
+        }
+
+        for (int i = list.size() - 1; i >= 0; i--) {
+            System.out.print(list.get(i));
+        }
+
+    }
+}
+
+//public class Main {
+//
+//    public static void main(String[] args) throws IOException {
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        StringTokenizer st = new StringTokenizer(br.readLine());
+//        int n = Integer.parseInt(st.nextToken());
+//        int b = Integer.parseInt(st.nextToken());
+//        StringBuilder ans = new StringBuilder();
+//        while (n != 0) {
+//            int temp = n % b;
+//            if (temp < 10) ans.append((char)(temp + 48));
+//            else ans.append((char)(temp + 55));
+//            n /= b;
+//        }
+//        ans.reverse();
+//        System.out.println(ans);
+//    }
+//}
+
+//public class Main {
+//
+//    public static void main(String[] args) throws IOException{
+//
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        StringTokenizer st = new StringTokenizer(br.readLine());
+//        int n = Integer.parseInt(st.nextToken());
+//        int b = Integer.parseInt(st.nextToken());
+//
+//        System.out.println(Integer.toString(n, b).toUpperCase());
+//
+//    }
+//
+//}
+
+// 2720 세탁소 사장 동혁
+//public class Main {
+//
+//    public static void main(String[] args) throws IOException {
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        StringTokenizer st = new StringTokenizer(br.readLine());
+//        int n = Integer.parseInt(st.nextToken());
+//        int b = Integer.parseInt(st.nextToken());
+//        StringBuilder ans = new StringBuilder();
+//        while (n != 0) {
+//            int temp = n % b;
+//            if (temp < 10) ans.append((char)(temp + 48));
+//            else ans.append((char)(temp + 55));
+//            n /= b;
+//        }
+//        ans.reverse();
+//        System.out.println(ans);
+//    }
+//}
 
 
 
