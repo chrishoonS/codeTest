@@ -56,33 +56,33 @@ import java.util.StringTokenizer;
 //}
 
 // 11005 진법 변환 2
-public class Main08 {
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
-
-        int N = Integer.parseInt(st.nextToken());
-        int B = Integer.parseInt(st.nextToken());
-
-        String result = "";
-
-        List<Character> list = new ArrayList<>();
-
-        while (N > 0) {
-            if (N % B < 10)
-                list.add((char) (N % B + '0'));
-            else
-                list.add((char) (N % B - 10 + 'A'));
-
-            N /= B;
-        }
-
-        for (int i = list.size() - 1; i >= 0; i--) {
-            System.out.print(list.get(i));
-        }
-
-    }
-}
+//public class Main08 {
+//    public static void main(String[] args) throws IOException {
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+//
+//        int N = Integer.parseInt(st.nextToken());
+//        int B = Integer.parseInt(st.nextToken());
+//
+//        String result = "";
+//
+//        List<Character> list = new ArrayList<>();
+//
+//        while (N > 0) {
+//            if (N % B < 10)
+//                list.add((char) (N % B + '0'));
+//            else
+//                list.add((char) (N % B - 10 + 'A'));
+//
+//            N /= B;
+//        }
+//
+//        for (int i = list.size() - 1; i >= 0; i--) {
+//            System.out.print(list.get(i));
+//        }
+//
+//    }
+//}
 
 //public class Main {
 //
@@ -119,24 +119,24 @@ public class Main08 {
 //}
 
 // 2720 세탁소 사장 동혁
-//public class Main {
-//
-//    public static void main(String[] args) throws IOException {
-//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-//        StringTokenizer st = new StringTokenizer(br.readLine());
-//        int n = Integer.parseInt(st.nextToken());
-//        int b = Integer.parseInt(st.nextToken());
-//        StringBuilder ans = new StringBuilder();
-//        while (n != 0) {
-//            int temp = n % b;
-//            if (temp < 10) ans.append((char)(temp + 48));
-//            else ans.append((char)(temp + 55));
-//            n /= b;
-//        }
-//        ans.reverse();
-//        System.out.println(ans);
-//    }
-//}
+public class Main08 {
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int n = Integer.parseInt(st.nextToken());
+        int b = Integer.parseInt(st.nextToken());
+        StringBuilder ans = new StringBuilder();
+        while (n != 0) {
+            int temp = n % b;
+            if (temp < 10) ans.append((char)(temp + 48));
+            else ans.append((char)(temp + 55));
+            n /= b;
+        }
+        ans.reverse();
+        System.out.println(ans);
+    }
+}
 
 
 
