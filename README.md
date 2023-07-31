@@ -594,6 +594,12 @@
         <td align="center">:white_check_mark:</td>
         <td></td>
     </tr>
+    <tr>
+        <td><a href="https://programmers.co.kr/learn/courses/30/lessons/176963">추억 점수</a></td>
+        <td><a href="https://github.com/chrishoonS/codeTest/blob/main/src/main/java/com/test3/level1/Excercise32.java">Excercise32.java</a></td>
+        <td align="center">:white_check_mark:</td>
+        <td></td>
+    </tr>
 </table>
 
 ---
