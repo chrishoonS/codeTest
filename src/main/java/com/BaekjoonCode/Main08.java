@@ -116,31 +116,33 @@ import java.io.InputStreamReader;
 //}
 
 // 2720 세탁소 사장 동혁
-public class Main08 {
+//public class Main08 {
+//
+//    public static void main(String[] args) throws IOException {
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        int t = Integer.parseInt(br.readLine());  //테스트 케이스 개수
+//        int quarter = 25;
+//        int dime = 10;
+//        int nickel = 5;
+//        int penny = 1;
+//        StringBuilder sb = new StringBuilder();
+//
+//        for (int i = 0; i < t; i++) {
+//            int change = Integer.parseInt(br.readLine());
+//            sb.append(change / quarter + " ");
+//            change %= quarter;
+//            sb.append(change / dime + " ");
+//            change %= dime;
+//            sb.append(change / nickel + " ");
+//            change %= nickel;
+//            sb.append(change / penny + "\n");
+//        }
+//        System.out.print(sb);
+//        br.close();
+//    }
+//}
 
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int t = Integer.parseInt(br.readLine());  //테스트 케이스 개수
-        int quarter = 25;
-        int dime = 10;
-        int nickel = 5;
-        int penny = 1;
-        StringBuilder sb = new StringBuilder();
 
-        for (int i = 0; i < t; i++) {
-            int change = Integer.parseInt(br.readLine());
-            sb.append(change / quarter + " ");
-            change %= quarter;
-            sb.append(change / dime + " ");
-            change %= dime;
-            sb.append(change / nickel + " ");
-            change %= nickel;
-            sb.append(change / penny + "\n");
-        }
-        System.out.print(sb);
-        br.close();
-    }
-}
 // 다른 풀이
 //class Main08 {
 //    static int read() throws Exception {
@@ -167,39 +169,18 @@ public class Main08 {
 //    }
 //}
 
-
-
-
 // 2903
-//class Main08 {
-//    static int read() throws Exception {
-//        int c, n = System.in.read() & 15;
-//        while ((c = System.in.read()) > 32) n = (n << 3) + (n << 1) + (c & 15);
-//        if (c == 13) System.in.read();
-//        return n;
-//    }
-//
-//    public static void main(String[] args) throws Exception {
-//        int t = read();
-//        StringBuilder sb = new StringBuilder();
-//
-//        for (int i = 0; i < t; i++) {
-//            int change = read();
-//
-//            sb.append(change / 25).append(" ")
-//                    .append((change % 25) / 10).append(" ")
-//                    .append(((change % 25) % 10) / 5).append(" ")
-//                    .append((change % 5)).append('\n');
-//        }
-//
-//        System.out.println(sb);
-//    }
-//}
+class Main08 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine());
+        System.out.print((int) Math.pow(Math.pow(2, N)+1, 2));
 
-
-
-
-
+    }
+}
+// 1 9 3^2 3
+// 2 81 (3^2)^2 5
+// 3 289 17^2 9
 
 //2292
 //public class Main08 {
