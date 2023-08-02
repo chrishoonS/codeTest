@@ -169,7 +169,7 @@ import java.io.InputStreamReader;
 //    }
 //}
 
-// 2903
+// 2903 중앙이동 알고리즘
 class Main08 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -178,6 +178,27 @@ class Main08 {
 
     }
 }
+
+// 2903 다른 풀이
+//public class Main {
+//
+//    public static void main(String[] args) throws IOException {
+//
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//
+//        int N = Integer.parseInt(br.readLine());
+//        int temp = 2;
+//
+//        for(int i = 0; i < N; i++) {
+//            temp = temp * 2 - 1;
+//        }
+//
+//        System.out.println(temp * temp);
+//    }
+//
+//}
+
+
 // 1 9 3^2 3
 // 2 81 (3^2)^2 5
 // 3 289 17^2 9
@@ -206,6 +227,8 @@ class Main08 {
 //        }
 //    }
 //}
+
+
 
 //  1193 분수찾기
 //public class Main08 {
@@ -287,7 +310,7 @@ class Main08 {
 
 
 
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 여기부터는 나중에 다른 파일로 이동
 
 
 //1712

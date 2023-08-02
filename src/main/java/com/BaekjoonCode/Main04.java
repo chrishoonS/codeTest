@@ -1,8 +1,6 @@
 package com.BaekjoonCode;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.StringTokenizer;
 
 //10807
 //public class Main04 {
@@ -433,21 +431,21 @@ import java.util.StringTokenizer;
 //    }
 //}
 
-//public class Main04 {
-//    public static void main(String[] args) throws IOException{
-//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-//        int[] nums = new int[42];
-//        int cnt = 0;
-//
-//        for (int i = 0; i < 10; ++i) {
-//            nums[Integer.parseInt(br.readLine()) % 42]++;
-//        }
-//        for (int i = 0; i < 42; ++i) {
-//            if (nums[i] != 0 ) cnt++;
-//        }
-//        System.out.println(cnt);
-//    }
-//}
+public class Main04 {
+    public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int[] nums = new int[42];
+        int cnt = 0;
+
+        for (int i = 0; i < 10; ++i) {
+            nums[Integer.parseInt(br.readLine()) % 42]++;
+        }
+        for (int i = 0; i < 42; ++i) {
+            if (nums[i] != 0 ) cnt++;
+        }
+        System.out.println(cnt);
+    }
+}
 
 //1546
 //public class Main04 {
