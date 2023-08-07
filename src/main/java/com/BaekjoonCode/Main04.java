@@ -1,6 +1,6 @@
 package com.BaekjoonCode;
 
-import java.io.*;
+import java.io.IOException;
 
 //10807
 //public class Main04 {
@@ -324,33 +324,33 @@ import java.io.*;
 //}
 
 // 10811 다른풀이
-//public class Main {
-//    public static void main(String[] args) throws IOException {
-//        StringBuilder sb = new StringBuilder();
-//        int n = read();
-//        int[] lst = new int[n];
-//        for (int i = 0; i < n; i++) lst[i] = i + 1;
-//        int m = read();
-//        for (int j = 0; j < m; j++) {
-//            int a = read() - 1;
-//            int b = read() - 1;
-//            for (int l = 0; l < (b - a + 1) / 2; l++) {
-//                int tmp = lst[a + l];
-//                lst[a + l] = lst[b - l];
-//                lst[b - l] = tmp;
-//            }
-//
-//        }
-//        for (int k = 0; k < n; k++) sb.append(lst[k]).append(' ');
-//        System.out.print(sb);
-//
-//    }
-//    static int read() throws IOException{
-//        int c, n = System.in.read() & 15;
-//        while ((c = System.in.read()) > 32) n = (n << 3) + (n << 1) + (c & 15);
-//        return n;
-//    }
-//}
+public class Main04 {
+    public static void main(String[] args) throws IOException {
+        StringBuilder sb = new StringBuilder();
+        int n = read();
+        int[] lst = new int[n];
+        for (int i = 0; i < n; i++) lst[i] = i + 1;
+        int m = read();
+        for (int j = 0; j < m; j++) {
+            int a = read() - 1;
+            int b = read() - 1;
+            for (int l = 0; l < (b - a + 1) / 2; l++) {
+                int tmp = lst[a + l];
+                lst[a + l] = lst[b - l];
+                lst[b - l] = tmp;
+            }
+
+        }
+        for (int k = 0; k < n; k++) sb.append(lst[k]).append(' ');
+        System.out.print(sb);
+
+    }
+    static int read() throws IOException{
+        int c, n = System.in.read() & 15;
+        while ((c = System.in.read()) > 32) n = (n << 3) + (n << 1) + (c & 15);
+        return n;
+    }
+}
 
 //2577
 //public class Main04 {
@@ -431,21 +431,21 @@ import java.io.*;
 //    }
 //}
 
-public class Main04 {
-    public static void main(String[] args) throws IOException{
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int[] nums = new int[42];
-        int cnt = 0;
-
-        for (int i = 0; i < 10; ++i) {
-            nums[Integer.parseInt(br.readLine()) % 42]++;
-        }
-        for (int i = 0; i < 42; ++i) {
-            if (nums[i] != 0 ) cnt++;
-        }
-        System.out.println(cnt);
-    }
-}
+//public class Main04 {
+//    public static void main(String[] args) throws IOException{
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        int[] nums = new int[42];
+//        int cnt = 0;
+//
+//        for (int i = 0; i < 10; ++i) {
+//            nums[Integer.parseInt(br.readLine()) % 42]++;
+//        }
+//        for (int i = 0; i < 42; ++i) {
+//            if (nums[i] != 0 ) cnt++;
+//        }
+//        System.out.println(cnt);
+//    }
+//}
 
 //1546
 //public class Main04 {
