@@ -6,41 +6,98 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 // 5086 배수와 약수
+//public class Main09 {
+//    public static void main(String[] args) throws IOException {
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//
+//        // 입력 받아서 두 수의 크기 비교
+//        StringTokenizer st;
+//
+//        // 0을 입력받았을때 프로그램 종료
+//        while(true){
+//            st = new StringTokenizer(br.readLine(), " ");
+//            int no1 = Integer.parseInt(st.nextToken());
+//            int no2 = Integer.parseInt(st.nextToken());
+//
+//            if(no1 == 0 && no2 == 0) break;
+//            else if(no1 > no2){
+//                if (no1 % no2 == 0) System.out.println("multiple");
+//                else System.out.println("neither");
+//
+//            }else{
+//                if (no2 % no1 == 0) System.out.println("factor");
+//                else System.out.println("neither");
+//            }
+//
+//        }
+//    }
+//
+//}
+
+
+
+
+
+
+
+
+// 2501 약수 구하기
 public class Main09 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        // 입력 받아서 두 수의 크기 비교
-        StringTokenizer st;
+        // 입력 받아서 두 수
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+        int N = Integer.parseInt(st.nextToken());
+        int K = Integer.parseInt(st.nextToken());
 
-        // 0을 입력받았을때 프로그램 종료
-        while(true){
-            st = new StringTokenizer(br.readLine(), " ");
-            int no1 = Integer.parseInt(st.nextToken());
-            int no2 = Integer.parseInt(st.nextToken());
-            int temp = 0;
+        System.out.print(chkYaksu(N, K));
 
-            if(no1 == 0 && no2 == 0) break;
-            else if(no1 > no2){
-                temp = no1 % no2;
-
-                if (temp == 0) System.out.println("multiple");
-                else System.out.println("neither");
-
-            }else{
-                temp = no2 % no1;
-                if (temp == 0) System.out.println("factor");
-                else System.out.println("neither");
-            }
-
-        }
     }
 
+    private static int chkYaksu(int n, int k) {
+        int cnt = 0;
+
+        for (int i = 1; i <= n; i++) {
+            if(n%i == 0) cnt++;
+        }
+
+        int[] yaksu = new int[cnt];
+        cnt = 0;
+
+        for (int i = 1; i <= n; i++) {
+            if(n%i == 0){
+                yaksu[cnt] = i;
+                cnt++;
+            }
+        }
+
+        return yaksu.length < k ? 0 : yaksu[k-1];
+    }
 }
 
-
-
-
+// 다른 풀이
+//public class Main {
+//    public static void main(String[] args) throws IOException {
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        StringTokenizer st = new StringTokenizer(br.readLine());
+//        int N = Integer.parseInt(st.nextToken());
+//        int K = Integer.parseInt(st.nextToken());
+//        int cnt = 0;
+//        int inx = 0;
+//        for (int i = 1; i <=N ; i++) {
+//            if(N%i == 0){
+//                cnt++;
+//                inx = i;
+//
+//                if(cnt == K) break;
+//            }
+//        }
+//
+//        if(cnt == K) System.out.println(inx);
+//        else System.out.println(0);
+//    }
+//}
 
 
 
