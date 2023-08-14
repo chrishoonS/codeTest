@@ -37,6 +37,66 @@ import java.util.StringTokenizer;
 
 
 // 2501 약수 구하기
+//public class Main09 {
+//    public static void main(String[] args) throws IOException {
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//
+//        // 입력 받아서 두 수
+//        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+//        int N = Integer.parseInt(st.nextToken());
+//        int K = Integer.parseInt(st.nextToken());
+//
+//        System.out.print(chkYaksu(N, K));
+//
+//    }
+//
+//    private static int chkYaksu(int n, int k) {
+//        int cnt = 0;
+//
+//        for (int i = 1; i <= n; i++)
+//            if(n%i == 0) cnt++;
+//
+//        int[] yaksu = new int[cnt];
+//        cnt = 0;
+//
+//        for (int i = 1; i <= n; i++) {
+//            if(n%i == 0){
+//                yaksu[cnt] = i;
+//                cnt++;
+//            }
+//        }
+//
+//        return yaksu.length < k ? 0 : yaksu[k-1];
+//    }
+//}
+
+// 다른 풀이
+//public class Main {
+//    public static void main(String[] args) throws IOException {
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        StringTokenizer st = new StringTokenizer(br.readLine());
+//        int N = Integer.parseInt(st.nextToken());
+//        int K = Integer.parseInt(st.nextToken());
+//        int cnt = 0;
+//        int inx = 0;
+//        for (int i = 1; i <=N ; i++) {
+//            if(N%i == 0){
+//                cnt++;
+//                inx = i;
+//
+//                if(cnt == K) break;
+//            }
+//        }
+//
+//        if(cnt == K) System.out.println(inx);
+//        else System.out.println(0);
+//    }
+//}
+
+
+
+
+// 9506 약수들의 합
 public class Main09 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -69,29 +129,6 @@ public class Main09 {
         return yaksu.length < k ? 0 : yaksu[k-1];
     }
 }
-
-// 다른 풀이
-//public class Main {
-//    public static void main(String[] args) throws IOException {
-//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-//        StringTokenizer st = new StringTokenizer(br.readLine());
-//        int N = Integer.parseInt(st.nextToken());
-//        int K = Integer.parseInt(st.nextToken());
-//        int cnt = 0;
-//        int inx = 0;
-//        for (int i = 1; i <=N ; i++) {
-//            if(N%i == 0){
-//                cnt++;
-//                inx = i;
-//
-//                if(cnt == K) break;
-//            }
-//        }
-//
-//        if(cnt == K) System.out.println(inx);
-//        else System.out.println(0);
-//    }
-//}
 
 
 
