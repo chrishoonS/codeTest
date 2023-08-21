@@ -1,35 +1,33 @@
 package com;
 
 import java.io.IOException;
+import java.security.SecureRandom;
+import java.util.Date;
 
 public class fooNote {
-    public static void main(String[] args) throws IOException {
-        int w = read();
-        int x = read();
-        int y = read();
-        int z = read();
-
-        System.out.println(w);
-        System.out.println(x);
-        System.out.println(y);
-        System.out.println(z);
+    public static void main(String[] args) {
+        System.out.println(getRandomPassword(6));
     }
-    static int read() throws IOException {
-        int c;
-        int n = System.in.read() & 15;
 
-        n = (n << 3);
-        System.out.println("n1 ::: " + n);
-        n = (n << 1);
-        System.out.println("n2 ::: " + n);
+    public static String getRandomPassword(int size) {
+        char[] charSet = new char[] {
+                '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+                'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
+                'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
+                '!', '@', '#', '$', '%', '^', '&' };
 
-        while ((c = System.in.read()) > 32) {
+        StringBuffer sb = new StringBuffer();
+        SecureRandom sr = new SecureRandom();
+        sr.setSeed(new Date().getTime());
 
-            n = (c & 15);
-            System.out.println("n3 ::: " + n);
-            n = (n << 3) + (n << 1) + (c & 15);
-            System.out.println("n4 ::: " + n);
+        int idx = 0;
+        int len = charSet.length;
+        for (int i=0; i<size; i++) {
+            // idx = (int) (len * Math.random());
+            idx = sr.nextInt(len);    // 강력한 난수를 발생시키기 위해 SecureRandom을 사용한다.
+            sb.append(charSet[idx]);
         }
-        return n;
+
+        return sb.toString();
     }
 }
