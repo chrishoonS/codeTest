@@ -6,6 +6,7 @@ import java.util.Date;
 
 public class fooNote {
     public static void main(String[] args) {
+        // 출처 : https://byul91oh.tistory.com/466
         System.out.println(getRandomPassword(6));
     }
 
