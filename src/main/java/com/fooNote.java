@@ -1,5 +1,6 @@
 package com;
 
+import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.security.SecureRandom;
 import java.util.Date;
@@ -30,5 +31,17 @@ public class fooNote {
         }
 
         return sb.toString();
+    }
+
+    public static void httpServletTest(HttpServletRequest request){
+        System.out.println("=====START-LINE=====begin");
+        System.out.println("request.getMethod() = " + request.getMethod());
+        System.out.println("request.getProtocol() = " + request.getProtocol());
+        System.out.println("request.getRequestURI() = " + request.getRequestURI());
+        System.out.println("request.getRequestURL() = " + request.getRequestURL());
+        System.out.println("request.getScheme() = " + request.getScheme());
+        System.out.println("request.getQueryString() = " + request.getQueryString());
+        System.out.println("request.isSecure() = " + request.isSecure());
+        System.out.println("=====START-LINE=====end");
     }
 }
