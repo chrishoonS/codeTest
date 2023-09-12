@@ -3,7 +3,7 @@ package com.BaekjoonCode;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.StringTokenizer;
+import java.util.ArrayList;
 
 // 5086 배수와 약수
 //public class Main09 {
@@ -101,32 +101,44 @@ public class Main09 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        // 입력 받아서 두 수
-        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
-        int N = Integer.parseInt(st.nextToken());
-        int K = Integer.parseInt(st.nextToken());
+        StringBuilder sb = new StringBuilder();
 
-        System.out.print(chkYaksu(N, K));
+        while(true){
+            int N = Integer.parseInt(br.readLine());
 
-    }
+            if(N == -1) break;
 
-    private static int chkYaksu(int n, int k) {
-        int cnt = 0;
+            // 약수를 담아 둘 list
+            ArrayList<Integer> list = new ArrayList<>();
 
-        for (int i = 1; i <= n; i++)
-            if(n%i == 0) cnt++;
+            int sum = 0;
 
-        int[] yaksu = new int[cnt];
-        cnt = 0;
-
-        for (int i = 1; i <= n; i++) {
-            if(n%i == 0){
-                yaksu[cnt] = i;
-                cnt++;
+            for(int i = 1; i < N; i++){
+                // 약수라면 list에 추가하고 합을 구한다.
+                if(N % i == 0) {
+                    list.add(i);
+                    sum += i;
+                }
             }
+
+            sb.append(N);
+
+            if(N == sum) {
+                sb.append(" = ");
+
+                for (int i = 0; i < list.size()-1; i++){
+                    sb.append(list.get(i) + " + ");
+                }
+
+                sb.append(list.get(list.size()-1));
+            } else sb.append(" is NOT perfect.");
+
+            sb.append("\n");
         }
 
-        return yaksu.length < k ? 0 : yaksu[k-1];
+        System.out.print(sb);
+        br.close();
+
     }
 }
 
