@@ -1,6 +1,7 @@
 package com.BaekjoonCode;
 
 import java.io.IOException;
+import java.util.Scanner;
 
 //10807
 //public class Main04 {
@@ -324,33 +325,33 @@ import java.io.IOException;
 //}
 
 // 10811 다른풀이
-public class Main04 {
-    public static void main(String[] args) throws IOException {
-        StringBuilder sb = new StringBuilder();
-        int n = read();
-        int[] lst = new int[n];
-        for (int i = 0; i < n; i++) lst[i] = i + 1;
-        int m = read();
-        for (int j = 0; j < m; j++) {
-            int a = read() - 1;
-            int b = read() - 1;
-            for (int l = 0; l < (b - a + 1) / 2; l++) {
-                int tmp = lst[a + l];
-                lst[a + l] = lst[b - l];
-                lst[b - l] = tmp;
-            }
-
-        }
-        for (int k = 0; k < n; k++) sb.append(lst[k]).append(' ');
-        System.out.print(sb);
-
-    }
-    static int read() throws IOException{
-        int c, n = System.in.read() & 15;
-        while ((c = System.in.read()) > 32) n = (n << 3) + (n << 1) + (c & 15);
-        return n;
-    }
-}
+//public class Main04 {
+//    public static void main(String[] args) throws IOException {
+//        StringBuilder sb = new StringBuilder();
+//        int n = read();
+//        int[] lst = new int[n];
+//        for (int i = 0; i < n; i++) lst[i] = i + 1;
+//        int m = read();
+//        for (int j = 0; j < m; j++) {
+//            int a = read() - 1;
+//            int b = read() - 1;
+//            for (int l = 0; l < (b - a + 1) / 2; l++) {
+//                int tmp = lst[a + l];
+//                lst[a + l] = lst[b - l];
+//                lst[b - l] = tmp;
+//            }
+//
+//        }
+//        for (int k = 0; k < n; k++) sb.append(lst[k]).append(' ');
+//        System.out.print(sb);
+//
+//    }
+//    static int read() throws IOException{
+//        int c, n = System.in.read() & 15;
+//        while ((c = System.in.read()) > 32) n = (n << 3) + (n << 1) + (c & 15);
+//        return n;
+//    }
+//}
 
 //2577
 //public class Main04 {
@@ -448,28 +449,28 @@ public class Main04 {
 //}
 
 //1546
-//public class Main04 {
-//    public static void main(String[] args) throws IOException{
-//        Scanner sc = new Scanner(System.in);
-//        int N = sc.nextInt();
-//        double[] score = new double[N];
-//        int M = 0;
-//        float sum = 0;
-//
-//        for (int i = 0; i < N; i++) {
-//            score[i] = sc.nextInt();
-//        }
-//        for (int i = 0; i < score.length; i++) {
-//            if (i == 0) M = (int) score[i];
-//            else M = (int) Math.max(M, score[i]);
-//        }
-//        for (int i = 0; i < N; i++) {
-//            score[i] = (score[i]/M) * 100;
-//            sum += score[i];
-//        }
-//        System.out.println(sum/N);
-//    }
-//}
+public class Main04 {
+    public static void main(String[] args) throws IOException{
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        double[] score = new double[N];
+        int M = 0;
+        float sum = 0;
+
+        for (int i = 0; i < N; i++) {
+            score[i] = sc.nextInt();
+        }
+        for (int i = 0; i < score.length; i++) {
+            if (i == 0) M = (int) score[i];
+            else M = (int) Math.max(M, score[i]);
+        }
+        for (int i = 0; i < N; i++) {
+            score[i] = (score[i]/M) * 100;
+            sum += score[i];
+        }
+        System.out.println(sum/N);
+    }
+}
 
 //8958
 //public class Main04 {
