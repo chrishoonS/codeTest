@@ -19,6 +19,7 @@ public class fooNote {
 
         log.debug(String.valueOf(now));
         log.debug(String.valueOf(dtfFull));
+        log.debug(now.format(dtfFull));
         log.debug(currentDate);
 
         String totalStr = "20231031140000";
@@ -27,15 +28,16 @@ public class fooNote {
         log.debug(dateStr);
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
-        try {
-            Date date = formatter.parse(dateStr);
-            Date nowDate = new Date();
-            log.debug(String.valueOf(date));
-            log.debug(String.valueOf(date.after(nowDate)));
-            log.debug(String.valueOf(date.before(nowDate)));
-        } catch (Exception e) {
-            log.error("errororor:::::{}", e);
-        }
+//        try {
+//            Date date = formatter.parse(dateStr);
+//            Date nowDate = new Date();
+//            log.debug(String.valueOf(date));
+//            log.debug(String.valueOf(date.equals(date)));
+//            log.debug(String.valueOf(date.after(nowDate)));
+//            log.debug(String.valueOf(date.before(nowDate)));
+//        } catch (Exception e) {
+//            log.error("errororor:::::{}", e);
+//        }
 
     }
 }
