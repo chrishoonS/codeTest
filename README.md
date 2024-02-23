@@ -240,7 +240,7 @@
         <th>Note</th>
     </tr>
     <tr>
-        <td rowspan="4" align="center">해시</td>
+        <td rowspan="3" align="center">해시</td>
         <td align="center">Lv.1</td>
         <td><a href="https://programmers.co.kr/learn/courses/30/lessons/42576">완주하지 못한 선수</a></td>
         <td><a href="https://github.com/chrishoonS/codeTest/blob/af4196f452fdb06a0106211912c273362826ae86/src/main/java/com/test2/level1/Algorithm01.java">Algorithm01.java</a></td>
