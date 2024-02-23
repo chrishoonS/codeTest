@@ -248,15 +248,9 @@
         <td></td>
     </tr>
     <tr>
-        <td rowspan="2" align="center">Lv.2</td>
-        <td><a href="https://programmers.co.kr/learn/courses/30/lessons/70129">전화번호 목록</a></td>
-        <td><a href="https://github.com/chrishoonS/codeTest/blob/af4196f452fdb06a0106211912c273362826ae86/src/main/java/com/test2/level2/Algorithm01.java"></a></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td><a href="https://programmers.co.kr/learn/courses/30/lessons/70129">위장</a></td>
-        <td><a href="https://github.com/chrishoonS/codeTest/blob/af4196f452fdb06a0106211912c273362826ae86/src/main/java/com/test2/level2/Algorithm01.java"></a></td>
+        <td align="center">Lv.2</td>
+        <td><a href="https://school.programmers.co.kr/learn/courses/30/lessons/42578">의상</a></td>
+        <td><a href="https://github.com/chrishoonS/codeTest/blob/af4196f452fdb06a0106211912c273362826ae86/src/main/java/com/test2/level2/Algorithm01.java">Algorithm05.java</a></td>
         <td></td>
         <td></td>
     </tr>
