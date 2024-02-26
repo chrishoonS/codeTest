@@ -255,8 +255,8 @@
     <tr>
         <td align="center">Lv.2</td>
         <td><a href="https://school.programmers.co.kr/learn/courses/30/lessons/42578">의상</a></td>
-        <td><a href="https://github.com/chrishoonS/codeTest/blob/af4196f452fdb06a0106211912c273362826ae86/src/main/java/com/test2/level2/Algorithm01.java">Algorithm05.java</a></td>
-        <td></td>
+        <td><a href="https://github.com/chrishoonS/codeTest/blob/af4196f452fdb06a0106211912c273362826ae86/src/main/java/com/test2/level2/Algorithm05.java">Algorithm05.java</a></td>
+        <td align="center">:white_check_mark:</td>
         <td></td>
     </tr>
     <tr>
