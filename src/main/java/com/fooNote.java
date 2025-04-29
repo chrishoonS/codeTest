@@ -1,43 +1,52 @@
 package com;
 
-import jdk.jfr.internal.JVM;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.util.Assert;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Date;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 @Slf4j
 public class fooNote {
+
     public static void main(String[] args) {
-        LocalDateTime now = LocalDateTime.now();
-        DateTimeFormatter dtfFull = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-        String currentDate = now.format(dtfFull).substring(0, 10);
+        String[] arr1 = { "1", "2", "3", "4" };
+        String[] arr2 = { "2", "3", "5" };
 
-        log.debug(String.valueOf(now));
-        log.debug(String.valueOf(dtfFull));
-        log.debug(now.format(dtfFull));
-        log.debug(currentDate);
-
-        String totalStr = "20231031140000";
-        String dateStr = totalStr.substring(0, 4) +"-"+ totalStr.substring(4, 6) +"-"+ totalStr.substring(6, 8) +" "+
-                         totalStr.substring(8,10) +":"+ totalStr.substring(10,12) +":"+ totalStr.substring(12,14);
-        log.debug(dateStr);
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-
-//        try {
-//            Date date = formatter.parse(dateStr);
-//            Date nowDate = new Date();
-//            log.debug(String.valueOf(date));
-//            log.debug(String.valueOf(date.equals(date)));
-//            log.debug(String.valueOf(date.after(nowDate)));
-//            log.debug(String.valueOf(date.before(nowDate)));
-//        } catch (Exception e) {
-//            log.error("errororor:::::{}", e);
-//        }
-
+        compareEventLoungeArrays(arr1, arr2);
     }
+
+    public static void compareEventLoungeArrays(String[] eventLoungeArr, String[] eventLoungeArrBk) {
+        Set<String> setA = new HashSet<>(Arrays.asList(eventLoungeArr));
+        Set<String> setB = new HashSet<>(Arrays.asList(eventLoungeArrBk));
+
+        if (eventLoungeArr.length > eventLoungeArrBk.length) {
+            // A가 더 긴 경우 → A에만 있는 값
+            Set<String> diff = new HashSet<>(setA);
+            diff.removeAll(setB);
+            System.out.println("eventLoungeArr에만 있는 값: " + diff);
+
+        } else if (eventLoungeArr.length < eventLoungeArrBk.length) {
+            // B가 더 긴 경우 → B에만 있는 값
+            Set<String> diff = new HashSet<>(setB);
+            diff.removeAll(setA);
+            System.out.println("eventLoungeArrBk에만 있는 값: " + diff);
+
+        } else {
+            // 길이는 같지만 내용이 다름
+            if (!setA.equals(setB)) {
+                Set<String> diffA = new HashSet<>(setA);
+                diffA.removeAll(setB);
+
+                Set<String> diffB = new HashSet<>(setB);
+                diffB.removeAll(setA);
+
+                System.out.println("eventLoungeArr에만 있는 값: " + diffA);
+                System.out.println("eventLoungeArrBk에만 있는 값: " + diffB);
+            } else {
+                System.out.println("두 배열은 동일한 값을 가지고 있습니다.");
+            }
+        }
+    }
+
 }
