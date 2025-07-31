@@ -114,7 +114,7 @@
         <td rowspan="2" align="center">Lv.2</td>
         <td><a href="https://programmers.co.kr/learn/courses/30/lessons/86052">빛의 경로 사이클</a></td>
         <td><a href="https://github.com/chrishoonS/codeTest/blob/af4196f452fdb06a0106211912c273362826ae86/src/main/java/com/test/level2/Solution27.java">Solution27.java</a></td>
-        <td>고득점 키트 먼저 푸는중</td>
+        <td>:white_check_mark:</td>
         <td></td>
     </tr>
     <tr>
