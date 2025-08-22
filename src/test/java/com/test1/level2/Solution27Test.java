@@ -1,5 +1,6 @@
 package com.test1.level2;
 
+import com.programmers.test1.level2.Solution27;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 

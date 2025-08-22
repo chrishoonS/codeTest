@@ -1,6 +1,6 @@
 package com.test2.level1;
 
-import com.test2.level2.Algorithm05;
+import com.programmers.test2.level2.Algorithm05;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

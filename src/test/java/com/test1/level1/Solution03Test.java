@@ -1,5 +1,6 @@
 package com.test1.level1;
 
+import com.programmers.test1.level1.Solution03;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

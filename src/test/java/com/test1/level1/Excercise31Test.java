@@ -1,6 +1,6 @@
 package com.test1.level1;
 
-import com.test3.level1.Excercise31;
+import com.programmers.level1.Excercise31;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

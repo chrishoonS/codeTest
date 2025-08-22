@@ -1,5 +1,6 @@
 package com.test3.level1;
 
+import com.programmers.level1.Excercise02;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
