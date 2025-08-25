@@ -2,17 +2,54 @@ package com;
 
 
 import lombok.extern.slf4j.Slf4j;
+import io.hypersistence.tsid.TSID;
 
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
 import java.util.*;
 
 @Slf4j
 public class fooNote {
 
     public static void main(String[] args) {
-        String[] eventLoungeArr = { "1", "4"};
-        String[] eventLoungeArrBk = { "1", "2", "3"};
+//        String[] eventLoungeArr = { "1", "4"};
+//        String[] eventLoungeArrBk = { "1", "2", "3"};
+//        compareEventLoungeArrays(eventLoungeArr, eventLoungeArrBk);
+        log.info("[generateStringId ] ::::: {}", generateStringId());
+        log.info("[generateLongId   ] ::::: {}", generateLongId());
+        log.info("[generateWithParam] ::::: {}", generateWithParam("3"));
+    }
 
-        compareEventLoungeArrays(eventLoungeArr, eventLoungeArrBk);
+    // TSID의 문자열 버전(27자리 Base62) 반환
+    public static String generateStringId() {
+        // TSID(Time-Sorted Unique Identifier)
+        // UUID처럼 전역 고유성 보장, 생성된 ID 시간순 정렬 가능
+        // DB 인덱스 효율이 좋아져 UUID보다 성능이 우수
+        return TSID.Factory.getTsid().toString(); // 27자리
+    }
+
+    // TSID를 Long 타입으로 반환 (시간 정렬된 숫자 ID)
+    public static long generateLongId() {
+        return TSID.Factory.getTsid().toLong();
+    }
+
+    public static String generateWithParam(String inputKey) {
+        String tsid = TSID.Factory.getTsid().toString(); // 27자리
+        String hash = shortHash(inputKey); // 6자리
+        return tsid + "-" + hash; // 34자
+    }
+
+    private static String shortHash(String input) {
+        try {
+            MessageDigest digest = MessageDigest.getInstance("SHA-256");
+            byte[] hashBytes = digest.digest(input.getBytes(StandardCharsets.UTF_8));
+            return Base64.getUrlEncoder()
+                    .withoutPadding()
+                    .encodeToString(hashBytes)
+                    .substring(0, 6); // 길이 고정
+        } catch (Exception e) {
+            throw new RuntimeException("Hashing failed", e);
+        }
     }
 
     public static void compareEventLoungeArrays(String[] eventLoungeArr, String[] eventLoungeArrBk) {
